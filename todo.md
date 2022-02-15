@@ -21,3 +21,16 @@
 - [ ] implement basic api calls to read manga
 - [ ] implement back/forth buttons
 - [ ] implement chapter picker?
+
+## LTM
+
+- [ ] disable perma-caching
+- [ ] have proper cache limits depending on type of request (eg. view/chapters/reading)
+
+## unsure
+
+- [ ] implement auth/login systems, which will allow:
+- - [ ] getting last chapter/vol. read from mangadex
+- - [ ] retrieving user's manga follows
+- - [ ] displaying user's home feed in-app
+- - and many more cool things
