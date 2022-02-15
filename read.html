@@ -16,24 +16,11 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <body class="dark" style="--accent-page: 7;">
-    <div class="bg" id="manga-bg">
-        <section class="min header padding">
-            <div class="manga-img-wrap">
-                <img id="manga-img">
-            </div>
-            <div class="bg-dark lib-grad"></div>
-        </section>
+    <div class="image-viewer">
+        <img class="manga" id="manga" alt="Manga page">
     </div>
-    <section class="left header no-sep no-align" id="overview">
-        <div class="shift-right">
-            <h2 translate="no" id="manga-title"></h2>
-            <h3 translate="no" id="manga-jptitle"></h3>
-        </div>
-        <p class="text-18" id="manga-desc"></p>
-        <a role="button" class="button left icon con" id="manga-read">Start Reading</a>
-        <a role="button" class="button focus icon ext" id="mangadex" target="_blank">MangaDex</a>
-    </section>
     <script src="js/read.js"></script>
+    <a role="button" class="button focus icon con" onclick="image(0)">Read page 0</a>
 </body>
 <script>
     feather.replace()
