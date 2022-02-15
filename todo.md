@@ -18,7 +18,7 @@
 
 ## reading
 
-- [ ] implement basic api calls to read manga
+- [x] implement basic api calls to read manga
 - [ ] implement back/forth buttons
 - [ ] implement chapter picker?
 
