@@ -26,6 +26,7 @@
     overflow: hidden;
     cursor: pointer;
     transition: 0.2s;
+    position: relative;
 }
 .chapter-card:hover, .chapter-card:focus {
     background-color: var(--raise-hover);
@@ -34,6 +35,36 @@
     font-size: 32px;
     font-family: var(--font-head);
     font-weight: 700;
+}
+/* overlay icons */
+.chapter-card .overlay-icons {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* overlay icon */
+.overlay-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    width: 100%;
+    cursor: pointer;
+}
+.overlay-icons a svg {
+    top: 0 !important;
+    opacity: 1;
+    transition: 0.2s;
+}
+.overlay-icons a:not(:hover):not(:focus) svg {
+    opacity: 0;
+}
+.overlay-icons a:hover, .overlay-icons a:focus {
+    background-color: var(--b4);
+    color: var(--text-icon) !important;
 }
 
 /* manga */

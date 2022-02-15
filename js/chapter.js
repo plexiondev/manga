@@ -12,10 +12,10 @@ let em_mangachlist = document.getElementById("manga-chapters");
 
 // checks
 if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
-    
+
     // if exceeded cache
     console.log("[ C ] sending request - no cache present or reached timeout");
-    
+
     // do everything
     // define xhr GET
     const c_xhr = new XMLHttpRequest();
@@ -25,7 +25,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 
 
     // request is received
-    c_xhr.onload = function() {
+    c_xhr.onload = function () {
         console.log(`[ Y ] found ${manga} via ${c_url}`);
 
         // parse
@@ -50,7 +50,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 
     // then cache
     c_now = new Date(c_now);
-    c_now.setMinutes ( c_now.getMinutes() + 150000 );
+    c_now.setMinutes(c_now.getMinutes() + 150000);
     console.log(`[ C ] cached until ${c_now} (15m)`);
     localStorage.setItem(`${manga}_chapters_timeout`, c_now);
 } else {
@@ -69,18 +69,27 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 
         // loop over pool of volumes
         for (let i in v) {
-            
+
             // create element
-            let card = document.createElement('a');
+            let card = document.createElement('span');
             card.classList.add('chapter-card');
 
-            // link
-            //card.href = `read?m=${manga}&c=${c1}`;
+            // links
+            let chapters_parent = v[i].chapters;
+            var chapters_array = [];
+            for (let x in chapters_parent) {
+                chapters_array.push(x);
+            }
+            var read_now = `read?c=${chapters_parent[chapters_array[0]].id}`;
 
             // html
             card.innerHTML = (`
             <div class="info">
             <h4 class="text-20">VOL. ${v[i].volume}</h4>
+            </div>
+            <div class="overlay-icons">
+            <a onclick="mark_read('${manga}')" title="Mark as read"><i class="icon w-32" data-feather="bookmark"></i></a>
+            <a href="${read_now}" title="Read now"><i class="icon w-32" data-feather="arrow-right-circle"></i></a>
             </div>
             `);
 

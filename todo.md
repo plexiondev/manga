@@ -10,7 +10,7 @@
 
 - [ ] display cover art on view
 - [ ] tidy up chapter/volume display
-- [ ] allow chapter/volume display to link directly to start of volume's first chapter
+- [x] allow chapter/volume display to link directly to start of volume's first chapter
 - [ ] show tags on view page
 - [ ] add links (from api) to additional pages for manga
 - [ ] add status, content rating, state
@@ -21,6 +21,7 @@
 - [x] implement basic api calls to read manga
 - [x] implement back/forth buttons
 - [ ] implement chapter picker?
+- [x] allow choosing of volume
 
 ## styling
 

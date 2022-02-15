@@ -63,7 +63,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     // then cache
     now = new Date(now);
     now.setMinutes ( now.getMinutes() + 150000 );
-    console.log(`[ C ] cached until ${now} (15m)`);
+    console.log(`[ C ] cached until ${now} (1h)`);
     localStorage.setItem(`${manga}_view_timeout`, now);
 } else {
     console.log(`[ C ] using cached info until ${cached_out}`);
@@ -91,7 +91,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
             em_mangaread.href = `read?m=${manga}&c=1`;
         } else {
             console.log(`[...] user has previously read`)
-            em_mangaread.textContent = `Continue Reading`;
+            em_mangaread.textContent = `Continue reading`;
             em_mangaread.classList.add("focus");
             em_mangaread.href = `read?m=${manga}&c=${chapter}`;
         }
