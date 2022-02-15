@@ -1,3 +1,11 @@
+## view manga page
+
+`https://api.mangadex.org/manga/{ manga.id }`
+
+eg. `https://api.mangadex.org/manga/d7a0991d-2913-4b3c-8fb6-2b752f9e5f3a`
+
+---
+
 ## get cover
 
 `https://uploads.mangadex.org/covers/{ manga.id }/{ cover.filename }`
