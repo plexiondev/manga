@@ -80,3 +80,8 @@
 .manga-wrap .manga {
     height: 100%;
 }
+
+/* tags */
+.tags {
+    padding: 10px 0;
+}

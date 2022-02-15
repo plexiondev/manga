@@ -11,7 +11,7 @@
 - [ ] display cover art on view
 - [ ] tidy up chapter/volume display
 - [x] allow chapter/volume display to link directly to start of volume's first chapter
-- [ ] show tags on view page
+- [x] show tags on view page
 - [ ] add links (from api) to additional pages for manga
 - [ ] add status, content rating, state
 - [ ] add year, created at, updated at, (version?)

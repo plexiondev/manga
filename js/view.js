@@ -20,6 +20,8 @@ let em_mangadesc = document.getElementById("manga-desc");
 // buttons
 let em_mangaread = document.getElementById("manga-read");
 let em_mangadex = document.getElementById("mangadex");
+// tags
+let em_tags = document.getElementById("tags");
 
 
 // checks
@@ -78,7 +80,14 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
         // titles
         em_mangatitle.textContent = data.data.attributes.title.en;
-        em_mangajptitle.textContent = data.data.attributes.altTitles[0].ja;
+        //em_mangajptitle.textContent = data.data.attributes.altTitles[0].ja;
+        // edge-case when multiple alt titles
+        for (i in data.data.attributes.altTitles) {
+            if (data.data.attributes.altTitles[i].ja != undefined) {
+                em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
+            }
+        }
+        
 
         // desc
         em_mangadesc.textContent = data.data.attributes.description.en;
@@ -94,6 +103,27 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
             em_mangaread.textContent = `Continue reading`;
             em_mangaread.classList.add("focus");
             em_mangaread.href = `read?m=${manga}&c=${chapter}`;
+        }
+
+        // relationships
+        let relationships = data.data.relationships;
+        for (let i in relationships) {
+            console.log(`[ Y ] found ${relationships[i].type} relationship`);
+            if (relationships[i].type == "cover_art") {
+                var cover_art = relationships[i].id;
+                localStorage.setItem("cover_art_temp",relationships[i].id);
+            } else {
+                
+                // create element
+                let tag = document.createElement('label');
+                tag.classList.add('tag');
+
+                // text
+                tag.textContent = `${relationships[i].type}`;
+
+                em_tags.appendChild(tag);
+
+            }
         }
 
     }
