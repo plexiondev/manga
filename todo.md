@@ -15,6 +15,7 @@
 - [ ] add links (from api) to additional pages for manga
 - [ ] add status, content rating, state
 - [ ] add year, created at, updated at, (version?)
+- [ ] convert markdown for manga descriptions
 
 ## reading
 
