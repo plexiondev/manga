@@ -3,13 +3,21 @@
 
 // pass manga id from url
 const search = window.location.search;
-const query = new search(queryString);
+const query = new URLSearchParams(search);
 let manga = query.get('m')
 
 // cache
 let cached_out = localStorage.getItem(`${manga}_view_timeout`) || "";
 let cache = localStorage.getItem(`${manga}_view`) || "";
 let now = new Date();
+
+// get elements
+let em_mangatitle = document.getElementById("manga-title");
+let em_mangajptitle = document.getElementById("manga-jptitle")
+let em_mangadesc = document.getElementById("manga-desc")
+// buttons
+let em_mangaread = document.getElementById("manga-read")
+let em_mangadex = document.getElementById("mangadex")
 
 
 // checks
@@ -42,7 +50,6 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         } else { // success
 
             //
-
         }
     }
 
@@ -67,7 +74,16 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         console.log("[ X ] 404")
     } else { // success
 
-        //
+        // titles
+        em_mangatitle.textContent = data.data.attributes.title.en;
+        em_mangajptitle.textContent = data.data.attributes.altTitles[0].ja;
+
+        // desc
+        em_mangadesc.textContent = data.data.attributes.description.en;
+
+        // buttons
+        em_mangaread.setAttribute("href",`read?m=${manga}`);
+        em_mangadex.setAttribute("href",`https://mangadex.org/title/${manga}`);
 
     }
 }

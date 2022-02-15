@@ -1,3 +1,7 @@
 /* manga styles */
 
 
+/* shift elements to right for cover */
+.shift-right {
+    margin-left: 260px;
+}
