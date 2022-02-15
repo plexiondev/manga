@@ -19,13 +19,19 @@
 ## reading
 
 - [x] implement basic api calls to read manga
-- [ ] implement back/forth buttons
+- [x] implement back/forth buttons
 - [ ] implement chapter picker?
+
+## styling
+
+- [ ] fix up styling of back/forth buttons when reading
+- [ ] fix up styling of chapter/volume display
 
 ## LTM
 
 - [ ] disable perma-caching
 - [ ] have proper cache limits depending on type of request (eg. view/chapters/reading)
+- [x] ^ reading does not cache
 
 ## unsure
 
