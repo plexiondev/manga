@@ -16,19 +16,19 @@ let now = new Date();
 if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     
     // if exceeded cache
-    console.log("[CACHE] Exceeded cache limit, sending request")
+    console.log("[ C ] sending request - no cache present or reached timeout")
     
     // do everything
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.github.com/orgs/plex1on/repos`;
-    console.log(`Searching for ${url}`)
+    const url = `https://api.mangadex.org/manga/${manga}`;
+    console.log(`[...] searching mangadex for ${manga}`)
     xhr.open('GET', url, true);
 
 
     // request is received
     xhr.onload = function() {
-        console.log("Found!")
+        console.log(`[ Y ] found ${manga} via ${url}`)
 
         // parse
         localStorage.setItem(`${manga}_view`, this.response);
@@ -38,7 +38,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         if (data.message === "Not Found") {
 
             // log
-            console.log("[ERROR] 404")
+            console.log("[ X ] 404")
         } else { // success
 
             //
@@ -54,17 +54,17 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     // then cache
     now = new Date(now);
     now.setMinutes ( now.getMinutes() + 10 );
-    console.log(`[CACHE] Cached page until ${now} (7 minutes)`)
+    console.log(`[ C ] cached until ${now} (10m)`)
     localStorage.setItem(`${manga}_view_timeout`, now);
 } else {
-    console.log(`[CACHE] Not exceeded cache limit yet, using cached information. Wait until ${cached_out}`)
+    console.log(`[ C ] using cached info until ${cached_out}`)
     const data = JSON.parse(localStorage.getItem(`${manga}_view`))
 
     // error response
     if (data.message === "Not Found") {
 
         // log
-        console.log("[ERROR] 404")
+        console.log("[ X ] 404")
     } else { // success
 
         //
