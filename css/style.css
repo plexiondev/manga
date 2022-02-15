@@ -5,3 +5,33 @@
 .shift-right {
     margin-left: 260px;
 }
+
+/* chapters */
+.chapter-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    transition: 0.2s;
+    padding: 20px 0;
+}
+.chapter-card {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--b5);
+    box-shadow: var(--raise-0);
+    text-decoration: none !important;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.chapter-card:hover, .chapter-card:focus {
+    background-color: var(--raise-hover);
+}
+.chapter-card .info h4 {
+    font-size: 32px;
+    font-family: var(--font-head);
+    font-weight: 700;
+}

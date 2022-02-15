@@ -5,6 +5,7 @@
 const search = window.location.search;
 const query = new URLSearchParams(search);
 let manga = query.get('m')
+// has user read before?
 let chapter = localStorage.getItem("chapter") || null;
 
 // cache
@@ -83,26 +84,17 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         em_mangadesc.textContent = data.data.attributes.description.en;
 
         // buttons
-        em_mangadex.setAttribute("href",`https://mangadex.org/title/${manga}`);
-
+        em_mangadex.href = `https://mangadex.org/title/${manga}`;
+        // detect if user has read
         if (chapter == null) {
             console.log(`[...] user has not read before`)
+            em_mangaread.href = `read?m=${manga}&c=1`;
         } else {
             console.log(`[...] user has previously read`)
             em_mangaread.textContent = `Continue Reading`;
             em_mangaread.classList.add("focus");
+            em_mangaread.href = `read?m=${manga}&c=${chapter}`;
         }
 
-    }
-}
-
-function read() {
-    console.log("[ Y ] read requested")
-
-    if (chapter == null) {
-        console.log(`[...] no chapter requested (${chapter}), defaulting to chapter 1`)
-        window.location.href = `read?m=${manga}&c=1`;
-    } else {
-        window.location.href = `read?m=${manga}&c=${chapter}`;
     }
 }
