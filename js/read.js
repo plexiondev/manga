@@ -63,9 +63,25 @@ first_xhr.onload = function() {
 // send
 first_xhr.send();
 
+// auto-show first image
+var index = 0;
+image(0);
 
-// requests to pull images dynamically
+// forward/backward
+function forward(i) {
+    image(index += i);
+    console.log(`[ Y ] moving ${i}`)
+}
+function backward(i) {
+    image(index += i);
+    console.log(`[ Y ] moving ${i}`)
+}
+
+
+// requests to pull images dynamically (will set to specific page number)
 function image(id) {
+    
+    var index = id;
 
     // get from local storage
     let base_url = localStorage.getItem("base_url");

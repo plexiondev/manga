@@ -16,11 +16,12 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <body class="dark" style="--accent-page: 7;">
-    <div class="image-viewer">
+    <div class="manga-wrap">
         <img class="manga" id="manga" alt="Manga page">
     </div>
     <script src="js/read.js"></script>
-    <a role="button" class="button focus icon con" onclick="image(0)">Read page 0</a>
+    <a role="button" class="arrow prev" onclick="backward(-1)"><i class="icon w-24" data-feather="arrow-left"></i></a>
+    <a role="button" class="arrow next" onclick="forward(1)"><i class="icon w-24" data-feather="arrow-right"></i></a>
 </body>
 <script>
     feather.replace()
