@@ -80,7 +80,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
             for (let x in chapters_parent) {
                 chapters_array.push(x);
             }
-            var read_now = `read?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
+            var read_now = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
 
             // html
             card.innerHTML = (`

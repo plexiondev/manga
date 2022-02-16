@@ -26,3 +26,11 @@ REQUIRES: `GET MANGA`, `GET COVER`
 `https://api.mangadex.org/manga/{ manga.id }/aggregate`
 
 eg. `https://api.mangadex.org/manga/d7a0991d-2913-4b3c-8fb6-2b752f9e5f3a/aggregate`
+
+---
+
+## advancing to next chapter
+
+1. make use of `/chapter` api calls via passing in the current chapter id?
+2. ^ this should allow you to view the current chapter number the user is currently on
+3. can then run the same `chapter.js` and reload this page with a new `?c=`

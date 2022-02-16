@@ -86,12 +86,15 @@ function image(id) {
     // get from local storage
     let base_url = localStorage.getItem("base_url");
     let hash = localStorage.getItem("hash");
-    let image_array = localStorage.getItem("image_array");
+    let image_length = (localStorage.getItem("manga_length") - 1);
     let image_id = localStorage.getItem(`manga_${id}`);
 
-    console.log(`[...] requested image ${id}`);
+    // if reached end
+    if (index > image_length) {
 
-    var url = `${base_url}/data/${hash}/${image_id}`;
-
-    manga_page.setAttribute("src",`${url}`);
+    } else {
+        console.log(`[...] requested image ${id}`);
+        var url = `${base_url}/data/${hash}/${image_id}`;
+        manga_page.setAttribute("src",`${url}`);
+    }
 }
