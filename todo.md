@@ -17,6 +17,11 @@
 - [ ] add year, created at, updated at, (version?)
 - [ ] convert markdown for manga descriptions
 
+## indexing
+
+- [ ] integrate search with mangadex api
+- [ ] use global header on all pages (minimal on manga reading)
+
 ## reading
 
 - [x] implement basic api calls to read manga
