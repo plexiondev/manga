@@ -52,7 +52,7 @@ first_xhr.onload = function() {
         for (let i in first_data.chapter.data) {
             // store in array
             images.push(first_data.chapter.data[i]);
-            localStorage.setItem(`manga_${i}`,`${first_data.chapter.data[i]}`)
+            localStorage.setItem(`manga_${i}`,`${first_data.chapter.data[i]}`);
             console.log(`[ A ] pushed ${first_data.chapter.data[i]} into images array`);
         }
         console.log(`[ Y ] stored array of images, ${images}`);

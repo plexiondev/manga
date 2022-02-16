@@ -80,12 +80,12 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
             for (let x in chapters_parent) {
                 chapters_array.push(x);
             }
-            var read_now = `read?c=${chapters_parent[chapters_array[0]].id}`;
+            var read_now = `read?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
 
             // html
             card.innerHTML = (`
             <div class="info">
-            <h4 class="text-20">VOL. ${v[i].volume}</h4>
+            <h4 class="text-20">Read volume ${v[i].volume}</h4>
             </div>
             <div class="overlay-icons">
             <a onclick="mark_read('${manga}')" title="Mark as read"><i class="icon w-32" data-feather="bookmark"></i></a>
