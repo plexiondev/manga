@@ -8,7 +8,7 @@
 
 ## viewing
 
-- [ ] display cover art on view
+- [x] display cover art on view
 - [ ] tidy up chapter/volume display
 - [x] allow chapter/volume display to link directly to start of volume's first chapter
 - [x] show tags on view page
