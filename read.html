@@ -19,9 +19,23 @@
     <div class="manga-wrap">
         <img class="manga" id="manga" alt="Page not available">
     </div>
+    <span class="exit" onclick="exit()">
+        <i class="icon w-28" data-feather="x"></i>
+    </span>
+    <div class="controls-wrap">
+        <div class="controls">
+            <span id="volume-down" onclick="image(index -= 1);">
+                <i class="icon w-28" data-feather="arrow-left"></i>
+            </span>
+            <span id="chapter-control">
+                <strong id="chapter"></strong><p class="sep">/</p><i id="chapter-length"></i>
+            </span>
+            <span id="volume-up" onclick="image(index += 1);">
+                <i class="icon w-28" data-feather="arrow-right"></i>
+            </span>
+        </div>
+    </div>
     <script src="js/read.js"></script>
-    <a role="button" class="arrow prev" onclick="backward(-1)"><i class="icon w-24" data-feather="arrow-left"></i></a>
-    <a role="button" class="arrow next" onclick="forward(1)"><i class="icon w-24" data-feather="arrow-right"></i></a>
 </body>
 <script>
     feather.replace()

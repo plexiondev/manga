@@ -15,6 +15,9 @@ var images = [];
 
 // get elements
 let manga_page = document.getElementById("manga");
+// lengths
+let em_manga_page = document.getElementById("chapter");
+let em_manga_page_full = document.getElementById("chapter-length");
 
 
 // no caching, pulling directly from the MangaDex@Home network
@@ -58,6 +61,7 @@ first_xhr.onload = function() {
         console.log(`[ Y ] stored array of images, ${images}`);
         localStorage.setItem("image_array",images);
         localStorage.setItem("manga_length",`${images.length}`);
+        em_manga_page_full.textContent = `${images.length -= 1}`;
     }
 }
 // send
@@ -82,6 +86,8 @@ function backward(i) {
 function image(id) {
     
     var index = id;
+
+    em_manga_page.textContent = `${index}`;
 
     // get from local storage
     let base_url = localStorage.getItem("base_url");

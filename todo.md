@@ -20,8 +20,8 @@
 
 ## indexing
 
-- [ ] integrate search with mangadex api
-- [ ] use global header on all pages (minimal on manga reading)
+- [x] integrate search with mangadex api
+- [x] use global header on all pages (minimal on manga reading)
 
 ## reading
 
@@ -32,7 +32,7 @@
 
 ## styling
 
-- [ ] fix up styling of back/forth buttons when reading
+- [x] fix up styling of back/forth buttons when reading
 - [ ] fix up styling of chapter/volume display
 
 ## LTM
