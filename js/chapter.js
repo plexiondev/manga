@@ -82,6 +82,18 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
             }
             var read_now = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
 
+            // append to button if first chapter
+            // detect if user has read
+            if (chapter == null) {
+                console.log(`[...] user has not read before`);
+                em_mangaread.href = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
+            } else {
+                console.log(`[...] user has previously read`)
+                em_mangaread.textContent = `Continue reading`;
+                em_mangaread.classList.add("focus");
+                em_mangaread.href = `read?m=${manga}&c=${chapter}`;
+            }
+
             // html
             card.innerHTML = (`
             <div class="info">

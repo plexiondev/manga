@@ -47,17 +47,9 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
         // parse
         localStorage.setItem(`${manga}_view`, this.response);
-        const data = JSON.parse(this.response);
 
-        // error response
-        if (data.message === "Not Found") {
-
-            // log
-            console.log("[ X ] 404");
-        } else { // success
-
-            //
-        }
+        get_general(this.response);
+        get_relationships(this.response);
     }
 
 
@@ -74,130 +66,123 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     console.log(`[ C ] using cached info until ${cached_out}`);
     const data = JSON.parse(localStorage.getItem(`${manga}_view`));
 
-    // error response
-    if (data.message === "Not Found") {
+    get_general(localStorage.getItem(`${manga}_view`));
+    get_relationships(localStorage.getItem(`${manga}_view`));
 
-        // log
-        console.log("[ X ] 404");
-    } else { // success
+}
 
-        // titles
-        em_mangatitle.textContent = data.data.attributes.title.en;
-        //em_mangajptitle.textContent = data.data.attributes.altTitles[0].ja;
-        // edge-case when multiple alt titles
-        for (i in data.data.attributes.altTitles) {
-            if (data.data.attributes.altTitles[i].ja != undefined) {
-                em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
-            }
+function get_general(data_pass) {
+
+    console.log(`[ Y ] G: retrieving...`);
+
+    // parse
+    const data = JSON.parse(data_pass);
+
+    // titles
+    em_mangatitle.textContent = data.data.attributes.title.en;
+    console.log(`[ Y ] G: title (${data.data.attributes.title.en})`);
+    // edge-case when multiple alt titles
+    for (let i in data.data.attributes.altTitles) {
+        if (data.data.attributes.altTitles[i].ja != undefined) {
+            em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
+            console.log(`[ Y ] G: jp title (${data.data.attributes.altTitles[i].ja})`);
         }
-        
+    }
+    // desc
+    em_mangadesc.textContent = data.data.attributes.description.en;
+    console.log(`[ Y ] G: description`);
 
-        // desc
-        em_mangadesc.textContent = data.data.attributes.description.en;
 
-        // buttons
-        em_mangadex.href = `https://mangadex.org/title/${manga}`;
-        // detect if user has read
-        if (chapter == null) {
-            console.log(`[...] user has not read before`);
-            em_mangaread.href = `read.html?m=${manga}&c=1`;
+    // buttons
+    em_mangadex.href = `https://mangadex.org/title/${manga}`;
+}
+
+function get_relationships(data_pass) {
+
+    console.log(`[ Y ] R: retrieving...`);
+
+    // parse
+    const data = JSON.parse(data_pass);
+
+    // relationships
+    let relationships = data.data.relationships;
+    for (let i in relationships) {
+        console.log(`[ Y ] R: found ${relationships[i].type}`);
+        if (relationships[i].type == "cover_art") {
+            var cover_art = relationships[i].id;
+
+            get_cover(cover_art);
         } else {
-            console.log(`[...] user has previously read`)
-            em_mangaread.textContent = `Continue reading`;
-            em_mangaread.classList.add("focus");
-            em_mangaread.href = `read?m=${manga}&c=${chapter}`;
+            
+            // create element
+            let tag = document.createElement('label');
+            tag.classList.add('tag');
+
+            // text
+            tag.textContent = `${relationships[i].type}`;
+
+            em_tags.appendChild(tag);
+
         }
+    }
+}
 
-        // relationships
-        let relationships = data.data.relationships;
-        for (let i in relationships) {
-            console.log(`[ Y ] found ${relationships[i].type} relationship`);
-            if (relationships[i].type == "cover_art") {
-                var cover_art = relationships[i].id;
+function get_cover(cover_art_pass) {
 
-                // cache
-                let cached_out = localStorage.getItem(`${manga}_img_timeout`) || "";
-                let cache = localStorage.getItem(`${manga}_img`) || "";
-                let now = new Date();
+    var cover_art = cover_art_pass;
 
-                // checks
-                if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
-                    // define xhr GET
-                    const xhr = new XMLHttpRequest();
-                    const url = `https://api.mangadex.org/cover/${cover_art}`;
-                    console.log(`[...] searching mangadex for ${cover_art} cover art`);
-                    xhr.open('GET', url, true);
+    // cache
+    let cached_out = localStorage.getItem(`${manga}_img_timeout`) || "";
+    let cache = localStorage.getItem(`${manga}_img`) || "";
+    let now = new Date();
+
+    // checks
+    if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "" || cache == "") {
+        // define xhr GET
+        const xhr = new XMLHttpRequest();
+        const url = `https://api.mangadex.org/cover/${cover_art}`;
+        console.log(`[...] searching mangadex for ${cover_art} cover art`);
+        xhr.open('GET', url, true);
 
 
-                    // request is received
-                    xhr.onload = function() {
-                        console.log(`[ Y ] found ${cover_art} cover art via ${url}`);
+        // request is received
+        xhr.onload = function() {
+            console.log(`[ Y ] found ${cover_art} cover art via ${url}`);
 
-                        // parse
-                        localStorage.setItem(`${manga}_img`, this.response);
-                        const data = JSON.parse(this.response);
+            // parse
+            localStorage.setItem(`${manga}_img`, this.response);
+            const data = JSON.parse(this.response);
 
-                        // error response
-                        if (data.message === "Not Found") {
+            // take data
+            var filename = data.data.attributes.fileName;
 
-                            // log
-                            console.log("[ X ] 404");
-                        } else { // success
+            // create url
+            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${filename}`;
 
-                            // take data
-                            var filename = data.data.attributes.fileName;
-
-                            // create url
-                            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${filename}`;
-
-                            // expose on page
-                            em_mangabg.style = `background-image: url(${cover_url});`;
-                            em_mangaimg.src = `${cover_url}`;
-                        }
-                    }
-                    // send
-                    xhr.send();
-
-                    // then cache
-                    now = new Date(now);
-                    now.setMinutes ( now.getMinutes() + 12000000 );
-                    console.log(`[ C ] cached until ${now} (2h)`);
-                    localStorage.setItem(`${manga}_img_timeout`, now);
-                } else {
-                    console.log(`[ C ] using cached info until ${cached_out}`);
-                    const data = JSON.parse(localStorage.getItem(`${manga}_img`));
-
-                    // error response
-                    if (data.message === "Not Found") {
-
-                        // log
-                        console.log("[ X ] 404");
-                    } else { // success
-
-                        // take data
-                        var filename = data.data.attributes.fileName;
-
-                        // create url
-                        var cover_url = `https://uploads.mangadex.org/covers/${manga}/${filename}`;
-
-                        // expose on page
-                        em_mangabg.style = `background-image: url(${cover_url});`;
-                        em_mangaimg.src = `${cover_url}`;
-                    }
-                }
-            } else {
-                
-                // create element
-                let tag = document.createElement('label');
-                tag.classList.add('tag');
-
-                // text
-                tag.textContent = `${relationships[i].type}`;
-
-                em_tags.appendChild(tag);
-
-            }
+            // expose on page
+            em_mangabg.style = `background-image: url(${cover_url});`;
+            em_mangaimg.src = `${cover_url}`;
         }
+        // send
+        xhr.send();
 
+        // then cache
+        now = new Date(now);
+        now.setMinutes ( now.getMinutes() + 12000000 );
+        console.log(`[ C ] cached until ${now} (2h)`);
+        localStorage.setItem(`${manga}_img_timeout`, now);
+    } else {
+        console.log(`[ C ] using cached info until ${cached_out}`);
+        const data = JSON.parse(localStorage.getItem(`${manga}_img`));
+
+        // take data
+        var filename = data.data.attributes.fileName;
+
+        // create url
+        var cover_url = `https://uploads.mangadex.org/covers/${manga}/${filename}`;
+
+        // expose on page
+        em_mangabg.style = `background-image: url(${cover_url});`;
+        em_mangaimg.src = `${cover_url}`;
     }
 }
