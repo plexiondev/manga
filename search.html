@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <!-- meta info -->
-    <title translate="no" id="page-title">view manga</title>
+    <title translate="no" id="page-title">searching manga</title>
     <meta name="theme-color" content="#003BFF">
     <!-- display -->
     <meta charset="UTF-8">
@@ -39,25 +39,12 @@
             <div class="bg-dark lib-grad"></div>
         </section>
     </div>
-    <section class="left header no-sep no-align" id="overview">
-        <div class="manga-img-wrap">
-            <img id="manga-img">
-        </div>
-        <div class="shift-right">
-            <h2 translate="no" id="manga-title"></h2>
-            <h3 translate="no" id="manga-jptitle"></h3>
-        </div>
-        <p class="text-18" id="manga-desc"></p>
-        <div class="tags" id="tags"></div>
-        <a role="button" class="button left icon con" id="manga-read">Start reading</a>
-        <a role="button" class="button focus icon ext" id="mangadex" target="_blank">MangaDex</a>
+    <section class="left header no-sep no-align">
+        <h3>Search results</h3>
+        <h4 id="showing-results">Showing </h4>
+        <div class="search-body" id="search-body"></div>
     </section>
-    <section class="left header no-sep no-align" id="volumes">
-        <h4>Volumes</h4>
-        <div class="chapter-cards" id="manga-chapters"></div>
-    </section>
-    <script src="js/view.js"></script>
-    <script src="js/chapter.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/search_box.js"></script>
 </body>
 <script>

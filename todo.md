@@ -5,6 +5,7 @@
 - [x] swap ^ button depending on if previously read
 - [ ] continue off where left off if previously read
 - [x] add (temp?) link to mangadex page
+- [ ] dynamically update page titles via `page-title`
 
 ## viewing
 
