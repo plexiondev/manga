@@ -29,18 +29,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
         console.log(`[ Y ] found ${manga} via ${c_url}`);
 
         // parse
-        localStorage.setItem(`${manga}_chapters`, this.response);
-        const c_data = JSON.parse(this.response);
-
-        // error response
-        if (c_data.message === "Not Found") {
-
-            // log
-            console.log("[ X ] 404");
-        } else { // success
-
-            //
-        }
+        create_chapter(this.response);
     }
 
 
@@ -55,62 +44,62 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
     localStorage.setItem(`${manga}_chapters_timeout`, c_now);
 } else {
     console.log(`[ C ] using cached info until ${c_cached_out}`);
-    const c_data = JSON.parse(localStorage.getItem(`${manga}_chapters`));
 
-    // error response
-    if (c_data.message === "Not Found") {
-
-        // log
-        console.log("[ X ] 404");
-    } else { // success
-
-        // simplicity
-        let v = c_data.volumes;
-
-        // loop over pool of volumes
-        for (let i in v) {
-
-            // create element
-            let card = document.createElement('span');
-            card.classList.add('chapter-card');
-
-            // links
-            let chapters_parent = v[i].chapters;
-            var chapters_array = [];
-            for (let x in chapters_parent) {
-                chapters_array.push(x);
-            }
-            var read_now = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
-
-            // append to button if first chapter
-            // detect if user has read
-            if (chapter == null) {
-                console.log(`[...] user has not read before`);
-                em_mangaread.href = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
-            } else {
-                console.log(`[...] user has previously read`)
-                em_mangaread.textContent = `Continue reading`;
-                em_mangaread.classList.add("focus");
-                em_mangaread.href = `read?m=${manga}&c=${chapter}`;
-            }
-
-            // html
-            card.innerHTML = (`
-            <div class="info">
-            <h4 class="text-20">Read volume ${v[i].volume}</h4>
-            </div>
-            <div class="overlay-icons">
-            <a onclick="mark_read('${manga}')" title="Mark as read"><i class="icon w-32" data-feather="bookmark"></i></a>
-            <a href="${read_now}" title="Read now"><i class="icon w-32" data-feather="arrow-right-circle"></i></a>
-            </div>
-            `);
-
-            em_mangachlist.appendChild(card);
-        }
-
-    }
+    create_chapter(localStorage.getItem(`${manga}_chapters`));
 }
 
 //function chapter(id) {
 //    console.log(`[...] coming soon! ${id}`)
 //}
+
+function create_chapter(data_pass) {
+
+    // parse
+    const data = JSON.parse(data_pass);
+
+    // simplicity
+    let v = data.volumes;
+
+    // loop over pool of volumes
+    for (let i in v) {
+
+        // create element
+        let card = document.createElement('span');
+        card.classList.add('chapter-card');
+
+        // links
+        let chapters_parent = v[i].chapters;
+        var chapters_array = [];
+        for (let x in chapters_parent) {
+            chapters_array.push(x);
+        }
+        var read_now = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
+
+        // append to button if first chapter
+        // detect if user has read
+        if (chapter == null) {
+            console.log(`[...] user has not read before`);
+            em_mangaread.href = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
+        } else {
+            console.log(`[...] user has previously read`)
+            em_mangaread.textContent = `Continue reading`;
+            em_mangaread.classList.add("focus");
+            em_mangaread.href = `read?m=${manga}&c=${chapter}`;
+        }
+
+        // html
+        card.innerHTML = (`
+        <div class="info">
+        <h4 class="text-20">Read volume ${v[i].volume}</h4>
+        </div>
+        <div class="overlay-icons">
+        <a onclick="mark_read('${manga}')" title="Mark as read"><i class="icon w-32" data-feather="bookmark"></i></a>
+        <a href="${read_now}" title="Read now"><i class="icon w-32" data-feather="arrow-right-circle"></i></a>
+        </div>
+        `);
+
+        em_mangachlist.appendChild(card);
+
+        feather.replace();
+    }
+}

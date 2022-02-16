@@ -8,3 +8,9 @@ function search_manga() {
     console.log("[...] searching")
     window.location.href = `search.html?q=${request}`;
 }
+
+$("#search").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#search-con").click();
+    }
+});

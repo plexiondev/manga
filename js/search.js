@@ -13,6 +13,7 @@ let now = new Date();
 
 // get elements
 let em_searchbody = document.getElementById("search-body");
+let em_searchresults = document.getElementById("showing-results");
 // images
 let em_mangabg = document.getElementById("manga-bg");
 
@@ -38,6 +39,8 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         // parse
         localStorage.setItem(`${search_req}_search`, this.response);
         const data = JSON.parse(this.response);
+
+        em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
 
         for (let i in data.data) {
             
@@ -71,6 +74,8 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 } else {
     console.log(`[ C ] using cached info until ${cached_out}`);
     const data = JSON.parse(localStorage.getItem(`${search_req}_search`));
+
+    em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
 
     for (let i in data.data) {
             
