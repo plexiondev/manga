@@ -131,13 +131,14 @@ header .menu.left {
     border: none;
     color: var(--text-main);
     font-family: var(--font-main);
-    padding: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
 }
 /* confirm */
 .search button {
     background-color: var(--accent-raise);
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 40px;
     border: none;
     display: flex;
     justify-content: center;
@@ -150,4 +151,24 @@ header .menu.left {
 }
 .search svg {
     top: 0 !important;
+    color: var(--text-head);
+}
+
+/* manga/search cards */
+.manga-card {
+    display: flex;
+    text-decoration: none !important;
+    background-color: var(--b5);
+    border-radius: 5px;
+    box-shadow: var(--raise-1);
+    padding: 20px;
+}
+/* cover */
+.manga-card .cover {
+    height: 200px;
+    margin-right: 20px;
+}
+.manga-card .cover img {
+    height: 100%;
+    border-radius: 5px;
 }

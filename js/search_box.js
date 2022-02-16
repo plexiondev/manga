@@ -1,7 +1,7 @@
 // search for manga
 
 
-function search() {
+function search_manga() {
     input = document.getElementById("search");
     request = input.value;
 
