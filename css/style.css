@@ -15,26 +15,20 @@
     padding: 20px 0;
 }
 .chapter-card {
-    padding: 60px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--b5);
-    box-shadow: var(--raise-0);
+    padding: 20px 0;
     text-decoration: none !important;
-    border-radius: 10px;
     overflow: hidden;
-    cursor: pointer;
     transition: 0.2s;
     position: relative;
 }
-.chapter-card:hover, .chapter-card:focus {
-    background-color: var(--raise-hover);
+.chapter-card .info h5 {
+    margin-bottom: 10px;
 }
-.chapter-card .info h4 {
-    font-size: 24px;
-    font-family: var(--font-head);
-    font-weight: 700;
+/* chapter list */
+.chapter-card ul li {
+    background-color: var(--b5);
+    margin: 2px 0;
+    border-radius: 5px;
 }
 /* overlay icons */
 .chapter-card .overlay-icons {

@@ -75,6 +75,11 @@ function create_chapter(data_pass) {
             chapters_array.push(x);
         }
         var read_now = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
+        // store chapter links
+        var chapters_links_array = [];
+        for (let x in chapters_parent) {
+            chapters_links_array.push(chapters_parent[x].id);
+        }
 
         // append to button if first chapter
         // detect if user has read
@@ -91,14 +96,32 @@ function create_chapter(data_pass) {
         // html
         card.innerHTML = (`
         <div class="info">
-        <h4 class="text-20">Read volume ${v[i].volume}</h4>
-        </div>
-        <div class="overlay-icons">
-        <a onclick="mark_read('${manga}')" title="Mark as read"><i class="icon w-32" data-feather="bookmark"></i></a>
-        <a href="${read_now}" title="Read now"><i class="icon w-32" data-feather="arrow-right-circle"></i></a>
+        <h5>Volume ${v[i].volume}</h5>
         </div>
         `);
 
+        let chapter_list = document.createElement("ul");
+
+        // show chapters
+        console.log(chapters_array);
+        console.log("a");
+        console.log(chapters_links_array);
+        for (let i in chapters_array) {
+
+            // create element
+            let chapter_s = document.createElement('li');
+            chapter_s.classList.add('chapter-embed');
+
+            // text
+            chapter_s.innerHTML = (`
+            <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
+            `);
+
+            // append
+            chapter_list.appendChild(chapter_s);
+        }
+
+        card.appendChild(chapter_list);
         em_mangachlist.appendChild(card);
 
         feather.replace();
