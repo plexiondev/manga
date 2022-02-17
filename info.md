@@ -34,3 +34,5 @@ eg. `https://api.mangadex.org/manga/d7a0991d-2913-4b3c-8fb6-2b752f9e5f3a/aggrega
 1. make use of `/chapter` api calls via passing in the current chapter id?
 2. ^ this should allow you to view the current chapter number the user is currently on
 3. can then run the same `chapter.js` and reload this page with a new `?c=`
+
+could also pass in the chapters_array aggregate feed into local storage which can then be read via /read.html, allowing it to decide what chapter it needs to turn to next without making any unnecessary api calls. the array will only be refreshed upon re-entering reading mode.
