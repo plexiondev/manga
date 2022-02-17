@@ -48,6 +48,8 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         // parse
         localStorage.setItem(`${manga}_view`, this.response);
 
+        data_parse = JSON.parse(this.response)
+
         get_general(this.response);
         get_relationships(this.response);
     }
@@ -86,6 +88,9 @@ function get_general(data_pass) {
         if (data.data.attributes.altTitles[i].ja != undefined) {
             em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
             console.log(`[ Y ] G: jp title (${data.data.attributes.altTitles[i].ja})`);
+            // page title
+            let page_title = document.getElementById("page-title");
+            page_title.textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
         }
     }
     // desc
