@@ -46,8 +46,8 @@
 
 ## LTM
 
-- [ ] disable perma-caching
-- [ ] have proper cache limits depending on type of request (eg. view/chapters/reading)
+- [x] disable perma-caching
+- [x] have proper cache limits depending on type of request (eg. view/chapters/reading)
 - [x] ^ reading does not cache
 
 ## settings

@@ -40,7 +40,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 
     // then cache
     c_now = new Date(c_now);
-    c_now.setMinutes(c_now.getMinutes() + 150000);
+    c_now.setMinutes(c_now.getMinutes() + 15);
     console.log(`[ C ] cached until ${c_now} (15m)`);
     localStorage.setItem(`${manga}_chapters_timeout`, c_now);
 } else {

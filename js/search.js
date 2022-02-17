@@ -68,7 +68,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
     // then cache
     now = new Date(now);
-    now.setMinutes ( now.getMinutes() + 150000 );
+    now.setMinutes ( now.getMinutes() + 60 );
     console.log(`[ C ] cached until ${now} (1h)`);
     localStorage.setItem(`${search_req}_search_timeout`, now);
 } else {
@@ -193,7 +193,7 @@ function get_cover(cover_art_pass,manga_pass,data_pass,y) {
 
         // then cache
         now = new Date(now);
-        now.setMinutes ( now.getMinutes() + 12000000 );
+        now.setMinutes ( now.getMinutes() + 120 );
         console.log(`[ C ] cached until ${now} (2h)`);
         localStorage.setItem(`${manga}_img_timeout`, now);
 
