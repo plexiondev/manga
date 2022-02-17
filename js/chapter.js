@@ -19,7 +19,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
     // do everything
     // define xhr GET
     const c_xhr = new XMLHttpRequest();
-    const c_url = `https://api.mangadex.org/manga/${manga}/aggregate`;
+    const c_url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=en`;
     console.log(`[...] searching mangadex chapters for ${manga}`);
     c_xhr.open('GET', c_url, true);
 
