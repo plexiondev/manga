@@ -2,7 +2,10 @@
 
 
 const options = {
-    0: "lowq_downloads"
+    0: "lowq_downloads",
+    1: "show_suggestive",
+    2: "show_erotica",
+    3: "show_nsfw"
 };
 
 // configure option

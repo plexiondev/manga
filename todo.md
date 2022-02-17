@@ -24,8 +24,8 @@
 - [ ] add links (from api) to additional pages for manga
 - [ ] add status, content rating, state
 - [ ] add year, created at, updated at, (version?)
-- [ ] convert markdown for manga descriptions
-- [ ] make api calls for author + artist (/author/${id})
+- [x] convert markdown for manga descriptions
+- [x] make api calls for author + artist (/author/${id})
 
 ## indexing
 

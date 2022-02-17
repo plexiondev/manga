@@ -61,6 +61,61 @@
             </li>
         </ul>
     </section>
+    <section class="left settings">
+        <div class="head">
+            <label class="overl">Age ratings</label>
+        </div>
+        <ul class="inner">
+            <li class="setting" onclick="option('show_suggestive')">
+                <span class="text">
+                    <span class="icon">
+                        <div class="headline-icon min-icon">
+                            <i class="icon w-24" data-feather="alert-octagon"></i>
+                        </div>
+                    </span>
+                    <span class="info">
+                        <h5 class="text-16">Show suggestive content</h5>
+                        <p>Display manga tagged as suggestive.</p>
+                    </span>
+                </span>
+                <span class="option">
+                    <a role="toggle" class="toggle" id="show_suggestive" href="javascript:void(0);" tabindex="-1"></a>
+                </span>
+            </li>
+            <li class="setting" onclick="option('show_erotica')">
+                <span class="text">
+                    <span class="icon">
+                        <div class="headline-icon min-icon">
+                            <i class="icon w-24" data-feather="alert-octagon"></i>
+                        </div>
+                    </span>
+                    <span class="info">
+                        <h5 class="text-16">Show erotica content</h5>
+                        <p>Display manga tagged as erotica.</p>
+                    </span>
+                </span>
+                <span class="option">
+                    <a role="toggle" class="toggle" id="show_erotica" href="javascript:void(0);" tabindex="-1"></a>
+                </span>
+            </li>
+            <li class="setting" onclick="option('show_nsfw')">
+                <span class="text">
+                    <span class="icon">
+                        <div class="headline-icon min-icon">
+                            <i class="icon w-24" data-feather="alert-octagon"></i>
+                        </div>
+                    </span>
+                    <span class="info">
+                        <h5 class="text-16">Show NSFW content</h5>
+                        <p>Display manga tagged as pornographic.</p>
+                    </span>
+                </span>
+                <span class="option">
+                    <a role="toggle" class="toggle" id="show_nsfw" href="javascript:void(0);" tabindex="-1"></a>
+                </span>
+            </li>
+        </ul>
+    </section>
     <script src="js/settings.js"></script>
     <footer style="text-align: center; margin-top: 350px;">
         <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
