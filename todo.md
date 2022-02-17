@@ -38,7 +38,7 @@
 - [x] implement back/forth buttons
 - [ ] implement chapter picker?
 - [x] allow choosing of volume
-
+z
 ## styling
 
 - [x] fix up styling of back/forth buttons when reading

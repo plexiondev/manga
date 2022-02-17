@@ -4,7 +4,7 @@
 // pass search request
 const search = window.location.search;
 const query = new URLSearchParams(search);
-let search_req = query.get('q')
+let search_req = query.get('q') || "";
 
 // cache
 let cached_out = localStorage.getItem(`${search_req}_search_timeout`) || "";
@@ -42,21 +42,26 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
         em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
 
-        for (let i in data.data) {
+        // check results aren't empty
+        if (data.data.length != 0) {
+            for (let i in data.data) {
             
-            localStorage.setItem("i",i);
-
-            // get manga id
-            var manga = data.data[i].id;
-
-            get_relationships(this.response,manga);
-
-            // pass cover art into here along with extra info etc.
-
-            // make layout of cards similar to gsot:
-            // big cover on left, then info on right (all rounded etc.)
-            // possibly include extra info (tags?) n cool stuff
-
+                localStorage.setItem("i",i);
+    
+                // get manga id
+                var manga = data.data[i].id;
+    
+                get_relationships(this.response,manga);
+    
+                // pass cover art into here along with extra info etc.
+    
+                // make layout of cards similar to gsot:
+                // big cover on left, then info on right (all rounded etc.)
+                // possibly include extra info (tags?) n cool stuff
+    
+            }
+        } else {
+            empty_results()
         }
 
     }
@@ -77,21 +82,25 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
     em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
 
-    for (let i in data.data) {
+    if (data.data.length != 0) {
+        for (let i in data.data) {
             
-        localStorage.setItem("i",i);
-
-        // get manga id
-        var manga = data.data[i].id;
-
-        get_relationships(localStorage.getItem(`${search_req}_search`),manga);
-
-        // pass cover art into here along with extra info etc.
-
-        // make layout of cards similar to gsot:
-        // big cover on left, then info on right (all rounded etc.)
-        // possibly include extra info (tags?) n cool stuff
-
+            localStorage.setItem("i",i);
+    
+            // get manga id
+            var manga = data.data[i].id;
+    
+            get_relationships(localStorage.getItem(`${search_req}_search`),manga);
+    
+            // pass cover art into here along with extra info etc.
+    
+            // make layout of cards similar to gsot:
+            // big cover on left, then info on right (all rounded etc.)
+            // possibly include extra info (tags?) n cool stuff
+    
+        }
+    } else {
+        empty_results()
     }
 
 }
@@ -243,4 +252,10 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     `);
 
     em_searchbody.appendChild(card);
+}
+
+// empty
+function empty_results() {
+    console.log(`[...] no results`)
+    document.getElementById("no_results").style.display = `flex`;
 }
