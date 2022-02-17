@@ -30,6 +30,27 @@
     margin: 2px 0;
     border-radius: 5px;
 }
+.chapter-card ul li::before {
+    display: none;
+}
+/* read/unread */
+.chapter-card ul li .mark_read {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 5px;
+    position: relative;
+    bottom: 1px;
+}
+.mark_read:not(.read) .not_seen {
+    display: none;
+}
+.mark_read.read .seen {
+    display: none;
+}
+.mark_read .not_seen {
+    opacity: 0.4;
+}
 /* overlay icons */
 .chapter-card .overlay-icons {
     display: flex;

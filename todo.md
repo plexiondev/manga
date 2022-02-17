@@ -25,7 +25,7 @@
 - [ ] add year, created at, updated at, (version?)
 - [x] convert markdown for manga descriptions
 - [x] make api calls for author + artist (/author/${id})
-- [ ] allow marking as read manga chapters
+- [x] allow marking as read manga chapters
 - [ ] if all chapters marked as read, auto-mark volume as read
 - [ ] auto mark chapter as read if finished reading (possibly make option incase prefer manual)
 

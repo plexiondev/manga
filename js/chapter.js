@@ -112,10 +112,19 @@ function create_chapter(data_pass) {
             let chapter_s = document.createElement('li');
             chapter_s.classList.add('chapter-embed');
 
-            // text
-            chapter_s.innerHTML = (`
-            <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
-            `);
+            if (check_read(`${chapters_links_array[i]}`) == 1) {
+                // text
+                chapter_s.innerHTML = (`
+                <button class="mark_read read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}')"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
+                `);
+            } else {
+                // text
+                chapter_s.innerHTML = (`
+                <button class="mark_read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}')"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
+                `);
+            }
 
             // append
             chapter_list.appendChild(chapter_s);
