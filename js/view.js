@@ -36,7 +36,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     // do everything
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga/${manga}?includes[]=author&includes[]=artist&includes[]=cover_art`;
+    const url = `https://api.mangadex.org/manga/${manga}?includes[]=author&includes[]=artist&includes[]=cover_art&includes[]=manga`;
     console.log(`[...] searching mangadex for ${manga}`);
     xhr.open('GET', url, true);
 
@@ -119,8 +119,6 @@ function get_relationships(data_pass) {
     for (let i in relationships) {
         console.log(`[ Y ] R: found ${relationships[i].type}`);
         if (relationships[i].type == "cover_art") {
-            var cover_art = relationships[i].id;
-
             // create url
             var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[i].attributes.fileName}`;
 
@@ -135,6 +133,67 @@ function get_relationships(data_pass) {
             let em_artist = document.getElementById("manga-artist");
             em_artist.href = `https://mangadex.org/author/${relationships[i].id}`;
             em_artist.innerHTML = `<h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+        } else if (relationships[i].type == "manga") {
+            // create element
+            let related_card = document.createElement('a');
+            related_card.classList.add('manga-card');
+            related_card.style.margin = '0';
+
+            // link
+            related_card.href = `view.html?m=${relationships[i].id}`;
+
+            // how related
+            if (relationships[i].related == "based_on") {
+                var relationship = 'Original';
+            } else if (relationships[i].related == "doujinshi") {
+                var relationship = 'Doujinshi';
+            } else if (relationships[i].related == "sequel") {
+                var relationship = 'Sequel';
+            } else if (relationships[i].related == "adapted_from") {
+                var relationship = 'Original';
+            } else if (relationships[i].related == "side_story") {
+                var relationship = 'Side Story';
+            } else if (relationships[i].related == "prequel") {
+                var relationship = 'Prequel';
+            } else if (relationships[i].related == "spin_off") {
+                var relationship = 'Spin-off';
+            } else if (relationships[i].related == "shared_universe") {
+                var relationship = 'Shared universe';
+            } else {
+                var relationship = `${relationships[i].related}`;
+            }
+
+            // content rating
+            if (relationships[i].attributes.contentRating == "safe") {
+                var rating = 'Safe';
+            } else if (relationships[i].attributes.contentRating == "suggestive") {
+                var rating = 'Suggestive';
+            } else if (relationships[i].attributes.contentRating == "erotica") {
+                var rating = 'Erotica';
+            } else if (relationships[i].attributes.contentRating == "pornographic") {
+                var rating = 'NSFW';
+            } else {
+                var rating = `${relationships[i].attributes.contentRating}`;
+            }
+
+            // description
+            var converter = new showdown.Converter();
+            text = `${relationships[i].attributes.description.en}`;
+            html = converter.makeHtml(text);
+
+            // text
+            related_card.innerHTML = (`
+            <div class="info">
+            <h4 class="text-20">${relationships[i].attributes.title.en}</h4>
+            <div class="desc-cont">${html}</div>
+            <br>
+            <label class="tag">${relationship}</label>
+            <label class="tag">${rating}</label>
+            </div>
+            `);
+
+            // append
+            document.getElementById("manga-related").appendChild(related_card);
         }
     }
 

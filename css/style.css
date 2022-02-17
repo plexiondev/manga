@@ -314,3 +314,9 @@ input#transl {
 .tag:not(:first-child) {
     margin-left: 3px;
 }
+
+/* related cards */
+.desc-cont {
+    max-height: 150px;
+    overflow: hidden;
+}
