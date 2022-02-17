@@ -7,6 +7,14 @@
 - [x] add (temp?) link to mangadex page
 - [x] dynamically update page titles via `page-title`
 
+## home
+
+- [ ] include page headers
+- [ ] include top header (with title, description)
+- [ ] also include bigger search box to find content
+- [ ] possibly include `last_read` (that will update as the last content read - based on id and saved name (to prevent additional api call just to get name)) to jump right back in
+- [ ] include a non-authed basic homepage - look into api, can pass in calls where you can create a home page based on a set of preferences you choose (which can be passed in via settings possibly - would be very very cool)
+
 ## viewing
 
 - [x] display cover art on view
@@ -40,6 +48,10 @@
 - [ ] disable perma-caching
 - [ ] have proper cache limits depending on type of request (eg. view/chapters/reading)
 - [x] ^ reading does not cache
+
+## settings
+
+- [ ] include options for age ratings (eg. NSFW, suggestive) - not sure if possible via api
 
 ## unsure
 
