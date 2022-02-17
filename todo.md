@@ -13,12 +13,11 @@
 - [x] include top header (with title, description)
 - [x] also include bigger search box to find content
 - [ ] possibly include `last_read` (that will update as the last content read - based on id and saved name (to prevent additional api call just to get name)) to jump right back in
-- [ ] include a non-authed basic homepage - look into api, can pass in calls where you can create a home page based on a set of preferences you choose (which can be passed in via settings possibly - would be very very cool)
 
 ## viewing
 
 - [x] display cover art on view
-- [ ] tidy up chapter/volume display
+- [x tidy up chapter/volume display
 - [x] allow chapter/volume display to link directly to start of volume's first chapter
 - [x] show tags on view page
 - [ ] add links (from api) to additional pages for manga
@@ -52,7 +51,8 @@ z
 
 ## settings
 
-- [ ] include options for age ratings (eg. NSFW, suggestive) - not sure if possible via api
+- [x] include options for age ratings (eg. NSFW, suggestive) - not sure if possible via api
+- [ ] make age rating settings take effect (eg. related manga, and search?)
 
 ## unsure
 
@@ -61,3 +61,4 @@ z
 - - [ ] retrieving user's manga follows
 - - [ ] displaying user's home feed in-app
 - - and many more cool things
+- [ ] include a non-authed basic homepage - look into api, can pass in calls where you can create a home page based on a set of preferences you choose (which can be passed in via settings possibly - would be very very cool)
