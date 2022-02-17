@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <!-- meta info -->
-    <title translate="no" id="page-title">searching manga</title>
+    <title translate="no">settings</title>
     <meta name="theme-color" content="#003BFF">
     <!-- display -->
     <meta charset="UTF-8">
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://plexion.dev/js/scroll.js"></script>
     <!-- icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
@@ -35,18 +34,34 @@
             </span>
         </span>
     </header>
-    <div class="bg" id="manga-bg">
-        <section class="min header padding">
-            <div class="bg-dark lib-grad"></div>
-        </section>
-    </div>
-    <section class="left header no-sep no-align">
-        <h3>Search results</h3>
-        <h4 id="showing-results">Showing </h4>
-        <div class="search-body" id="search-body"></div>
+    <section class="center header padding accent">
+        <h1 class="text-56">Settings</h1>
+        <p class="text-20">Adjust your manga viewing experience.</p>
     </section>
-    <script src="js/search.js"></script>
-    <script src="js/search_box.js"></script>
+    <section class="left settings">
+        <div class="head">
+            <label class="overl">Reading</label>
+        </div>
+        <ul class="inner">
+            <li class="setting" onclick="option('lowq_downloads')">
+                <span class="text">
+                    <span class="icon">
+                        <div class="headline-icon min-icon">
+                            <i class="icon w-24" data-feather="image"></i>
+                        </div>
+                    </span>
+                    <span class="info">
+                        <h5 class="text-16">Prefer low quality downloads</h5>
+                        <p>Will opt for data-saver (lower quality) images when reading manga.</p>
+                    </span>
+                </span>
+                <span class="option">
+                    <a role="toggle" class="toggle" id="lowq_downloads" href="javascript:void(0);" tabindex="-1"></a>
+                </span>
+            </li>
+        </ul>
+    </section>
+    <script src="js/settings.js"></script>
 </body>
 <script>
     feather.replace()
