@@ -12,11 +12,35 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://plexion.dev/js/scroll.js"></script>
     <!-- icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
-<body class="dark" style="--accent-page: 0;">
-    
+<body class="dark" style="--accent-page: -4;">
+    <header class="dark">
+        <span class="menu left">
+            <span class="dropdown-wrap">
+                <a href="/" aria-label="Return Home" class="option-open"><i class="icon w-28" data-feather="home"></i></a>
+            </span>
+        </span>
+        <span class="search-wrap"></span>
+        <span class="menu">
+            <span class="dropdown-wrap">
+                <a href="/settings.html" aria-label="Options" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
+            </span>
+        </span>
+    </header>
+    <section class="center header padding accent">
+        <h1 class="text-56">Manga Viewer</h1>
+        <p class="text-20">Welcome! Search for a manga or get right back into reading.</p>
+    </section>
+    <section class="center limited">
+        <div class="search big">
+            <input class="search-input" id="search" placeholder="Search for...">
+            <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-30" data-feather="search"></i></button>
+        </div>
+    </section>
+    <script src="js/search_box.js"></script>
 </body>
 <script>
     feather.replace()

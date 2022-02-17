@@ -117,6 +117,14 @@ function get_relationships(data_pass) {
             var cover_art = relationships[i].id;
 
             get_cover(cover_art);
+        } else if (relationships[i].type == "author") {
+            let em_author = document.getElementById("manga-author");
+            em_author.href = `https://mangadex.org/author/${relationships[i].id}`;
+            em_author.innerHTML = `<h5 class="text-16">View author</h5>`;
+        } else if (relationships[i].type == "artist") {
+            let em_artist = document.getElementById("manga-artist");
+            em_artist.href = `https://mangadex.org/author/${relationships[i].id}`;
+            em_artist.innerHTML = `<h5 class="text-16">View artist</h5>`;
         } else {
             
             // create element

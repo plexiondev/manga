@@ -9,9 +9,9 @@
 
 ## home
 
-- [ ] include page headers
-- [ ] include top header (with title, description)
-- [ ] also include bigger search box to find content
+- [x] include page headers
+- [x] include top header (with title, description)
+- [x] also include bigger search box to find content
 - [ ] possibly include `last_read` (that will update as the last content read - based on id and saved name (to prevent additional api call just to get name)) to jump right back in
 - [ ] include a non-authed basic homepage - look into api, can pass in calls where you can create a home page based on a set of preferences you choose (which can be passed in via settings possibly - would be very very cool)
 
@@ -25,6 +25,7 @@
 - [ ] add status, content rating, state
 - [ ] add year, created at, updated at, (version?)
 - [ ] convert markdown for manga descriptions
+- [ ] make api calls for author + artist (/author/${id})
 
 ## indexing
 

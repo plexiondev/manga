@@ -98,13 +98,13 @@
     border-radius: 10px;
     box-shadow: var(--raise-1);
     position: absolute;
-    top: -150px;
+    top: -130px;
 }
 .manga-img-wrap {
     height: 20px;
 }
 .shift-right {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* header */
@@ -133,6 +133,7 @@ header .menu.left {
     font-family: var(--font-main);
     padding: 10px 15px;
     font-size: 16px;
+    width: 100%;
 }
 /* confirm */
 .search button {
@@ -152,6 +153,15 @@ header .menu.left {
 .search svg {
     top: 0 !important;
     color: var(--text-head);
+}
+/* home search */
+.search.big input {
+    padding: 15px 20px;
+    font-size: 21px;
+}
+.search.big button {
+    width: 65px;
+    height: 55px;
 }
 
 /* manga/search cards */
