@@ -2,8 +2,12 @@
 
 
 // cache
-let c_cached_out = localStorage.getItem(`${manga}_chapters_timeout`) || "";
-let c_cache = localStorage.getItem(`${manga}_chapters`) || "";
+var lang = localStorage.getItem("op_preferlang") || "en";
+if (lang == 0) {
+    lang = "en";
+}
+let c_cached_out = localStorage.getItem(`${manga}_chapters_${lang}_timeout`) || "";
+let c_cache = localStorage.getItem(`${manga}_chapters_${lang}`) || "";
 let c_now = new Date();
 
 // get elements
@@ -19,7 +23,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
     // do everything
     // define xhr GET
     const c_xhr = new XMLHttpRequest();
-    const c_url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=en`;
+    const c_url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=${lang}`;
     console.log(`[...] searching mangadex chapters for ${manga}`);
     c_xhr.open('GET', c_url, true);
 
@@ -30,7 +34,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 
         // parse
         create_chapter(this.response);
-        localStorage.setItem(`${manga}_chapters`, this.response);
+        localStorage.setItem(`${manga}_chapters_${lang}`, this.response);
     }
 
 
@@ -42,11 +46,11 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
     c_now = new Date(c_now);
     c_now.setMinutes(c_now.getMinutes() + 15);
     console.log(`[ C ] cached until ${c_now} (15m)`);
-    localStorage.setItem(`${manga}_chapters_timeout`, c_now);
+    localStorage.setItem(`${manga}_chapters_${lang}_timeout`, c_now);
 } else {
     console.log(`[ C ] using cached info until ${c_cached_out}`);
 
-    create_chapter(localStorage.getItem(`${manga}_chapters`));
+    create_chapter(localStorage.getItem(`${manga}_chapters_${lang}`));
 }
 
 //function chapter(id) {
