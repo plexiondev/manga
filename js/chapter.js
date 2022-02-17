@@ -6,6 +6,7 @@ var lang = localStorage.getItem("op_preferlang") || "en";
 if (lang == 0) {
     lang = "en";
 }
+console.log(lang);
 let c_cached_out = localStorage.getItem(`${manga}_chapters_${lang}_timeout`) || "";
 let c_cache = localStorage.getItem(`${manga}_chapters_${lang}`) || "";
 let c_now = new Date();
@@ -32,9 +33,17 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
     c_xhr.onload = function () {
         console.log(`[ Y ] found ${manga} via ${c_url}`);
 
+        const data = JSON.parse(this.response);
+        let v = data.volumes;
+
         // parse
-        create_chapter(this.response);
-        localStorage.setItem(`${manga}_chapters_${lang}`, this.response);
+        if (v.length != 0) {
+            create_chapter(this.response);
+            localStorage.setItem(`${manga}_chapters_${lang}`, this.response);
+        } else {
+            empty_results()
+            localStorage.setItem(`${manga}_chapters_${lang}`, this.response);
+        }
     }
 
 
@@ -50,7 +59,14 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 } else {
     console.log(`[ C ] using cached info until ${c_cached_out}`);
 
-    create_chapter(localStorage.getItem(`${manga}_chapters_${lang}`));
+    const data = JSON.parse(localStorage.getItem(`${manga}_chapters_${lang}`));
+    let v = data.volumes;
+
+    if (v.length != 0) {
+        create_chapter(localStorage.getItem(`${manga}_chapters_${lang}`));
+    } else {
+        empty_results()
+    }
 }
 
 //function chapter(id) {
@@ -139,4 +155,10 @@ function create_chapter(data_pass) {
 
         feather.replace();
     }
+}
+
+// empty
+function empty_results() {
+    console.log(`[...] no results`)
+    document.getElementById("no_results").style.display = `flex`;
 }
