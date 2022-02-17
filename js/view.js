@@ -83,13 +83,15 @@ function get_general(data_pass) {
     // titles
     em_mangatitle.textContent = data.data.attributes.title.en;
     console.log(`[ Y ] G: title (${data.data.attributes.title.en})`);
+    // page title
+    let page_title = document.getElementById("page-title");
+    page_title.textContent = `Viewing ${data.data.attributes.title.en}`;
     // edge-case when multiple alt titles
     for (let i in data.data.attributes.altTitles) {
         if (data.data.attributes.altTitles[i].ja != undefined) {
             em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
             console.log(`[ Y ] G: jp title (${data.data.attributes.altTitles[i].ja})`);
             // page title
-            let page_title = document.getElementById("page-title");
             page_title.textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
         }
     }
