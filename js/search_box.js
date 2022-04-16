@@ -9,8 +9,23 @@ function search_manga() {
     window.location.href = `search.html?q=${request}`;
 }
 
+// clear search
+function clear_search() {
+    console.log('a')
+    document.getElementById('search').value = "";
+    search();
+}
+
+// enter
 $("#search").keyup(function(event) {
     if (event.keyCode === 13) {
         $("#search-con").click();
+    }
+});
+
+// escape
+$("#search").keyup(function(event) {
+    if (event.keyCode === 27) {
+        clear_search();
     }
 });
