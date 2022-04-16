@@ -130,7 +130,7 @@ header .menu.left {
     justify-content: left;
 }
 
-/* search */
+* search */
 .search {
     border-radius: 5px;
     transition: 0.25s;
@@ -151,7 +151,7 @@ header .menu.left {
     width: 100%;
 }
 /* confirm */
-.search button {
+.search button:not(.clear-input) {
     background-color: var(--accent-raise);
     width: 50px;
     height: 40px;
@@ -168,6 +168,20 @@ header .menu.left {
 .search svg {
     top: 0 !important;
     color: var(--text-head);
+}
+/* clear input */
+.search button.clear-input {
+    background: var(--b6);
+    width: 60px;
+    height: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none !important;
+}
+.search button.clear-input svg {
+    opacity: 0.5;
 }
 /* home search */
 .search.big input {
