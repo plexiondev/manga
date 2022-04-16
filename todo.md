@@ -40,6 +40,7 @@
 - [x] implement back/forth buttons
 - [ ] implement chapter picker?
 - [x] allow choosing of volume
+- [ ] automatically move to the next volume/chapter when finished
 
 ## styling
 
