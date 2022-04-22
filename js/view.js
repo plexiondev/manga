@@ -137,6 +137,8 @@ function get_relationships(data_pass) {
     for (let i in relationships) {
         console.log(`[ Y ] R: found ${relationships[i].type}`);
         if (relationships[i].type == "cover_art") {
+            // cover art
+
             // create url
             var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[i].attributes.fileName}`;
 
@@ -144,14 +146,18 @@ function get_relationships(data_pass) {
             em_mangabg.style = `background-image: url(${cover_url});`;
             em_mangaimg.src = `${cover_url}`;
         } else if (relationships[i].type == "author") {
+            // author
             let em_author = document.getElementById("manga-author");
             em_author.href = `https://mangadex.org/author/${relationships[i].id}`;
             em_author.innerHTML = `<h5 class="text-16">${relationships[i].attributes.name}</h5>`;
         } else if (relationships[i].type == "artist") {
+            // artist
             let em_artist = document.getElementById("manga-artist");
             em_artist.href = `https://mangadex.org/author/${relationships[i].id}`;
             em_artist.innerHTML = `<h5 class="text-16">${relationships[i].attributes.name}</h5>`;
         } else if (relationships[i].type == "manga") {
+            // other relationships
+
             // create element
             let related_card = document.createElement('a');
             related_card.classList.add('manga-card');
@@ -205,6 +211,7 @@ function get_relationships(data_pass) {
         // text
         tag.textContent = `${tags[i].attributes.name.en}`;
 
+        // append
         em_tags.appendChild(tag);
     }
 }
