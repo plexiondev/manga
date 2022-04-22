@@ -15,7 +15,6 @@
             "name": "Translated language",
             "icon": "globe",
             "type": "switcher",
-            "switcher_type": "flag",
             "option": "translate_language",
             "options": [
                 {
