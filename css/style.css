@@ -346,6 +346,9 @@ input#transl {
 .cover.flag .flag {
     font-size: 32px;
 }
+.cover.flag .flag-img {
+    width: 44px;
+}
 
 .switcher-cont {
     max-width: 70vw;
