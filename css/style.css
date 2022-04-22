@@ -345,6 +345,7 @@ input#transl {
 }
 .cover.flag .flag {
     font-size: 32px;
+    filter: contrast(1) brightness(1.5);
 }
 .cover.flag .flag-img {
     width: 44px;
