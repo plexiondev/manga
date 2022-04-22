@@ -70,10 +70,17 @@ $.get( 'settings.json', function( response ) {
                 em_switch.classList.add('setting-switch');
                 em_switch.setAttribute('id',`${data.settings[i].option}_${data.settings[i].options[n].option}`);
                 em_switch.setAttribute('onclick',`option_multi('${data.settings[i].option}','${data.settings[i].options[n].option}')`);
-                em_switch.innerHTML = (`
-                <span class="cover"><img src="/img/${data.settings[i].option}_${data.settings[i].options[n].option}.png"></span>
-                <span class="info"><h5 class="text-14">${data.settings[i].options[n].name}</h5></span>
-                `);
+                if (data.settings[i].switcher_icons == "flag") {
+                    em_switch.innerHTML = (`
+                    <span class="cover flag"><i class="flag twf twf-${data.settings[i].options[n].option}"></i></span>
+                    <span class="info"><h5 class="text-14">${data.settings[i].options[n].name}</h5></span>
+                    `);
+                } else {
+                    em_switch.innerHTML = (`
+                    <span class="cover"><img src="/img/${data.settings[i].option}_${data.settings[i].options[n].option}.png"></span>
+                    <span class="info"><h5 class="text-14">${data.settings[i].options[n].name}</h5></span>
+                    `);
+                }
 
                 // append
                 em_switcher.appendChild(em_switch);
