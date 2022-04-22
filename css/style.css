@@ -346,3 +346,7 @@ input#transl {
 .cover.flag .flag {
     font-size: 32px;
 }
+
+.switcher-cont {
+    max-width: 85vw;
+}

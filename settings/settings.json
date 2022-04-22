@@ -20,11 +20,27 @@
             "options": [
                 {
                     "name": "English",
-                    "option": "en"
+                    "option": "gb"
                 },
                 {
                     "name": "Japanese",
                     "option": "jp"
+                },
+                {
+                    "name": "Korean",
+                    "option": "kr"
+                },
+                {
+                    "name": "Chinese (Simp)",
+                    "option": "cn"
+                },
+                {
+                    "name": "Chinese (Trad)",
+                    "option": "hk"
+                },
+                {
+                    "name": "Other",
+                    "option": ""
                 }
             ]
         },
