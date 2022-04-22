@@ -1,6 +1,10 @@
 {
     "categories": [
         {
+            "type": "appearance",
+            "name": "Appearance"
+        },
+        {
             "type": "reading",
             "name": "Reading"
         },
@@ -14,6 +18,23 @@
         }
     ],
     "settings": [
+        {
+            "category": "appearance",
+            "name": "Theme",
+            "icon": "image",
+            "type": "switcher",
+            "option": "theme",
+            "options": [
+                {
+                    "name": "Dark",
+                    "option": "dark"
+                },
+                {
+                    "name": "AMOLED",
+                    "option": "amoled"
+                }
+            ]
+        },
         {
             "category": "reading",
             "name": "Translated language",
