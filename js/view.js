@@ -12,6 +12,13 @@ const relationships_string = {
     'shared_universe': 'Shared universe'
 }
 
+const contentrating_string = {
+    'safe': 'Safe',
+    'suggestive': 'Suggestive',
+    'erotica': 'Erotica',
+    'pornographic': 'NSFW'
+}
+
 // pass manga id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -161,15 +168,9 @@ function get_relationships(data_pass) {
             }
 
             // content rating
-            if (relationships[i].attributes.contentRating == "safe") {
-                var rating = 'Safe';
-            } else if (relationships[i].attributes.contentRating == "suggestive") {
-                var rating = 'Suggestive';
-            } else if (relationships[i].attributes.contentRating == "erotica") {
-                var rating = 'Erotica';
-            } else if (relationships[i].attributes.contentRating == "pornographic") {
-                var rating = 'NSFW';
-            } else {
+            try {
+                var rating = contentrating_string[relationships[i].attributes.contentRating];
+            } catch(error) {
                 var rating = `${relationships[i].attributes.contentRating}`;
             }
 
