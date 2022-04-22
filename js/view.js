@@ -1,6 +1,17 @@
 // view manga page
 
 
+const relationships_string = {
+    'based_on': 'Original',
+    'doujinshi': 'Doujinshi',
+    'sequel': 'Sequel',
+    'adapted_from': 'Original',
+    'side_story': 'Side-story',
+    'prequel': 'Prequel',
+    'spin_off': 'Spin-off',
+    'shared_universe': 'Shared universe'
+}
+
 // pass manga id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -143,23 +154,9 @@ function get_relationships(data_pass) {
             related_card.href = `view.html?m=${relationships[i].id}`;
 
             // how related
-            if (relationships[i].related == "based_on") {
-                var relationship = 'Original';
-            } else if (relationships[i].related == "doujinshi") {
-                var relationship = 'Doujinshi';
-            } else if (relationships[i].related == "sequel") {
-                var relationship = 'Sequel';
-            } else if (relationships[i].related == "adapted_from") {
-                var relationship = 'Original';
-            } else if (relationships[i].related == "side_story") {
-                var relationship = 'Side Story';
-            } else if (relationships[i].related == "prequel") {
-                var relationship = 'Prequel';
-            } else if (relationships[i].related == "spin_off") {
-                var relationship = 'Spin-off';
-            } else if (relationships[i].related == "shared_universe") {
-                var relationship = 'Shared universe';
-            } else {
+            try {
+                var relationship = relationships_string[relationships[i].related];
+            } catch(error) {
                 var relationship = `${relationships[i].related}`;
             }
 
