@@ -5,6 +5,10 @@
             "name": "Reading"
         },
         {
+            "type": "rating",
+            "name": "Age ratings"
+        },
+        {
             "type": "dev",
             "name": "Development"
         }
@@ -50,6 +54,27 @@
             "description": "Opt for data-saver images when reading manga.",
             "option": "data_saver",
             "icon": "image"
+        },
+        {
+            "category": "rating",
+            "name": "Show suggestive content",
+            "description": "Display manga tagged as suggestive while browsing.",
+            "option": "show_suggestive",
+            "icon": "alert-circle"
+        },
+        {
+            "category": "rating",
+            "name": "Show erotica content",
+            "description": "Display manga tagged as erotica while browsing.",
+            "option": "show_erotica",
+            "icon": "alert-circle"
+        },
+        {
+            "category": "rating",
+            "name": "Show NSFW content",
+            "description": "Display manga tagged as pornographic while browsing.",
+            "option": "show_nsfw",
+            "icon": "alert-octagon"
         },
         {
             "category": "dev",
