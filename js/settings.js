@@ -1,44 +1,58 @@
 // settings
 
 
-const options = {
-    0: "lowq_downloads",
-    1: "show_suggestive",
-    2: "show_erotica",
-    3: "show_nsfw",
-    4: "prefer_lang"
-};
-
 // configure option
 function option(value) {
     if (localStorage.getItem(`op_${value}`) == null || localStorage.getItem(`op_${value}`) == 0) {
         localStorage.setItem(`op_${value}`,1);
-        console.log(`[ S ] enabled ${value}`);
-        document.getElementById(`${value}`).classList.add("enabled");
+        log('enabled',`Enabled ${value}`);
+        document.getElementById(`${value}`).classList.add('enabled');
+        document.body.classList.add(`op_${value}`);
     } else {
         localStorage.setItem(`op_${value}`,0);
-        console.log(`[ S ] disabled ${value}`);
-        document.getElementById(`${value}`).classList.remove("enabled");
+        log('disabled',`Disabled ${value}`);
+        document.getElementById(`${value}`).classList.remove('enabled');
+        document.body.classList.remove(`op_${value}`);
     }
 }
-function option_lang() {
-    let lang_text = document.getElementById("transl").value;
 
-    localStorage.setItem("op_preferlang",`${lang_text}`);
-    console.log(`[ S ] enabling lang ${lang_text}`);
+// configure multi-option
+// (for options eg. theme that accept multiple states - rather than 0/1)
+function option_multi(option,value) {
+    // get all options
+    var options = document.getElementById(`${option}_options`).getElementsByClassName('setting-switch');
+
+    // set classes
+    for (i = 0; i < options.length; i++) {
+        options[i].classList.remove('enabled');
+        document.body.classList.remove(`op_${options[i].getAttribute('id')}`);
+    }
+    document.getElementById(`${option}_${value}`).classList.add('enabled');
+    document.body.classList.add(`op_${option}_${value}`);
+
+    localStorage.setItem(`op_${option}`,`${value}`);
+    log('enabled',`Set ${option} to ${value}`);
 }
 
 // detect upon load
 function onload() {
-    for (let i in options) {
-        if (localStorage.getItem(`op_${options[i]}`) == 1) {
-            document.getElementById(`${options[i]}`).classList.add("enabled");
-            console.log(`[ S ] detected that ${options[i]} is enabled`);
-        } else if (options[i] == "prefer_lang" && localStorage.getItem("op_preferlang") != null && localStorage.getItem("op_preferlang") != 0 && localStorage.getItem("op_preferlang") != "en") {
-            document.getElementById(`${options[i]}`).classList.add("enabled");
-            console.log(`[ S ] detected that ${options[i]} is enabled`);
+    $.get( '/settings/settings.json', function( response ) {
+        let data = response;
+        
+        for (let i in data.settings) {
+            if (data.settings[i].type != "switcher") {
+                if (localStorage.getItem(`op_${data.settings[i].option}`) == 1) {
+                    document.body.classList.add(`op_${data.settings[i].option}`);
+                    log('enabled',`Auto-enabled ${data.settings[i].option}`);
+                }
+            } else if (data.settings[i].type == "switcher") {
+                if (localStorage.getItem(`op_${data.settings[i].option}`) != undefined) {
+                    document.body.classList.add(`op_${data.settings[i].option}_${localStorage.getItem(`op_${data.settings[i].option}`)}`);
+                    log('enabled',`Auto-set ${data.settings[i].option} to ${localStorage.getItem(`op_${data.settings[i].option}`)}`);
+                }
+            }
         }
-    }
+    });
 }
 // run on load
 window.onload = onload()
