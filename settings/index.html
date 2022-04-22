@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <!-- meta info -->
-    <title translate="no" id="page-title">searching manga</title>
+    <title translate="no">Manga Preferences</title>
     <meta name="theme-color" content="#003BFF">
     <!-- display -->
     <meta charset="UTF-8">
@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="https://plexion.dev/css/reset.css">
     <link rel="stylesheet" href="https://plexion.dev/css/style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/flags.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://plexion.dev/js/scroll.js"></script>
@@ -28,34 +29,23 @@
         <span class="search-wrap">
             <div class="search">
                 <input class="search-input" id="search" placeholder="Search for...">
-                <button role="button" class="clear-input" onclick="clear_search()" id="search-clear" aria-label="Clear search text"><i class="icon w-16" data-feather="x"></i></button>
                 <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-28" data-feather="search"></i></button>
             </div>
         </span>
         <span class="menu">
             <span class="dropdown-wrap">
-                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
+                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i><span class="bar"></span></a>
             </span>
         </span>
     </header>
-    <div class="bg" id="manga-bg">
-        <section class="min header padding">
-            <div class="bg-dark lib-grad"></div>
-        </section>
-    </div>
-    <section class="left header no-sep no-align">
-        <h3>Search results</h3>
-        <h4 id="showing-results">Showing </h4>
-        <div class="search-body" id="search-body"></div>
-        <div class="empty-results" id="no_results" style="display: none;">
-            <span>
-                <h3>Nothing...</h3>
-                <p>Try a different query or combination of key-words.</p>
-            </span>
-        </div>
+    <section class="center header padding accent">
+        <h1 class="text-56">Settings</h1>
+        <p class="text-20">Adjust your manga viewing experience.</p>
     </section>
-    <script src="js/search.js"></script>
-    <script src="js/search_box.js"></script>
+    <div id="settings"></div>
+    <script src="/js/settings.js"></script>
+    <script src="load.js"></script>
+    <div class="gap small"></div>
     <footer style="text-align: center; margin-top: 350px;">
         <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
     </footer>

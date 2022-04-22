@@ -1,0 +1,108 @@
+{
+    "categories": [
+        {
+            "type": "appearance",
+            "name": "Appearance"
+        },
+        {
+            "type": "reading",
+            "name": "Reading"
+        },
+        {
+            "type": "rating",
+            "name": "Age ratings"
+        },
+        {
+            "type": "dev",
+            "name": "Development"
+        }
+    ],
+    "settings": [
+        {
+            "category": "appearance",
+            "name": "Theme",
+            "icon": "image",
+            "type": "switcher",
+            "option": "theme",
+            "options": [
+                {
+                    "name": "Dark",
+                    "option": "dark"
+                },
+                {
+                    "name": "AMOLED",
+                    "option": "amoled"
+                }
+            ]
+        },
+        {
+            "category": "reading",
+            "name": "Translated language",
+            "icon": "globe",
+            "type": "switcher",
+            "switcher_icons": "flag",
+            "option": "translate_language",
+            "options": [
+                {
+                    "name": "English",
+                    "option": "gb"
+                },
+                {
+                    "name": "Japanese",
+                    "option": "jp"
+                },
+                {
+                    "name": "Korean",
+                    "option": "kr"
+                },
+                {
+                    "name": "Chinese (Simp)",
+                    "option": "cn"
+                },
+                {
+                    "name": "Chinese (Trad)",
+                    "option": "hk"
+                },
+                {
+                    "name": "Other",
+                    "option": ""
+                }
+            ]
+        },
+        {
+            "category": "reading",
+            "name": "Prefer low quality downloads",
+            "description": "Opt for data-saver images when reading manga.",
+            "option": "data_saver",
+            "icon": "image"
+        },
+        {
+            "category": "rating",
+            "name": "Show suggestive content",
+            "description": "Display manga tagged as suggestive while browsing.",
+            "option": "show_suggestive",
+            "icon": "alert-circle"
+        },
+        {
+            "category": "rating",
+            "name": "Show erotica content",
+            "description": "Display manga tagged as erotica while browsing.",
+            "option": "show_erotica",
+            "icon": "alert-circle"
+        },
+        {
+            "category": "rating",
+            "name": "Show NSFW content",
+            "description": "Display manga tagged as pornographic while browsing.",
+            "option": "show_nsfw",
+            "icon": "alert-octagon"
+        },
+        {
+            "category": "dev",
+            "name": "Visual logging",
+            "description": "Soon to become the default, shows logs in top-right.",
+            "option": "visual_logging",
+            "icon": "info"
+        }
+    ]
+}
