@@ -1,0 +1,95 @@
+{
+    "categories": [
+        {
+            "type": "appearance",
+            "name": "Appearance"
+        },
+        {
+            "type": "accessibility",
+            "name": "Accessibility"
+        },
+        {
+            "type": "accessibility_fonts",
+            "name": "Accessibility fonts"
+        },
+        {
+            "type": "dev",
+            "name": "Development"
+        }
+    ],
+    "settings": [
+        {
+            "category": "appearance",
+            "name": "Theme",
+            "icon": "image",
+            "type": "switcher",
+            "option": "theme",
+            "options": [
+                {
+                    "name": "Dark",
+                    "option": "dark"
+                },
+                {
+                    "name": "AMOLED",
+                    "option": "amoled"
+                }
+            ]
+        },
+        {
+            "category": "accessibility_fonts",
+            "name": "OpenDyslexic font",
+            "description": "Accessibility font",
+            "option": "opendyslexic_font",
+            "icon": "type"
+        },
+        {
+            "category": "accessibility_fonts",
+            "name": "Hyperlegible font",
+            "description": "Accessibility font",
+            "option": "hyperlegible_font",
+            "icon": "type"
+        },
+        {
+            "category": "accessibility_fonts",
+            "name": "Helvetica font",
+            "description": "Accessibility font",
+            "option": "helvetica_font",
+            "icon": "type"
+        },
+        {
+            "category": "accessibility_fonts",
+            "name": "Noto Sans font",
+            "description": "Accessibility font",
+            "option": "noto_font",
+            "icon": "type"
+        },
+        {
+            "category": "accessibility",
+            "name": "High contrast",
+            "description": "Provides a much greater contrast between elements.",
+            "option": "high_contrast",
+            "icon": "eye"
+        },
+        {
+            "category": "accessibility",
+            "name": "Reduce animations",
+            "description": "Reduce the intensity of animations.",
+            "option": "reduce_motion",
+            "icon": "copy"
+        },
+        {
+            "category": "accessibility",
+            "name": "Reduce saturation",
+            "description": "Reduce the intensity of colours.",
+            "option": "reduce_saturation",
+            "icon": "sun"
+        },
+        {
+            "category": "dev",
+            "name": "Visual logging",
+            "description": "Soon to become the default, shows logs in top-right.",
+            "option": "visual_logging",
+            "icon": "info"
+        }
+    ]
+}
