@@ -104,10 +104,10 @@ function create_chapter(data_pass) {
         // append to button if first chapter
         // detect if user has read
         if (chapter == null) {
-            log('general',`User not read before`);
+            /*log('general',`User not read before`);*/
             em_mangaread.href = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
         } else {
-            log('general',`User previously read`);
+            /*log('general',`User previously read`);*/
             em_mangaread.textContent = `Continue reading`;
             em_mangaread.classList.add("focus");
             em_mangaread.href = `read?m=${manga}&c=${chapter}`;
