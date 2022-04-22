@@ -1,16 +1,8 @@
 {
     "categories": [
         {
-            "type": "appearance",
-            "name": "Appearance"
-        },
-        {
-            "type": "accessibility",
-            "name": "Accessibility"
-        },
-        {
-            "type": "accessibility_fonts",
-            "name": "Accessibility fonts"
+            "type": "reading",
+            "name": "Reading"
         },
         {
             "type": "dev",
@@ -19,70 +11,28 @@
     ],
     "settings": [
         {
-            "category": "appearance",
-            "name": "Theme",
-            "icon": "image",
+            "category": "reading",
+            "name": "Translated language",
+            "icon": "globe",
             "type": "switcher",
-            "option": "theme",
+            "option": "translate_language",
             "options": [
                 {
-                    "name": "Dark",
-                    "option": "dark"
+                    "name": "English",
+                    "option": "en"
                 },
                 {
-                    "name": "AMOLED",
-                    "option": "amoled"
+                    "name": "Japanese",
+                    "option": "jp"
                 }
             ]
         },
         {
-            "category": "accessibility_fonts",
-            "name": "OpenDyslexic font",
-            "description": "Accessibility font",
-            "option": "opendyslexic_font",
-            "icon": "type"
-        },
-        {
-            "category": "accessibility_fonts",
-            "name": "Hyperlegible font",
-            "description": "Accessibility font",
-            "option": "hyperlegible_font",
-            "icon": "type"
-        },
-        {
-            "category": "accessibility_fonts",
-            "name": "Helvetica font",
-            "description": "Accessibility font",
-            "option": "helvetica_font",
-            "icon": "type"
-        },
-        {
-            "category": "accessibility_fonts",
-            "name": "Noto Sans font",
-            "description": "Accessibility font",
-            "option": "noto_font",
-            "icon": "type"
-        },
-        {
-            "category": "accessibility",
-            "name": "High contrast",
-            "description": "Provides a much greater contrast between elements.",
-            "option": "high_contrast",
-            "icon": "eye"
-        },
-        {
-            "category": "accessibility",
-            "name": "Reduce animations",
-            "description": "Reduce the intensity of animations.",
-            "option": "reduce_motion",
-            "icon": "copy"
-        },
-        {
-            "category": "accessibility",
-            "name": "Reduce saturation",
-            "description": "Reduce the intensity of colours.",
-            "option": "reduce_saturation",
-            "icon": "sun"
+            "category": "reading",
+            "name": "Prefer low quality downloads",
+            "description": "Opt for data-saver images when reading manga.",
+            "option": "data_saver",
+            "icon": "image"
         },
         {
             "category": "dev",
