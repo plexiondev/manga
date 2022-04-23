@@ -23,6 +23,12 @@
     ],
     "settings": [
         {
+            "category": "account",
+            "name": "Account",
+            "icon": "user",
+            "type": "show_login"
+        },
+        {
             "category": "appearance",
             "name": "Theme",
             "icon": "image",
