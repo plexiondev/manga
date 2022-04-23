@@ -4,12 +4,12 @@
 // initial call (to get user id)
 
 // define XHR GET
-const xhr = new XMLHttpRequest();
-const url = `https://api.mangadex.org/user/me`;
-xhr.open('GET', url, true);
-xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+const sl_xhr = new XMLHttpRequest();
+const sl_url = `https://api.mangadex.org/user/me`;
+sl_xhr.open('GET', sl_url, true);
+sl_xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
 
-xhr.onload = function() {
+sl_xhr.onload = function() {
     const data = JSON.parse(this.response);
 
     let user_id = data.data.id;
@@ -26,4 +26,4 @@ xhr.onload = function() {
 }
 
 // send off
-xhr.send();
+sl_xhr.send();
