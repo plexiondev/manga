@@ -131,13 +131,13 @@ function create_chapter(data_pass) {
             if (check_read(`${chapters_links_array[i]}`) == 1) {
                 // text
                 chapter_s.innerHTML = (`
-                <button class="mark_read read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}')"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <button class="mark_read read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
                 <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
                 `);
             } else {
                 // text
                 chapter_s.innerHTML = (`
-                <button class="mark_read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}')"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <button class="mark_read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
                 <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
                 `);
             }
@@ -151,10 +151,36 @@ function create_chapter(data_pass) {
 
         feather.replace();
     }
+
+    read_chapters();
 }
 
 // empty
 function empty_results() {
     log('general',`No results`);
     document.getElementById("no_results").style.display = `flex`;
+}
+
+
+// get read chapters
+function read_chapters() {
+    // define xhr GET
+    const r_xhr = new XMLHttpRequest();
+    const r_url = `https://api.mangadex.org/manga/${manga}/read`;
+    r_xhr.open('GET', r_url, true);
+    r_xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+
+
+    // request is received
+    r_xhr.onload = function () {
+        const data = JSON.parse(this.response);
+        
+        for (let i in data.data) {
+            mark_read(data.data[i],true);
+        }
+    }
+
+
+    // send
+    r_xhr.send();
 }

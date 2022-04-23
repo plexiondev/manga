@@ -15,11 +15,11 @@ function check_read(chapter_id_pass) {
 }
 
 // mark manga chapter as read
-function mark_read(chapter_id_pass) {
+function mark_read(chapter_id_pass,force) {
 
     var chapter_id = chapter_id_pass;
 
-    if (localStorage.getItem(`${chapter_id}_read`) == 0 || localStorage.getItem(`${chapter_id}_read`) == null) {
+    if (localStorage.getItem(`${chapter_id}_read`) == 0 || localStorage.getItem(`${chapter_id}_read`) == null || force == true) {
         // mark as read
         localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add("read");
