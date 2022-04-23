@@ -377,6 +377,6 @@ input.generic {
 .tag.suggestive {
     background-color: #cf650e !important;
 }
-.tag.pornographic, .tag.erotica {
+.tag.pornographic, .tag.erotica, .tag.Sexual_Violence {
     background-color: #cf0e0e !important;
 }
