@@ -71,6 +71,10 @@ function parse_auth(response) {
     log('general',`Done! Parsing auth..`);
     const data = JSON.parse(response);
 
-    console.log(response,data);
-    console.log('worked?');
+    // save token to storage
+    localStorage.setItem('token',data.token.session);
+    localStorage.setItem('token_refresh',data.token.refresh);
+
+    // swap url
+    window.location.href = '/?logged_in';
 }
