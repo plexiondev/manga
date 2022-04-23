@@ -128,7 +128,7 @@ function get_general(data_pass) {
     }
     // create element
     let em_rating = document.createElement('label');
-    em_rating.classList.add('tag',`${rating}`);
+    em_rating.classList.add('tag',`${data.data.attributes.contentRating}`);
     em_rating.innerHTML = (`${rating}`);
     em_tags.appendChild(em_rating);
 

@@ -371,3 +371,12 @@ input.generic {
     border: none;
     cursor: pointer;
 }
+
+
+/* content ratings */
+.tag.suggestive {
+    background-color: #cf650e !important;
+}
+.tag.pornographic, .tag.erotica {
+    background-color: #cf0e0e !important;
+}
