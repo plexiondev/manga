@@ -120,6 +120,18 @@ function get_general(data_pass) {
     em_mangadesc.innerHTML = `${html}`;
     console.log(`[ Y ] G: description`);
 
+    // content rating
+    try {
+        var rating = contentrating_string[data.data.attributes.contentRating];
+    } catch(error) {
+        var rating = `${data.data.attributes.contentRating}`;
+    }
+    // create element
+    let em_rating = document.createElement('label');
+    em_rating.classList.add('tag',`${rating}`);
+    em_rating.innerHTML = (`${rating}`);
+    em_tags.appendChild(em_rating);
+
 
     // buttons
     em_mangadex.href = `https://mangadex.org/title/${manga}`;
