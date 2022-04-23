@@ -2,11 +2,10 @@
 
 
 // cache
-var lang = localStorage.getItem("op_preferlang") || "en";
+var lang = localStorage.getItem("op_translate_language") || "en";
 if (lang == 0) {
     lang = "en";
 }
-console.log(lang);
 let c_cached_out = localStorage.getItem(`${manga}_chapters_${lang}_timeout`) || "";
 let c_cache = localStorage.getItem(`${manga}_chapters_${lang}`) || "";
 let c_now = new Date();
