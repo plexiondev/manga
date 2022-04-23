@@ -45,7 +45,7 @@
 ## styling
 
 - [x] fix up styling of back/forth buttons when reading
-- [ ] fix up styling of chapter/volume display
+- [x] fix up styling of chapter/volume display
 
 ## LTM
 
@@ -60,7 +60,7 @@
 
 ## unsure
 
-- [ ] implement auth/login systems, which will allow:
+- [x] implement auth/login systems, which will allow:
 - - [ ] getting last chapter/vol. read from mangadex
 - - [ ] retrieving user's manga follows
 - - [ ] displaying user's home feed in-app
