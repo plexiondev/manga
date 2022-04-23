@@ -161,12 +161,14 @@ function get_relationships(data_pass) {
             // author
             let em_author = document.getElementById("manga-author");
             em_author.href = `https://mangadex.org/author/${relationships[i].id}`;
-            em_author.innerHTML = `<h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            em_author.innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="user"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            feather.replace();
         } else if (relationships[i].type == "artist") {
             // artist
             let em_artist = document.getElementById("manga-artist");
             em_artist.href = `https://mangadex.org/author/${relationships[i].id}`;
-            em_artist.innerHTML = `<h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            em_artist.innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            feather.replace();
         } else if (relationships[i].type == "manga") {
             // other relationships
 
