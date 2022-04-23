@@ -69,12 +69,30 @@ function create_auth(accept,username,email,password) {
 // parse auth
 function parse_auth(response) {
     log('general',`Done! Parsing auth..`);
-    const data = JSON.parse(response);
+    const idata = JSON.parse(response);
 
-    // save token to storage
-    localStorage.setItem('token',data.token.session);
-    localStorage.setItem('token_refresh',data.token.refresh);
 
-    // swap url
-    window.location.href = '/?logged_in=1';
+    // refresh token (for 1 month)
+    // define XHR POST
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/auth/refresh`;
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+
+    xhr.onload = function() {
+
+        log('general',`Refresh token for 1 month!`);
+        const data = JSON.parse(this.response);
+
+        // save token to storage
+        localStorage.setItem('token',data.token.session);
+        localStorage.setItem('token_refresh',data.token.refresh);
+
+        // swap url
+        window.location.href = '/?logged_in=1';
+    }
+
+    xhr.send(JSON.stringify({
+        token: idata.token.refresh
+    }));
 }
