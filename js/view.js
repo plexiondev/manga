@@ -204,7 +204,7 @@ function get_relationships(data_pass) {
             <div class="desc-cont">${html}</div>
             <br>
             <label class="tag">${relationship}</label>
-            <label class="tag">${rating}</label>
+            <label class="tag ${relationships[i].attributes.contentRating}">${rating}</label>
             </div>
             `);
 
