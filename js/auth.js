@@ -44,17 +44,17 @@ function create_auth(accept,username,email,password) {
 
     if (accept == 1) {
         // - password & username [1]
-        xhr.send({
+        xhr.send(JSON.stringify({
             username: username,
             password: password
-        });
+        }));
     } else if (accept == 2) {
         // - password & username & email [2]
-        xhr.send({
+        xhr.send(JSON.stringify({
             username: username,
             email: email,
             password: password
-        });
+        }));
     } else {
         // - password & email [0]
         xhr.send(JSON.stringify({
