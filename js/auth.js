@@ -4,10 +4,25 @@
 // parse login form
 function parse_form() {
     create_auth(0,document.getElementById('email'),document.getElementById('password'));
+    log('general',`Accepted input`);
+}
+
+// get params
+const auth_query = window.location.search;
+const auth_url = new URLSearchParams(auth_query);
+// email
+const auth_email = auth_url.get('email') || undefined;
+// password
+const auth_password = auth_url.get('password') || undefined;
+
+// if values inputted
+if (email != undefined && password != undefined) {
+    create_auth(0,"",auth_email,auth_password);
 }
 
 // create auth post
 function create_auth(accept,username,email,password) {
+    log('general',`Creating auth..`);
     // accepts an auth type of:
     // - password & email [0]
     // - password & username [1]
@@ -19,6 +34,7 @@ function create_auth(accept,username,email,password) {
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/auth/login`;
     xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function() {
 
@@ -41,10 +57,10 @@ function create_auth(accept,username,email,password) {
         });
     } else {
         // - password & email [0]
-        xhr.send({
+        xhr.send(JSON.stringify({
             email: email,
             password: password
-        });
+        }));
     }
 }
 
@@ -52,6 +68,7 @@ function create_auth(accept,username,email,password) {
 
 // parse auth
 function parse_auth(response) {
+    log('general',`Done! Parsing auth..`);
     const data = JSON.parse(response);
 
     console.log(response,data);
