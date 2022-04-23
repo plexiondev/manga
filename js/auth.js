@@ -81,7 +81,7 @@ function parse_auth(response) {
 
     xhr.onload = function() {
 
-        log('general',`Refresh token for 1 month!`);
+        log('general',`Refreshed token for 1 month!`);
         const data = JSON.parse(this.response);
 
         // save token to storage
