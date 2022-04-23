@@ -76,5 +76,5 @@ function parse_auth(response) {
     localStorage.setItem('token_refresh',data.token.refresh);
 
     // swap url
-    window.location.href = '/?logged_in';
+    window.location.href = '/?logged_in=1';
 }
