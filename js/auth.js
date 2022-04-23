@@ -1,12 +1,18 @@
 // authorise with mangadex
 
 
+// parse login form
+function parse_form() {
+    create_auth(0,document.getElementById('email'),document.getElementById('password'));
+}
+
 // create auth post
-function create_auth(accept,username,password,email) {
+function create_auth(accept,username,email,password) {
     // accepts an auth type of:
-    // - password & email
-    // - password & username
-    // - password & username & email
+    // - password & email [0]
+    // - password & username [1]
+    // - password & username & email [2]
+    // [accept]
 
 
     // define XHR POST
@@ -20,11 +26,26 @@ function create_auth(accept,username,password,email) {
         parse_auth(this.response);
     }
 
-    xhr.send({
-        username: username,
-        email: email,
-        password: password
-    })
+    if (accept == 1) {
+        // - password & username [1]
+        xhr.send({
+            username: username,
+            password: password
+        });
+    } else if (accept == 2) {
+        // - password & username & email [2]
+        xhr.send({
+            username: username,
+            email: email,
+            password: password
+        });
+    } else {
+        // - password & email [0]
+        xhr.send({
+            email: email,
+            password: password
+        });
+    }
 }
 
 

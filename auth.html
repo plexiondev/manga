@@ -41,6 +41,31 @@
         <h1 class="text-56">Authorise with MangaDex</h1>
         <p class="text-20">Welcome! Search for a manga or get right back into reading.</p>
     </section>
+    <section class="left header no-sep no-align" id="overview">
+        <h4>Login via MangaDex</h4>
+        <form onsubmit="parse_form()">
+            <!--
+            <label class="over" for="username">Username</label>
+            <br>
+            <input class="generic" type="text" id="username" name="username">
+
+            <br>
+            <br>-->
+            <label class="over" for="email">Email</label>
+            <br>
+            <input class="generic" type="email" id="email" name="email">
+
+            <br>
+            <br>
+            <label class="over" for="password">Password</label>
+            <br>
+            <input class="generic" type="password" id="password" name="password">
+
+            <br>
+            <br>
+            <input role="button" class="button focus left icon con" type="submit">
+        </form>
+    </section>
     <script src="/js/auth.js"></script>
     <footer style="text-align: center; margin-top: 350px;">
         <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
