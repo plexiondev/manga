@@ -22,26 +22,7 @@ $.get( 'settings.json', function( response ) {
     for (let i in data.settings) {
         let em_setting = document.createElement('li');
 
-        if (data.settings[i].type != "switcher") {
-            em_setting.classList.add('setting');
-            em_setting.setAttribute('onclick',`option('${data.settings[i].option}')`);
-            em_setting.innerHTML = (`
-            <span class="text">
-                <span class="icon">
-                    <div class="headline-icon min-icon">
-                        <i class="icon w-24" data-feather="${data.settings[i].icon}"></i>
-                    </div>
-                </span>
-                <span class="info">
-                    <h5 class="text-16">${data.settings[i].name}</h5>
-                    <p>${data.settings[i].description}</p>
-                </span>
-            </span>
-            <span class="option">
-                <a role="toggle" class="toggle" id="${data.settings[i].option}" href="javascript:void(0);" tabindex="-1"></a>
-            </span>
-            `);
-        } else if (data.settings[i].type == "switcher") {
+        if (data.settings[i].type == "switcher") {
             em_setting.classList.add('setting','switcher');
             em_setting.innerHTML = (`
             <span class="text">
@@ -98,6 +79,42 @@ $.get( 'settings.json', function( response ) {
             // append
             em_info.appendChild(em_switcher);
             em_setting.appendChild(em_info);
+        } else if (data.settings[i].type == "show_login") {
+            // show current user login
+            em_setting.classList.add('setting','switcher');
+            // add temporary innerHTML until auth scripts are run
+            em_setting.innerHTML = (`
+            <span class="text">
+                <span class="icon">
+                    <div class="headline-icon min-icon">
+                        <i class="icon w-24" data-feather="${data.settings[i].icon}"></i>
+                    </div>
+                </span>
+                <span class="info" id="login_info">
+                    <h5 class="text-16">${data.settings[i].name}</h5>
+                    <p id="login_info_temp">Checking login status..</p>
+                </span>
+            </span>
+            `);
+        } else {
+            em_setting.classList.add('setting');
+            em_setting.setAttribute('onclick',`option('${data.settings[i].option}')`);
+            em_setting.innerHTML = (`
+            <span class="text">
+                <span class="icon">
+                    <div class="headline-icon min-icon">
+                        <i class="icon w-24" data-feather="${data.settings[i].icon}"></i>
+                    </div>
+                </span>
+                <span class="info">
+                    <h5 class="text-16">${data.settings[i].name}</h5>
+                    <p>${data.settings[i].description}</p>
+                </span>
+            </span>
+            <span class="option">
+                <a role="toggle" class="toggle" id="${data.settings[i].option}" href="javascript:void(0);" tabindex="-1"></a>
+            </span>
+            `);
         }
 
         // append
