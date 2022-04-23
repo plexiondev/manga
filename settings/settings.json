@@ -1,6 +1,10 @@
 {
     "categories": [
         {
+            "type": "account",
+            "name": "Account"
+        },
+        {
             "type": "appearance",
             "name": "Appearance"
         },
