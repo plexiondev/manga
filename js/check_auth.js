@@ -54,7 +54,7 @@ function refresh_auth(redirect) {
     }));
 
     // reset auth cache
-    auth_now = new Date(now);
+    auth_now = new Date(auth_now);
     auth_now.setMinutes(auth_now.getMinutes() + 14);
     log('general',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`);
     localStorage.setItem('token_cache', auth_now);
