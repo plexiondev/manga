@@ -1,0 +1,486 @@
+{
+    "result": "ok",
+    "response": "collection",
+    "data": [
+        {
+            "id": "74088ca4-48ea-4c09-8df0-2943708b1c0c",
+            "type": "manga",
+            "attributes": {
+                "title": {
+                    "en": "Gabriel DropOut"
+                },
+                "altTitles": [
+                    {
+                        "ru": "Габриэль бросает школу"
+                    },
+                    {
+                        "th": "ไม่เป็นนางฟ้าได้ไหมเนี่ย"
+                    },
+                    {
+                        "ja": "ガヴリールドロップアウト"
+                    }
+                ],
+                "description": {
+                    "en": "A fallen angel with falling grades! Gabriel White Tenma has descended from heaven to attend high school and guide humanity, but a newly found video game addiction might say otherwise.\n___\n**PT-BR**\n\nA comédia desenrola-se em torno de Gabriel White, que se formou no topo da classe na escola de anjos e que frequenta uma escola humana na terra em busca de conhecimento, mas, um jogo web atrai toda a sua atenção e acaba decidindo que dá muito trabalho ir para outros lugares.  \n\n___",
+                    "ru": "Габриэль-Тенма Уайт была одной из самых прилежных учениц Академии Ангелов. Но вот пришло время выпуска, и Габриэль отправилась на Землю дабы выполнить порученную ей миссию: показать людям правильный путь и подарить им счастье. Однако, действительно ли всё будет именно так? Не изменит ли ангела новое место, куда она попала?..",
+                    "pt-br": "A comédia desenrola-se em torno de Gabriel White, que se formou no topo da classe na escola de anjos e que frequenta uma escola humana na terra em busca de conhecimento, mas, um jogo web atrai toda a sua atenção e acaba decidindo que dá muito trabalho ir para outros lugares.  \r\n  \r\n\r\n\r\n---"
+                },
+                "isLocked": false,
+                "links": {
+                    "al": "86864",
+                    "ap": "gabriel-dropout",
+                    "bw": "series/21789/list",
+                    "kt": "37208",
+                    "mu": "107073",
+                    "amz": "https://www.amazon.co.jp/gp/product/B074CKJW4Z/",
+                    "cdj": "https://www.cdjapan.co.jp/product/NEOBK-2644821",
+                    "ebj": "https://ebookjapan.yahoo.co.jp/books/276475/",
+                    "mal": "96526",
+                    "raw": "https://comic-walker.com/contents/detail/KDCW_AM06000005010000_68/",
+                    "engtl": "https://yenpress.com/9781975336059/gabriel-dropout-vol-10/"
+                },
+                "originalLanguage": "ja",
+                "lastVolume": "",
+                "lastChapter": "",
+                "publicationDemographic": "shounen",
+                "status": "ongoing",
+                "year": 2014,
+                "contentRating": "safe",
+                "tags": [
+                    {
+                        "id": "2d1f5d56-a1e5-4d0d-a961-2193588b08ec",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Loli"
+                            },
+                            "description": [],
+                            "group": "theme",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "39730448-9a5f-48a2-85b0-a70db87b1233",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Demons"
+                            },
+                            "description": [],
+                            "group": "theme",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Comedy"
+                            },
+                            "description": [],
+                            "group": "genre",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "a1f53773-c69a-4ce5-8cab-fffcd90b1565",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Magic"
+                            },
+                            "description": [],
+                            "group": "theme",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "School Life"
+                            },
+                            "description": [],
+                            "group": "theme",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Fantasy"
+                            },
+                            "description": [],
+                            "group": "genre",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Slice of Life"
+                            },
+                            "description": [],
+                            "group": "genre",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Supernatural"
+                            },
+                            "description": [],
+                            "group": "theme",
+                            "version": 1
+                        },
+                        "relationships": []
+                    }
+                ],
+                "state": "published",
+                "chapterNumbersResetOnNewVolume": false,
+                "createdAt": "2018-12-18T04:46:45+00:00",
+                "updatedAt": "2022-04-07T22:51:39+00:00",
+                "version": 18,
+                "availableTranslatedLanguages": [
+                    "ru",
+                    "pt-br",
+                    "id",
+                    "en",
+                    "fr"
+                ]
+            },
+            "relationships": [
+                {
+                    "id": "e81487a0-5980-4143-908d-06490de0e603",
+                    "type": "author"
+                },
+                {
+                    "id": "e81487a0-5980-4143-908d-06490de0e603",
+                    "type": "artist"
+                },
+                {
+                    "id": "603a15d9-14e8-4f92-8153-5493efbcfef9",
+                    "type": "cover_art"
+                },
+                {
+                    "id": "0f27b6b0-6c5d-4681-ab61-cfeaf8f58782",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "112804d6-1f2e-4d19-bafd-cfa38cce13ef",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "21f2e637-2b7c-44ae-87cf-0921afc133f6",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "2b42da34-a969-4d6c-8f0b-cdab6449f607",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "3a134baf-03f7-45f8-9892-ebdf16c2fc50",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "3e0ca444-a66c-4c8b-a938-678a4e0c5285",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "5ec2c2a8-8365-4ce6-b5ec-c210fdea2920",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "6008a9a8-77db-463b-a3a5-6e22439b1aef",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "7260aade-70ae-4fe2-a2f6-ee4ecfba9486",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "7a04aa2c-f00a-44c2-ad58-6658ec78d14d",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "8979c533-1a5f-45bd-b016-c4323a43f22e",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "c22535a0-87aa-4bf7-9535-264d81cd1922",
+                    "type": "manga",
+                    "related": "sequel"
+                },
+                {
+                    "id": "da507dd1-c9bc-4110-a5e5-e762a1c60970",
+                    "type": "manga",
+                    "related": "doujinshi"
+                },
+                {
+                    "id": "f786502e-38ef-4d2a-92e2-cb324022ddae",
+                    "type": "manga",
+                    "related": "spin_off"
+                }
+            ]
+        },
+        {
+            "id": "3e0ca444-a66c-4c8b-a938-678a4e0c5285",
+            "type": "manga",
+            "attributes": {
+                "title": {
+                    "en": "Gabriel DropOut - Vignette Dropout (Doujinshi)"
+                },
+                "altTitles": [
+                    {
+                        "ja": "ヴィネットドロップアウト"
+                    },
+                    {
+                        "ja-ro": "Vinetto Doroppuauto"
+                    }
+                ],
+                "description": [],
+                "isLocked": false,
+                "links": {
+                    "al": "122472"
+                },
+                "originalLanguage": "ja",
+                "lastVolume": "1",
+                "lastChapter": "1",
+                "publicationDemographic": null,
+                "status": "completed",
+                "year": null,
+                "contentRating": "safe",
+                "tags": [
+                    {
+                        "id": "0234a31e-a729-4e28-9d6a-3f87c4966b9e",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Oneshot"
+                            },
+                            "description": [],
+                            "group": "format",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Comedy"
+                            },
+                            "description": [],
+                            "group": "genre",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "b13b2a48-c720-44a9-9c77-39c9979373fb",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Doujinshi"
+                            },
+                            "description": [],
+                            "group": "format",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Slice of Life"
+                            },
+                            "description": [],
+                            "group": "genre",
+                            "version": 1
+                        },
+                        "relationships": []
+                    }
+                ],
+                "state": "published",
+                "chapterNumbersResetOnNewVolume": false,
+                "createdAt": "2020-08-20T07:43:26+00:00",
+                "updatedAt": "2022-02-05T17:07:13+00:00",
+                "version": 4,
+                "availableTranslatedLanguages": [
+                    "en",
+                    "pt-br"
+                ]
+            },
+            "relationships": [
+                {
+                    "id": "e81487a0-5980-4143-908d-06490de0e603",
+                    "type": "author"
+                },
+                {
+                    "id": "e81487a0-5980-4143-908d-06490de0e603",
+                    "type": "artist"
+                },
+                {
+                    "id": "b30fb6e1-e975-4f70-a83d-c06f46ca5840",
+                    "type": "cover_art"
+                },
+                {
+                    "id": "74088ca4-48ea-4c09-8df0-2943708b1c0c",
+                    "type": "manga",
+                    "related": "based_on"
+                }
+            ]
+        },
+        {
+            "id": "2b42da34-a969-4d6c-8f0b-cdab6449f607",
+            "type": "manga",
+            "attributes": {
+                "title": {
+                    "en": "Gabriel DropOut - Watashi, Mesuinu ni Sarete Shimaimashita (Doujinshi)"
+                },
+                "altTitles": [
+                    {
+                        "en": "Gabriel DropOut dj - Watashi, Mesuinu ni Sarete Shimaimashita ^^; "
+                    },
+                    {
+                        "en": "I've been turned into a Dog"
+                    },
+                    {
+                        "en": "Luminocity 17 Watashi, Mesuinu ni Sarete Shimaimashita ^^;"
+                    },
+                    {
+                        "en": "ガヴリールドロップアウト dj - 私、雌犬にされてしまいました^^;"
+                    }
+                ],
+                "description": {
+                    "en": "Pairing: Gabriel x Raphiel"
+                },
+                "isLocked": false,
+                "links": {
+                    "mu": "142901"
+                },
+                "originalLanguage": "ja",
+                "lastVolume": null,
+                "lastChapter": null,
+                "publicationDemographic": null,
+                "status": "completed",
+                "year": null,
+                "contentRating": "suggestive",
+                "tags": [
+                    {
+                        "id": "0234a31e-a729-4e28-9d6a-3f87c4966b9e",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Oneshot"
+                            },
+                            "description": [],
+                            "group": "format",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Comedy"
+                            },
+                            "description": [],
+                            "group": "genre",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "a3c67850-4684-404e-9b7f-c69850ee5da6",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Girls' Love"
+                            },
+                            "description": [],
+                            "group": "genre",
+                            "version": 1
+                        },
+                        "relationships": []
+                    },
+                    {
+                        "id": "b13b2a48-c720-44a9-9c77-39c9979373fb",
+                        "type": "tag",
+                        "attributes": {
+                            "name": {
+                                "en": "Doujinshi"
+                            },
+                            "description": [],
+                            "group": "format",
+                            "version": 1
+                        },
+                        "relationships": []
+                    }
+                ],
+                "state": "published",
+                "chapterNumbersResetOnNewVolume": false,
+                "createdAt": "2019-06-07T06:40:46+00:00",
+                "updatedAt": "2021-05-25T15:40:44+00:00",
+                "version": 2,
+                "availableTranslatedLanguages": [
+                    "en"
+                ]
+            },
+            "relationships": [
+                {
+                    "id": "844d75a5-ff31-4997-b7c4-98959dc156c3",
+                    "type": "author"
+                },
+                {
+                    "id": "844d75a5-ff31-4997-b7c4-98959dc156c3",
+                    "type": "artist"
+                },
+                {
+                    "id": "5e9b3520-69be-4fdc-8cab-c0b2876b5cc0",
+                    "type": "cover_art"
+                },
+                {
+                    "id": "74088ca4-48ea-4c09-8df0-2943708b1c0c",
+                    "type": "manga",
+                    "related": "based_on"
+                }
+            ]
+        }
+    ],
+    "limit": 10,
+    "offset": 0,
+    "total": 3
+}

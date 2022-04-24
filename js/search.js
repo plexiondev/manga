@@ -1,6 +1,13 @@
 // search for manga
 
 
+const contentrating_string = {
+    'safe': 'Safe',
+    'suggestive': 'Suggestive',
+    'erotica': 'Erotica',
+    'pornographic': 'NSFW'
+}
+
 // pass search request
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -119,29 +126,6 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
 }
 
-function get_general(data_pass) {
-
-    log('search',`Retrieving general attributes..`,true);
-
-    // parse
-    const data = JSON.parse(data_pass);
-
-    // titles
-    em_mangatitle.textContent = data.data.attributes.title.en;
-    // edge-case when multiple alt titles
-    for (let i in data.data.attributes.altTitles) {
-        if (data.data.attributes.altTitles[i].ja != undefined) {
-            em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
-        }
-    }
-    // desc
-    em_mangadesc.textContent = data.data.attributes.description.en;
-
-
-    // buttons
-    em_mangadex.href = `https://mangadex.org/title/${manga}`;
-}
-
 function get_relationships(data_pass,manga_pass) {
 
     log('search',`Retrieving relationships..`,true);
@@ -249,6 +233,13 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     // links
     card.href = `view.html?m=${manga}`;
 
+    // content rating
+    try {
+        var rating = contentrating_string[data.data[i].attributes.contentRating];
+    } catch(error) {
+        var rating = `${data.data[i].attributes.contentRating}`;
+    }
+
     // html
     log('general',`Created ${i}!`,true);
     card.innerHTML = (`
@@ -258,6 +249,7 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     <div class="info">
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
     <p class="text-16">${data.data[i].attributes.description.en}</p>
+    <label class="tag ${data.data[i].attributes.contentRating}">${rating}</label>
     </div>
     `);
 
