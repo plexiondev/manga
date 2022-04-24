@@ -28,6 +28,7 @@
 - [x] allow marking as read manga chapters
 - [ ] if all chapters marked as read, auto-mark volume as read
 - [ ] auto mark chapter as read if finished reading (possibly make option incase prefer manual)
+- [ ] figure out how to work mark read/unread chapters in mark_read.js
 
 ## indexing
 

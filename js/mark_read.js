@@ -1,6 +1,13 @@
 // mark chapter as read
 
 
+// TODO figure out how to send off mark read/unread to mangadex (when authed)
+
+// TODO possibly store JSON const in localStorage \/
+// TODO for some reason it's currently storing as '[object Object]' (who knows)
+localStorage.setItem('read',{});
+localStorage.setItem('unread',{});
+
 // detect upon load
 function check_read(chapter_id_pass) {
 
@@ -24,10 +31,53 @@ function mark_read(chapter_id_pass,force) {
         localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add("read");
         console.log(`[ Y ] marked ${chapter_id} as read`);
+        if (force != true) {
+            // append to list
+            try {
+                JSON.parse(localStorage.getItem('unread')).slice(JSON.parse(localStorage.getItem('unread')).indexOf(`${chapter_id}`),1);
+            } catch(error) {}
+            JSON.parse(localStorage.getItem('unread')).push(`${chapter_id}`);
+        }
     } else {
         // mark as unread
         localStorage.removeItem(`${chapter_id}_read`);
         document.getElementById(`mark_${chapter_id}`).classList.remove("read");
         console.log(`[ Y ] marked ${chapter_id} as unread`);
+        // append to list
+        try {
+            JSON.parse(localStorage.getItem('read')).slice(JSON.parse(localStorage.getItem('read')).indexOf(`${chapter_id}`),1);
+        } catch(error) {}
+        JSON.parse(localStorage.getItem('read')).push(`${chapter_id}`);
     }
+
+    // create 4 second timer (that is reset on every run of this function)
+    // once the timer completes it then sends read/un-read chapters to mangadex
+    // which then saves to account - and the cycle continues
+    if (force != true) {
+        // reset timer
+        window.clearTimeout(send_read);
+        // start new 4s timer
+        window.setTimeout(send_read,4000)
+    }
+}
+
+// send off read/un-read chapters
+function send_read() {
+    // define xhr GET
+    const sr_xhr = new XMLHttpRequest();
+    const sr_url = `https://api.mangadex.org/manga/${manga}/read`;
+    sr_xhr.open('POST', sr_url, true);
+    sr_xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+
+    console.log(read,unread)
+
+    // send
+    sr_xhr.send(JSON.stringify({
+        "chapterIdsRead": [
+            `${read}`
+        ],
+        "chapterIdsUnread": [
+            `${unread}`
+        ]
+    }));
 }
