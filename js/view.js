@@ -19,6 +19,24 @@ const contentrating_string = {
     'pornographic': 'NSFW'
 }
 
+// reading status
+const readstatus_string = {
+    'reading': 'Reading',
+    'on_hold': 'On Hold',
+    'plan_to_read': 'Plan To Read',
+    'dropped': 'Dropped',
+    're_reading': 'Re-reading',
+    'completed': 'Completed'
+}
+const readstatus_icon = {
+    'reading': 'book',
+    'on_hold': 'pause-circle',
+    'plan_to_read': 'clock',
+    'dropped': 'stop-circle',
+    're_reading': 'book',
+    'completed': 'check-circle'
+}
+
 // pass manga id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -147,6 +165,9 @@ function get_general(data_pass) {
 
     // buttons
     em_mangadex.href = `https://mangadex.org/title/${manga}`;
+
+    // reading status
+    read_status();
 }
 
 function get_relationships(data_pass) {
@@ -255,4 +276,39 @@ function get_error() {
         </span>
     </div>
     `);
+}
+
+// reading status
+function read_status() {
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga/${manga}/status`;
+    xhr.open('GET', url, true);
+
+
+    // on request
+    xhr.onload = function() {
+        let data = JSON.parse(this.response);
+
+        // spec
+        // - reading
+        // - on_hold
+        // - plan_to_read
+        // - dropped
+        // - re_reading
+        // - completed
+
+        console.log(data.status)
+
+        em_readstatus.setAttribute('title',`${readstatus_string[data.status]}`);
+        em_readstatus.innerHTML = (`
+        <i class=icon w-24" data-feather="${readstatus_icon[data.status]}">
+        `);
+
+        feather.replace();
+    }
+
+
+    // send
+    xhr.send();
 }
