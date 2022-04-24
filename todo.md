@@ -8,10 +8,10 @@
 - [x] dynamically update page titles via `page-title`
 
 ## auth
-- [ ] fix up auth
-- - [ ] do not attempt to auth with invalid (null?) credentials (with no query parameters on /auth)
-- - [ ] do not require re-authing after 15 minutes (refresh isn't working)
-- - [ ] make a global script (check_auth.js) to check if authorised
+- [x] fix up auth
+- - [x] do not attempt to auth with invalid (null?) credentials (with no query parameters on /auth)
+- - [x] do not require re-authing after 15 minutes (refresh isn't working)
+- - [x] make a global script (check_auth.js) to check if authorised
 
 (have a global function that can be called to check auth and grab token)
 
