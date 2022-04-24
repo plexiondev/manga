@@ -68,8 +68,13 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
         data_parse = JSON.parse(this.response)
 
-        get_general(this.response);
-        get_relationships(this.response);
+        try {
+            get_general(this.response);
+            get_relationships(this.response);
+        } catch(error) {
+            log('error',`${error}`);
+            get_error();
+        }
     }
 
 
@@ -86,8 +91,13 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     console.log(`[ C ] using cached info until ${cached_out}`);
     const data = JSON.parse(localStorage.getItem(`${manga}_view`));
 
-    get_general(localStorage.getItem(`${manga}_view`));
-    get_relationships(localStorage.getItem(`${manga}_view`));
+    try {
+        get_general(localStorage.getItem(`${manga}_view`));
+        get_relationships(localStorage.getItem(`${manga}_view`));
+    } catch(error) {
+        log('error',`${error}`);
+        get_error();
+    }
 
 }
 
