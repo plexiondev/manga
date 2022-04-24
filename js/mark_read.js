@@ -30,7 +30,7 @@ function mark_read(chapter_id_pass,force) {
         // mark as read
         localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add("read");
-        console.log(`[ Y ] marked ${chapter_id} as read`);
+        log('enabled',`Marked ${chapter_id} as read.`,false);
         if (force != true) {
             // append to list
             try {
@@ -42,7 +42,7 @@ function mark_read(chapter_id_pass,force) {
         // mark as unread
         localStorage.removeItem(`${chapter_id}_read`);
         document.getElementById(`mark_${chapter_id}`).classList.remove("read");
-        console.log(`[ Y ] marked ${chapter_id} as unread`);
+        log('enabled',`Marked ${chapter_id} as unread.`,false);
         // append to list
         try {
             JSON.parse(localStorage.getItem('read')).slice(JSON.parse(localStorage.getItem('read')).indexOf(`${chapter_id}`),1);
