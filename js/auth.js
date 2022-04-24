@@ -69,8 +69,6 @@ function create_auth(accept,username,email,password) {
 // parse auth
 function parse_auth(response) {
     log('general',`Done! Parsing auth..`);
-    const idata = JSON.parse(response);
-
 
     // refresh token (and redirect)
     refresh_auth(true);
