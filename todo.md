@@ -12,6 +12,7 @@
 - - [x] do not attempt to auth with invalid (null?) credentials (with no query parameters on /auth)
 - - [x] do not require re-authing after 15 minutes (refresh isn't working)
 - - [x] make a global script (check_auth.js) to check if authorised
+- [ ] display different `Logged in as x` message if un-authorised
 
 (have a global function that can be called to check auth and grab token)
 
