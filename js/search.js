@@ -18,6 +18,21 @@ let em_searchresults = document.getElementById("showing-results");
 let em_mangabg = document.getElementById("manga-bg");
 
 
+// get content rating
+let rating_suggestive = "";
+if (localStorage.getItem('op_show_suggestive') == 1) {
+    rating_suggestive = '&contentRating=suggestive';
+}
+let rating_explicit = "";
+if (localStorage.getItem('op_show_explicit') == 1) {
+    rating_explicit = '&contentRating=explicit';
+}
+let rating_nsfw = "";
+if (localStorage.getItem('op_show_nsfw') == 1) {
+    rating_nsfw = '&contentRating=pornographic';
+}
+
+
 // checks
 if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     
@@ -26,7 +41,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     // do everything
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga?title=${search_req}`;
+    const url = `https://api.mangadex.org/manga?title=${search_req}&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}`;
     log('search',`Searching for ${search_req}..`,false);
     xhr.open('GET', url, true);
 
@@ -72,8 +87,8 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
     // then cache
     now = new Date(now);
-    now.setMinutes ( now.getMinutes() + 60 );
-    log('general',`Cached search until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (1 hr)`,true);
+    now.setMinutes ( now.getMinutes() + 1 );
+    log('general',`Cached search until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (1 min)`,true);
     localStorage.setItem(`${search_req}_search_timeout`, now);
 } else {
     log('general',`Using cached search info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
