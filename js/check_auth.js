@@ -91,5 +91,5 @@ function get_info() {
 
 // embed info
 function embed_info(element) {
-    element.innerHTML = `Logged in as <strong>${localStorage.getItem('token_username')}</strong><br><br><a href="/auth.html">Re-authorise</a>`;
+    element.innerHTML = `Logged in as <strong>${localStorage.getItem('token_username')}</strong><br><br><a href="/auth.html">Re-authorise</a> <a href="javascript:void(0);" onclick="refresh_auth(false)">Refresh token</a>`;
 }
