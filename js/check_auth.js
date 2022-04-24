@@ -24,6 +24,7 @@ function check_auth() {
 // refresh token with mangadex
 function refresh_auth(redirect) {
     log('general',`Refreshing auth!`);
+    // redirect: if after completion, user redirected to /?logged_in=1
 
     // define XHR POST
     const xhr = new XMLHttpRequest();
