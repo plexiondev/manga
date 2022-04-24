@@ -4,7 +4,7 @@
 
 
 let token_cache;
-let now;
+let auth_now;
 
 // run every 3 seconds
 check_auth();
@@ -13,10 +13,10 @@ window.setInterval(check_auth,3000);
 // check auth
 function check_auth() {
     token_cache = localStorage.getItem('token_cache') || "";
-    now = new Date();
+    auth_now = new Date();
     
     // if over 14m (1m below for safety)
-    if (Date.parse(now) >= Date.parse(token_cache) || token_cache == "") {
+    if (Date.parse(auth_now) >= Date.parse(token_cache) || token_cache == "") {
         refresh_auth(false);
     } else {
         console.log('Auth still valid');
@@ -54,10 +54,10 @@ function refresh_auth(redirect) {
     }));
 
     // reset auth cache
-    now = new Date(now);
-    now.setMinutes(now.getMinutes() + 14);
-    log('general',`Authorised again until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (14 min)`);
-    localStorage.setItem('token_cache', now);
+    auth_now = new Date(now);
+    auth_now.setMinutes(now.getMinutes() + 14);
+    log('general',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`);
+    localStorage.setItem('token_cache', auth_now);
 }
 
 
