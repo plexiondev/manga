@@ -16,7 +16,7 @@ const auth_email = auth_url.get('email') || undefined;
 const auth_password = auth_url.get('password') || undefined;
 
 // if values inputted
-if (email != undefined && password != undefined) {
+if (auth_email != undefined && auth_password != undefined) {
     create_auth(0,"",auth_email,auth_password);
 }
 
