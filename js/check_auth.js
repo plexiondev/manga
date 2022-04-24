@@ -43,6 +43,8 @@ function refresh_auth(redirect) {
         localStorage.setItem('token',data.token.session);
         localStorage.setItem('token_refresh',data.token.refresh);
 
+        get_info();
+
         // swap url
         if (redirect == true) { window.location.href = '/?logged_in=1'; };
     }
