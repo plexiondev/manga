@@ -36,13 +36,34 @@ this function can then refresh auth automatically if required (and also display 
 - [x] show tags on view page
 - [ ] add links (from api) to additional pages for manga
 - [ ] add status, content rating, state
-- [ ] add year, created at, updated at, (version?)
+- - [ ] status
+- - [x] content rating
+- - [ ] state
+- [ ] add year, created at, updated at
+- - [ ] original year
+- - [ ] created at
+- - [ ] updated at
 - [x] convert markdown for manga descriptions
 - [x] make api calls for author + artist (/author/${id})
 - [x] allow marking as read manga chapters
 - [ ] if all chapters marked as read, auto-mark volume as read
 - [ ] auto mark chapter as read if finished reading (possibly make option incase prefer manual)
 - [ ] figure out how to work mark read/unread chapters in mark_read.js
+- [ ] show warning if manga does not fit in user's content rating
+
+## authors/artists
+
+- [ ] make pages for authors/artists
+- - [ ] authors
+- - [ ] artists
+- allow searching for authors/artists
+
+## groups
+
+- [ ] make pages for groups
+- - [ ] viewing group description
+- - [ ] viewing group's work (manga scanlations)
+- [ ] allow searching for groups
 
 ## indexing
 
@@ -70,14 +91,14 @@ this function can then refresh auth automatically if required (and also display 
 
 ## settings
 
-- [x] include options for age ratings (eg. NSFW, suggestive) - not sure if possible via api
-- [ ] make age rating settings take effect (eg. related manga, and search?)
-
-## unsure
-
-- [x] implement auth/login systems, which will allow:
-- - [ ] getting last chapter/vol. read from mangadex
-- - [ ] retrieving user's manga follows
-- - [ ] displaying user's home feed in-app
-- - and many more cool things
-- [ ] include a non-authed basic homepage - look into api, can pass in calls where you can create a home page based on a set of preferences you choose (which can be passed in via settings possibly - would be very very cool)
+- [x] include options for age ratings (eg. NSFW, suggestive)
+- [ ] make age rating settings take effect
+- - [ ] related manga
+- - [ ] search
+- - [ ] viewing manga
+- [x] implement auth/login systems
+- - [ ] retrieve user's manga reading status
+- - [ ] retrieve user's home feed
+- - [ ] retrieve user's manga follows
+- - [ ] retrieve user's (group?) follows
+- - [ ] retrieve user's manga ratings
