@@ -18,3 +18,9 @@ To authenticate, head over to [the authentication page](/auth.html) and enter in
 
 This refresh token can then be periodically used every **14 min** to refresh your current session via https://api.mangadex.org/auth/refresh.
 
+Your current session can be viewed in the [settings page](/settings), using https://api.mangadex.org/user/me to get your current user information.
+
+### <i class="icon w-24" data-feather="book"></i> Reading
+
+> Related: [read.js](/js/read.js)
+
