@@ -7,6 +7,20 @@
 - [x] add (temp?) link to mangadex page
 - [x] dynamically update page titles via `page-title`
 
+## auth
+- [ ] fix up auth
+- - [ ] do not attempt to auth with invalid (null?) credentials (with no query parameters on /auth)
+- - [ ] do not require re-authing after 15 minutes (refresh isn't working)
+- - [ ] make a global script (check_auth.js) to check if authorised
+
+(have a global function that can be called to check auth and grab token)
+
+eg. `function grab_token()`
+
+this function can then refresh auth automatically if required (and also display auth in header n stuff)
+
+
+
 ## home
 
 - [x] include page headers
