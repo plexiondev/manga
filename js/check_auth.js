@@ -19,14 +19,14 @@ function check_auth() {
     if (Date.parse(auth_now) >= Date.parse(token_cache) || token_cache == "") {
         refresh_auth(false);
     } else {
-        console.log('Auth still valid');
+        log('auth',`Auth still valid!`,true);
     }
 }
 
 
 // refresh token with mangadex
 function refresh_auth(redirect) {
-    log('general',`Refreshing auth!`);
+    log('auth',`Refreshing auth!`,true);
     // redirect: if after completion, user redirected to /?logged_in=1
 
     // define XHR POST
@@ -56,7 +56,7 @@ function refresh_auth(redirect) {
     // reset auth cache
     auth_now = new Date(auth_now);
     auth_now.setMinutes(auth_now.getMinutes() + 14);
-    log('general',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`);
+    log('auth',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`,true);
     localStorage.setItem('token_cache', auth_now);
 }
 

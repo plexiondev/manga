@@ -22,19 +22,18 @@ let em_mangabg = document.getElementById("manga-bg");
 if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     
     // if exceeded cache
-    console.log("[ C ] sending request - no cache present or reached timeout");
     
     // do everything
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga?title=${search_req}`;
-    console.log(`[...] searching mangadex for ${search_req}`);
+    log('search',`Searching for ${search_req}..`,false);
     xhr.open('GET', url, true);
 
 
     // request is received
     xhr.onload = function() {
-        console.log(`[ Y ] displaying search results for ${search_req} via ${url}`);
+        log('search',`Displaying results for ${search_req}`,true);
 
         // parse
         localStorage.setItem(`${search_req}_search`, this.response);
@@ -74,10 +73,10 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     // then cache
     now = new Date(now);
     now.setMinutes ( now.getMinutes() + 60 );
-    console.log(`[ C ] cached until ${now} (1h)`);
+    log('general',`Cached search until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (1 hr)`,true);
     localStorage.setItem(`${search_req}_search_timeout`, now);
 } else {
-    console.log(`[ C ] using cached info until ${cached_out}`);
+    log('general',`Using cached search info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
     const data = JSON.parse(localStorage.getItem(`${search_req}_search`));
 
     em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
@@ -107,24 +106,21 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
 function get_general(data_pass) {
 
-    console.log(`[ Y ] G: retrieving...`);
+    log('search',`Retrieving general attributes..`,true);
 
     // parse
     const data = JSON.parse(data_pass);
 
     // titles
     em_mangatitle.textContent = data.data.attributes.title.en;
-    console.log(`[ Y ] G: title (${data.data.attributes.title.en})`);
     // edge-case when multiple alt titles
     for (let i in data.data.attributes.altTitles) {
         if (data.data.attributes.altTitles[i].ja != undefined) {
             em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
-            console.log(`[ Y ] G: jp title (${data.data.attributes.altTitles[i].ja})`);
         }
     }
     // desc
     em_mangadesc.textContent = data.data.attributes.description.en;
-    console.log(`[ Y ] G: description`);
 
 
     // buttons
@@ -133,7 +129,7 @@ function get_general(data_pass) {
 
 function get_relationships(data_pass,manga_pass) {
 
-    console.log(`[ Y ] R: retrieving...`);
+    log('search',`Retrieving relationships..`,true);
 
     // parse
     const data_raw = data_pass;
@@ -144,7 +140,6 @@ function get_relationships(data_pass,manga_pass) {
     // relationships
     let relationships = data.data[x].relationships;
     for (let i in relationships) {
-        console.log(`[ Y ] R: found ${relationships[i].type}`);
         if (relationships[i].type == "cover_art") {
             var cover_art = relationships[i].id;
 
@@ -171,13 +166,13 @@ function get_cover(cover_art_pass,manga_pass,data_pass,y) {
         // define xhr GET
         const xhr = new XMLHttpRequest();
         const url = `https://api.mangadex.org/cover/${cover_art}`;
-        console.log(`[...] searching mangadex for ${cover_art} cover art`);
+        log('search',`Searching for ${cover_art} cover art..`,true);
         xhr.open('GET', url, true);
 
 
         // request is received
         xhr.onload = function() {
-            console.log(`[ Y ] found ${cover_art} cover art via ${url}`);
+            log('search',`Found ${cover_art} cover art!`,true);
 
             // parse
             localStorage.setItem(`${manga}_img`, this.response);
@@ -203,12 +198,12 @@ function get_cover(cover_art_pass,manga_pass,data_pass,y) {
         // then cache
         now = new Date(now);
         now.setMinutes ( now.getMinutes() + 120 );
-        console.log(`[ C ] cached until ${now} (2h)`);
+        log('general',`Cached cover until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (2 hr)`,true);
         localStorage.setItem(`${manga}_img_timeout`, now);
 
         create_em(data_raw,cover_url,manga);
     } else {
-        console.log(`[ C ] using cached info until ${cached_out}`);
+        log('general',`Using cached cover info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
         const data = JSON.parse(localStorage.getItem(`${manga}_img`));
 
         // take data
@@ -240,7 +235,7 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     card.href = `view.html?m=${manga}`;
 
     // html
-    console.log(`[ Y ] created (${i})`);
+    log('general',`Created ${i}!`,true);
     card.innerHTML = (`
     <div class="cover">
     <img src="${cover_art_url}" id="${manga}_cover" alt="Cover art">
@@ -256,6 +251,6 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
 
 // empty
 function empty_results() {
-    console.log(`[...] no results`)
+    log('general',`No search results found.`,true);
     document.getElementById("no_results").style.display = `flex`;
 }

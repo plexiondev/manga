@@ -4,7 +4,7 @@
 // parse login form
 function parse_form() {
     create_auth(0,document.getElementById('email'),document.getElementById('password'));
-    log('general',`Accepted input`);
+    log('general',`Accepted input`,true);
 }
 
 // get params
@@ -22,7 +22,7 @@ if (auth_email != undefined && auth_password != undefined) {
 
 // create auth post
 function create_auth(accept,username,email,password) {
-    log('general',`Creating auth..`);
+    log('auth',`Creating auth..`,true);
     // accepts an auth type of:
     // - password & email [0]
     // - password & username [1]
@@ -68,7 +68,7 @@ function create_auth(accept,username,email,password) {
 
 // parse auth
 function parse_auth(response) {
-    log('general',`Done! Parsing auth..`);
+    log('auth',`Done! Parsing auth..`,true);
     const data = JSON.parse(response);
 
     // save token to storage

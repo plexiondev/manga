@@ -5,12 +5,12 @@
 function option(value) {
     if (localStorage.getItem(`op_${value}`) == null || localStorage.getItem(`op_${value}`) == 0) {
         localStorage.setItem(`op_${value}`,1);
-        log('enabled',`Enabled ${value}`);
+        log('enabled',`Enabled ${value}`,false);
         document.getElementById(`${value}`).classList.add('enabled');
         document.body.classList.add(`op_${value}`);
     } else {
         localStorage.setItem(`op_${value}`,0);
-        log('disabled',`Disabled ${value}`);
+        log('disabled',`Disabled ${value}`,false);
         document.getElementById(`${value}`).classList.remove('enabled');
         document.body.classList.remove(`op_${value}`);
     }
@@ -31,7 +31,7 @@ function option_multi(option,value) {
     document.body.classList.add(`op_${option}_${value}`);
 
     localStorage.setItem(`op_${option}`,`${value}`);
-    log('enabled',`Set ${option} to ${value}`);
+    log('enabled',`Set ${option} to ${value}`,false);
 }
 
 // detect upon load
@@ -43,12 +43,12 @@ function onload() {
             if (data.settings[i].type != "switcher") {
                 if (localStorage.getItem(`op_${data.settings[i].option}`) == 1) {
                     document.body.classList.add(`op_${data.settings[i].option}`);
-                    log('enabled',`Auto-enabled ${data.settings[i].option}`);
+                    log('enabled',`Auto-enabled ${data.settings[i].option}`,true);
                 }
             } else if (data.settings[i].type == "switcher") {
                 if (localStorage.getItem(`op_${data.settings[i].option}`) != undefined) {
                     document.body.classList.add(`op_${data.settings[i].option}_${localStorage.getItem(`op_${data.settings[i].option}`)}`);
-                    log('enabled',`Auto-set ${data.settings[i].option} to ${localStorage.getItem(`op_${data.settings[i].option}`)}`);
+                    log('enabled',`Auto-set ${data.settings[i].option} to ${localStorage.getItem(`op_${data.settings[i].option}`)}`,true);
                 }
             }
         }

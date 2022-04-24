@@ -18,19 +18,18 @@ let em_mangachlist = document.getElementById("manga-chapters");
 if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 
     // if exceeded cache
-    console.log("[ C ] sending request - no cache present or reached timeout");
 
     // do everything
     // define xhr GET
     const c_xhr = new XMLHttpRequest();
     const c_url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=${lang}`;
-    log('general',`Searching chapters for ${manga}`);
+    log('search',`Searching chapters for ${manga}`,true);
     c_xhr.open('GET', c_url, true);
 
 
     // request is received
     c_xhr.onload = function () {
-        log('general',`Found ${manga} via ${c_url}`);
+        log('search',`Found ${manga}'s chapters!`,true);
 
         const data = JSON.parse(this.response);
         let v = data.volumes;
@@ -53,10 +52,10 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
     // then cache
     c_now = new Date(c_now);
     c_now.setMinutes(c_now.getMinutes() + 15);
-    log('general',`Cached until ${c_now.getHours()}:${c_now.getMinutes()}:${c_now.getSeconds()} (15 min)`);
+    log('general',`Cached chapter info until ${c_now.getHours()}:${c_now.getMinutes()}:${c_now.getSeconds()} (15 min)`,true);
     localStorage.setItem(`${manga}_chapters_${lang}_timeout`, c_now);
 } else {
-    log('general',`Using cached info until ${new Date(c_cached_out).getHours()}:${new Date(c_cached_out).getMinutes()}:${new Date(c_cached_out).getSeconds()}`);
+    log('general',`Using cached chapter info until ${new Date(c_cached_out).getHours()}:${new Date(c_cached_out).getMinutes()}:${new Date(c_cached_out).getSeconds()}`,true);
 
     const data = JSON.parse(localStorage.getItem(`${manga}_chapters_${lang}`));
     let v = data.volumes;
@@ -157,7 +156,7 @@ function create_chapter(data_pass) {
 
 // empty
 function empty_results() {
-    log('general',`No results`);
+    log('general',`No chapter results found.`,true);
     document.getElementById("no_results").style.display = `flex`;
 }
 

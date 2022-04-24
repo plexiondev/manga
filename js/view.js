@@ -69,19 +69,18 @@ let em_readstatus = document.getElementById('reading_status');
 if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     
     // if exceeded cache
-    console.log("[ C ] sending request - no cache present or reached timeout");
     
     // do everything
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}?includes[]=author&includes[]=artist&includes[]=cover_art&includes[]=manga`;
-    console.log(`[...] searching mangadex for ${manga}`);
+    log('search',`Searching for ${manga} manga..`,true);
     xhr.open('GET', url, true);
 
 
     // request is received
     xhr.onload = function() {
-        console.log(`[ Y ] found ${manga} via ${url}`);
+        log('general',`Found ${manga} manga!`,true);
 
         // parse
         localStorage.setItem(`${manga}_view`, this.response);
@@ -92,7 +91,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
             get_general(this.response);
             get_relationships(this.response);
         } catch(error) {
-            log('error',`${error}`);
+            log('error',`${error}`,true);
             get_error();
         }
     }
@@ -104,18 +103,18 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
     // then cache
     now = new Date(now);
-    now.setMinutes ( now.getMinutes() + 120 );
-    console.log(`[ C ] cached until ${now} (2h)`);
+    now.setMinutes (now.getMinutes() + 120);
+    log('general',`Cached until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (2 hr)`,true);
     localStorage.setItem(`${manga}_view_timeout`, now);
 } else {
-    console.log(`[ C ] using cached info until ${cached_out}`);
+    log('general',`Using cached info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
     const data = JSON.parse(localStorage.getItem(`${manga}_view`));
 
     try {
         get_general(localStorage.getItem(`${manga}_view`));
         get_relationships(localStorage.getItem(`${manga}_view`));
     } catch(error) {
-        log('error',`${error}`);
+        log('error',`${error}`,true);
         get_error();
     }
 
@@ -123,14 +122,13 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
 function get_general(data_pass) {
 
-    console.log(`[ Y ] G: retrieving...`);
+    log('search',`Retrieving general attributes..`,true);
 
     // parse
     const data = JSON.parse(data_pass);
 
     // titles
     em_mangatitle.textContent = data.data.attributes.title.en;
-    console.log(`[ Y ] G: title (${data.data.attributes.title.en})`);
     // page title
     let page_title = document.getElementById("page-title");
     page_title.textContent = `Viewing ${data.data.attributes.title.en}`;
@@ -138,7 +136,6 @@ function get_general(data_pass) {
     for (let i in data.data.attributes.altTitles) {
         if (data.data.attributes.altTitles[i].ja != undefined) {
             em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
-            console.log(`[ Y ] G: jp title (${data.data.attributes.altTitles[i].ja})`);
             // page title
             page_title.textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
         }
@@ -148,7 +145,6 @@ function get_general(data_pass) {
     text = `${data.data.attributes.description.en}`;
     html = converter.makeHtml(text);
     em_mangadesc.innerHTML = `${html}`;
-    console.log(`[ Y ] G: description`);
 
     // content rating
     try {
@@ -172,7 +168,7 @@ function get_general(data_pass) {
 
 function get_relationships(data_pass) {
 
-    console.log(`[ Y ] R: retrieving...`);
+    log('search',`Retrieving relationships..`,true);
 
     // parse
     const data = JSON.parse(data_pass);
@@ -180,7 +176,6 @@ function get_relationships(data_pass) {
     // relationships
     let relationships = data.data.relationships;
     for (let i in relationships) {
-        console.log(`[ Y ] R: found ${relationships[i].type}`);
         if (relationships[i].type == "cover_art") {
             // cover art
 
