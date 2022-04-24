@@ -24,6 +24,9 @@ let em_searchresults = document.getElementById("showing-results");
 // images
 let em_mangabg = document.getElementById("manga-bg");
 
+// page title
+document.getElementById('page-title').textContent = `Searching for ${search_req}`;
+
 
 // get content rating
 let rating_suggestive = "";
