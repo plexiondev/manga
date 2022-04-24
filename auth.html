@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <!-- meta info -->
-    <title translate="no">manga</title>
+    <title translate="no">Authorise with MangaDex</title>
     <meta name="theme-color" content="#003BFF">
     <!-- display -->
     <meta charset="UTF-8">
@@ -40,8 +40,9 @@
     </header>
     <section class="center header padding accent">
         <h1 class="text-56">Authorise with MangaDex</h1>
-        <p class="text-20">Welcome! Search for a manga or get right back into reading.</p>
     </section>
+    <section class="left header no-sep no-align" id="account"></section>
+    <script>document.getElementById('account').innerHTML = `<h4>Account</h4><p>Logged in as <strong>${localStorage.getItem('token_username')}</strong></p><br><br><a href="/auth.html">Re-authorise</a> <a href="javascript:void(0);" onclick="refresh_auth(false)">Refresh token</a>`;</script>
     <section class="left header no-sep no-align" id="overview">
         <h4>Login via MangaDex</h4>
         <br>
