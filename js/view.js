@@ -43,6 +43,8 @@ let em_tags = document.getElementById("tags");
 // images
 let em_mangabg = document.getElementById("manga-bg");
 let em_mangaimg = document.getElementById("manga-img");
+// reading status
+let em_readstatus = document.getElementById('reading_status');
 
 
 // checks
