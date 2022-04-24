@@ -92,8 +92,12 @@ $.get( 'settings.json', function( response ) {
                 </span>
                 <span class="info" id="login_info">
                     <h5 class="text-16">${data.settings[i].name}</h5>
-                    <p id="login_info_temp">Checking login status..</p>
+                    <p>Logged in as <strong>${localStorage.getItem('token_username')}</strong></p>
                 </span>
+            </span>
+            <span class="option">
+                <a role="button" class="button focus" href="/auth.html">Re-authorise</a>
+                <a role="button" class="button focus right" href="javascript:void(0)" onclick="refresh_auth(false)">Refresh token</a>
             </span>
             `);
         } else {
