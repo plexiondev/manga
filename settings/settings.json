@@ -109,10 +109,10 @@
         },
         {
             "category": "dev",
-            "name": "Visual logging",
-            "description": "Soon to become the default, shows logs in top-right.",
-            "option": "visual_logging",
-            "icon": "info"
+            "name": "Show debug logs",
+            "description": "Show lower-level, debugging logs.",
+            "option": "show_debug",
+            "icon": "code"
         }
     ]
 }
