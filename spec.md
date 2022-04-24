@@ -1,14 +1,14 @@
-# General Specs for Manga Viewer
+## General Specs for Manga Viewer
 
 Insight into how each component works together to allow for seamless manga reading. May be helpful if anyone else is looking into the MangaDex API and doesn't know where to begin (or is lost on something).
 
-## <i class="icon w-24" data-feather="link-2"></i> Useful links
+### <i class="icon w-24" data-feather="link-2"></i> Useful links
 
 - [MangaDex](https://mangadex.org/)
 - [MangaDex API](https://api.mangadex.org/swagger)
 - [MangaDex Discord](https://discord.gg/mangadex)
 
-## <i class="icon w-24" data-feather="lock"></i> Authentication
+### <i class="icon w-24" data-feather="lock"></i> Authentication
 
 > Related: [auth.js](/js/auth.js), [check_auth.js](/js/check_auth.js)
 
