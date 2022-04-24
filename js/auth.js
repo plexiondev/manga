@@ -69,6 +69,12 @@ function create_auth(accept,username,email,password) {
 // parse auth
 function parse_auth(response) {
     log('general',`Done! Parsing auth..`);
+    const data = JSON.parse(response);
+
+    // save token to storage
+    localStorage.setItem('token',data.token.session);
+    localStorage.setItem('token_refresh',data.token.refresh);
+
 
     // refresh token (and redirect)
     refresh_auth(true);
