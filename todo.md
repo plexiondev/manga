@@ -94,7 +94,7 @@ this function can then refresh auth automatically if required (and also display 
 - [x] include options for age ratings (eg. NSFW, suggestive)
 - [ ] make age rating settings take effect
 - - [ ] related manga
-- - [ ] search
+- - [x] search
 - - [ ] viewing manga
 - [x] implement auth/login systems
 - - [ ] retrieve user's manga reading status
