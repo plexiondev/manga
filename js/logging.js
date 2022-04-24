@@ -10,7 +10,8 @@ const log_icons = {
     'enabled': 'check-circle',
     'disabled': 'x-circle',
     'debug': 'code',
-    'search': 'search'
+    'search': 'search',
+    'auth': 'lock'
 };
 const log_headers = {
     'general': 'General',
@@ -19,7 +20,8 @@ const log_headers = {
     'enabled': 'Settings',
     'disabled': 'Settings',
     'debug': 'Debug',
-    'search': 'Search'
+    'search': 'Search',
+    'auth': 'Authorisation'
 };
 
 const log_raw_icons = {
@@ -29,7 +31,8 @@ const log_raw_icons = {
     'enabled': '✅',
     'disabled': '❎',
     'debug': '💾',
-    'search': '🔎'
+    'search': '🔎',
+    'auth': '🔒'
 };
 
 function log(type,details,advanced) {
