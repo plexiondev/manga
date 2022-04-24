@@ -249,7 +249,7 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     <div class="info">
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
     <p class="text-16">${data.data[i].attributes.description.en}</p>
-    <label class="tag ${data.data[i].attributes.contentRating}">${rating}</label>
+    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;">${rating}</label>
     </div>
     `);
 
