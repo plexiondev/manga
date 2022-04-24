@@ -7,7 +7,8 @@ let token_cache;
 let now;
 
 // run every 3 seconds
-window.setInterval(check_auth(),3000);
+check_auth();
+window.setInterval(check_auth,3000);
 
 // check auth
 function check_auth() {
@@ -17,7 +18,9 @@ function check_auth() {
     // if over 14m (1m below for safety)
     if (Date.parse(now) >= Date.parse(token_cache) || token_cache == "") {
         refresh_auth(false);
-    } 
+    } else {
+        console.log('Auth still valid');
+    }
 }
 
 
