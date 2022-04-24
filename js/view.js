@@ -239,3 +239,18 @@ function get_relationships(data_pass) {
         em_tags.appendChild(tag);
     }
 }
+
+// on error (404)
+function get_error() {
+    document.getElementById('overview').innerHTML = (`
+    <div class="empty-results" style="display: flex;">
+        <span>
+        <h3>Title not found</h3>
+        <p>The requested title was not found on MangaDex.</p>
+        <br>
+        <br>
+        <label class="over">404</label>
+        </span>
+    </div>
+    `);
+}
