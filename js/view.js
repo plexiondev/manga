@@ -279,6 +279,7 @@ function read_status() {
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}/status`;
     xhr.open('GET', url, true);
+    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
 
 
     // on request
