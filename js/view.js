@@ -26,7 +26,8 @@ const readstatus_string = {
     'plan_to_read': 'Plan To Read',
     'dropped': 'Dropped',
     're_reading': 'Re-reading',
-    'completed': 'Completed'
+    'completed': 'Completed',
+    'add': 'Add to Library'
 }
 const readstatus_icon = {
     'reading': 'book',
@@ -34,7 +35,8 @@ const readstatus_icon = {
     'plan_to_read': 'clock',
     'dropped': 'stop-circle',
     're_reading': 'book',
-    'completed': 'check-circle'
+    'completed': 'check-circle',
+    'add': 'plus-circle'
 }
 
 // pass manga id from url
@@ -293,13 +295,14 @@ function read_status() {
         // - dropped
         // - re_reading
         // - completed
+        
+        let status = data.status;
+        if (status == undefined || status == null) { status = 'add' };
 
-        console.log(data.status)
-
-        em_readstatus.setAttribute('title',`${readstatus_string[data.status]}`);
+        em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
         em_readstatus.setAttribute('onclick',`open_read_status()`);
         em_readstatus.innerHTML = (`
-        <i class="icon w-20" data-feather="${readstatus_icon[data.status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[data.status]}
+        <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
 
         feather.replace();
@@ -359,6 +362,8 @@ function save_read_status() {
         log('enabled',`Saved status as ${status}`,false);
         // clear window
         document.getElementById('window_parent').innerHTML = ``;
+
+        if (status == undefined || status == null) { status = 'add' };
 
         // show on button
         em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
