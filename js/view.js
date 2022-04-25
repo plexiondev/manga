@@ -363,7 +363,7 @@ function save_read_status() {
         // clear window
         document.getElementById('window_parent').innerHTML = ``;
 
-        if (status == undefined || status == null) { status = 'add' };
+        if (status == undefined || status == null || status == 'null') { status = 'add' };
 
         // show on button
         em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
