@@ -393,3 +393,13 @@ blockquote {
 .md-body h3 {
     margin-top: 20px;
 }
+
+
+/* window actions */
+.window .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 5px 0;
+    background-color: var(--b6);
+}

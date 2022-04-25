@@ -297,6 +297,7 @@ function read_status() {
         console.log(data.status)
 
         em_readstatus.setAttribute('title',`${readstatus_string[data.status]}`);
+        em_readstatus.setAttribute('onclick',`open_read_status()`);
         em_readstatus.innerHTML = (`
         <i class="icon w-24" data-feather="${readstatus_icon[data.status]}">
         `);
@@ -307,4 +308,34 @@ function read_status() {
 
     // send
     xhr.send();
+}
+
+// open reading status window
+function open_read_status() {
+    let em_window = document.createElement('span');
+    em_window.classList.add('window');
+
+    em_window.innerHTML = (`
+        <div class="header"><h5>Add to library</h5></div>
+        <div class="info">
+            <p>Modify your reading status.</p>
+            <div class="select">
+                <select name="version" id="version">
+                    <option value="reading">${readstatus_string['reading']}</option>
+                    <option value="on_hold">${readstatus_string['on_hold']}</option>
+                    <option value="plan_to_read">${readstatus_string['plan_to_read']}</option>
+                    <option value="dropped">${readstatus_string['dropped']}</option>
+                    <option value="re_reading">${readstatus_string['re_reading']}</option>
+                    <option value="completed">${readstatus_string['completed']}</option>
+                </select>
+            </div>
+        </div>
+        <div class="actions">
+            <a role="button" class="button focus" onclick="save_read_status()">Save</a>
+        </div>
+    `);
+
+    // append
+    document.getElementById('window_parent').appendChild(em_window);
+    feather.replace();
 }
