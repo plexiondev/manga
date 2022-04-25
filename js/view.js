@@ -314,6 +314,7 @@ function read_status() {
 function open_read_status() {
     let em_window = document.createElement('span');
     em_window.classList.add('window');
+    em_window.setAttribute('id','read_status_window');
 
     em_window.innerHTML = (`
         <div class="header"><h5>Add to library</h5></div>
@@ -343,20 +344,23 @@ function open_read_status() {
 // save reading status (to mangadex)
 function save_read_status() {
     let status = document.getElementById('status').value;
-    console.log(status)
 
     // define xhr POST
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}/status`;
     xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
 
 
-    log('enabled',`Saved status as ${status}`,false);
+    xhr.onload = function() {
+        log('enabled',`Saved status as ${status}`,false);
+        document.getElementById('read_status_window').remove;
+    }
 
 
     // send
     xhr.send(JSON.stringify({
-        status: `${status}`
+        status: status
     }));
 }
