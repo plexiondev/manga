@@ -36,6 +36,7 @@ this function can then refresh auth automatically if required (and also display 
 - [x] allow chapter/volume display to link directly to start of volume's first chapter
 - [x] show tags on view page
 - [ ] add links (from api) to additional pages for manga
+- [x] add user's reading status
 - [ ] add status, content rating, state
 - - [ ] status
 - - [x] content rating
@@ -98,7 +99,7 @@ this function can then refresh auth automatically if required (and also display 
 - - [x] search
 - - [ ] viewing manga
 - [x] implement auth/login systems
-- - [ ] retrieve user's manga reading status
+- - [x] retrieve user's manga reading status
 - - [ ] retrieve user's home feed
 - - [ ] retrieve user's manga follows
 - - [ ] retrieve user's (group?) follows
