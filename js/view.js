@@ -320,7 +320,7 @@ function open_read_status() {
         <div class="info">
             <p>Modify your reading status.</p>
             <div class="select">
-                <select name="version" id="version">
+                <select name="status" id="status">
                     <option value="reading">${readstatus_string['reading']}</option>
                     <option value="on_hold">${readstatus_string['on_hold']}</option>
                     <option value="plan_to_read">${readstatus_string['plan_to_read']}</option>
@@ -338,4 +338,25 @@ function open_read_status() {
     // append
     document.getElementById('window_parent').appendChild(em_window);
     feather.replace();
+}
+
+// save reading status (to mangadex)
+function save_read_status() {
+    let status = document.getElementById('status').value;
+    console.log(status)
+
+    // define xhr POST
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga/${manga}/status`;
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+
+
+    log('enabled',`Saved status as ${status}`,false);
+
+
+    // send
+    xhr.send(JSON.stringify({
+        status: `${status}`
+    }));
 }
