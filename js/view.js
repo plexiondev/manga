@@ -357,6 +357,14 @@ function save_read_status() {
         log('enabled',`Saved status as ${status}`,false);
         // clear window
         document.getElementById('window_parent').innerHTML = ``;
+
+        // show on button
+        em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
+        em_readstatus.innerHTML = (`
+        <i class="icon w-24" data-feather="${readstatus_icon[status]}">
+        `);
+
+        feather.replace();
     }
 
 
