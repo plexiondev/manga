@@ -299,7 +299,7 @@ function read_status() {
         em_readstatus.setAttribute('title',`${readstatus_string[data.status]}`);
         em_readstatus.setAttribute('onclick',`open_read_status()`);
         em_readstatus.innerHTML = (`
-        <i class="icon w-24" data-feather="${readstatus_icon[data.status]}">
+        <i class="icon w-20" data-feather="${readstatus_icon[data.status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[data.status]}
         `);
 
         feather.replace();
@@ -317,9 +317,8 @@ function open_read_status() {
     em_window.setAttribute('id','read_status_window');
 
     em_window.innerHTML = (`
-        <div class="header"><h5>Add to library</h5></div>
-        <div class="info">
-            <p>Modify your reading status.</p>
+        <div class="header" style="text-align: center;"><h5>Reading status</h5></div>
+        <div class="info" style="text-align: center;">
             <div class="select">
                 <select name="status" id="status">
                     <option value="reading">${readstatus_string['reading']}</option>
@@ -328,11 +327,14 @@ function open_read_status() {
                     <option value="dropped">${readstatus_string['dropped']}</option>
                     <option value="re_reading">${readstatus_string['re_reading']}</option>
                     <option value="completed">${readstatus_string['completed']}</option>
+                    <option style="font-size: 10px;" disabled>&nbsp;</option>
+                    <option value="null">Remove from Library</option>
                 </select>
             </div>
         </div>
         <div class="actions">
             <a role="button" class="button focus" onclick="save_read_status()">Save</a>
+            <a role="button" class="button" onclick="exit_read_status()">Cancel</a>
         </div>
     `);
 
@@ -361,7 +363,7 @@ function save_read_status() {
         // show on button
         em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
         em_readstatus.innerHTML = (`
-        <i class="icon w-24" data-feather="${readstatus_icon[status]}">
+        <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
 
         feather.replace();
@@ -372,4 +374,9 @@ function save_read_status() {
     xhr.send(JSON.stringify({
         status: status
     }));
+}
+
+// exit window
+function exit_read_status() {
+    document.getElementById('window_parent').innerHTML = ``;
 }
