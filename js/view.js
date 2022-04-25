@@ -355,7 +355,8 @@ function save_read_status() {
 
     xhr.onload = function() {
         log('enabled',`Saved status as ${status}`,false);
-        document.getElementById('read_status_window').remove;
+        // clear window
+        document.getElementById('window_parent').innerHTML = ``;
     }
 
 
