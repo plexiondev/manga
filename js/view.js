@@ -298,7 +298,7 @@ function read_status() {
 
         em_readstatus.setAttribute('title',`${readstatus_string[data.status]}`);
         em_readstatus.innerHTML = (`
-        <i class=icon w-24" data-feather="${readstatus_icon[data.status]}">
+        <i class="icon w-24" data-feather="${readstatus_icon[data.status]}">
         `);
 
         feather.replace();
