@@ -235,7 +235,7 @@ function get_relationships(data_pass) {
             <h4 class="text-20">${relationships[i].attributes.title.en}</h4>
             <div class="desc-cont">${html}</div>
             <br>
-            <label class="tag">${relationship}</label>
+            <label class="tag ${relationship}">${relationship}</label>
             <label class="tag ${relationships[i].attributes.contentRating}">${rating}</label>
             </div>
             `);

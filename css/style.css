@@ -374,10 +374,15 @@ input.generic {
 
 /* content ratings */
 .tag.suggestive {
-    background-color: #cf650e !important;
+    background-color: #a84e04 !important;
 }
 .tag.pornographic, .tag.erotica, .tag.Sexual_Violence {
     background-color: #cf0e0e !important;
+}
+
+/* other tags */
+.tag.Doujinshi {
+    background-color: #8d21cc !important;
 }
 
 
