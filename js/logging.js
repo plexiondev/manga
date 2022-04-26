@@ -45,7 +45,7 @@ function log(type,details,advanced) {
         // info
         em_log.innerHTML = (`
         <span class="icon"><i class="icon w-32" data-feather="${log_icons[type]}"></i></span>
-        <span class="info"><span><h5>${log_headers[type]}</h5><p>${details}</p></span></span>
+        <span class="info"><span><h5>${log_headers[type]} (debug)</h5><p class="text-15">${details}</p></span></span>
         `);
     
         // append
@@ -57,8 +57,8 @@ function log(type,details,advanced) {
             em_log.classList.add('hide');
             setTimeout(function() {
                 em_log_parent.removeChild(em_log);    
-            }, 200);  
-        }, 4000);
+            }, 190);  
+        }, 5000);
     
         // log to console
         console.log(`[${log_raw_icons[type]}] ${details}`);
@@ -71,7 +71,7 @@ function log(type,details,advanced) {
         // info
         em_log.innerHTML = (`
         <span class="icon"><i class="icon w-32" data-feather="${log_icons[type]}"></i></span>
-        <span class="info"><span><h5>${log_headers[type]}</h5><p>${details}</p></span></span>
+        <span class="info"><span><h5>${log_headers[type]}</h5><p class="text-15">${details}</p></span></span>
         `);
 
         // append
@@ -83,8 +83,8 @@ function log(type,details,advanced) {
             em_log.classList.add('hide');
             setTimeout(function() {
                 em_log_parent.removeChild(em_log);    
-            }, 200);  
-        }, 4000);
+            }, 190);  
+        }, 5000);
 
         // log to console
         console.log(`[${log_raw_icons[type]}] ${details}`);
