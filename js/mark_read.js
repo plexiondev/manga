@@ -30,8 +30,8 @@ function mark_read(chapter_id_pass,force) {
         // mark as read
         localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add("read");
-        log('enabled',`Marked ${chapter_id} as read.`,false);
         if (force != true) {
+            log('enabled',`Marked ${chapter_id} as read.`,false);
             // append to list
             try {
                 unread.slice(unread.indexOf([`${chapter_id}`]),1);
@@ -45,9 +45,9 @@ function mark_read(chapter_id_pass,force) {
         log('enabled',`Marked ${chapter_id} as unread.`,false);
         // append to list
         try {
-            unread.slice(unread.indexOf([`${chapter_id}`]),1);
+            read.slice(unread.indexOf([`${chapter_id}`]),1);
         } catch(error) {}
-        read.push(...[`${chapter_id}`]);
+        unread.push(...[`${chapter_id}`]);
     }
 
     // create 4 second timer (that is reset on every run of this function)
