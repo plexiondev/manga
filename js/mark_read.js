@@ -5,8 +5,8 @@
 
 // TODO possibly store JSON const in localStorage \/
 // TODO for some reason it's currently storing as '[object Object]' (who knows)
-localStorage.setItem('read',{});
-localStorage.setItem('unread',{});
+localStorage.setItem('read',JSON.stringify({}));
+localStorage.setItem('unread',JSON.stringify({}));
 
 // detect upon load
 function check_read(chapter_id_pass) {
