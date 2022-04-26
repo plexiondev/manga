@@ -36,7 +36,7 @@ function mark_read(chapter_id_pass,force) {
             try {
                 unread.slice(unread.indexOf(`${chapter_id}`),1);
             } catch(error) {}
-            unread.push(`${chapter_id}`);
+            unread.push(...[`${chapter_id}`]);
         }
     } else {
         // mark as unread
@@ -45,9 +45,9 @@ function mark_read(chapter_id_pass,force) {
         log('enabled',`Marked ${chapter_id} as unread.`,false);
         // append to list
         try {
-            JSON.parse(localStorage.getItem('read')).slice(JSON.parse(localStorage.getItem('read')).indexOf(`${chapter_id}`),1);
+            read.slice(read.indexOf(`${chapter_id}`),1);
         } catch(error) {}
-        JSON.parse(localStorage.getItem('read')).push(`${chapter_id}`);
+        read.push(...[`${chapter_id}`]);
     }
 
     // create 4 second timer (that is reset on every run of this function)
@@ -67,17 +67,38 @@ function send_read() {
     const sr_xhr = new XMLHttpRequest();
     const sr_url = `https://api.mangadex.org/manga/${manga}/read`;
     sr_xhr.open('POST', sr_url, true);
+    sr_xhr.setRequestHeader('Content-Type', 'application/json');
     sr_xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
 
-    console.log(read,unread)
+    console.log(`Read: ${read}\n\nUnread: ${unread}`);
 
     // send
-    sr_xhr.send(JSON.stringify({
-        "chapterIdsRead": [
-            `${read}`
-        ],
-        "chapterIdsUnread": [
-            `${unread}`
-        ]
-    }));
+    if (read.length > 0 && unread.length > 0) {
+        sr_xhr.send(JSON.stringify({
+            "chapterIdsRead": [
+                `${read}`
+            ],
+            "chapterIdsUnread": [
+                `${unread}`
+            ]
+        }));
+    } else if (read.length > 0 && unread.length >! 0) {
+        sr_xhr.send(JSON.stringify({
+            "chapterIdsRead": [
+                `${read}`
+            ]
+        }));        
+    } else if (read.length >! 0 && unread.length > 0) {
+        sr_xhr.send(JSON.stringify({
+            "chapterIdsUnread": [
+                `${unread}`
+            ]
+        }));
+    } else {
+        log('general',`No items in arrays for marking read/unread.`,true);
+    }
+
+    // clear arrays
+    read = [];
+    unread = [];
 }
