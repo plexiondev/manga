@@ -38,7 +38,7 @@ this function can then refresh auth automatically if required (and also display 
 - [ ] add links (from api) to additional pages for manga
 - [x] add user's reading status
 - [x] add `Cancel` button to reading status window
-- [ ] auto-select user's current reading status in window
+- [x] auto-select user's current reading status in window
 - [ ] add status, content rating, state
 - - [ ] status
 - - [x] content rating
