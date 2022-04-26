@@ -39,6 +39,14 @@ const readstatus_icon = {
     'add': 'plus-circle'
 }
 
+// tags
+const tags_icon = {
+    'safe': 'check',
+    'suggestive': 'alert-circle',
+    'erotica': 'alert-circle',
+    'pornographic': 'alert-octagon'
+}
+
 // pass manga id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -157,7 +165,7 @@ function get_general(data_pass) {
     // create element
     let em_rating = document.createElement('label');
     em_rating.classList.add('tag',`${data.data.attributes.contentRating}`);
-    em_rating.innerHTML = (`${rating}`);
+    em_rating.innerHTML = (`<i class="icon w-16" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}`);
     em_tags.appendChild(em_rating);
 
 
@@ -236,7 +244,7 @@ function get_relationships(data_pass) {
             <div class="desc-cont">${html}</div>
             <br>
             <label class="tag ${relationship}">${relationship}</label>
-            <label class="tag ${relationships[i].attributes.contentRating}">${rating}</label>
+            <label class="tag ${relationships[i].attributes.contentRating}"><i class="icon w-16" data-feather="${tags_icon[`${relationships[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
             </div>
             `);
 
