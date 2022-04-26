@@ -324,14 +324,14 @@ function open_read_status() {
         <div class="info" style="text-align: center;">
             <div class="select">
                 <select name="status" id="status">
-                    <option value="reading">${readstatus_string['reading']}</option>
-                    <option value="on_hold">${readstatus_string['on_hold']}</option>
-                    <option value="plan_to_read">${readstatus_string['plan_to_read']}</option>
-                    <option value="dropped">${readstatus_string['dropped']}</option>
-                    <option value="re_reading">${readstatus_string['re_reading']}</option>
-                    <option value="completed">${readstatus_string['completed']}</option>
+                    <option value="reading" id="op_reading">${readstatus_string['reading']}</option>
+                    <option value="on_hold" id="op_on_hold">${readstatus_string['on_hold']}</option>
+                    <option value="plan_to_read" id="op_plan_to_read">${readstatus_string['plan_to_read']}</option>
+                    <option value="dropped" id="op_dropped">${readstatus_string['dropped']}</option>
+                    <option value="re_reading" id="op_re_reading">${readstatus_string['re_reading']}</option>
+                    <option value="completed" id="op_completed">${readstatus_string['completed']}</option>
                     <option style="font-size: 10px;" disabled>&nbsp;</option>
-                    <option value="null">Remove from Library</option>
+                    <option value="null" id="op_null">Remove from Library</option>
                 </select>
             </div>
         </div>
