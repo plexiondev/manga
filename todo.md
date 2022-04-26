@@ -81,6 +81,9 @@ this function can then refresh auth automatically if required (and also display 
 - [ ] implement chapter picker?
 - [x] allow choosing of volume
 - [ ] automatically move to the next volume/chapter when finished
+- [ ] pre-load all page images
+- - [ ] make seperate image elements for each page
+- - [ ] swap to pages the same as plexion.dev gallery.js
 
 ## styling
 
