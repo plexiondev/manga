@@ -300,7 +300,7 @@ function read_status() {
         if (status == undefined || status == null) { status = 'add' };
 
         em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
-        em_readstatus.setAttribute('onclick',`open_read_status()`);
+        em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
         em_readstatus.innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
@@ -314,7 +314,7 @@ function read_status() {
 }
 
 // open reading status window
-function open_read_status() {
+function open_read_status(status) {
     let em_window = document.createElement('span');
     em_window.classList.add('window');
     em_window.setAttribute('id','read_status_window');
@@ -370,6 +370,7 @@ function save_read_status() {
 
         // show on button
         em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
+        em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
         em_readstatus.innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
