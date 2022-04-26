@@ -33,9 +33,10 @@ function mark_read(chapter_id_pass,force) {
         if (force != true) {
             log('enabled',`Marked ${chapter_id} as read.`,false);
             // append to list
-            try {
-                unread.slice(unread.indexOf([`${chapter_id}`]),1);
-            } catch(error) {}
+            if (unread.includes(`${chapter_id}`)) {
+                console.log(`unread includes ${chapter_id} at ${read.indexOf(`${chapter_id}`)}`);
+                unread.slice(unread.indexOf(`${chapter_id}`),1);
+            }
             read.push(...[`${chapter_id}`]);
         }
     } else {
@@ -44,9 +45,10 @@ function mark_read(chapter_id_pass,force) {
         document.getElementById(`mark_${chapter_id}`).classList.remove("read");
         log('enabled',`Marked ${chapter_id} as unread.`,false);
         // append to list
-        try {
-            read.slice(unread.indexOf([`${chapter_id}`]),1);
-        } catch(error) {}
+        if (read.includes(`${chapter_id}`)) {
+            console.log(`read includes ${chapter_id} at ${unread.indexOf(`${chapter_id}`)}`);
+            read.slice(unread.indexOf(`${chapter_id}`),1);
+        }
         unread.push(...[`${chapter_id}`]);
     }
 

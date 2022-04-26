@@ -171,11 +171,13 @@ function read_chapters() {
 
 
     // request is received
-    r_xhr.onload = function () {
+    r_xhr.onload = function() {
         const data = JSON.parse(this.response);
         
         for (let i in data.data) {
-            mark_read(data.data[i],true);
+            try {
+                mark_read(data.data[i],true);
+            } catch(error) {}
         }
     }
 
