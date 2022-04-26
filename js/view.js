@@ -241,7 +241,9 @@ function get_relationships(data_pass) {
             `);
 
             // append
-            document.getElementById("manga-related").appendChild(related_card);
+            if ((relationships[i].attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') == 1) || (relationships[i].attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') == 1) || (relationships[i].attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') == 1) || (relationships[i].attributes.contentRating == 'safe')) {
+                document.getElementById("manga-related").appendChild(related_card);
+            }
         }
     }
 
