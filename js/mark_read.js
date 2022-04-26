@@ -34,9 +34,9 @@ function mark_read(chapter_id_pass,force) {
         if (force != true) {
             // append to list
             try {
-                unread.slice(unread.indexOf(`${chapter_id}`),1);
+                unread.slice(unread.indexOf([`${chapter_id}`]),1);
             } catch(error) {}
-            unread.push(...[`${chapter_id}`]);
+            read.push(...[`${chapter_id}`]);
         }
     } else {
         // mark as unread
@@ -45,7 +45,7 @@ function mark_read(chapter_id_pass,force) {
         log('enabled',`Marked ${chapter_id} as unread.`,false);
         // append to list
         try {
-            read.slice(read.indexOf(`${chapter_id}`),1);
+            unread.slice(unread.indexOf([`${chapter_id}`]),1);
         } catch(error) {}
         read.push(...[`${chapter_id}`]);
     }
@@ -57,7 +57,7 @@ function mark_read(chapter_id_pass,force) {
         // reset timer
         window.clearTimeout(send_read);
         // start new 4s timer
-        window.setTimeout(send_read,4000)
+        window.setTimeout(send_read,4000);
     }
 }
 
