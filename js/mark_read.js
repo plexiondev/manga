@@ -5,8 +5,8 @@
 
 // TODO possibly store JSON const in localStorage \/
 // TODO for some reason it's currently storing as '[object Object]' (who knows)
-localStorage.setItem('read',JSON.stringify({}));
-localStorage.setItem('unread',JSON.stringify({}));
+var read = [];
+var unread = [];
 
 // detect upon load
 function check_read(chapter_id_pass) {
@@ -34,9 +34,9 @@ function mark_read(chapter_id_pass,force) {
         if (force != true) {
             // append to list
             try {
-                JSON.parse(localStorage.getItem('unread')).slice(JSON.parse(localStorage.getItem('unread')).indexOf(`${chapter_id}`),1);
+                unread.slice(unread.indexOf(`${chapter_id}`),1);
             } catch(error) {}
-            JSON.parse(localStorage.getItem('unread')).push(`${chapter_id}`);
+            unread.push(`${chapter_id}`);
         }
     } else {
         // mark as unread
