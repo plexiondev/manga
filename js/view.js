@@ -313,7 +313,6 @@ function read_status() {
         let status = data.status;
         if (status == undefined || status == null) { status = 'add' };
 
-        em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
         em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
         em_readstatus.innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
@@ -383,7 +382,6 @@ function save_read_status() {
         if (status == undefined || status == null || status == 'null') { status = 'add' };
 
         // show on button
-        em_readstatus.setAttribute('title',`${readstatus_string[status]}`);
         em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
         em_readstatus.innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
