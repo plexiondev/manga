@@ -45,8 +45,8 @@ this function can then refresh auth automatically if required (and also display 
 - - [ ] state
 - [ ] add year, created at, updated at
 - - [ ] original year
-- - [ ] created at
-- - [ ] updated at
+- - [x] created at
+- - [x] updated at
 - [x] convert markdown for manga descriptions
 - [x] make api calls for author + artist (/author/${id})
 - [x] allow marking as read manga chapters

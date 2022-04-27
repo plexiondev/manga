@@ -174,6 +174,10 @@ function get_general(data_pass) {
 
     // reading status
     read_status();
+
+    // info blocks
+    document.getElementById('date_created').innerHTML = (`${new Date(`${data.data.attributes.createdAt}`).toLocaleDateString()}`);
+    document.getElementById('date_updated').innerHTML = (`${new Date(`${data.data.attributes.updatedAt}`).toLocaleDateString()}`);
 }
 
 function get_relationships(data_pass) {
