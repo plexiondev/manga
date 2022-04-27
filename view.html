@@ -48,7 +48,9 @@
     </div>
     <section class="left header no-sep no-align" id="overview">
         <div class="manga-img-wrap">
+            <span class="manga-img-cont">
             <img id="manga-img">
+            </span>
         </div>
         <div class="shift-right">
             <h2 translate="no" id="manga-title"></h2>
@@ -58,12 +60,27 @@
                 <a id="manga-artist" target="_blank" title="Artist"></a>
             </div>
         </div>
-        <p class="text-18" id="manga-desc"></p>
-        <div class="info-blocks" id="info"></div>
-        <div class="tags" id="tags"></div>
         <a role="button" class="button focus left icon con" id="manga-read">Start reading</a>
         <a role="button" class="button" id="reading_status"></a>
         <a role="button" class="button icon ext" id="mangadex" target="_blank">MangaDex</a>
+        <p class="text-18" id="manga-desc"></p>
+        <div class="info-blocks">
+            <div class="dl-wrap">
+                <dl>
+                    <dt>Created</dt>
+                    <dd id="date_created"></dd>
+                </dl>
+                <dl>
+                    <dt>Updated</dt>
+                    <dd id="date_updated"></dd>
+                </dl>
+                <dl>
+                    <dt>Rating</dt>
+                    <dd id="rating"></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="tags" id="tags"></div>
     </section>
     <script src="js/mark_read.js"></script>
     <section class="left header no-sep no-align" id="volumes">

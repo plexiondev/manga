@@ -108,12 +108,20 @@
 #overview {
     position: relative;
 }
-#manga-img {
-    max-width: 190px;
+.manga-img-cont {
+    width: 190px;
+    height: 266px;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: var(--raise-1);
     position: absolute;
     top: -130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#manga-img {
+    width: 190px;
 }
 .manga-img-wrap {
     height: 20px;
