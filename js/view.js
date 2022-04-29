@@ -314,6 +314,7 @@ function read_status() {
         if (status == undefined || status == null) { status = 'add' };
 
         em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
+        em_readstatus.setAttribute('status',`${status}`);
         em_readstatus.innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
@@ -333,7 +334,7 @@ function open_read_status(status) {
     em_window.setAttribute('id','read_status_window');
 
     em_window.innerHTML = (`
-        <div class="header" style="text-align: center;"><h5>Reading status</h5></div>
+        <div class="header" style="text-align: center;"><h4>Reading status</h4></div>
         <div class="info" style="text-align: center;">
             <div class="select">
                 <select name="status" id="status">
@@ -383,6 +384,7 @@ function save_read_status() {
 
         // show on button
         em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
+        em_readstatus.setAttribute('status',`${status}`);
         em_readstatus.innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);

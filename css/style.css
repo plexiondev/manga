@@ -407,6 +407,16 @@ blockquote {
 }
 
 
+/* window */
+.window {
+    overflow: hidden;
+}
+.window .header {
+    padding: 20px 20px 0;
+}
+.window .info {
+    padding: 20px 20px;
+}
 /* window actions */
 .window .actions {
     display: flex;
@@ -414,4 +424,7 @@ blockquote {
     justify-content: space-evenly;
     padding: 5px 0;
     background-color: var(--b6);
+}
+.window .actions .button {
+    flex: 1;
 }
