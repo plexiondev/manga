@@ -6,7 +6,7 @@ function search_manga() {
     request = input.value;
 
     log('search',`Searching for ${request}..`,false);
-    window.location.href = `search.html?q=${request}`;
+    window.location.href = `/search.html?q=${request}`;
 }
 
 // clear search
