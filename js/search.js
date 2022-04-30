@@ -50,88 +50,65 @@ if (localStorage.getItem('op_show_nsfw') == 1) {
     rating_nsfw = '&contentRating[]=pornographic';
 }
 
-
-// checks
-if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
-    
-    // if exceeded cache
-    
-    // do everything
-    // define xhr GET
-    const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga?title=${search_req}&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}`;
-    log('search',`Searching for ${search_req}..`,false);
-    xhr.open('GET', url, true);
+// define xhr GET
+const xhr = new XMLHttpRequest();
+const url = `https://api.mangadex.org/manga?title=${search_req}&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}`;
+log('search',`Searching for ${search_req}..`,false);
+xhr.open('GET', url, true);
 
 
-    // request is received
-    xhr.onload = function() {
-        log('search',`Displaying results for ${search_req}`,true);
+// request is received
+xhr.onload = function() {
+    const data = JSON.parse(this.response);
+    log('search',`Displaying results for ${search_req}`,true);
 
-        // parse
-        localStorage.setItem(`${search_req}_search`, this.response);
-        const data = JSON.parse(this.response);
+    em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
 
-        em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
+    // check results aren't empty
+    if (data.data.length != 0) {
+        for (let i in data.data) {
+            // get manga id
+            var manga = data.data[i].id;
 
-        // check results aren't empty
-        if (data.data.length != 0) {
-            for (let i in data.data) {
-            
-                localStorage.setItem("i",i);
-    
-                // get manga id
-                var manga = data.data[i].id;
-    
-                get_relationships(this.response,manga);
-    
-                // pass cover art into here along with extra info etc.
-    
-                // make layout of cards similar to gsot:
-                // big cover on left, then info on right (all rounded etc.)
-                // possibly include extra info (tags?) n cool stuff
-    
-            }
-        } else {
-            empty_results()
+            get_relationships(this.response,manga,i);
+
         }
-
+    } else {
+        empty_results()
     }
 
-
-    // send
-    xhr.send();
 }
 
-function get_relationships(data_pass,manga_pass) {
+// send
+xhr.send();
+
+function get_relationships(data_pass,manga_pass,i) {
 
     log('search',`Retrieving relationships..`,true);
 
     // parse
     const data_raw = data_pass;
     const data = JSON.parse(data_pass);
-    var x = localStorage.getItem("i");
     var manga = manga_pass;
 
     // relationships
-    let relationships = data.data[x].relationships;
-    for (let i in relationships) {
-        if (relationships[i].type == "cover_art") {
+    let relationships = data.data[i].relationships;
+    for (let n in relationships) {
+        if (relationships[n].type == "cover_art") {
             // cover art
 
             // create url
-            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[i].attributes.fileName}`;
+            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[n].attributes.fileName}`;
 
-            create_em(data_raw,cover_url,manga);
+            create_em(data_raw,cover_url,manga,i);
         }
     }
 }
 
-function create_em(data_pass,cover_url_pass,manga_pass) {
+function create_em(data_pass,cover_url_pass,manga_pass,i) {
 
     const data = JSON.parse(data_pass);
     var cover_art_url = cover_url_pass;
-    var i = localStorage.getItem("i");
     var manga = manga_pass;
 
     // create element
@@ -161,22 +138,24 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     em_info.classList.add('info');
     em_info.innerHTML = (`
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
-    <p class="text-16">${data.data[i].attributes.description.en}</p>
+    <div class="desc-cont"><p class="text-16">${data.data[i].attributes.description.en}</p></div>
     <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" data-feather="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
     `);
 
     // tags
     let tags = data.data[i].attributes.tags;
     for (let i in tags) {
-        // create element
-        let tag = document.createElement('label');
-        tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);
+        if (i < 8) {
+            // create element
+            let tag = document.createElement('label');
+            tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);
 
-        // text
-        tag.textContent = `${tags[i].attributes.name.en}`;
+            // text
+            tag.textContent = `${tags[i].attributes.name.en}`;
 
-        // append
-        em_info.appendChild(tag);
+            // append
+            em_info.appendChild(tag);
+        }
     }
 
     // append
