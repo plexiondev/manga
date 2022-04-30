@@ -96,7 +96,7 @@
     position: absolute;
     top: 0;
 }
-.manga-wrap .manga {
+.manga-wrap .page {
     height: 100%;
     display: flex;
     align-items: center;

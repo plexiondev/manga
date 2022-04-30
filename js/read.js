@@ -17,7 +17,6 @@ var base_url;
 
 // lengths
 let em_manga_page = document.getElementById("chapter");
-let em_manga_page_full = document.getElementById("chapter-length");
 
 
 // no caching, pulling directly from the MangaDex@Home network
@@ -44,23 +43,29 @@ first_xhr.onload = function() {
     log('auth',`Hash: ${hash}`,true);
 
     // grab images
-    if (localStorage.getItem("op_lowq_downloads") == 1) {
+    if (localStorage.getItem('op_lowq_downloads') == 1) {
         for (let i in first_data.chapter.dataSaver) {
             // store in array
             images.push(first_data.chapter.dataSaver[i]);
-            log('general',`Pushed ${first_data.chapter.data[i]}`,true);
+            log('general',`Pushed ${first_data.chapter.dataSaver[i]}`,true);
+
+            // create
+            create_page('dataSaver',`${first_data.chapter.dataSaver[i]}`);
         }
     } else {
         for (let i in first_data.chapter.data) {
             // store in array
             images.push(first_data.chapter.data[i]);
             log('general',`Pushed ${first_data.chapter.data[i]}`,true);
+
+            // create
+            create_page('data',`${first_data.chapter.data[i]}`);
         }
     }
-    console.log(`[ Y ] stored array of images, ${images}`);
-    localStorage.setItem("image_array",images);
-    localStorage.setItem("manga_length",`${images.length}`);
-    em_manga_page_full.textContent = `${images.length -= 1}`;
+
+    // manga length
+    manga_length = `${images.length - 1}`;
+    document.getElementById('chapter-length').textContent = `${manga_length}`;
 
     done = 1;
 }
@@ -71,19 +76,34 @@ function exit() {
     window.location.href = `view.html?m=${manga}`;
 }
 
-// requests to pull images dynamically (will set to specific page number)
-function image(id) {
-    
-    var index = id;
+// create page
+function create_page(type,id) {
+    let em_page = document.createElement('img');
+    em_page.classList.add('page');
+    em_page.alt = 'Page is loading or unavailable';
 
+    // generate url
+    // - base_url   assigned from MD@H
+    // - type       data/dataSaver
+    // - id         page id from MD@H
+    em_page.src = `${base_url}/${type}/${id}?a=${Math.random()}`;
+    
+    // append
+    document.getElementById('manga_wrap').appendChild(em_page);
+}
+
+// read page
+function read_page(id) {
+
+}
+
+// requests to pull images dynamically (will set to specific page number)
+function image(index) {
     em_manga_page.textContent = `${index}`;
 
     let page_title = document.getElementById("page-title");
-    page_title.textContent = `Reading ${index}/${localStorage.getItem("manga_length")}`;
+    page_title.textContent = `Reading ${index}/${manga_length}`;
 
-    // get from local storage
-    let base_url = localStorage.getItem("base_url");
-    let hash = localStorage.getItem("hash");
     let image_length = (localStorage.getItem("manga_length") - 1);
     let image_id = localStorage.getItem(`manga_${id}`);
 
