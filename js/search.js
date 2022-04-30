@@ -29,8 +29,6 @@ let now = new Date();
 // get elements
 let em_searchbody = document.getElementById("search-body");
 let em_searchresults = document.getElementById("showing-results");
-// images
-let em_mangabg = document.getElementById("manga-bg");
 
 // page title
 document.getElementById('page-title').textContent = `Searching for ${search_req}`;
@@ -99,6 +97,7 @@ function get_relationships(data_pass,manga_pass,i) {
 
             // create url
             var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[n].attributes.fileName}`;
+            if (i == 0) { document.getElementById('manga-bg').style = `background-image: url(${cover_url});`; }
 
             create_em(data_raw,cover_url,manga,i);
         }
