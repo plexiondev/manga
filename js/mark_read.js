@@ -27,22 +27,29 @@ function mark_read(chapter_id_pass,force) {
         localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add('read');
         document.getElementById(`mark_${chapter_id}`).setAttribute('read','true');
+
         if (force != true) {
-            log('enabled',`Marked ${chapter_id} as read.`,false);
-            // append to list
-            unread.slice(unread.indexOf(`${chapter_id}`),1);
-            read.push(`${chapter_id}`);
+        // log to user
+        log('enabled',`Marked ${chapter_id} as read.`,false);
+        // remove redundant data
+        read.slice(read.indexOf(`${chapter_id}`),1);
+        unread.slice(unread.indexOf(`${chapter_id}`),1);
+        // append to list
+        read.push(`${chapter_id}`);
         }
     } else {
         // mark as unread
         localStorage.removeItem(`${chapter_id}_read`);
         document.getElementById(`mark_${chapter_id}`).classList.remove('read');
         document.getElementById(`mark_${chapter_id}`).setAttribute('read','false');
+
+        // log to user
         log('enabled',`Marked ${chapter_id} as unread.`,false);
-        // append to list
+        // remove redundant data
+        unread.slice(unread.indexOf(`${chapter_id}`),1);
         read.slice(read.indexOf(`${chapter_id}`),1);
-        unread.push(...[`${chapter_id}`]);
-        console.log(`this is unread pushed now: ${unread}`);
+        // append to list
+        unread.push(`${chapter_id}`);
     }
 
     // create 4 second timer (that is reset on every run of this function)
