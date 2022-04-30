@@ -86,5 +86,20 @@ function send_read(pending_items) {
         pending_items[i].classList.remove('pending_upload');
     }
 
-    
+    let chapterIdsRead = read;
+    let chapterIdsUnread = unread;
+
+    // send
+    if (read.length != 0 && unread.length != 0) {
+        // updates for read & unread
+        sr_xhr.send(JSON.stringify(read,unread));
+    } else if (read.length != 0 && unread.length == 0) {
+        // updates for read only
+        sr_xhr.send(JSON.stringify(read));
+    } else if (read.length == 0 && unread.length != 0) {
+        // updates for unread only
+        sr_xhr.send(JSON.stringify(unread));
+    } else {
+        log('general',`No items in arrays for marking read/unread.`,true);
+    }
 }
