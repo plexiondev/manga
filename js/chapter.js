@@ -143,7 +143,7 @@ function create_chapter(data_pass) {
                 // text
                 chapter_s.innerHTML = (`
                 <button class="mark_read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="false" onclick="mark_read('${chapters_links_array[n]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
-                <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]} (${v[i].volume})</a>
+                <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]}</a>
                 `);
             }
 
@@ -157,7 +157,7 @@ function create_chapter(data_pass) {
         feather.replace();
     }
 
-    read_chapters(read_cache,unread_cache);
+    read_chapters();
 }
 
 // empty
@@ -168,7 +168,7 @@ function empty_results() {
 
 
 // get read chapters
-function read_chapters(read,unread) {
+function read_chapters() {
     // define xhr GET
     const r_xhr = new XMLHttpRequest();
     const r_url = `https://api.mangadex.org/manga/${manga}/read`;
@@ -181,17 +181,21 @@ function read_chapters(read,unread) {
         const data = JSON.parse(this.response);
         
         for (let i in data.data) {
+            // remove from unread (if there)
+            unread_cache.slice(unread_cache.indexOf(`${data.data[i]}`),1);
+            log('general',`Removed ${data.data[i]} from unread.`,true);
+            // append to read & mark read
             try {
-                read.push(`${data.data[i]}`);
+                read_cache.push(`${data.data[i]}`);
                 mark_read(data.data[i],true);
             } catch(error) {}
         }
 
         // cache arrays
-        localStorage.setItem(`${manga}_read_array`,read);
-        localStorage.setItem(`${manga}_unread_array`,unread);
+        localStorage.setItem(`${manga}_read_array`,read_cache);
+        localStorage.setItem(`${manga}_unread_array`,unread_cache);
 
-        console.log(`CACHE\n\nread (${read.length}):\n${read}\n\nunread (${unread.length}):\n${unread}`);
+        console.log(`CACHE\n\nread (${read_cache.length}):\n${read_cache}\n\nunread (${unread_cache.length}):\n${unread_cache}`);
     }
 
 
