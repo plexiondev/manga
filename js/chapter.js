@@ -13,6 +13,11 @@ let c_now = new Date();
 // get elements
 let em_mangachlist = document.getElementById("manga-chapters");
 
+// cached from mangadex
+// initial lists for comparison upon sending data later on
+var read_cache = [];
+var unread_cache = [];
+
 
 // checks
 if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
@@ -121,23 +126,24 @@ function create_chapter(data_pass) {
         let chapter_list = document.createElement("ul");
 
         // show chapters
-        for (let i in chapters_array) {
+        for (let n in chapters_array) {
 
             // create element
             let chapter_s = document.createElement('li');
             chapter_s.classList.add('chapter-embed');
 
-            if (check_read(`${chapters_links_array[i]}`) == 1) {
+            if (check_read(`${chapters_links_array[n]}`) == 1) {
                 // text
                 chapter_s.innerHTML = (`
-                <button class="mark_read read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
-                <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
+                <button class="mark_read read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="true" onclick="mark_read('${chapters_links_array[n]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]}</a>
                 `);
             } else {
+                unread_cache.push(`${chapters_links_array[n]}`);
                 // text
                 chapter_s.innerHTML = (`
-                <button class="mark_read" id="mark_${chapters_links_array[i]}" onclick="mark_read('${chapters_links_array[i]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
-                <a href="read.html?c=${chapters_links_array[i]}&m=${manga}">Chapter ${chapters_array[i]}</a>
+                <button class="mark_read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="false" onclick="mark_read('${chapters_links_array[n]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]} (${v[i].volume})</a>
                 `);
             }
 
@@ -151,7 +157,7 @@ function create_chapter(data_pass) {
         feather.replace();
     }
 
-    read_chapters();
+    read_chapters(read_cache,unread_cache);
 }
 
 // empty
@@ -162,7 +168,7 @@ function empty_results() {
 
 
 // get read chapters
-function read_chapters() {
+function read_chapters(read,unread) {
     // define xhr GET
     const r_xhr = new XMLHttpRequest();
     const r_url = `https://api.mangadex.org/manga/${manga}/read`;
@@ -176,9 +182,16 @@ function read_chapters() {
         
         for (let i in data.data) {
             try {
+                read.push(`${data.data[i]}`);
                 mark_read(data.data[i],true);
             } catch(error) {}
         }
+
+        // cache arrays
+        localStorage.setItem(`${manga}_read_array`,read);
+        localStorage.setItem(`${manga}_unread_array`,unread);
+
+        console.log(`CACHE\n\nread (${read.length}):\n${read}\n\nunread (${unread.length}):\n${unread}`);
     }
 
 

@@ -1,10 +1,6 @@
 // mark chapter as read
 
 
-// TODO figure out how to send off mark read/unread to mangadex (when authed)
-
-// TODO possibly store JSON const in localStorage \/
-// TODO for some reason it's currently storing as '[object Object]' (who knows)
 var read = [];
 var unread = [];
 
@@ -30,26 +26,39 @@ function mark_read(chapter_id_pass,force) {
         // mark as read
         localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add("read");
+        document.getElementById(`mark_${chapter_id}`).setAttribute('read','true');
         if (force != true) {
             log('enabled',`Marked ${chapter_id} as read.`,false);
             // append to list
             if (unread.includes(`${chapter_id}`)) {
                 console.log(`unread includes ${chapter_id} at ${read.indexOf(`${chapter_id}`)}`);
+                console.log(`unread at index: ${unread[`${unread.indexOf(`${chapter_id}`)}`]}`);
+                console.log(`this is unread: ${unread}`);
                 unread.slice(unread.indexOf(`${chapter_id}`),1);
+                console.log(`this is unread now: ${unread}`);
             }
             read.push(...[`${chapter_id}`]);
+            console.log(`this is read pushed now: ${read}`);
         }
     } else {
         // mark as unread
         localStorage.removeItem(`${chapter_id}_read`);
         document.getElementById(`mark_${chapter_id}`).classList.remove("read");
+        document.getElementById(`mark_${chapter_id}`).setAttribute('read','false');
         log('enabled',`Marked ${chapter_id} as unread.`,false);
         // append to list
         if (read.includes(`${chapter_id}`)) {
-            console.log(`read includes ${chapter_id} at ${unread.indexOf(`${chapter_id}`)}`);
-            read.slice(unread.indexOf(`${chapter_id}`),1);
+            let index = unread.indexOf(`${chapter_id}`);
+
+            console.log(`read includes ${chapter_id} at ${index}`);
+            console.log(`read at index: ${read[`${index}`]}`);
+            console.log(`this is read: ${read}`);
+
+            read.slice(index,1);
+            console.log(`this is read now: ${read}`);
         }
         unread.push(...[`${chapter_id}`]);
+        console.log(`this is unread pushed now: ${unread}`);
     }
 
     // create 4 second timer (that is reset on every run of this function)
