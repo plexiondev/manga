@@ -17,9 +17,6 @@ var base_url;
 
 var index = 1;
 
-// lengths
-let em_manga_page = document.getElementById("chapter");
-
 
 // no caching, pulling directly from the MangaDex@Home network
 
@@ -120,6 +117,10 @@ function read_page(id) {
         pages[i].classList.remove('shown');
     }
     pages[index-1].classList.add('shown');
+
+    // info
+    document.getElementById('page-title').textContent = `Reading ${index}/${localStorage.getItem("manga_length")}`;
+    document.getElementById('chapter').textContent = `${index}`;
 }
 
 // auto-show first image
