@@ -407,6 +407,22 @@ blockquote {
 }
 
 
+/* section header */
+section > h4 {
+    border-bottom: 2px solid var(--text-link);
+    display: inline-block;
+}
+section h5:before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: var(--text-link);
+    margin-right: 7px;
+}
+
+
 /* window */
 .window {
     overflow: hidden;
