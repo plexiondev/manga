@@ -438,7 +438,7 @@ section > h4 {
     border-bottom: 2px solid var(--text-link);
     display: inline-block;
 }
-section .chapter-card h5:before {
+section .chapter-card h5:before, h5.main:before {
     content: '';
     display: inline-block;
     width: 3px;
@@ -470,4 +470,49 @@ section .chapter-card h5:before {
 }
 .window .actions .button {
     flex: 1;
+}
+
+
+/* full page cont */
+.cont {
+    display: flex;
+}
+.cont .main {
+    flex: 1;
+}
+:root {
+    --padding: 180px;
+}
+
+/* nav */
+nav {
+    width: 200px;
+    background-color: var(--b6);
+    padding: 80px 10px;
+}
+/* links */
+nav .links li:before {
+    display: none;
+}
+nav .links a {
+    display: flex;
+    padding: 3px 10px;
+    border-radius: 5px;
+    transition: background-color 0.25s, color 0.25s;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+}
+nav .links a:hover, nav .links a:focus {
+    background-color: var(--b5);
+    color: var(--text-head);
+}
+nav .links svg {
+    top: 6px !important;
+    margin-right: 10px;
+}
+/* gap */
+nav hr {
+    margin: 20px 0;
+    border: 1px solid var(--b4);
 }

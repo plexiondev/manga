@@ -25,9 +25,7 @@
     <script src="/js/windows.js"></script>
     <header class="dark">
         <span class="menu left">
-            <span class="dropdown-wrap">
-                <a href="/" aria-label="Return Home" class="option-open"><i class="icon w-28" data-feather="home"></i></a>
-            </span>
+            
         </span>
         <span class="search-wrap">
             <div class="search">
@@ -41,65 +39,71 @@
             </span>
         </span>
     </header>
-    <div class="bg" id="manga-bg">
-        <section class="min header padding">
-            <div class="bg-dark lib-grad"></div>
-        </section>
+    <div class="cont">
+        <nav class="left" id="header"></nav>
+        <script src="/js/header.js"></script>
+        <div class="main">
+            <div class="bg" id="manga-bg">
+                <section class="min header padding">
+                    <div class="bg-dark lib-grad"></div>
+                </section>
+            </div>
+            <section class="left header no-sep no-align" id="overview">
+                <div class="manga-img-wrap">
+                    <a class="manga-img-cont" id="manga-img-link" target="_blank">
+                    <img id="manga-img">
+                    </a>
+                </div>
+                <div class="shift-right">
+                    <h2 translate="no" id="manga-title"></h2>
+                    <h3 translate="no" id="manga-jptitle"></h3>
+                    <div class="creator" id="creators-body">
+                        <a id="manga-author" target="_blank" title="Author" style="margin-left: 0;"></a>
+                        <a id="manga-artist" target="_blank" title="Artist"></a>
+                    </div>
+                </div>
+                <a role="button" class="button focus left icon con" id="manga-read" title="Read the current manga">Start reading</a>
+                <a role="button" class="button" id="reading_status" title="Change your reading status"></a>
+                <a role="button" class="button icon ext" id="mangadex" target="_blank" title="View on MangaDex">MangaDex</a>
+                <p class="text-18" id="manga-desc"></p>
+                <div class="info-blocks">
+                    <div class="dl-wrap">
+                        <dl>
+                            <dt>Created</dt>
+                            <dd id="date_created"></dd>
+                        </dl>
+                        <dl>
+                            <dt>Updated</dt>
+                            <dd id="date_updated"></dd>
+                        </dl>
+                        <dl>
+                            <dt>Rating</dt>
+                            <dd id="rating"></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="tags" id="tags"></div>
+            </section>
+            <script src="js/mark_read.js"></script>
+            <section class="left header no-sep no-align" id="volumes">
+                <h4>Volumes</h4>
+                <div class="empty-results" id="no_results" style="display: none;">
+                    <span>
+                        <h3>Nothing...</h3>
+                        <p>No volumes found for your specified language. Try swapping back to English in the settings.</p>
+                    </span>
+                </div>
+                <div class="chapter-cards" id="manga-chapters"></div>
+            </section>
+            <section class="left header no-sep no-align" id="related">
+                <h4>Related</h4>
+                <div class="cards" id="manga-related" style="padding: 20px 0;"></div>
+            </section>
+            <script src="js/view.js"></script>
+            <script src="js/chapter.js"></script>
+            <script src="js/search_box.js"></script>
+        </div>
     </div>
-    <section class="left header no-sep no-align" id="overview">
-        <div class="manga-img-wrap">
-            <a class="manga-img-cont" id="manga-img-link" target="_blank">
-            <img id="manga-img">
-            </a>
-        </div>
-        <div class="shift-right">
-            <h2 translate="no" id="manga-title"></h2>
-            <h3 translate="no" id="manga-jptitle"></h3>
-            <div class="creator" id="creators-body">
-                <a id="manga-author" target="_blank" title="Author" style="margin-left: 0;"></a>
-                <a id="manga-artist" target="_blank" title="Artist"></a>
-            </div>
-        </div>
-        <a role="button" class="button focus left icon con" id="manga-read" title="Read the current manga">Start reading</a>
-        <a role="button" class="button" id="reading_status" title="Change your reading status"></a>
-        <a role="button" class="button icon ext" id="mangadex" target="_blank" title="View on MangaDex">MangaDex</a>
-        <p class="text-18" id="manga-desc"></p>
-        <div class="info-blocks">
-            <div class="dl-wrap">
-                <dl>
-                    <dt>Created</dt>
-                    <dd id="date_created"></dd>
-                </dl>
-                <dl>
-                    <dt>Updated</dt>
-                    <dd id="date_updated"></dd>
-                </dl>
-                <dl>
-                    <dt>Rating</dt>
-                    <dd id="rating"></dd>
-                </dl>
-            </div>
-        </div>
-        <div class="tags" id="tags"></div>
-    </section>
-    <script src="js/mark_read.js"></script>
-    <section class="left header no-sep no-align" id="volumes">
-        <h4>Volumes</h4>
-        <div class="empty-results" id="no_results" style="display: none;">
-            <span>
-                <h3>Nothing...</h3>
-                <p>No volumes found for your specified language. Try swapping back to English in the settings.</p>
-            </span>
-        </div>
-        <div class="chapter-cards" id="manga-chapters"></div>
-    </section>
-    <section class="left header no-sep no-align" id="related">
-        <h4>Related</h4>
-        <div class="cards" id="manga-related" style="padding: 20px 0;"></div>
-    </section>
-    <script src="js/view.js"></script>
-    <script src="js/chapter.js"></script>
-    <script src="js/search_box.js"></script>
     <footer style="text-align: center; margin-top: 350px;">
         <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
     </footer>
