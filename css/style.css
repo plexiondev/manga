@@ -248,7 +248,7 @@ header .menu.left {
     justify-content: center;
     position: absolute;
     left: 0;
-    width: 100%;
+    width: 400px;
     height: 100%;
 }
 .controls {

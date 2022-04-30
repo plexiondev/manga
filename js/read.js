@@ -63,7 +63,7 @@ first_xhr.onload = function() {
     }
 
     // manga length
-    manga_length = `${images.length - 1}`;
+    manga_length = `${images.length}`;
     document.getElementById('chapter-length').textContent = `${manga_length}`;
 
     done = 1;
@@ -133,3 +133,15 @@ function check_done() {
         setTimeout(check_done, 1);
     }
 }
+
+// detect key input
+$(document).keydown(function(event) {
+    // <
+    if (event.keyCode === 37) {
+        turn_page(-1);
+    }
+    // >
+    if (event.keyCode === 39) {
+        turn_page(1);
+    }
+});
