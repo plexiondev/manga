@@ -1,9 +1,6 @@
 // mark chapter as read
 
 
-var read = [];
-var unread = [];
-
 // detect upon load
 function check_read(chapter_id_pass) {
 
@@ -17,6 +14,11 @@ function check_read(chapter_id_pass) {
     }
 }
 
+// periodically check for upload
+// will check if any items have `pending_upload` as a class
+// this means the current reading state has not been sent to mangadex
+window.setInterval(check_pending,5000);
+
 // mark manga chapter as read
 function mark_read(chapter_id_pass,force) {
 
@@ -29,42 +31,37 @@ function mark_read(chapter_id_pass,force) {
         document.getElementById(`mark_${chapter_id}`).setAttribute('read','true');
 
         if (force != true) {
+        // mark as pending upload
+        document.getElementById(`mark_${chapter_id}`).classList.add('pending_upload');
+
         // log to user
         log('enabled',`Marked ${chapter_id} as read.`,false);
-        // remove redundant data
-        read.slice(read.indexOf(`${chapter_id}`),1);
-        unread.slice(unread.indexOf(`${chapter_id}`),1);
-        // append to list
-        read.push(`${chapter_id}`);
         }
     } else {
         // mark as unread
         localStorage.removeItem(`${chapter_id}_read`);
         document.getElementById(`mark_${chapter_id}`).classList.remove('read');
         document.getElementById(`mark_${chapter_id}`).setAttribute('read','false');
+        
+        // mark as pending upload
+        document.getElementById(`mark_${chapter_id}`).classList.add('pending_upload');
 
         // log to user
         log('enabled',`Marked ${chapter_id} as unread.`,false);
-        // remove redundant data
-        unread.slice(unread.indexOf(`${chapter_id}`),1);
-        read.slice(read.indexOf(`${chapter_id}`),1);
-        // append to list
-        unread.push(`${chapter_id}`);
     }
+}
 
-    // create 4 second timer (that is reset on every run of this function)
-    // once the timer completes it then sends read/un-read chapters to mangadex
-    // which then saves to account - and the cycle continues
-    if (force != true) {
-        // reset timer
-        window.clearTimeout(send_read);
-        // start new 4s timer
-        window.setTimeout(send_read,4000);
+// check if any mark_read pending upload
+function check_pending() {
+    let pending_items = document.getElementsByClassName('pending_upload');
+    
+    if (pending_items.length > 0) {
+        send_read(pending_items);
     }
 }
 
 // send off read/un-read chapters
-function send_read() {
+function send_read(pending_items) {
     // define xhr GET
     const sr_xhr = new XMLHttpRequest();
     const sr_url = `https://api.mangadex.org/manga/${manga}/read`;
@@ -72,38 +69,22 @@ function send_read() {
     sr_xhr.setRequestHeader('Content-Type', 'application/json');
     sr_xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
 
-    console.log(`Read: ${read}\n\nUnread: ${unread}`);
+    // create arrays
+    let read = [];
+    let unread = [];
 
-    // send
-    if (read.length != 0 && unread.length != 0) {
-        // updates for read & unread
-        sr_xhr.send(JSON.stringify({
-            "chapterIdsRead": [
-                `${read}`
-            ],
-            "chapterIdsUnread": [
-                `${unread}`
-            ]
-        }));
-    } else if (read.length != 0 && unread.length == 0) {
-        // updates for read only
-        sr_xhr.send(JSON.stringify({
-            "chapterIdsRead": [
-                `${read}`
-            ]
-        }));        
-    } else if (read.length == 0 && unread.length != 0) {
-        // updates for unread only
-        sr_xhr.send(JSON.stringify({
-            "chapterIdsUnread": [
-                `${unread}`
-            ]
-        }));
-    } else {
-        log('general',`No items in arrays for marking read/unread.`,true);
+    // run over each pending item
+    for (i = 0; i < pending_items.length; i++) {
+        let is_read = pending_items[i].getAttribute('read');
+
+        if (is_read == 'true') {
+            read.push(`${pending_items[i].getAttribute('chapter_id')}`);
+        } else if (is_read == 'false') {
+            unread.push(`${pending_items[i].getAttribute('chapter_id')}`);
+        }
+
+        pending_items[i].classList.remove('pending_upload');
     }
 
-    // clear arrays
-    read = [];
-    unread = [];
+    
 }
