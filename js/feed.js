@@ -50,23 +50,22 @@ function get_relationships(data_pass,manga_pass,i) {
 
     // relationships
     let relationships = data.data[i].relationships;
-    for (let i in relationships) {
-        if (relationships[i].type == "cover_art") {
+    for (let n in relationships) {
+        if (relationships[n].type == "cover_art") {
             // cover art
 
             // create url
-            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[i].attributes.fileName}`;
+            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[n].attributes.fileName}`;
 
-            create_em(data_raw,cover_url,manga);
+            create_em(data_raw,cover_url,manga,i);
         }
     }
 }
 
-function create_em(data_pass,cover_url_pass,manga_pass) {
+function create_em(data_pass,cover_url_pass,manga_pass,i) {
 
     const data = JSON.parse(data_pass);
     var cover_art_url = cover_url_pass;
-    var i = localStorage.getItem("i");
     var manga = manga_pass;
 
     // create element
