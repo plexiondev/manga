@@ -11,4 +11,4 @@ setInterval(function() {
     } else {
         em_window_parent.classList.remove('shown');
     }
-}, 100);
+}, 1);
