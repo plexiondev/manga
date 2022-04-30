@@ -80,7 +80,7 @@ this function can then refresh auth automatically if required (and also display 
 - [x] implement back/forth buttons
 - [ ] implement chapter picker?
 - [x] allow choosing of volume
-- [ ] automatically move to the next volume/chapter when finished
+- [x] automatically move to the next volume/chapter when finished
 - [x] pre-load all page images
 - - [x] make seperate image elements for each page
 - - [x] swap to pages the same as plexion.dev gallery.js

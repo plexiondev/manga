@@ -9,11 +9,15 @@ let chapter_id = query.get('c');
 
 var manga_length = 0;
 var images = [];
+let chapters;
 // auth
 var hash;
 var base_url;
 
 var index = 1;
+
+// aggregate for chapter list
+aggregate();
 
 
 // no caching, pulling directly from the MangaDex@Home network
@@ -103,10 +107,10 @@ function read_page(id) {
 
     // checks
     if (index > pages.length) {
-        index = 1;
+        advance_chapter();
     }
     if (index < 1) {
-        index = pages.length;
+        backtrack_chapter();
     }
 
     // display
@@ -143,3 +147,51 @@ $(document).keydown(function(event) {
         turn_page(1);
     }
 });
+
+// aggregate for chapter list
+function aggregate() {
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=${localStorage.getItem('op_translate_language')}`;
+    xhr.open('GET', url, true);
+
+    // on receival
+    xhr.onload = function() {
+        const data = JSON.parse(this.response);
+
+        chapters = data.volumes;
+    }
+
+    // send
+    xhr.send();
+}
+
+// backtrack chapter
+function backtrack_chapter() {
+    // find position of current chapter
+    for (let n in chapters) {
+        for (let i in chapters[n].chapters) {
+            if (chapters[n].chapters[i].id == chapter_id) {
+                // jackpot
+
+                // locate next chapter
+                window.location.href = `/read.html?c=${chapters[n].chapters[parseInt(i)-1].id}&m=${manga}`;
+            }
+        }
+    }
+}
+
+// advance chapter
+function advance_chapter() {
+    // find position of current chapter
+    for (let n in chapters) {
+        for (let i in chapters[n].chapters) {
+            if (chapters[n].chapters[i].id == chapter_id) {
+                // jackpot
+
+                // locate next chapter
+                window.location.href = `/read.html?c=${chapters[n].chapters[parseInt(i)+1].id}&m=${manga}`;
+            }
+        }
+    }
+}
