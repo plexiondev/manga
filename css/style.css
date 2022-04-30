@@ -340,6 +340,7 @@ input#transl {
     color: var(--text-head) !important;
     border-radius: 5px !important;
     border: 1px solid var(--b3);
+    line-height: 34px;
 }
 .tag:not(:first-child) {
     margin-left: 3px;

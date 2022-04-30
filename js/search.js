@@ -223,7 +223,9 @@ function get_cover(cover_art_pass,manga_pass,data_pass,y) {
         var cover_url = `https://uploads.mangadex.org/covers/${manga}/${filename}`;
 
         // expose on page
-        em_mangabg.style = `background-image: url(${cover_url});`;
+        if (x == 0) {
+            em_mangabg.style = `background-image: url(${cover_url});`;
+        }
         localStorage.setItem(`${manga}_cover_img`,`${cover_url}`);
 
         create_em(data_raw,cover_url,manga);
@@ -257,14 +259,33 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     <div class="cover">
     <img src="${cover_art_url}" id="${manga}_cover" alt="Cover art">
     </div>
-    <div class="info">
+    `);
+
+    // info
+    let em_info = document.createElement('div');
+    em_info.classList.add('info');
+    em_info.innerHTML = (`
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
     <p class="text-16">${data.data[i].attributes.description.en}</p>
     <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" data-feather="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
-    </div>
     `);
 
+    // tags
+    let tags = data.data[i].attributes.tags;
+    for (let i in tags) {
+        // create element
+        let tag = document.createElement('label');
+        tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);
+
+        // text
+        tag.textContent = `${tags[i].attributes.name.en}`;
+
+        // append
+        em_info.appendChild(tag);
+    }
+
     // append
+    card.appendChild(em_info);
     em_searchbody.appendChild(card);
 
     feather.replace();
