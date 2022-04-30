@@ -25,38 +25,22 @@ function mark_read(chapter_id_pass,force) {
     if (localStorage.getItem(`${chapter_id}_read`) == 0 || localStorage.getItem(`${chapter_id}_read`) == null || force == true) {
         // mark as read
         localStorage.setItem(`${chapter_id}_read`,1);
-        document.getElementById(`mark_${chapter_id}`).classList.add("read");
+        document.getElementById(`mark_${chapter_id}`).classList.add('read');
         document.getElementById(`mark_${chapter_id}`).setAttribute('read','true');
         if (force != true) {
             log('enabled',`Marked ${chapter_id} as read.`,false);
             // append to list
-            if (unread.includes(`${chapter_id}`)) {
-                console.log(`unread includes ${chapter_id} at ${read.indexOf(`${chapter_id}`)}`);
-                console.log(`unread at index: ${unread[`${unread.indexOf(`${chapter_id}`)}`]}`);
-                console.log(`this is unread: ${unread}`);
-                unread.slice(unread.indexOf(`${chapter_id}`),1);
-                console.log(`this is unread now: ${unread}`);
-            }
-            read.push(...[`${chapter_id}`]);
-            console.log(`this is read pushed now: ${read}`);
+            unread.slice(unread.indexOf(`${chapter_id}`),1);
+            read.push(`${chapter_id}`);
         }
     } else {
         // mark as unread
         localStorage.removeItem(`${chapter_id}_read`);
-        document.getElementById(`mark_${chapter_id}`).classList.remove("read");
+        document.getElementById(`mark_${chapter_id}`).classList.remove('read');
         document.getElementById(`mark_${chapter_id}`).setAttribute('read','false');
         log('enabled',`Marked ${chapter_id} as unread.`,false);
         // append to list
-        if (read.includes(`${chapter_id}`)) {
-            let index = unread.indexOf(`${chapter_id}`);
-
-            console.log(`read includes ${chapter_id} at ${index}`);
-            console.log(`read at index: ${read[`${index}`]}`);
-            console.log(`this is read: ${read}`);
-
-            read.slice(index,1);
-            console.log(`this is read now: ${read}`);
-        }
+        read.slice(read.indexOf(`${chapter_id}`),1);
         unread.push(...[`${chapter_id}`]);
         console.log(`this is unread pushed now: ${unread}`);
     }
