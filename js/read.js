@@ -6,8 +6,6 @@ const search = window.location.search;
 const query = new URLSearchParams(search);
 let manga = query.get('m');
 let chapter_id = query.get('c');
-// has user read before?
-let chapter = localStorage.getItem("chapter") || null;
 
 var manga_length = 0;
 var images = [];
