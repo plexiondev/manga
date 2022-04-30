@@ -9,12 +9,12 @@ let chapter_id = query.get('c');
 // has user read before?
 let chapter = localStorage.getItem("chapter") || null;
 
-
-// create array for images
+var manga_length = 0;
 var images = [];
+// auth
+var hash;
+var base_url;
 
-// get elements
-let manga_page = document.getElementById("manga");
 // lengths
 let em_manga_page = document.getElementById("chapter");
 let em_manga_page_full = document.getElementById("chapter-length");
@@ -30,35 +30,31 @@ first_xhr.open('GET', first_url, true);
 var done = 0;
 // request is received
 first_xhr.onload = function() {
-    console.log(`[ Y ] received filenames and hash`);
+    log('general',`Received filenames and hash successfully`,true);
 
     // parse
     const first_data = JSON.parse(this.response)
 
     // store base url
-    let base_url = first_data.baseUrl;
-    localStorage.setItem("base_url",base_url);
-    console.log(`[ Y ] base url: ${base_url}`);
+    base_url = first_data.baseUrl;
+    log('auth',`Base URL: ${base_url}`,true);
 
     // store hash
-    let hash = first_data.chapter.hash;
-    localStorage.setItem("hash",hash);
-    console.log(`[ Y ] hash: ${hash}`);
+    hash = first_data.chapter.hash;
+    log('auth',`Hash: ${hash}`,true);
 
     // grab images
     if (localStorage.getItem("op_lowq_downloads") == 1) {
         for (let i in first_data.chapter.dataSaver) {
             // store in array
             images.push(first_data.chapter.dataSaver[i]);
-            localStorage.setItem(`manga_${i}`,`${first_data.chapter.dataSaver[i]}`);
-            console.log(`[ A ] pushed ${first_data.chapter.dataSaver[i]} into images array`);
+            log('general',`Pushed ${first_data.chapter.data[i]}`,true);
         }
     } else {
         for (let i in first_data.chapter.data) {
             // store in array
             images.push(first_data.chapter.data[i]);
-            localStorage.setItem(`manga_${i}`,`${first_data.chapter.data[i]}`);
-            console.log(`[ A ] pushed ${first_data.chapter.data[i]} into images array`);
+            log('general',`Pushed ${first_data.chapter.data[i]}`,true);
         }
     }
     console.log(`[ Y ] stored array of images, ${images}`);
