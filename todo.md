@@ -84,6 +84,7 @@ this function can then refresh auth automatically if required (and also display 
 - [ ] pre-load all page images
 - - [ ] make seperate image elements for each page
 - - [ ] swap to pages the same as plexion.dev gallery.js
+- [ ] add support for cross-linked chapters (not hosted on mangadex) (eg. MangaPlus, https://mangadex.org/title/ac28f3f4-1bfd-491c-8403-0162379f953d)
 
 ## styling
 
