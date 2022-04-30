@@ -412,7 +412,7 @@ section > h4 {
     border-bottom: 2px solid var(--text-link);
     display: inline-block;
 }
-section h5:before {
+section .chapter-card h5:before {
     content: '';
     display: inline-block;
     width: 3px;
