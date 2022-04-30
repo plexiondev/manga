@@ -101,40 +101,6 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
     // send
     xhr.send();
-
-
-    // then cache
-    now = new Date(now);
-    now.setSeconds ( now.getSeconds() + 5 );
-    log('general',`Cached search until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (1 min)`,true);
-    localStorage.setItem(`${search_req}_search_timeout`, now);
-} else {
-    log('general',`Using cached search info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
-    const data = JSON.parse(localStorage.getItem(`${search_req}_search`));
-
-    em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
-
-    if (data.data.length != 0) {
-        for (let i in data.data) {
-            
-            localStorage.setItem("i",i);
-    
-            // get manga id
-            var manga = data.data[i].id;
-    
-            get_relationships(localStorage.getItem(`${search_req}_search`),manga);
-    
-            // pass cover art into here along with extra info etc.
-    
-            // make layout of cards similar to gsot:
-            // big cover on left, then info on right (all rounded etc.)
-            // possibly include extra info (tags?) n cool stuff
-    
-        }
-    } else {
-        empty_results()
-    }
-
 }
 
 function get_relationships(data_pass,manga_pass) {
