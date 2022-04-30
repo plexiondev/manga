@@ -208,6 +208,10 @@ header .menu.left {
     height: 55px;
 }
 
+.cards .manga-card {
+    margin: 0 !important;
+}
+
 /* manga/search cards */
 .manga-card {
     display: flex;
