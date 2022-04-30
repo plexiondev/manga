@@ -39,26 +39,32 @@
             </span>
         </span>
     </header>
-    <div class="bg" id="manga-bg">
-        <section class="min header padding">
-            <div class="bg-dark lib-grad"></div>
-        </section>
-    </div>
-    <section class="left header no-sep no-align">
-        <h4>Search</h4>
-        <br>
-        <br>
-        <h5 class="main" id="showing-results">Shwoing </h5>
-        <div class="search-body" id="search-body"></div>
-        <div class="empty-results" id="no_results" style="display: none;">
-            <span>
-                <h3>Nothing...</h3>
-                <p>Try a different query or combination of key-words.</p>
-            </span>
+    <div class="cont">
+        <nav class="left" id="header"></nav>
+        <script src="/js/header.js"></script>
+        <div class="main">
+            <div class="bg" id="manga-bg">
+                <section class="min header padding">
+                    <div class="bg-dark lib-grad"></div>
+                </section>
+            </div>
+            <section class="left header no-sep no-align">
+                <h4>Search</h4>
+                <br>
+                <br>
+                <h5 class="main" id="showing-results">Shwoing </h5>
+                <div class="search-body" id="search-body"></div>
+                <div class="empty-results" id="no_results" style="display: none;">
+                    <span>
+                        <h3>Nothing...</h3>
+                        <p>Try a different query or combination of key-words.</p>
+                    </span>
+                </div>
+            </section>
+            <script src="js/search.js"></script>
+            <script src="js/search_box.js"></script>
         </div>
-    </section>
-    <script src="js/search.js"></script>
-    <script src="js/search_box.js"></script>
+    </div>
     <footer style="text-align: center; margin-top: 350px;">
         <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
     </footer>

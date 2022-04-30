@@ -39,20 +39,26 @@
             </span>
         </span>
     </header>
-    <section class="center header padding accent">
-        <h1 class="text-48">Manga Documentation</h1>
-    </section>
-    <section class="left header no-align md-body" id="hook"></section>
-    <script>
-        $.get( "/spec.md", function( data ) {
-            var converter = new showdown.Converter();
-            text = `${data}`;
-            html = converter.makeHtml(text);
-            document.getElementById('hook').innerHTML = (`${html}`);
-        },'text');
-    </script>
-    <script src="/js/search_box.js"></script>
-    <script src="/js/accept_auth.js"></script>
+    <div class="cont">
+        <nav class="left" id="header"></nav>
+        <script src="/js/header.js"></script>
+        <div class="main">
+            <section class="center header padding accent">
+                <h1 class="text-48">Manga Documentation</h1>
+            </section>
+            <section class="left header no-align md-body" id="hook"></section>
+            <script>
+                $.get( "/spec.md", function( data ) {
+                    var converter = new showdown.Converter();
+                    text = `${data}`;
+                    html = converter.makeHtml(text);
+                    document.getElementById('hook').innerHTML = (`${html}`);
+                },'text');
+            </script>
+            <script src="/js/search_box.js"></script>
+            <script src="/js/accept_auth.js"></script>
+        </div>
+    </div>
     <footer style="text-align: center; margin-top: 350px;">
         <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
     </footer>

@@ -38,39 +38,45 @@
             </span>
         </span>
     </header>
-    <section class="center header padding accent">
-        <h1 class="text-56">Authorise with MangaDex</h1>
-    </section>
-    <section class="left header no-sep no-align" id="account"></section>
-    <script>document.getElementById('account').innerHTML = `<h4>Account</h4><p>Logged in as <strong>${localStorage.getItem('token_username')}</strong></p><br><br><a href="/auth.html">Re-authorise</a> <a href="javascript:void(0);" onclick="refresh_auth(false)">Refresh token</a>`;</script>
-    <section class="left header no-sep no-align" id="overview">
-        <h4>Login via MangaDex</h4>
-        <br>
-        <br>
-        <form onsubmit="parse_form()">
-            <!--
-            <label class="over" for="username">Username</label>
-            <br>
-            <input class="generic" type="text" id="username" name="username">
-
-            <br>
-            <br>-->
-            <label class="over" for="email">Email</label>
-            <br>
-            <input class="generic" type="email" id="email" name="email">
-
-            <br>
-            <br>
-            <label class="over" for="password">Password</label>
-            <br>
-            <input class="generic" type="password" id="password" name="password">
-
-            <br>
-            <br>
-            <input role="button" class="button focus left icon con" type="submit">
-        </form>
-    </section>
-    <script src="/js/auth.js"></script>
+    <div class="cont">
+        <nav class="left" id="header"></nav>
+        <script src="/js/header.js"></script>
+        <div class="main">
+            <section class="center header padding accent">
+                <h1 class="text-56">Authorise with MangaDex</h1>
+            </section>
+            <section class="left header no-sep no-align" id="account"></section>
+            <script>document.getElementById('account').innerHTML = `<h4>Account</h4><p>Logged in as <strong>${localStorage.getItem('token_username')}</strong></p><br><br><a href="/auth.html">Re-authorise</a> <a href="javascript:void(0);" onclick="refresh_auth(false)">Refresh token</a>`;</script>
+            <section class="left header no-sep no-align" id="overview">
+                <h4>Login via MangaDex</h4>
+                <br>
+                <br>
+                <form onsubmit="parse_form()">
+                    <!--
+                    <label class="over" for="username">Username</label>
+                    <br>
+                    <input class="generic" type="text" id="username" name="username">
+        
+                    <br>
+                    <br>-->
+                    <label class="over" for="email">Email</label>
+                    <br>
+                    <input class="generic" type="email" id="email" name="email">
+        
+                    <br>
+                    <br>
+                    <label class="over" for="password">Password</label>
+                    <br>
+                    <input class="generic" type="password" id="password" name="password">
+        
+                    <br>
+                    <br>
+                    <input role="button" class="button focus left icon con" type="submit">
+                </form>
+            </section>
+            <script src="/js/auth.js"></script>            
+        </div>
+    </div>
     <footer style="text-align: center; margin-top: 350px;">
         <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
     </footer>
