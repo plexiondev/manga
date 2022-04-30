@@ -16,15 +16,13 @@ function clear_search() {
     search();
 }
 
-// enter
+// detect key input
 $("#search").keyup(function(event) {
+    // enter
     if (event.keyCode === 13) {
         $("#search-con").click();
     }
-});
-
-// escape
-$("#search").keyup(function(event) {
+    // escape
     if (event.keyCode === 27) {
         clear_search();
     }
