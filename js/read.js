@@ -15,6 +15,8 @@ var images = [];
 var hash;
 var base_url;
 
+var index = 1;
+
 // lengths
 let em_manga_page = document.getElementById("chapter");
 
@@ -86,41 +88,38 @@ function create_page(type,id) {
     // - base_url   assigned from MD@H
     // - type       data/dataSaver
     // - id         page id from MD@H
-    em_page.src = `${base_url}/${type}/${id}?a=${Math.random()}`;
+    em_page.src = `${base_url}/${type}/${hash}/${id}?a=${Math.random()}`;
     
     // append
     document.getElementById('manga_wrap').appendChild(em_page);
 }
 
-// read page
-function read_page(id) {
-
+// turn page
+function turn_page(i) {
+    read_page(index += i);
 }
 
-// requests to pull images dynamically (will set to specific page number)
-function image(index) {
-    em_manga_page.textContent = `${index}`;
+// read page
+function read_page(id) {
+    // get pages
+    let pages = document.getElementsByClassName('page');
+    var i;
+    index = id;
 
-    let page_title = document.getElementById("page-title");
-    page_title.textContent = `Reading ${index}/${manga_length}`;
-
-    let image_length = (localStorage.getItem("manga_length") - 1);
-    let image_id = localStorage.getItem(`manga_${id}`);
-
-    // if reached end
-    if (index > image_length) {
-
-    } else {
-        console.log(`[...] requested image ${id}`);
-        if (localStorage.getItem("op_lowq_downloads") == 1) {
-            console.log(`[...] user requested dataSaver preset`);
-            var url = `${base_url}/data-saver/${hash}/${image_id}`;
-            manga_page.setAttribute("src",`${url}?a=${Math.random()}`);
-        } else {
-            var url = `${base_url}/data/${hash}/${image_id}`;
-            manga_page.setAttribute("src",`${url}?a=${Math.random()}`);
-        }
+    // checks
+    if (index > pages.length) {
+        index = 1;
     }
+    if (index < 1) {
+        index = pages.length;
+    }
+
+    // display
+    // display
+    for (i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('shown');
+    }
+    pages[index-1].classList.add('shown');
 }
 
 // auto-show first image
@@ -128,7 +127,7 @@ check_done()
 var index = 0;
 function check_done() {
     if (done == 1) {
-        image(0);
+        read_page(1);
     } else {
         setTimeout(check_done, 1);
     }

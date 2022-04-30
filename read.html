@@ -16,16 +16,18 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <body class="dark" style="--accent-page: -4;">
+    <div class="logs" id="log_parent"></div>
+    <script src="/js/logging.js"></script>
     <div class="manga-wrap" id="manga_wrap"></div>
     <div class="controls-wrap">
         <div class="controls">
-            <span id="volume-down" onclick="image(index -= 1);">
+            <span id="volume-down" onclick="turn_page(-1);">
                 <i class="icon w-28" data-feather="arrow-left"></i>
             </span>
             <span id="chapter-control">
                 <strong id="chapter"></strong><p class="sep">/</p><i id="chapter-length"></i>
             </span>
-            <span id="volume-up" onclick="image(index += 1);">
+            <span id="volume-up" onclick="turn_page(1);">
                 <i class="icon w-28" data-feather="arrow-right"></i>
             </span>
         </div>
