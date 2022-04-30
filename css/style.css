@@ -339,6 +339,7 @@ input#transl {
     background-color: var(--b4) !important;
     color: var(--text-head) !important;
     border-radius: 5px !important;
+    border: 1px solid var(--b3);
 }
 .tag:not(:first-child) {
     margin-left: 3px;
@@ -346,8 +347,25 @@ input#transl {
 
 /* related cards */
 .desc-cont {
-    max-height: 150px;
+    height: 100px;
     overflow: hidden;
+}
+.desc-cont:before {
+    --c: var(--b5);
+    z-index: 3;
+    content: '';
+    width: 100%;
+    height: 100%;    
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--c);
+    background: linear-gradient(0deg, var(--c) 0%, rgba(0,0,0,0) 50%);
+    transition: 0.25s;
+}
+
+.manga-card:hover .desc-cont:before, .manga-card:focus .desc-cont:before {
+    opacity: 0;
 }
 
 
@@ -391,7 +409,7 @@ input.generic {
 .tag.suggestive {
     background-color: #a84e04 !important;
 }
-.tag.pornographic, .tag.erotica, .tag.Sexual_Violence {
+.tag.pornographic, .tag.erotica, .tag.Sexual_Violence, .tag.Gore {
     background-color: #cf0e0e !important;
 }
 
