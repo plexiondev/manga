@@ -106,7 +106,7 @@ this function can then refresh auth automatically if required (and also display 
 - - [ ] viewing manga
 - [x] implement auth/login systems
 - - [x] retrieve user's manga reading status
-- - [ ] retrieve user's home feed
-- - [ ] retrieve user's manga follows
+- - [x] retrieve user's home feed
+- - [x] retrieve user's manga follows
 - - [ ] retrieve user's (group?) follows
 - - [ ] retrieve user's manga ratings
