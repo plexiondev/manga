@@ -350,6 +350,7 @@ input#transl {
 .desc-cont {
     height: 100px;
     overflow: hidden;
+    position: relative;
 }
 .desc-cont:before {
     --c: var(--b5);
