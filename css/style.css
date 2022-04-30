@@ -123,6 +123,10 @@
     justify-content: center;
     align-items: center;
 }
+.manga-img-cont:active, .manga-img-cont:hover, .manga-img-cont:focus {
+    top: -130px !important;
+    transform: scale(1.05);
+}
 #manga-img {
     width: 190px;
 }

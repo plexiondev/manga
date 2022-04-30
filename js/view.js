@@ -199,6 +199,7 @@ function get_relationships(data_pass) {
             // expose on page
             em_mangabg.style = `background-image: url(${cover_url});`;
             em_mangaimg.src = `${cover_url}`;
+            document.getElementById('manga-img-link').href = `${cover_url}`;
         } else if (relationships[i].type == "author") {
             // author
             let em_author = document.getElementById("manga-author");
