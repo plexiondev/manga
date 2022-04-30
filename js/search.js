@@ -8,6 +8,14 @@ const contentrating_string = {
     'pornographic': 'NSFW'
 }
 
+// tags
+const tags_icon = {
+    'safe': 'check',
+    'suggestive': 'alert-circle',
+    'erotica': 'alert-circle',
+    'pornographic': 'alert-octagon'
+}
+
 // pass search request
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -97,7 +105,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
     // then cache
     now = new Date(now);
-    now.setMinutes ( now.getMinutes() + 1 );
+    now.setSeconds ( now.getSeconds() + 5 );
     log('general',`Cached search until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (1 min)`,true);
     localStorage.setItem(`${search_req}_search_timeout`, now);
 } else {
@@ -252,11 +260,14 @@ function create_em(data_pass,cover_url_pass,manga_pass) {
     <div class="info">
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
     <p class="text-16">${data.data[i].attributes.description.en}</p>
-    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;">${rating}</label>
+    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" data-feather="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
     </div>
     `);
 
+    // append
     em_searchbody.appendChild(card);
+
+    feather.replace();
 }
 
 // empty
