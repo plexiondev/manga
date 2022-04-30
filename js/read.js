@@ -141,13 +141,13 @@ $(document).keydown(function(event) {
     // <
     if (event.keyCode === 37) {
         turn_page(-1);
+        event.preventDefault();
     }
     // >
     if (event.keyCode === 39) {
         turn_page(1);
+        event.preventDefault();
     }
-
-    event.preventDefault();
 });
 
 // aggregate for chapter list
