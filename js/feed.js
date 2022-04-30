@@ -4,8 +4,9 @@
 
 // define xhr GET
 const xhr = new XMLHttpRequest();
-const url = `https://api.mangadex.org/user/follows/manga/feed?limit=16`;
+const url = `https://api.mangadex.org/user/follows/manga/?includes[]=cover_art&limit=16`;
 xhr.open('GET', url, true);
+xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
 
 // on request
