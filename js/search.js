@@ -59,7 +59,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     // do everything
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga?title=${search_req}&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}`;
+    const url = `https://api.mangadex.org/manga?title=${search_req}&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}`;
     log('search',`Searching for ${search_req}..`,false);
     xhr.open('GET', url, true);
 
@@ -151,84 +151,13 @@ function get_relationships(data_pass,manga_pass) {
     let relationships = data.data[x].relationships;
     for (let i in relationships) {
         if (relationships[i].type == "cover_art") {
-            var cover_art = relationships[i].id;
-
-            get_cover(cover_art,manga,data_raw,x);
-        }
-    }
-}
-
-function get_cover(cover_art_pass,manga_pass,data_pass,y) {
-
-    var cover_art = cover_art_pass;
-    var manga = manga_pass;
-    var data = JSON.parse(data_pass);
-    var data_raw = data_pass;
-    var x = y;
-
-    // cache
-    let cached_out = localStorage.getItem(`${manga}_img_timeout`) || "";
-    let cache = localStorage.getItem(`${manga}_img`) || "";
-    let now = new Date();
-
-    // checks
-    if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "" || cache == "") {
-        // define xhr GET
-        const xhr = new XMLHttpRequest();
-        const url = `https://api.mangadex.org/cover/${cover_art}`;
-        log('search',`Searching for ${cover_art} cover art..`,true);
-        xhr.open('GET', url, true);
-
-
-        // request is received
-        xhr.onload = function() {
-            log('search',`Found ${cover_art} cover art!`,true);
-
-            // parse
-            localStorage.setItem(`${manga}_img`, this.response);
-            const data = JSON.parse(this.response);
-
-            // take data
-            var filename = data.data.attributes.fileName;
+            // cover art
 
             // create url
-            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${filename}`;
+            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[i].attributes.fileName}`;
 
-            // expose on page
-            if (x == 0) {
-                em_mangabg.style = `background-image: url(${cover_url});`;
-            }
-            localStorage.setItem(`${manga}_cover_img`,`${cover_url}`);
-
-            document.getElementById(`${manga}_cover`).src = `${cover_url}`;
+            create_em(data_raw,cover_url,manga);
         }
-        // send
-        xhr.send();
-
-        // then cache
-        now = new Date(now);
-        now.setMinutes ( now.getMinutes() + 120 );
-        log('general',`Cached cover until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (2 hr)`,true);
-        localStorage.setItem(`${manga}_img_timeout`, now);
-
-        create_em(data_raw,cover_url,manga);
-    } else {
-        log('general',`Using cached cover info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
-        const data = JSON.parse(localStorage.getItem(`${manga}_img`));
-
-        // take data
-        var filename = data.data.attributes.fileName;
-
-        // create url
-        var cover_url = `https://uploads.mangadex.org/covers/${manga}/${filename}`;
-
-        // expose on page
-        if (x == 0) {
-            em_mangabg.style = `background-image: url(${cover_url});`;
-        }
-        localStorage.setItem(`${manga}_cover_img`,`${cover_url}`);
-
-        create_em(data_raw,cover_url,manga);
     }
 }
 

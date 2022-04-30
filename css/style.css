@@ -477,7 +477,7 @@ section .chapter-card h5:before, h5.main:before {
 .cont {
     display: flex;
 }
-.cont .main {
+.cont > .main {
     margin-left: 200px;
     flex: 1;
 }
