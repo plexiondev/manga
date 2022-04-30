@@ -478,6 +478,7 @@ section .chapter-card h5:before, h5.main:before {
     display: flex;
 }
 .cont .main {
+    margin-left: 200px;
     flex: 1;
 }
 :root {
@@ -489,6 +490,11 @@ nav {
     width: 200px;
     background-color: var(--b6);
     padding: 80px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
 }
 /* links */
 nav .links li:before {
