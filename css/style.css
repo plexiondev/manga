@@ -231,6 +231,10 @@ header .menu.left {
     height: 100%;
     border-radius: 5px;
 }
+/* info */
+.manga-card .info {
+    overflow: hidden;
+}
 
 /* manga controls */
 .controls-wrap {

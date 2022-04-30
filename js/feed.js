@@ -102,15 +102,17 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     // tags
     let tags = data.data[i].attributes.tags;
     for (let i in tags) {
-        // create element
-        let tag = document.createElement('label');
-        tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);
+        if (i < 2) {
+            // create element
+            let tag = document.createElement('label');
+            tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);
 
-        // text
-        tag.textContent = `${tags[i].attributes.name.en}`;
+            // text
+            tag.textContent = `${tags[i].attributes.name.en}`;
 
-        // append
-        em_info.appendChild(tag);
+            // append
+            em_info.appendChild(tag);
+        }
     }
 
     // append
