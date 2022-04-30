@@ -20,6 +20,7 @@ const tags_icon = {
 const search = window.location.search;
 const query = new URLSearchParams(search);
 let search_req = query.get('q') || "";
+document.getElementById('search').value = `${search_req}`;
 
 // cache
 let cached_out = localStorage.getItem(`${search_req}_search_timeout`) || "";
