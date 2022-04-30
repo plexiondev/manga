@@ -42,6 +42,9 @@
     position: relative;
     bottom: 1px;
 }
+.mark_read[disabled] {
+    cursor: not-allowed !important;
+}
 .mark_read:not(.read) .not_seen {
     display: none;
 }

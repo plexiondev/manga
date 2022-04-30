@@ -135,14 +135,14 @@ function create_chapter(data_pass) {
             if (check_read(`${chapters_links_array[n]}`) == 1) {
                 // text
                 chapter_s.innerHTML = (`
-                <button class="mark_read read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="true" onclick="mark_read('${chapters_links_array[n]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <button class="mark_read read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="true" onclick="mark_read('${chapters_links_array[n]}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
                 <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]}</a>
                 `);
             } else {
                 unread_cache.push(`${chapters_links_array[n]}`);
                 // text
                 chapter_s.innerHTML = (`
-                <button class="mark_read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="false" onclick="mark_read('${chapters_links_array[n]}',false)"><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <button class="mark_read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="false" onclick="mark_read('${chapters_links_array[n]}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
                 <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]}</a>
                 `);
             }
