@@ -123,6 +123,12 @@ function create_chapter(data_pass) {
             let chapter_s = document.createElement('li');
             chapter_s.classList.add('chapter-embed');
 
+            if (n == 0) {
+                if (last_read_id == null) {
+                    document.getElementById('manga_read').href = `read.html?c=${chapters_links_array[n]}&m=${manga}`;
+                }
+            }
+
             if (check_read(`${chapters_links_array[n]}`) == 1) {
                 // text
                 chapter_s.innerHTML = (`
