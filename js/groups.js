@@ -16,6 +16,16 @@ function load_page() {
     xhr.onload = function() {
         const data = JSON.parse(this.response);
         document.getElementById('feed').innerHTML = ``;
+
+        // calculate total
+        var total = Math.round(data.data.total / 18); // 21418 = 1189
+        var page = offset / 18; // 18 = 1
+
+        // pages
+        document.getElementById('advance_pages').innerHTML =
+        (`
+        
+        `);
         
         for (let i in data.data) {
             create_em(this.response,i);
