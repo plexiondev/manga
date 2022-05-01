@@ -7,6 +7,8 @@ function random(min,max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+var set_title = false;
+
 const tags = {
     0: 'b29d6a3d-1569-4e7a-8caf-7557bc92cd5d',
     1: '97893a4c-12af-4dac-b6be-0dffb353568e',
@@ -238,8 +240,9 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
             // text
             tag.textContent = `${tags[i].attributes.name.en}`;
 
-            if (tags[i].id == tag_req) {
+            if (tags[i].id == tag_req && set_title != true) {
                 document.getElementById('tag_msg').innerHTML = `Viewing manga tagged with <label class="tag">${tags[i].attributes.name.en}</label>`;
+                set_title = true;
             }
 
             // append
