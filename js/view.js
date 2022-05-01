@@ -168,6 +168,10 @@ function get_general(data_pass) {
     em_rating.innerHTML = (`<i class="icon w-16" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}`);
     em_tags.appendChild(em_rating);
 
+    // check if content rating matches
+    if ((data.data.attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') != 1) || (data.data.attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') != 1) || (data.data.attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') != 1)) {
+        warn_content_rating(`<label class="tag ${data.data.attributes.contentRating}"><i class="icon w-16" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>`);
+    }
 
     // buttons
     em_mangadex.href = `https://mangadex.org/title/${manga}`;
@@ -403,4 +407,26 @@ function save_read_status() {
 // exit window
 function exit_read_status() {
     document.getElementById('window_parent').innerHTML = ``;
+}
+
+// content rating warning
+function warn_content_rating(type) {
+    let em_window = document.createElement('span');
+    em_window.classList.add('window');
+    em_window.setAttribute('id','warn_content_rating_window');
+
+    em_window.innerHTML = (`
+        <div class="header" style="text-align: center;"><h4>Content warning</h4></div>
+        <div class="info" style="text-align: center;">
+            <p>This manga contains content you have filtered out.</p>
+            ${type}
+        </div>
+        <div class="actions">
+        <a role="button" class="button focus" onclick="history.back()">Go back</a>
+            <a role="button" class="button" onclick="exit_read_status()">Continue</a>
+        </div>
+    `);
+
+    // append
+    document.getElementById('window_parent').appendChild(em_window);
 }
