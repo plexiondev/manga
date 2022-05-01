@@ -6,6 +6,7 @@ document.getElementById('header').innerHTML =
 <span class="links" id="header_links">
     <ul>
     <li><a href="javascript:void(0)" onclick="history.back()"><i class="icon w-20" data-feather="arrow-left"></i>Back</a></li>
+    <li><a href="javascript:void(0)" onclick="location.reload()"><i class="icon w-20" data-feather="repeat"></i>Reload</a></li>
     </ul>
     <hr>
     <ul>
