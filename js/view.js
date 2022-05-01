@@ -52,7 +52,9 @@ const search = window.location.search;
 const query = new URLSearchParams(search);
 let manga = query.get('m');
 // has user read before?
-let chapter = localStorage.getItem("chapter") || null;
+var last_read_volume = localStorage.getItem(`${manga}_read_volume`) || null;
+var last_read_chapter = localStorage.getItem(`${manga}_read_chapter`) || null;
+var last_read_id = localStorage.getItem(`${manga}_read_id`) || null;
 
 // cache
 let cached_out = localStorage.getItem(`${manga}_view_timeout`) || "";
