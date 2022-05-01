@@ -102,10 +102,6 @@ function create_chapter(data_pass) {
         for (let x in chapters_parent) {
             chapters_links_array.push(chapters_parent[x].id);
         }
-        
-        if (last_read_id == null) {
-            document.getElementById('manga_read').href = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
-        }
 
         // html
         card.innerHTML = (`
@@ -122,8 +118,9 @@ function create_chapter(data_pass) {
             // create element
             let chapter_s = document.createElement('li');
             chapter_s.classList.add('chapter-embed');
+            console.log(i,n)
 
-            if (n == 0) {
+            if (i == 1 && n == 0) {
                 if (last_read_id == null) {
                     document.getElementById('manga_read').href = `read.html?c=${chapters_links_array[n]}&m=${manga}`;
                 }
