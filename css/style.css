@@ -494,6 +494,7 @@ section .chapter-card h5:before, h5.main:before {
 }
 :root {
     --padding: 180px;
+    --highlight-padding: 180px;
 }
 
 /* nav */
@@ -562,4 +563,9 @@ nav hr {
 }
 .nav-manga button:hover, .nav-manga button:focus {
     background-color: var(--b5);
+}
+
+/* settings */
+#settings {
+    display: initial;
 }

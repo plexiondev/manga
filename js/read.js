@@ -217,6 +217,10 @@ document.getElementById('header').innerHTML =
     <li><a href="https://github.com/plexiondev/manga"><i class="icon w-20" data-feather="external-link"></i>View Source</a></li>
     <li><a href="/settings"><i class="icon w-20" data-feather="settings"></i>Settings</a></li>
     </ul>
+    <hr>
+    <ul>
+    <li><a href="javascript:void(0)" onclick="exit()"><i class="icon w-20" data-feather="arrow-left-circle"></i>Return</a></li>
+    </ul>
 </span>
 `);
 
