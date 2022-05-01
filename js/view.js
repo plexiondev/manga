@@ -153,6 +153,7 @@ function get_general(data_pass) {
     // desc
     var converter = new showdown.Converter();
     text = `${data.data.attributes.description.en}`;
+    if (text == 'undefined') { text = '' }
     html = converter.makeHtml(text);
     em_mangadesc.innerHTML = `${html}`;
 
@@ -244,6 +245,7 @@ function get_relationships(data_pass) {
             // description
             var converter = new showdown.Converter();
             text = `${relationships[i].attributes.description.en}`;
+            if (text == 'undefined') { text = '' }
             html = converter.makeHtml(text);
 
             // text

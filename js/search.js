@@ -133,12 +133,18 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     </div>
     `);
 
+    // description
+    var converter = new showdown.Converter();
+    text = `${data.data[i].attributes.description.en}`;
+    if (text == 'undefined') { text = '' }
+    html = converter.makeHtml(text);
+
     // info
     let em_info = document.createElement('div');
     em_info.classList.add('info');
     em_info.innerHTML = (`
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
-    <div class="desc-cont"><p class="text-16">${data.data[i].attributes.description.en}</p></div>
+    <div class="desc-cont text-16">${html}</div>
     <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" data-feather="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
     `);
 
