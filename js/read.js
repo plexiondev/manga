@@ -197,9 +197,25 @@ function advance_chapter() {
                 // jackpot
 
                 // locate next chapter
-                window.location.href = `/read.html?c=${chapters[n].chapters[parseInt(i)+1].id}&m=${manga}`;
+                try {
+                    let next_chapter = `${chapters[n].chapters[parseInt(i)+1].id}`;
+                    window.location.href = `/read.html?c=${next_chapter}&m=${manga}`;
+                } catch(error) {
+                    // no more chapters, advance volume
+                    advance_volume(n);
+                }
             }
         }
+    }
+}
+
+// advance volume
+function advance_volume(volume) {
+    // find position of current volume
+    for (let i in chapters[parseInt(volume)+1].chapters) {
+            let next_chapter = chapters[parseInt(volume)+1].chapters[i].id;
+            window.location.href = `/read.html?c=${next_chapter}&m=${manga}`;
+            break
     }
 }
 
