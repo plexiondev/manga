@@ -29,6 +29,17 @@
                 <h4 class="main">Groups</h4>
             </section>
             <div class="cards" id="feed"></div>
+            <section class="center">
+                <div class="advance">
+                    <button onclick="advance_page(-1);">
+                        <i class="icon w-20" data-feather="arrow-left"></i>
+                    </button>
+                    <span class="pages" id="advance_pages"></span>
+                    <button onclick="advance_page(1);">
+                        <i class="icon w-20" data-feather="arrow-right"></i>
+                    </button>
+                </div>
+            </section>
             <script src="/js/groups.js"></script>
             <script src="/js/search_box.js"></script>
             <script src="/js/accept_auth.js"></script>

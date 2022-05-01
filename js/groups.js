@@ -1,26 +1,35 @@
 // groups listing
 
 
-// define xhr GET
-const xhr = new XMLHttpRequest();
-const url = `https://api.mangadex.org/group?limit=18`;
-xhr.open('GET', url, true);
+var limit = 18;
+var offset = 0;
 
-// on request
-xhr.onload = function() {
-    const data = JSON.parse(this.response);
-    
-    for (let i in data.data) {
-        create_em(this.response,i);
+load_page();
+
+function load_page() {
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/group?limit=${limit}&offset=${offset}`;
+    xhr.open('GET', url, true);
+
+    // on request
+    xhr.onload = function() {
+        const data = JSON.parse(this.response);
+        document.getElementById('feed').innerHTML = ``;
+        
+        for (let i in data.data) {
+            create_em(this.response,i);
+        }
     }
-}
 
-// send
-xhr.send();
+    // send
+    xhr.send();
+}
 
 function create_em(data_pass,i) {
 
     const data = JSON.parse(data_pass);
+    console.log(data)
 
     // create element
     let card = document.createElement('a');
@@ -50,4 +59,17 @@ function create_em(data_pass,i) {
     document.getElementById('feed').appendChild(card);
 
     feather.replace();
+}
+
+// advance pages
+function advance_page(direction) {
+    if (direction == 1) {
+        offset += 18;
+        log('general',`Advancing forward 1 page (${offset})`,true);
+        load_page();
+    } else {
+        offset -= 18;
+        log('general',`Advancing backward 1 page (${offset})`,true);
+        load_page();
+    }
 }
