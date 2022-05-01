@@ -1,9 +1,9 @@
 // home feed
 // requires auth via auth.js
 
-var limit = 70;
+var limit = 16;
 var offset = 0;
-var top_limit = 140;
+var top_limit = 48;
 
 load_page();
 
@@ -160,7 +160,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
 function advance_page(direction) {
     if (direction == 1) {
         offset += limit;
-        if (offset <= 3600) {
+        if (offset <= top_limit) {
             log('general',`Advancing forward 1 page (${offset})`,true);
             load_page();
         } else {
@@ -181,7 +181,7 @@ function advance_page(direction) {
 function set_page(page) {
     offset_temp = offset;
     offset = page;
-    if (offset >= 0 && offset <= 3600) {
+    if (offset >= 0 && offset <= top_limit) {
         log('general',`Set page to ${offset}`,true);
         load_page();
     } else {
