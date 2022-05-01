@@ -27,10 +27,24 @@
         <div class="main">
             <section class="center">
                 <h4 class="main">Tags</h4>
-                <h5 id="tag_msg">Viewing manga tagged with </h5>
+                <br>
+                <h5 id="tag_msg">Viewing manga tagged with <label class="tag"></label></h5>
             </section>
             <div class="cards" id="feed"></div>
-            <script src="/js/recent.js"></script>
+            <section class="center">
+                <div class="advance">
+                    <button class="advance" onclick="advance_page(-1);">
+                        <i class="icon w-16" data-feather="chevron-left"></i>
+                        PREV
+                    </button>
+                    <span class="pages" id="advance_pages"></span>
+                    <button class="advance" onclick="advance_page(1);">
+                        NEXT
+                        <i class="icon w-16" data-feather="chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+            <script src="/js/tags.js"></script>
             <script src="/js/search_box.js"></script>
             <script src="/js/accept_auth.js"></script>
         </div>

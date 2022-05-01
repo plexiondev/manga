@@ -4,7 +4,22 @@
 // pass tag request
 const search = window.location.search;
 const query = new URLSearchParams(search);
-let tag = query.get('t') || "";
+let tag_req = query.get('t') || "";
+
+const contentrating_string = {
+    'safe': 'Safe',
+    'suggestive': 'Suggestive',
+    'erotica': 'Erotica',
+    'pornographic': 'NSFW'
+}
+
+// tags
+const tags_icon = {
+    'safe': 'check',
+    'suggestive': 'alert-circle',
+    'erotica': 'alert-circle',
+    'pornographic': 'alert-octagon'
+}
 
 // get content rating
 let rating_suggestive = "";
@@ -29,7 +44,7 @@ load_page();
 function load_page() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga?includedTags[]=${tag}&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}&limit=${limit}&offset=${offset}`;
+    const url = `https://api.mangadex.org/manga?includedTags[]=${tag_req}&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}&limit=${limit}&offset=${offset}`;
     xhr.open('GET', url, true);
 
     // on request
@@ -61,7 +76,7 @@ function load_page() {
             // get manga id
             var manga = data.data[i].id;
 
-            create_em(this.response,manga,i);
+            get_relationships(this.response,manga,i);
         }
     }
 
@@ -145,6 +160,10 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
 
             // text
             tag.textContent = `${tags[i].attributes.name.en}`;
+
+            if (tags[i].id == tag_req) {
+                document.getElementById('tag_msg').innerHTML = `Viewing manga tagged with <label class="tag">${tags[i].attributes.name.en}</label>`;
+            }
 
             // append
             em_info.appendChild(tag);

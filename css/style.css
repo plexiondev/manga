@@ -352,6 +352,7 @@ input#transl {
     border: 1px solid var(--b3);
     line-height: 34px;
     font-size: 14px;
+    text-decoration: none;
 }
 .tag:not(:first-child) {
     margin-left: 3px;

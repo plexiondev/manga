@@ -1,0 +1,3526 @@
+[
+    {
+        "id": "ac28f3f4-1bfd-491c-8403-0162379f953d",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Agravity Boys"
+            },
+            "altTitles": [
+                {
+                    "ru": "Внеземные пацаны"
+                },
+                {
+                    "ja": "アグラビティボーイズ"
+                }
+            ],
+            "description": {
+                "en": "The year 2118… Four young astronauts head out to the stars to find humanity's new frontier…or so they thought! Two days after they depart, earth is devoured by a black hole! Plunged into a destiny they cannot escape, these unique young men reach their destination of Alpha Jumbro and plan to live out the rest of their lives there. How will humanity survive in this wacky space-survival comedy?!  \n\n\n---",
+                "ru": "2118 год… четверо юных астронавтов отправляются покорять новые рубежи человечества… точнее, так им казалось! Через два дня после отправки на Земле устроили ядерную войну, а потом её поглотила чёрная дыра. Оказавшись в лапах неизбежной судьбы, эти юноши достигли точки своего назначения — планеты Альфа Джамбро, и решили прожить там до конца своих дней. Как же выживет человечество в этой безумной комедии о космическом выживании?!"
+            },
+            "isLocked": false,
+            "links": {
+                "al": "113629",
+                "ap": "agravity-boys",
+                "bw": "series/239993",
+                "kt": "55707",
+                "mu": "158809",
+                "amz": "https://www.amazon.co.jp/dp/B0855D38T8",
+                "cdj": "https://www.cdjapan.co.jp/product/NEOBK-2625707",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/584523/",
+                "mal": "123188",
+                "raw": "https://shonenjumpplus.com/episode/3269754496370783987",
+                "engtl": "https://mangaplus.shueisha.co.jp/titles/100077"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "7",
+            "lastChapter": "50.5",
+            "publicationDemographic": "shounen",
+            "status": "completed",
+            "year": 2019,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "256c8bd9-4904-4360-bf4f-508a76d67183",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Sci-Fi"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "36fd93ea-e8b8-445e-b836-358f02b3d33d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Monsters"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Action"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "5fff9cde-849c-4d78-aab0-0d52b2ee1d25",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Survival"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "87cc87cd-a395-47af-b27a-93258283bbc6",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Adventure"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "9ab53f92-3eed-4e9b-903a-917c86035ee3",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Crossdressing"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "dd1f77c5-dea9-4e2b-97ae-224af09caf99",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Monster Girls"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Slice of Life"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e64f6742-c834-471d-8d72-dd51fc02b835",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Aliens"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Supernatural"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2020-04-12T08:03:46+00:00",
+            "updatedAt": "2022-01-25T09:03:16+00:00",
+            "version": 8,
+            "availableTranslatedLanguages": [
+                "ru",
+                "pt-br",
+                "en",
+                "vi",
+                "zh-hk"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "fece46bf-b1f0-4485-8200-11b665f1db91",
+                "type": "author"
+            },
+            {
+                "id": "fece46bf-b1f0-4485-8200-11b665f1db91",
+                "type": "artist"
+            },
+            {
+                "id": "ccabd41e-e8c1-4fef-880f-0f349ad505b8",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "7",
+                    "fileName": "3ef47337-6677-4d3d-bffc-6a5ca48d1dee.jpg",
+                    "locale": "ja",
+                    "createdAt": "2021-11-10T20:04:51+00:00",
+                    "updatedAt": "2021-11-10T20:04:51+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "b49db7e7-0637-462c-9d09-372f5d09de4a",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Ayakashi Triangle"
+            },
+            "altTitles": [
+                {
+                    "ru": "Треугольник Аякаси"
+                },
+                {
+                    "ja": "あやかしトライアングル"
+                }
+            ],
+            "description": {
+                "en": "Ever since he was a boy, Matsuri Kazamaki has worked as an exorcist. Because his childhood friend Suzu Kanade attracts malicious spirits called ayakashi like moths to a flame, Matsuri is tasked with slaying any with ill intentions.   \n  \nOne day, an ayakashi named Shirogane notices the budding romance between these two childhood friends. Eager to both devour Suzu and foil Matsuri’s chance at love, he performs a forbidden spell…  \n  \nThe newest series by Kentaro Yabuki, creator of Black Cat and artist behind To Love Ru and Darling in the Franxx.",
+                "fr": "Depuis son enfance, Matsuri Kazamaki travaille comme exorciste. Parce que son ami d'enfance Suzu Kanade attire à une flamme des esprits malveillants appelés ayakashi comme des papillons de nuit, Matsuri est chargé de tuer tous ceux qui ont de mauvaises intentions. Un jour, un ayakashi nommé Shirogane remarque la romance naissante entre ces deux amis d'enfance. Désireux à la fois de dévorer Suzu et de déjouer les chances de Matsuri de s'aimer, il exécute un sort interdit…",
+                "it": "Il Giappone sembra invaso da misteriosi mostri chiamati Ayakashi, ma a contrastare la minaccia esiste una forza speciale, i ninja esorcisti! Il giovane ninja esorcista Matsuri passa le giornate a combatterli e a proteggere la sua amica d'infanzia Suzu. Quando appare un ayakashi chiamato Shirogane, le cose si stravolgono! Kentaro Yabuki torna su Shonen Jump con una nuova serie fantasy, ricca di ayakashi e romanticismo!",
+                "ru": "Японию начали наводнять таинственные монстры — Аякаси. Ниндзя-экзорцист по имени Мацури неустанно борется с ними изо дня в день, чтобы уберечь себя и свою подругу детства Сузу. Однако, после появления кота-аякаси по имени Широганэ, всё переворачивается с ног на голову!  \nСможет ли наш отважный герой справиться с возникшей напастью? С этого и начинается наше приключение от всеми известного мангаки Кэнтаро Ябуки, который вернулся в Джамп со своей новой фэнтези историей с привкусом романтики!",
+                "pt-br": "Desde menino, Matsuri Kazamaki trabalha como exorcista.  Porque seu amigo de infância Suzu Kanade atrai espíritos maliciosos chamados ayakashi como mariposas para uma chama, Matsuri é encarregado de matar qualquer um com más intenções.\n  \nUm dia, um ayakashi chamado Shirogane percebe o romance entre esses dois amigos de infância.  Ansioso para devorar Suzu e frustrar a chance de amor de Matsuri, ele realiza um feitiço proibido…\n  \n|| A mais nova série de Kentaro Yabuki, criador de Black Cat e artista por trás de To Love Ru e Darling in the Franxx. ||"
+            },
+            "isLocked": false,
+            "links": {
+                "al": "119493",
+                "ap": "ayakashi-triangle",
+                "bw": "series/262963",
+                "kt": "56510",
+                "mu": "168090",
+                "amz": "https://www.amazon.co.jp/dp/B08GFTYPW3",
+                "cdj": "https://www.cdjapan.co.jp/product/NEOBK-2655635",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/607271",
+                "mal": "127545",
+                "raw": "https://shonenjumpplus.com/episode/13933686331667132670",
+                "engtl": "https://mangaplus.shueisha.co.jp/titles/100099"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "shounen",
+            "status": "ongoing",
+            "year": 2020,
+            "contentRating": "suggestive",
+            "tags": [
+                {
+                    "id": "0bc90acb-ccc1-44ca-a34a-b9f3a73259d0",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Reincarnation"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2d1f5d56-a1e5-4d0d-a961-2193588b08ec",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Loli"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "36fd93ea-e8b8-445e-b836-358f02b3d33d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Monsters"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Action"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "39730448-9a5f-48a2-85b0-a70db87b1233",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Demons"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "3bb26d85-09d5-4d2e-880c-c34b974339e9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Ghosts"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Romance"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "489dd859-9b61-4c37-af75-5b18e88daafc",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Ninja"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "799c202e-7daa-44eb-9cf7-8a3c0441531e",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Martial Arts"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "9ab53f92-3eed-4e9b-903a-917c86035ee3",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Crossdressing"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a1f53773-c69a-4ce5-8cab-fffcd90b1565",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Magic"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "School Life"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Slice of Life"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Supernatural"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ee968100-4191-4968-93d3-f82d72be7e46",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Mystery"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2020-08-03T20:29:22+00:00",
+            "updatedAt": "2022-02-03T16:19:24+00:00",
+            "version": 12,
+            "availableTranslatedLanguages": [
+                "pt-br",
+                "fr",
+                "es-la",
+                "id",
+                "en",
+                "ru",
+                "it",
+                "th",
+                "pl"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "a36f5f24-d009-46b5-bee3-b0ceb6a52067",
+                "type": "author"
+            },
+            {
+                "id": "a36f5f24-d009-46b5-bee3-b0ceb6a52067",
+                "type": "artist"
+            },
+            {
+                "id": "69aa2991-e12f-45b9-a75f-5f04861eec3e",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "8",
+                    "fileName": "68964f8e-5634-4fb3-8ce4-ffa18921f9f7.jpg",
+                    "locale": "ja",
+                    "createdAt": "2022-02-01T09:18:45+00:00",
+                    "updatedAt": "2022-02-01T09:18:45+00:00",
+                    "version": 1
+                }
+            },
+            {
+                "id": "0b1fdb85-209f-493d-9d21-b197f7d7d244",
+                "type": "manga",
+                "related": "preserialization"
+            }
+        ]
+    },
+    {
+        "id": "53283f02-80dc-4300-8449-e82acdf20140",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Don't Flirt With His Highness"
+            },
+            "altTitles": [
+                {
+                    "zh": "王爷不能撩"
+                },
+                {
+                    "en": "Entangled with the Duke"
+                },
+                {
+                    "en": "Entangled with the Prince!"
+                },
+                {
+                    "es": "Entangled with the Prince!"
+                },
+                {
+                    "pt": "Não Seduze o Príncipe"
+                },
+                {
+                    "vi": "Vương Gia Không Thể Trêu"
+                },
+                {
+                    "vi": "Wángyé Bùnéng Liāo"
+                },
+                {
+                    "ar": "الأمير لا يستطيع أن يتضايق"
+                },
+                {
+                    "ar": "التّورّط مع الأمير"
+                },
+                {
+                    "th": "ท่านอ๋องแหย่ไม่ได้"
+                },
+                {
+                    "ja": "王様を戯れるな!"
+                },
+                {
+                    "ko": "그를 조심하세영!"
+                }
+            ],
+            "description": {
+                "en": "Waking up in a coffin is bad enough, what more turning into a man! Kneeling on the ground, Lin Han laments and cries out, \"time-traveling isn't fun at all!\""
+            },
+            "isLocked": false,
+            "links": {
+                "mu": "155594",
+                "raw": "https://ac.qq.com/Comic/comicInfo/id/635881",
+                "engtl": "https://www.bilibilicomics.com/detail/mc473?utm_source=mgd&utm_medium=uploader"
+            },
+            "originalLanguage": "zh",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "shoujo",
+            "status": "ongoing",
+            "year": 2018,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "320831a8-4026-470b-94f6-8353740e6f04",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Official Colored"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Long Strip"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Romance"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Full Color"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-03-23T06:47:06+00:00",
+            "updatedAt": "2022-04-12T11:56:02+00:00",
+            "version": 3,
+            "availableTranslatedLanguages": [
+                "en"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "efe4717a-eb36-4fc8-839f-53c589537236",
+                "type": "author"
+            },
+            {
+                "id": "efe4717a-eb36-4fc8-839f-53c589537236",
+                "type": "artist"
+            },
+            {
+                "id": "fc0f5ddb-e89c-4dd7-b17a-cbc0db290622",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "1",
+                    "fileName": "17637043-d1c8-4b0a-a501-6300b47c08ef.jpg",
+                    "locale": "zh",
+                    "createdAt": "2022-04-12T11:56:00+00:00",
+                    "updatedAt": "2022-04-12T11:56:00+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "a4f3ef1e-5450-4a91-844e-67e728a862d1",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Egg of the Elf (Official Colored)"
+            },
+            "altTitles": [
+                {
+                    "zh": "精灵之蛋"
+                },
+                {
+                    "en": "The Balls of the Elves"
+                },
+                {
+                    "en": "The Eggs of the Elves"
+                },
+                {
+                    "en": "The Elven Balls"
+                }
+            ],
+            "description": {
+                "en": "Humans and elves coexisted on the continent. Due to the Demon King’s curse, females will no longer... be born???In order to save the humans, the elves added a new law to the land. This law allowed humans to continue to reproduce, and that law is..."
+            },
+            "isLocked": false,
+            "links": {
+                "mu": "149207",
+                "raw": "https://manga.bilibili.com/detail/mc25547",
+                "engtl": "https://www.bilibilicomics.com/detail/mc480?utm_source=mgd&utm_medium=uploader"
+            },
+            "originalLanguage": "zh",
+            "lastVolume": "",
+            "lastChapter": "80",
+            "publicationDemographic": null,
+            "status": "completed",
+            "year": null,
+            "contentRating": "suggestive",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "320831a8-4026-470b-94f6-8353740e6f04",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Official Colored"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "87cc87cd-a395-47af-b27a-93258283bbc6",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Adventure"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "9ab53f92-3eed-4e9b-903a-917c86035ee3",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Crossdressing"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "aafb99c1-7f60-43fa-b75f-fc9502ce29c7",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Harem"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Fantasy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Web Comic"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Full Color"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-04-19T03:52:44+00:00",
+            "updatedAt": "2022-04-19T15:00:01+00:00",
+            "version": 5,
+            "availableTranslatedLanguages": []
+        },
+        "relationships": [
+            {
+                "id": "293d31a7-0d8a-42e0-9826-b009f50c6aef",
+                "type": "author"
+            },
+            {
+                "id": "293d31a7-0d8a-42e0-9826-b009f50c6aef",
+                "type": "artist"
+            },
+            {
+                "id": "81cd8df5-00a5-4947-86ac-47a67048c217",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "1",
+                    "fileName": "7ca040c1-25df-4b8f-afe3-b42383e43c3e.jpg",
+                    "locale": "zh",
+                    "createdAt": "2022-04-19T14:57:19+00:00",
+                    "updatedAt": "2022-04-19T14:57:19+00:00",
+                    "version": 1
+                }
+            },
+            {
+                "id": "fece2451-336b-4401-9ccd-4b3ea048eabc",
+                "type": "manga",
+                "related": "monochrome"
+            }
+        ]
+    },
+    {
+        "id": "ed996855-70de-449f-bba2-e8e24224c14d",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Onii-chan Is Done For!"
+            },
+            "altTitles": [
+                {
+                    "de": "Ab sofort Schwester!"
+                },
+                {
+                    "ja-ro": "Oniichan ha Oshimai!"
+                },
+                {
+                    "ja": "お兄ちゃんはおしまい!"
+                },
+                {
+                    "en": "ONIMAI: I'm Now Your Sister!"
+                }
+            ],
+            "description": {
+                "de": "[Official German](https://www.manga-jam-session.com/werke-1/ab-sofort-schwester/)",
+                "en": "Mahiro Oyama was just a normal erotic-game loving dude...until he woke up one morning as a woman! Turns out his mad-scientist little sister, Mihari, tried out one of her new experiments on him...with a disastrous outcome, as far as Mahiro's concerned! But Mihari is as determined to study him as he is determined to go back to his shut-in, game-playing life, and one thing's for sure...life is going to get a whole lot weirder from here on out!\n\n*5th place of Tsugi Manga Awards, Category Webmanga  \n  \n- **Retail:** (Direct Retail From the Mangaka)  \n![](https://i.imgur.com/0e9KPgq.png) [Official Melon Books](https://www.melonbooks.co.jp/circle/index.php?circle_id=3753)  \n![](https://i.imgur.com/t9hf4kQ.png) [Official Toranoana](https://ec.toranoana.shop/tora/ec/cot/circle/2UPA116P847KdC6Rd687/all/)  \n![](https://i.imgur.com/lGJEbPa.png) [Official DLSite](https://www.dlsite.com/home/circle/profile/=/maker_id/RG40614.html) (jp)",
+                "pt-br": "Oyama Mahiro, um dia acordou como uma garota graças a sua irmã que colocou uma droga em sua comida, após ter visto eroges a noite toda. Um mangá de comédia sobre um garoto que se transformou em uma mulher."
+            },
+            "isLocked": true,
+            "links": {
+                "al": "100080",
+                "ap": "onii-chan-wa-oshimai",
+                "bw": "series/166038",
+                "kt": "40391",
+                "mu": "146713",
+                "amz": "https://www.amazon.co.jp/dp/B07DXHPJFV",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/462979",
+                "mal": "112592",
+                "raw": "https://www.pixiv.net/user/159912/series/12",
+                "engtl": "https://kodansha.us/series/onimai-im-now-your-sister/"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "seinen",
+            "status": "ongoing",
+            "year": null,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "School Life"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Web Comic"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Slice of Life"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2019-03-04T05:30:23+00:00",
+            "updatedAt": "2022-02-25T14:13:38+00:00",
+            "version": 20,
+            "availableTranslatedLanguages": [
+                "pt-br",
+                "en",
+                "it",
+                "hu",
+                "fr",
+                "ru",
+                "id",
+                "es",
+                "es-la"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "021d5e40-9a35-4df9-8514-e38e0c53f813",
+                "type": "author"
+            },
+            {
+                "id": "021d5e40-9a35-4df9-8514-e38e0c53f813",
+                "type": "artist"
+            },
+            {
+                "id": "8f9944ee-a667-4ff3-b864-ef84e2aef267",
+                "type": "cover_art",
+                "attributes": {
+                    "fileName": "2766d7bc-c2a7-4142-be3e-7ac835d4aa5e.jpg",
+                    "description": "",
+                    "volume": "16",
+                    "locale": "ja",
+                    "version": 2,
+                    "createdAt": "2021-05-23T06:26:23+00:00",
+                    "updatedAt": "2021-05-23T06:26:24+00:00"
+                }
+            },
+            {
+                "id": "027df837-7a15-4893-9dc3-e2ae11b94717",
+                "type": "manga",
+                "related": "side_story"
+            }
+        ]
+    },
+    {
+        "id": "ea8b180c-227b-4e72-b527-73963f7a9bcf",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Asuka Hybrid"
+            },
+            "altTitles": [
+                {
+                    "en": "アスカはいぶりっど"
+                },
+                {
+                    "en": "我被变成妹了"
+                },
+                {
+                    "en": "我被變成妹了"
+                }
+            ],
+            "description": {
+                "en": "Asuka helped someone who turned out to be a witch and as thanks she offered him one wish. He said he had just been put in a women's dorm even though he's a boy. She misinterprets this, turns his body into a girl, and runs away before he can react. He must now attend school as a girl and look for the witch in his spare time so she can change him back."
+            },
+            "isLocked": false,
+            "links": {
+                "al": "45943",
+                "ap": "asuka-hybrid",
+                "bw": "series/174759",
+                "kt": "1918",
+                "mu": "46224",
+                "amz": "https://www.amazon.co.jp/u30a2u30b9u30abu306fu3044u3076u308au3063u3069-1u5dfb-uff2buff25uff2euff0b-ebook/dp/B01G6KDOKA",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/20734/",
+                "mal": "15943"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "2",
+            "lastChapter": "23",
+            "publicationDemographic": "seinen",
+            "status": "ongoing",
+            "year": null,
+            "contentRating": "suggestive",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a1f53773-c69a-4ce5-8cab-fffcd90b1565",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Magic"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2018-04-08T15:32:26+00:00",
+            "updatedAt": "2021-05-25T15:49:07+00:00",
+            "version": 2,
+            "availableTranslatedLanguages": [
+                "en",
+                "pt-br"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "855fb7db-c842-46b4-887b-e386e321a73f",
+                "type": "author"
+            },
+            {
+                "id": "855fb7db-c842-46b4-887b-e386e321a73f",
+                "type": "artist"
+            },
+            {
+                "id": "6de6d082-f526-4f5e-8c73-cdd1d1aeb80d",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": null,
+                    "fileName": "e235900b-3a20-4791-aa74-d13b42c23a27.jpg",
+                    "locale": "ja",
+                    "createdAt": "2021-05-24T17:41:43+00:00",
+                    "updatedAt": "2021-05-24T17:41:43+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "834dd43a-2a85-4424-8a35-ec6ce849bfe2",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Savage Fang Ojou-sama"
+            },
+            "altTitles": [
+                {
+                    "ja": "サベージファングお嬢様, サベージファングお嬢様 史上最強の傭兵は史上最凶の暴虐令嬢となって二度目の世界を無双する"
+                },
+                {
+                    "ja": "サベージファングお嬢様"
+                },
+                {
+                    "ja": "Savage Fang Ojou-sama: Shijou Saikyou no Youhei wa Shijou Sai Kyou no Bougyaku Reijou to Natte Futatabime no Sekai o Musou Suru"
+                },
+                {
+                    "en": "Savage Fang Ojou-sama: The Most Powerful Mercenary in History Becomes the Most Tyrannical Daughter in History and Becomes a Warrior in the World for the Second Time"
+                },
+                {
+                    "en": "Savage Fang Ojou-sama: The Tale of Little Lady Who Conceals \"Savage Fang\""
+                }
+            ],
+            "description": {
+                "en": "This is the story of a \"princess\" who torments the whole world.\nShe is loved by God, and she has sunk beautiful hair, and she wields a violent blade. She was the prettiest young lady in the kingdom, but she was the most powerful of mercenaries, nicknamed \"Savage Fang.\" All of them are now beginning to be trampled by a girl who is out of standard!",
+                "id": "Mylene, putri seorang duke, memiliki rambut indah berkilauan yang disebut sebagai tanda “yang dipilih Dewa” dan memiliki kekuatan sihir yang kuat di tubuhnya. Dia adalah gadis paling cantik di kerajaan, memiliki rambut yang tergerai dan mengayunkan pedangnya dengan anggun. Tapi sebenarnya dia adalah… tentara bayaran terkuat dalam sejarah, yang dikenal sebagai “Savage Fang”! Seorang pejuang legendaris yang telah membantai ribuan musuh dengan kemampuan fisiknya yang luar biasa telah bereinkarnasi sebagai wanita muda yang membanggakan bakat sihir dari dewa! Seorang gadis dengan kekuatan sihir yang tak tertandingi dan keterampilan bertarung yang hebat, dia memikirkan kembali situasi dunia sambil melibatkan orang-orang dari aliansi dan mendominasi benua…! Dia terlihat seperti seorang saint, tapi di dalam dirinya adalah binatang buas. menyembunyikan taring prajuritnya yang ganas di balik senyum seorang wanita muda saat dia berjuang melewati dunia yang penuh dengan kekacauan untuk kedua kalinya!\n\nSerialisasi Savage Fang Ojou-sama akan dirilis pada musim dingin 2022"
+            },
+            "isLocked": false,
+            "links": {
+                "ap": "savage-fang-ojou-sama-shijou-saikyou-no-youhei-wa-shijou-saikyou-no-bougyaku-reijou-to-natte-ni-dome-no-sekai-wo-musou-suru-light-novel",
+                "mu": "200029",
+                "raw": "https://tonarinoyj.jp/episode/3269754496829555822"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "shounen",
+            "status": "ongoing",
+            "year": 2022,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "0bc90acb-ccc1-44ca-a34a-b9f3a73259d0",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Reincarnation"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Action"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a1f53773-c69a-4ce5-8cab-fffcd90b1565",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Magic"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Fantasy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-01-05T04:12:37+00:00",
+            "updatedAt": "2022-04-28T09:27:58+00:00",
+            "version": 12,
+            "availableTranslatedLanguages": [
+                "en",
+                "vi",
+                "id"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "164c555d-fbe5-40b7-b200-03dbf7900e28",
+                "type": "author"
+            },
+            {
+                "id": "64ef0945-f8d7-47db-a8aa-136fae2a1e7b",
+                "type": "artist"
+            },
+            {
+                "id": "d02c49d0-d172-4313-b31b-5f79f4483923",
+                "type": "artist"
+            },
+            {
+                "id": "12216196-784b-45dd-bad7-3181f0a8aeb9",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "0",
+                    "fileName": "6c75cd01-da2d-4e2e-a688-5ec121f5f0ca.jpg",
+                    "locale": "ja",
+                    "createdAt": "2022-04-26T16:55:37+00:00",
+                    "updatedAt": "2022-04-26T16:55:37+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "90715f83-5dda-45b6-9a30-5ab508dc5234",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Kamiya"
+            },
+            "altTitles": [
+                {
+                    "ja": "神屋"
+                }
+            ],
+            "description": {
+                "en": "After the questionable death of a patient, a young doctor is led to a mysterious club called Kamiya.  Drawn by the allure of an employee and the rumors about vampires in the establishment, she decides to experience the club for herself."
+            },
+            "isLocked": false,
+            "links": [],
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "seinen",
+            "status": "ongoing",
+            "year": 2022,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "0234a31e-a729-4e28-9d6a-3f87c4966b9e",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Oneshot"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "5ca48985-9a9d-4bd8-be29-80dc0303db72",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Crime"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "c8cbe35b-1b2b-4a3f-9c37-db84c4514856",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Medical"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "d7d1730f-6eb0-4ba6-9437-602cac38664c",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Vampires"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Supernatural"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ee968100-4191-4968-93d3-f82d72be7e46",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Mystery"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-04-26T21:57:11+00:00",
+            "updatedAt": "2022-04-30T17:12:19+00:00",
+            "version": 5,
+            "availableTranslatedLanguages": [
+                "pt-br",
+                "en"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "2d3845fa-e596-488f-b705-fff36d9ba23f",
+                "type": "author"
+            },
+            {
+                "id": "2d3845fa-e596-488f-b705-fff36d9ba23f",
+                "type": "artist"
+            },
+            {
+                "id": "1408a302-ca49-45ae-b2e1-0b528992489a",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "2",
+                    "fileName": "0f3459c7-a6bd-4f32-8299-a17dc2c8feab.png",
+                    "locale": "ja",
+                    "createdAt": "2022-04-29T18:34:54+00:00",
+                    "updatedAt": "2022-04-29T18:34:54+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "4665f772-9fea-4137-966c-b0ceb0162666",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Yo-Jo Life!"
+            },
+            "altTitles": [
+                {
+                    "ja": "よーじょらいふ！"
+                },
+                {
+                    "ru": "Жизнь Ё-Дзё!"
+                }
+            ],
+            "description": {
+                "en": "Akihiko Shimura, 20 years old (male). When I woke up in the morning, I was a little blonde loli.",
+                "ru": "Акихико Симура — 20-летний мужчина, который, проснувшись как-то утром, стал маленькой девочкой-блондинкой."
+            },
+            "isLocked": false,
+            "links": {
+                "al": "122842",
+                "ap": "youjo-life",
+                "bw": "series/255066",
+                "mu": "169619",
+                "mal": "133029",
+                "raw": "http://mangalifewin.takeshobo.co.jp/rensai/yo-jolife/"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "seinen",
+            "status": "ongoing",
+            "year": null,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2d1f5d56-a1e5-4d0d-a961-2193588b08ec",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Loli"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "School Life"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Slice of Life"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2020-09-08T22:56:41+00:00",
+            "updatedAt": "2022-04-22T21:19:01+00:00",
+            "version": 9,
+            "availableTranslatedLanguages": [
+                "en",
+                "ru",
+                "id"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "67ae00ca-6788-43d1-8248-0052d303c93c",
+                "type": "author"
+            },
+            {
+                "id": "67ae00ca-6788-43d1-8248-0052d303c93c",
+                "type": "artist"
+            },
+            {
+                "id": "c942a6ed-7c60-4435-ae70-7d888f69c923",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "2",
+                    "fileName": "da7b819a-c09b-4ee8-a089-2e3ede8acc0c.jpg",
+                    "locale": "ja",
+                    "createdAt": "2022-04-19T13:22:24+00:00",
+                    "updatedAt": "2022-04-19T13:22:24+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "05ccee57-de43-4e77-8381-253ff81f6cd5",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Fate/Apocrypha"
+            },
+            "altTitles": [
+                {
+                    "ru": "Судьба/Апокриф"
+                },
+                {
+                    "ja": "フェイト/アポクリファ"
+                }
+            ],
+            "description": {
+                "en": "The setting of Fate/Apocrypha is a parallel world to Fate/stay night where the Greater Grail was removed from Fuyuki after the Third Holy Grail War and disappeared for many years. Around the 2000s, around the same time as the Fifth Holy Grail War would have happened, the group that plundered the Grail, Yggdmillennia, openly declares their secession from the Mage's Association and that they are in possession of the Grail. The Association dispatches fifty magi to retrieve it, but all but one are instantly slaughtered by Lancer of Black. The one remaining manages to activate the reserve system of the Greater Grail, allowing for the summoning of fourteen Servants in total.  \n  \nThis marks the start of the Great Holy Grail War in Trifas, featuring two different factions, the Black Faction, whose members are part of Yggdramillennia, and the Red Faction, whose members were sent by the Mage's Association with the exception of one from the Church. The Grail itself also summons Ruler to act as a mediator of the Holy Grail War.",
+                "ru": "События Fate/Apocrypha происходят в мире параллельном миру Fate/stay night, в котором Грааль был убран из города Фуюки после Третьей Войны. История начинается с того, что в Румынии был обнаружен «726-ой Святой Грааль». Его похитила и привезла в Румынию семья Иггдмилленния. Это знаменует начало Великой Войны Святого Грааля в городе Трифас с двумя противоборствующими сторонами: Чёрная Фракция, члены которой являются частью семьи Иггдмилленния и Красная Фракция, члены которой были посланы Ассоциацией Магов, за исключением одного участника от Церкви. Грааль также призывает Рулера выступать в качестве посредника в Войне Святого Грааля."
+            },
+            "isLocked": false,
+            "links": {
+                "al": "87251",
+                "ap": "fateapocrypha",
+                "bw": "series/81043",
+                "kt": "38064",
+                "mu": "133353",
+                "nu": "fateapocrypha",
+                "amz": "https://www.amazon.co.jp/gp/product/B074CM9SP6",
+                "cdj": "https://www.cdjapan.co.jp/product/NEOBK-2644798",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/376857/A001671220/",
+                "mal": "99106",
+                "raw": "https://web-ace.jp/tmca/contents/2000001/"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "seinen",
+            "status": "ongoing",
+            "year": 2016,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "07251805-a27e-4d59-b488-f0bfbec15168",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Thriller"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2d1f5d56-a1e5-4d0d-a961-2193588b08ec",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Loli"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "33771934-028e-4cb3-8744-691e866a923e",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Historical"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "36fd93ea-e8b8-445e-b836-358f02b3d33d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Monsters"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Action"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "5fff9cde-849c-4d78-aab0-0d52b2ee1d25",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Survival"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "631ef465-9aba-4afb-b0fc-ea10efe274a8",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Zombies"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "799c202e-7daa-44eb-9cf7-8a3c0441531e",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Martial Arts"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "9ab53f92-3eed-4e9b-903a-917c86035ee3",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Crossdressing"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a1f53773-c69a-4ce5-8cab-fffcd90b1565",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Magic"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Fantasy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "d7d1730f-6eb0-4ba6-9437-602cac38664c",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Vampires"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "dd1f77c5-dea9-4e2b-97ae-224af09caf99",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Monster Girls"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Supernatural"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ee968100-4191-4968-93d3-f82d72be7e46",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Mystery"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "f4122d1c-3b44-44d0-9936-ff7502c39ad3",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Adaptation"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2019-01-01T00:41:30+00:00",
+            "updatedAt": "2022-03-16T20:58:28+00:00",
+            "version": 9,
+            "availableTranslatedLanguages": [
+                "en",
+                "pt-br",
+                "ar",
+                "tr",
+                "id"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "7b9374fb-9332-43d9-9371-ed5383ff95c6",
+                "type": "author"
+            },
+            {
+                "id": "d0658235-01cc-4604-9650-f315d4e743c5",
+                "type": "author"
+            },
+            {
+                "id": "73913714-c7ab-494f-9213-fb99feb142d3",
+                "type": "artist"
+            },
+            {
+                "id": "c481f106-5ba7-4c32-8a5e-845b02678192",
+                "type": "cover_art",
+                "attributes": {
+                    "fileName": "3294b966-7315-4f4e-876f-481f238fb7ab.jpg",
+                    "description": "",
+                    "volume": "12",
+                    "locale": "ja",
+                    "version": 1,
+                    "createdAt": "2022-03-16T20:58:27+00:00",
+                    "updatedAt": "2022-03-16T20:58:27+00:00"
+                }
+            }
+        ]
+    },
+    {
+        "id": "3ce2d473-dc22-4b93-8ad7-8b65bb466771",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Fate/Grand Order -Epic of Remnant- Pseudo-Singularity III: The Stage of Carnage, Shimousa – Seven Duels of Swordmasters"
+            },
+            "altTitles": [
+                {
+                    "ja-ro": "Fate/Grand Order: Epic of Remnant - Ashu Tokuiten 3 / Ashu Heikou Sekai - Shizan Ketsuga Butai Shimousa no Kuni - Eirei Kengou Nanaban Shoubu"
+                },
+                {
+                    "ja": "Fate/Grand Order: Epic of Remnant－亜種特異点３／亜種並行世界　屍山血河舞台　下総国　英霊剣豪七番勝負"
+                },
+                {
+                    "ru": "Судьба/Великий Приказ -Эпопея Остатка- Турнир Семи Героев-Мастеров Меча"
+                }
+            ],
+            "description": {
+                "en": "Fans of Fate/Grand Order—rejoice! A new side story appears...with all the twists and turns you might expect! Epic of Remnant is here!",
+                "ru": "Манга-адаптация одноименного сюжетного акта игры Fate/Grand Order. Фуджимару теряет сознание и, придя в себя, понимает, что очутилась в Японии периода Эдо. Там она встречает Миямото Мусаши, которую когда-то уже видела во сне. Исторически Мусаши был мужчиной, который прославился на весь мир как мастер меча. Почему же теперь их двое, мужчина и женщина с одним именем? Настало время начала Семи Поединков Мастеров Меча!"
+            },
+            "isLocked": false,
+            "links": {
+                "al": "107555",
+                "ap": "fategrand-order-epic-of-remnant-eirei-kengou-nanaban-shoubu",
+                "bw": "series/211077/",
+                "kt": "fate-grand-order-epic-of-remnant-eirei-kengou-nanaban-shoubu",
+                "mu": "153555",
+                "amz": "https://www.amazon.co.jp/gp/product/B083YXP2NX",
+                "cdj": "https://www.cdjapan.co.jp/product/NEOBK-2625991",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/548362/",
+                "mal": "117241",
+                "raw": "https://pocket.shonenmagazine.com/episode/10834108156642978280",
+                "engtl": "https://kodansha.us/series/fate-grand-order-epic-of-remnant-pseudo-singularity-iii-the-stage-of-carnage-shimousa-seven-duels-of-swordmasters/"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "shounen",
+            "status": "ongoing",
+            "year": 2019,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "256c8bd9-4904-4360-bf4f-508a76d67183",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Sci-Fi"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "292e862b-2d17-4062-90a2-0356caa4ae27",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Time Travel"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "33771934-028e-4cb3-8744-691e866a923e",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Historical"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "36fd93ea-e8b8-445e-b836-358f02b3d33d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Monsters"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Action"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "39730448-9a5f-48a2-85b0-a70db87b1233",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Demons"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "3bb26d85-09d5-4d2e-880c-c34b974339e9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Ghosts"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "5fff9cde-849c-4d78-aab0-0d52b2ee1d25",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Survival"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "631ef465-9aba-4afb-b0fc-ea10efe274a8",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Zombies"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "81183756-1453-4c81-aa9e-f6e1b63be016",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Samurai"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "87cc87cd-a395-47af-b27a-93258283bbc6",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Adventure"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a1f53773-c69a-4ce5-8cab-fffcd90b1565",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Magic"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ac72833b-c4e9-4878-b9db-6c8a4a99444a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Military"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Fantasy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Web Comic"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Supernatural"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ee968100-4191-4968-93d3-f82d72be7e46",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Mystery"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "f4122d1c-3b44-44d0-9936-ff7502c39ad3",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Adaptation"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2019-10-30T14:39:47+00:00",
+            "updatedAt": "2022-03-09T21:35:33+00:00",
+            "version": 7,
+            "availableTranslatedLanguages": [
+                "ru",
+                "fr",
+                "es-la",
+                "es",
+                "en",
+                "pt-br",
+                "ar",
+                "id"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "2c08392b-2962-4e01-824d-cc9625d48b80",
+                "type": "author"
+            },
+            {
+                "id": "7b9374fb-9332-43d9-9371-ed5383ff95c6",
+                "type": "author"
+            },
+            {
+                "id": "2c08392b-2962-4e01-824d-cc9625d48b80",
+                "type": "artist"
+            },
+            {
+                "id": "ea755531-de16-4f2f-bfb9-98fd90b01005",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "4",
+                    "fileName": "897305f2-a8bc-4627-b4db-0319d46068f9.jpg",
+                    "locale": "ja",
+                    "createdAt": "2021-11-09T21:33:35+00:00",
+                    "updatedAt": "2021-11-09T21:33:35+00:00",
+                    "version": 1
+                }
+            },
+            {
+                "id": "4293e1db-264a-4fd5-93f2-ed2d9694a3c8",
+                "type": "manga",
+                "related": "sequel"
+            },
+            {
+                "id": "46e9a772-184d-498b-8553-6e0801545f12",
+                "type": "manga",
+                "related": "prequel"
+            },
+            {
+                "id": "d14354de-6af5-4b92-825d-47686d3fa145",
+                "type": "manga",
+                "related": "sequel"
+            }
+        ]
+    },
+    {
+        "id": "bf790a7b-d45e-46bc-91de-79d636ae9704",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Ore ga... Yuri!?"
+            },
+            "altTitles": [
+                {
+                    "es": "Eu (um cara) ... lésbica!?"
+                },
+                {
+                    "en": "Me (a Guy)... Lesbian!?"
+                },
+                {
+                    "ja": "俺が…百合！？"
+                }
+            ],
+            "description": {
+                "en": "A miraculous account of a doubter who was turned into a woman by the one true god. \"If you cannot make a girl fall in love with you as a woman your punishment will be to remain a woman for the rest of her life.\" Thus spoke INSR-sama - the powerful holy lesbian fox goddess who rules our lives - hallowed will be thy name."
+            },
+            "isLocked": false,
+            "links": {
+                "al": "87514",
+                "ap": "ore-ga-yuri",
+                "bw": "series/296910",
+                "kt": "40703",
+                "mu": "134611",
+                "amz": "https://www.amazon.co.jp/gp/product/B074BQVGG2",
+                "raw": "https://comic.iowl.jp/titles/25627/volumes",
+                "engtl": "https://coolmic.me/titles/27"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "1",
+            "lastChapter": "8",
+            "publicationDemographic": "shounen",
+            "status": "completed",
+            "year": 2015,
+            "contentRating": "suggestive",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Romance"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a3c67850-4684-404e-9b7f-c69850ee5da6",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Girls' Love"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "School Life"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2019-01-14T17:26:17+00:00",
+            "updatedAt": "2022-03-17T01:54:28+00:00",
+            "version": 9,
+            "availableTranslatedLanguages": [
+                "en",
+                "pt-br",
+                "id"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "35542843-1b9e-4d39-97a4-f8daaeb577f9",
+                "type": "author"
+            },
+            {
+                "id": "35542843-1b9e-4d39-97a4-f8daaeb577f9",
+                "type": "artist"
+            },
+            {
+                "id": "f72db122-f807-4fe4-a01c-0dd8a5487669",
+                "type": "cover_art",
+                "attributes": {
+                    "fileName": "7e817ae7-ddf7-4333-8688-96623e6971c2.jpg",
+                    "description": "",
+                    "volume": "8",
+                    "locale": "ja",
+                    "version": 2,
+                    "createdAt": "2021-05-23T06:12:54+00:00",
+                    "updatedAt": "2021-05-23T06:12:54+00:00"
+                }
+            }
+        ]
+    },
+    {
+        "id": "8ce792e1-5420-435e-bd2c-fdf709611bc2",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Don't worry, even if you became a girl we're still best friends!"
+            },
+            "altTitles": [
+                {
+                    "ja": "大丈夫、お前が女になっても俺たちは親友だからな！"
+                },
+                {
+                    "ja-ro": "Daijoubu, Omae ga Onna ni Nattemo Oretachi wa Shin'yuu dakara na!"
+                },
+                {
+                    "vi": "Đừng lo lắng, kể cả khi cậu biến thành con gái, thì chúng ta vẫn là bạn tốt!"
+                }
+            ],
+            "description": [],
+            "isLocked": false,
+            "links": {
+                "raw": "https://www.pixiv.net/user/22970036/series/144378"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": null,
+            "status": "ongoing",
+            "year": 2022,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Web Comic"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-01-26T00:42:50+00:00",
+            "updatedAt": "2022-01-29T05:02:09+00:00",
+            "version": 8,
+            "availableTranslatedLanguages": [
+                "vi",
+                "en",
+                "id"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "d81ca27a-944b-4565-948c-cde080f32401",
+                "type": "author"
+            },
+            {
+                "id": "d81ca27a-944b-4565-948c-cde080f32401",
+                "type": "artist"
+            },
+            {
+                "id": "e047dc27-2adf-45e4-a4b9-efa27195adc8",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "0",
+                    "fileName": "44c35a92-2bfa-499f-8e34-2e3eb2659010.jpg",
+                    "locale": "ja",
+                    "createdAt": "2022-01-26T00:42:52+00:00",
+                    "updatedAt": "2022-01-26T00:42:52+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "467937dc-559d-4803-8018-cbe36ecaf585",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Forced to Be an Invincible Saintess"
+            },
+            "altTitles": [
+                {
+                    "en": "Invincible Goddess"
+                },
+                {
+                    "zh-ro": "Bèi Pò Chéngwéi Kāi Guà De Wúdí Shèng Nǚ"
+                },
+                {
+                    "zh": "被迫成为开挂的无敌圣女"
+                }
+            ],
+            "description": {
+                "en": "The true identity of the saint that is worshipped by all the people in the kingdom is actually an average boy? With the beautiful priest, the big breasted knight, and the loli doctor at the side, the road of a saintess is really difficult..."
+            },
+            "isLocked": false,
+            "links": {
+                "mu": "193412",
+                "raw": "https://manga.bilibili.com/detail/mc30815"
+            },
+            "originalLanguage": "zh",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "shounen",
+            "status": "ongoing",
+            "year": 2021,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Action"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Long Strip"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Drama"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Fantasy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Full Color"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-02-03T05:18:10+00:00",
+            "updatedAt": "2022-02-07T08:43:33+00:00",
+            "version": 3,
+            "availableTranslatedLanguages": [
+                "en"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "9db4c458-2bcf-4865-a9bf-ec7aff2c824b",
+                "type": "author"
+            },
+            {
+                "id": "9db4c458-2bcf-4865-a9bf-ec7aff2c824b",
+                "type": "artist"
+            },
+            {
+                "id": "e37f0083-cdc4-49d6-a392-9c2e2cfbfe66",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "0",
+                    "fileName": "28daec83-5a6e-44a0-a8cd-d739061370c6.jpg",
+                    "locale": "zh",
+                    "createdAt": "2022-02-03T05:18:11+00:00",
+                    "updatedAt": "2022-02-03T05:18:11+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "fc0a7b86-992e-4126-b30f-ca04811979bf",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "The Unrivaled Mememori-kun"
+            },
+            "altTitles": [
+                {
+                    "en": "Unparalleled Mememori-kun"
+                },
+                {
+                    "ja-ro": "Mememori-kun ni wa kanawanai"
+                },
+                {
+                    "zh": "无敌目目盛"
+                },
+                {
+                    "ja": "目々盛くんには敵わない"
+                }
+            ],
+            "description": {
+                "en": "When Mememori woke up one morning, he had become a girl. She was surprised that she became a girl, but since she was a beauty, she decided to live her life as one!! An exciting TS Comedy opens!",
+                "fr": "Quand Mememori s'est réveillé un matin, il était devenu une fille. Elle est surprise de devenir une fille, mais comme elle est une beauté, elle décide de vivre sa vie comme une fille ! Une comédie passionnante commence!"
+            },
+            "isLocked": false,
+            "links": {
+                "al": "125400",
+                "ap": "mememori-kun-niha-kanawanai",
+                "bw": "series/299283/list/",
+                "kt": "58552",
+                "mu": "173269",
+                "amz": "https://www.amazon.co.jp/gp/product/B09RK7RWQ7",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/639154",
+                "mal": "139269",
+                "raw": "https://comic.pixiv.net/works/7043"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "shounen",
+            "status": "ongoing",
+            "year": null,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Romance"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "School Life"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2020-11-22T07:02:25+00:00",
+            "updatedAt": "2022-04-27T16:49:20+00:00",
+            "version": 12,
+            "availableTranslatedLanguages": [
+                "fr",
+                "en",
+                "id",
+                "pt-br"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "d8637833-186e-46ca-8fa6-4304a1d17d60",
+                "type": "author"
+            },
+            {
+                "id": "d8637833-186e-46ca-8fa6-4304a1d17d60",
+                "type": "artist"
+            },
+            {
+                "id": "8af89f5b-369f-4562-8a42-8d2dd361a5f0",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "2",
+                    "fileName": "8a5bee4b-935b-4aa7-9994-787e2f15b8a1.jpg",
+                    "locale": "ja",
+                    "createdAt": "2022-03-04T08:27:47+00:00",
+                    "updatedAt": "2022-03-04T08:27:47+00:00",
+                    "version": 1
+                }
+            },
+            {
+                "id": "02cc8467-4aa0-4da2-976a-6ce547f35f5e",
+                "type": "manga",
+                "related": "preserialization"
+            }
+        ]
+    },
+    {
+        "id": "e52367ac-5799-46d0-93db-67ef336de6dd",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Taberu Dake de Level-Up! Damegami to Issho ni Isekai Musou"
+            },
+            "altTitles": [
+                {
+                    "en": "Level Up Just By Eating!"
+                },
+                {
+                    "en": "LEVEL UP JUST BY EATING! ~I’M PEERLESS IN ANOTHER WORLD WITH A USELESS GODDESS~"
+                },
+                {
+                    "ja": "食べるだけでレベルアップ！ ～駄女神といっしょに異世界無双～"
+                }
+            ],
+            "description": {
+                "en": "The Useless Goddess Laura whose only strong point is having huge breasts,  \n  \nAnd the boy Keima who was summoned to another world.  \n  \nGaining a cheat skill that absorbs the abilities of what he eats, he enjoys the other world life eating delicious monsters and playing with the easy to handle Goddess.",
+                "pt-br": "A Inútil Deusa Laura cujo único ponto forte é ter seios enormes,\n\nE o menino Kehma que foi convocado para outro mundo.\n\nGanhando uma habilidade de trapaça que absorve as habilidades do que ele come, ele aproveita a vida no outro mundo comendo monstros deliciosos e brincando com a Deusa fácil de lidar."
+            },
+            "isLocked": false,
+            "links": {
+                "al": "109072",
+                "ap": "taberu-dake-de-level-up-damegami-to-issho-ni-isekai-musou",
+                "bw": "180179",
+                "kt": "54499",
+                "mu": "150832",
+                "nu": "level-up-just-by-eating",
+                "amz": "https://www.amazon.co.jp/dp/B07FQ9P735/",
+                "cdj": "http://www.cdjapan.co.jp/product/NEOBK-2282072",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/482352/A002006674/",
+                "mal": "115978",
+                "raw": "https://seiga.nicovideo.jp/comic/34891"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "seinen",
+            "status": "ongoing",
+            "year": 2018,
+            "contentRating": "suggestive",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "36fd93ea-e8b8-445e-b836-358f02b3d33d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Monsters"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Action"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Romance"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "aafb99c1-7f60-43fa-b75f-fc9502ce29c7",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Harem"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ace04997-f6bd-436e-b261-779182193d3d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Isekai"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Fantasy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Slice of Life"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ea2bc92d-1c26-4930-9b7c-d5c0dc1b6869",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Cooking"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "f4122d1c-3b44-44d0-9936-ff7502c39ad3",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Adaptation"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2019-11-24T12:31:40+00:00",
+            "updatedAt": "2022-04-30T11:17:43+00:00",
+            "version": 7,
+            "availableTranslatedLanguages": [
+                "pt-br",
+                "en"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "306674ca-81d5-4501-af1e-0b0c10916d21",
+                "type": "author"
+            },
+            {
+                "id": "53afecf0-09ed-4d93-8c36-236d89cccb9d",
+                "type": "artist"
+            },
+            {
+                "id": "f829c056-5125-4f41-aad1-4a161dcc9d09",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": null,
+                    "fileName": "ce593aff-80d4-40ef-8883-50b8857f68eb.jpg",
+                    "locale": "ja",
+                    "createdAt": "2021-05-24T17:34:59+00:00",
+                    "updatedAt": "2021-05-24T17:34:59+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "027df837-7a15-4893-9dc3-e2ae11b94717",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Onii-chan is Done For! Official Anthology Comic"
+            },
+            "altTitles": [
+                {
+                    "ja-ro": "Onii-chan wa Oshimai! Koushiki Anthology Comic"
+                },
+                {
+                    "ja": "お兄ちゃんはおしまい！ 公式アンソロジーコミック"
+                }
+            ],
+            "description": {
+                "en": "An anthology comic of Onii-chan wa Oshimai! by various mangaka."
+            },
+            "isLocked": false,
+            "links": {
+                "al": "136495",
+                "bw": "series/302245/list/",
+                "mu": "191589",
+                "amz": "https://www.amazon.co.jp/dp/4758069182/ref=cm_sw_r_tw_dp_8KY1W7JJAWD6C6G5B1Q5",
+                "ebj": "https://ebookjapan.yahoo.co.jp/books/639473/A002605085/"
+            },
+            "originalLanguage": "ja",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": "seinen",
+            "status": "ongoing",
+            "year": 2021,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "51d83883-4103-437c-b4b1-731cb73d786c",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Anthology"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Slice of Life"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-04-26T20:50:05+00:00",
+            "updatedAt": "2022-04-30T10:30:09+00:00",
+            "version": 4,
+            "availableTranslatedLanguages": [
+                "en"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "021d5e40-9a35-4df9-8514-e38e0c53f813",
+                "type": "author"
+            },
+            {
+                "id": "1f4e005c-cec8-418e-b956-1fc29325bce4",
+                "type": "author"
+            },
+            {
+                "id": "3d96a43b-3cf4-4fa4-a1fe-819228789f42",
+                "type": "author"
+            },
+            {
+                "id": "465b6513-a230-4ce1-b2a9-5027e94e52cc",
+                "type": "author"
+            },
+            {
+                "id": "60130e62-fdd0-4909-8852-ddf836248fd3",
+                "type": "author"
+            },
+            {
+                "id": "6f7882a1-fd64-44d0-a424-b4c8a4d73ba8",
+                "type": "author"
+            },
+            {
+                "id": "72e03751-6f20-441b-93cc-6fbdcd0ccb0c",
+                "type": "author"
+            },
+            {
+                "id": "8d7c4185-a1c7-4fd2-961f-f5e4d05918c5",
+                "type": "author"
+            },
+            {
+                "id": "9be1fc9c-8c1d-42ce-aa3f-db7cd82c12fd",
+                "type": "author"
+            },
+            {
+                "id": "9e2fd0e7-f8f3-4145-b562-d2e44f490f7d",
+                "type": "author"
+            },
+            {
+                "id": "aeb51702-9f41-4697-99ec-b76caaa0756a",
+                "type": "author"
+            },
+            {
+                "id": "beeb860e-199f-4d73-a501-78efa5b610b2",
+                "type": "author"
+            },
+            {
+                "id": "c2d6fe7c-59e6-416f-b58a-fecb55a77b01",
+                "type": "author"
+            },
+            {
+                "id": "c7f422af-157c-4822-bb71-10f5c4ec2b2a",
+                "type": "author"
+            },
+            {
+                "id": "ccfaa1ce-767a-4fbf-b9a5-3baf91a787e5",
+                "type": "author"
+            },
+            {
+                "id": "f049cee3-3b14-4101-8e5d-813526abb1f6",
+                "type": "author"
+            },
+            {
+                "id": "fc529e59-6be0-4dbf-ae03-0c201b6e809d",
+                "type": "author"
+            },
+            {
+                "id": "1f462d2f-2cd5-420e-9f07-b4a214ef9465",
+                "type": "artist"
+            },
+            {
+                "id": "1f4e005c-cec8-418e-b956-1fc29325bce4",
+                "type": "artist"
+            },
+            {
+                "id": "3d96a43b-3cf4-4fa4-a1fe-819228789f42",
+                "type": "artist"
+            },
+            {
+                "id": "465b6513-a230-4ce1-b2a9-5027e94e52cc",
+                "type": "artist"
+            },
+            {
+                "id": "60130e62-fdd0-4909-8852-ddf836248fd3",
+                "type": "artist"
+            },
+            {
+                "id": "60f69905-13da-42a5-9b2f-0571fcd567c2",
+                "type": "artist"
+            },
+            {
+                "id": "6f7882a1-fd64-44d0-a424-b4c8a4d73ba8",
+                "type": "artist"
+            },
+            {
+                "id": "72e03751-6f20-441b-93cc-6fbdcd0ccb0c",
+                "type": "artist"
+            },
+            {
+                "id": "8d7c4185-a1c7-4fd2-961f-f5e4d05918c5",
+                "type": "artist"
+            },
+            {
+                "id": "9be1fc9c-8c1d-42ce-aa3f-db7cd82c12fd",
+                "type": "artist"
+            },
+            {
+                "id": "9e2fd0e7-f8f3-4145-b562-d2e44f490f7d",
+                "type": "artist"
+            },
+            {
+                "id": "aeb51702-9f41-4697-99ec-b76caaa0756a",
+                "type": "artist"
+            },
+            {
+                "id": "beeb860e-199f-4d73-a501-78efa5b610b2",
+                "type": "artist"
+            },
+            {
+                "id": "c2d6fe7c-59e6-416f-b58a-fecb55a77b01",
+                "type": "artist"
+            },
+            {
+                "id": "c7f422af-157c-4822-bb71-10f5c4ec2b2a",
+                "type": "artist"
+            },
+            {
+                "id": "ccfaa1ce-767a-4fbf-b9a5-3baf91a787e5",
+                "type": "artist"
+            },
+            {
+                "id": "f049cee3-3b14-4101-8e5d-813526abb1f6",
+                "type": "artist"
+            },
+            {
+                "id": "fc529e59-6be0-4dbf-ae03-0c201b6e809d",
+                "type": "artist"
+            },
+            {
+                "id": "28797433-d492-49a9-b426-aa1232fb9014",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "1",
+                    "fileName": "fe167529-c83d-4038-b20f-ac78a07b15f4.jpg",
+                    "locale": "ja",
+                    "createdAt": "2022-04-26T20:50:07+00:00",
+                    "updatedAt": "2022-04-26T20:50:07+00:00",
+                    "version": 1
+                }
+            },
+            {
+                "id": "ed996855-70de-449f-bba2-e8e24224c14d",
+                "type": "manga",
+                "related": "main_story"
+            }
+        ]
+    },
+    {
+        "id": "5cd6cc31-796e-4494-8960-98c215bd4f9d",
+        "type": "manga",
+        "attributes": {
+            "title": {
+                "en": "Rewritten Love Story"
+            },
+            "altTitles": [
+                {
+                    "ko": "다시쓰는 연애사"
+                },
+                {
+                    "en": "Rewriting the Love Story"
+                },
+                {
+                    "en": "Rewrite Love Story"
+                }
+            ],
+            "description": {
+                "en": "'Lee Jeya' who gets into an accident with his ex-girlfriend from college, 'Han Seori.' When he wakes up, he finds himself 10 years in the past and his and Seori's bodies are switched! Jeya wants to rewrite their failed love story along with Seori during this time. \n\n\"Jeya, you want to go out with me again? Then try seducing me.\"\n\nBut will Jeya be able to seduce Seori when he is  in Seori's body himself?!"
+            },
+            "isLocked": false,
+            "links": {
+                "mu": "199445",
+                "raw": "https://comic.naver.com/webtoon/list?titleId=793274"
+            },
+            "originalLanguage": "ko",
+            "lastVolume": "",
+            "lastChapter": "",
+            "publicationDemographic": null,
+            "status": "ongoing",
+            "year": 2022,
+            "contentRating": "safe",
+            "tags": [
+                {
+                    "id": "292e862b-2d17-4062-90a2-0356caa4ae27",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Time Travel"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Genderswap"
+                        },
+                        "description": [],
+                        "group": "theme",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Long Strip"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Romance"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Comedy"
+                        },
+                        "description": [],
+                        "group": "genre",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Web Comic"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+                    "type": "tag",
+                    "attributes": {
+                        "name": {
+                            "en": "Full Color"
+                        },
+                        "description": [],
+                        "group": "format",
+                        "version": 1
+                    },
+                    "relationships": []
+                }
+            ],
+            "state": "published",
+            "chapterNumbersResetOnNewVolume": false,
+            "createdAt": "2022-04-11T23:26:36+00:00",
+            "updatedAt": "2022-04-22T10:28:17+00:00",
+            "version": 4,
+            "availableTranslatedLanguages": [
+                "en"
+            ]
+        },
+        "relationships": [
+            {
+                "id": "666ac806-107f-412d-978a-557d267536fa",
+                "type": "author"
+            },
+            {
+                "id": "02b56eb6-9663-406c-a4e6-866e50e156cb",
+                "type": "artist"
+            },
+            {
+                "id": "9cffd214-1591-4874-a18d-aa0399dec8e3",
+                "type": "cover_art",
+                "attributes": {
+                    "description": "",
+                    "volume": "0.1",
+                    "fileName": "c951be86-f824-490b-b9b7-e81dcba91eb8.jpg",
+                    "locale": "ko",
+                    "createdAt": "2022-04-11T23:26:39+00:00",
+                    "updatedAt": "2022-04-11T23:26:39+00:00",
+                    "version": 1
+                }
+            }
+        ]
+    }
+]

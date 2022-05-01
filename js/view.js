@@ -272,8 +272,9 @@ function get_relationships(data_pass) {
     let tags = data.data.attributes.tags;
     for (let i in tags) {
         // create element
-        let tag = document.createElement('label');
+        let tag = document.createElement('a');
         tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);
+        tag.href = `/tags.html?t=${tags[i].id}`;
 
         // text
         tag.textContent = `${tags[i].attributes.name.en}`;
