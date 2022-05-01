@@ -98,7 +98,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         // parse
         localStorage.setItem(`${manga}_view`, this.response);
 
-        data_parse = JSON.parse(this.response)
+        data_parse = JSON.parse(this.response);
 
         try {
             get_general(this.response);
