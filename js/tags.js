@@ -144,13 +144,14 @@ const tags_string = {
 };
 
 // pass tag request
-const search = window.location.search;
-const query = new URLSearchParams(search);
+var search = window.location.search;
+var query = new URLSearchParams(search);
 let tag_req = query.get('t') || "";
 if (tag_req == "") {
     tag_req = tags[random(0,63)];
     console.log(tag_req)
 }
+let offset = (query.get('page') * 18) || 0;
 
 const contentrating_string = {
     'safe': 'Safe',
@@ -182,7 +183,6 @@ if (localStorage.getItem('op_show_nsfw') == 1) {
 }
 
 var limit = 18;
-var offset = 0;
 var top_limit = 3600;
 
 load_page();
