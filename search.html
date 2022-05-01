@@ -21,31 +21,17 @@
     <div class="logs" id="log_parent"></div>
     <script src="/js/logging.js"></script>
     <script src="/js/check_auth.js"></script>
-    <header class="dark">
-        <span class="menu left">
-            <span class="dropdown-wrap">
-                <a href="/" aria-label="Return Home" class="option-open"><i class="icon w-28" data-feather="home"></i></a>
-            </span>
-        </span>
-        <span class="search-wrap">
-            <div class="search">
-                <input class="search-input" id="search" placeholder="Search for..." autofocus>
-                <button role="button" class="clear-input" onclick="clear_search()" id="search-clear" aria-label="Clear search text"><i class="icon w-16" data-feather="x"></i></button>
-                <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-28" data-feather="search"></i></button>
-            </div>
-        </span>
-        <span class="menu">
-            <span class="dropdown-wrap">
-                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
-            </span>
-        </span>
-    </header>
     <div class="cont">
         <nav class="left" id="header"></nav>
         <script src="/js/header.js"></script>
         <div class="main">
             <div class="bg" id="manga-bg">
-                <section class="min header padding">
+                <section class="min header padding center limited search-cont">
+                    <div class="search big">
+                        <input class="search-input" id="search" placeholder="Search for..." autofocus>
+                        <button role="button" class="clear-input" onclick="clear_search()" id="search-clear" aria-label="Clear search text"><i class="icon w-16" data-feather="x"></i></button>
+                        <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-30" data-feather="search"></i></button>
+                    </div>
                     <div class="bg-dark lib-grad"></div>
                 </section>
             </div>
