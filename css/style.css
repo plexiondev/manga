@@ -502,7 +502,7 @@ nav {
     width: 200px;
     background-color: var(--b6);
     padding: 80px 10px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -542,6 +542,9 @@ nav hr {
     left: -200px;
     transition: 0.4s;
     z-index: 100;
+}
+.nav-manga nav {
+    position: absolute;
 }
 .nav-manga.shown {
     left: 0;
