@@ -693,3 +693,9 @@ section.search-cont .bg-dark {
 section.search-cont .search {
     flex: 1;
 }
+
+/* select */
+select {
+    border-bottom: var(--button-border);
+    min-width: 175px;
+}
