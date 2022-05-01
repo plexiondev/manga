@@ -16,6 +16,9 @@ var base_url;
 
 var index = 1;
 
+let this_volume;
+let this_chapter;
+
 // aggregate for chapter list
 aggregate();
 
@@ -122,7 +125,7 @@ function read_page(id) {
 
     // info
     document.getElementById('page-title').textContent = `Reading ${index}/${localStorage.getItem("manga_length")}`;
-    document.getElementById('chapter').textContent = `${index}`;
+    document.getElementById('page').textContent = `${index}`;
 }
 
 // auto-show first image
@@ -134,6 +137,28 @@ function check_done() {
     } else {
         setTimeout(check_done, 1);
     }
+}
+
+function get_info() {
+    // find position of current chapter
+    for (let n in chapters) {
+        for (let i in chapters[n].chapters) {
+            if (chapters[n].chapters[i].id == chapter_id) {
+                // jackpot
+
+                this_volume = n;
+                this_chapter = i;
+            }
+        }
+    }
+
+    document.getElementById('this_volume').textContent = `${this_volume}`;
+    document.getElementById('this_chapter').textContent = `${this_chapter}`;
+
+    // continue reading (where left off)
+    localStorage.setItem(`${manga}_read_volume`,`${this_volume}`);
+    localStorage.setItem(`${manga}_read_chapter`,`${this_chapter}`);
+    localStorage.setItem(`${manga}_read_id`,`${chapter_id}`);
 }
 
 // detect key input
@@ -171,6 +196,8 @@ function aggregate() {
         const data = JSON.parse(this.response);
 
         chapters = data.volumes;
+
+        get_info();
     }
 
     // send
@@ -217,21 +244,31 @@ function advance_chapter() {
 function advance_volume(volume) {
     // find position of current volume
     for (let i in chapters[parseInt(volume)+1].chapters) {
-            let next_chapter = chapters[parseInt(volume)+1].chapters[i].id;
-            window.location.href = `/read.html?c=${next_chapter}&m=${manga}`;
-            break
+        let next_chapter = chapters[parseInt(volume)+1].chapters[i].id;
+        window.location.href = `/read.html?c=${next_chapter}&m=${manga}`;
+        break
     }
 }
 
 // navbar
-let em_hr = document.createElement('hr');
-document.getElementById('header_links').appendChild(em_hr);
-let em_attach = document.createElement('ul');
-em_attach.innerHTML =
+document.getElementById('header').innerHTML =
 (`
-    <li><a href="javascript:void(0)" onclick="exit()" class="keycode-cont"><i class="icon w-20" data-feather="arrow-left-circle"></i>Return<label class="overl keycode">X</label></a></li>
+<span class="links" id="header_links">
+    <ul>
+    <li><a href="javascript:void(0)" onclick="history.back()"><i class="icon w-20" data-feather="arrow-left"></i>Back</a></li>
+    <li><a href="javascript:void(0)" onclick="location.reload()"><i class="icon w-20" data-feather="repeat"></i>Reload</a></li>
+    </ul>
+    <hr>
+    <ul>
+    <li>Vol. <strong id="this_volume"></strong> Ch. <strong id="this_chapter"></strong></li>
+    </ul>
+    <hr>
+    <ul>
+    <li><a href="javascript:void(0)" onclick="exit()" class="keycode-cont"><i class="icon w-20" data-feather="log-out"></i>Exit<label class="overl keycode">X</label></a></li>
+    <li><a href="/settings" target="_blank"><i class="icon w-20" data-feather="settings"></i>Settings</a></li>
+    </ul>
+</span>
 `);
-document.getElementById('header_links').appendChild(em_attach);
 
 function show_nav() {
     document.getElementById('nav-manga').classList.toggle('shown');

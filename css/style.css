@@ -477,6 +477,20 @@ section .chapter-card h5:before, h5.main:before {
     linear-gradient(var(--b5), var(--d5)) padding-box,
     linear-gradient(0deg, var(--text-link) 0%, var(--b5) 100%) border-box;
     border: 2px solid transparent;
+    position: relative;
+    animation: show 0.25s;
+}
+@keyframes show {
+    0% {
+        transform: scale(0.9);
+        top: 20px;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        top: 0;
+        opacity: 1;
+    }
 }
 .windows.shown {
     backdrop-filter: blur(10px);
