@@ -74,6 +74,9 @@ let em_mangaimg = document.getElementById("manga-img");
 // reading status
 let em_readstatus = document.getElementById('reading_status');
 
+// cover art
+var cover_art;
+
 
 // checks
 if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
@@ -171,7 +174,7 @@ function get_general(data_pass) {
 
     // check if content rating matches
     if ((data.data.attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') != 1) || (data.data.attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') != 1) || (data.data.attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') != 1)) {
-        warn_content_rating(`<label class="tag ${data.data.attributes.contentRating}"><i class="icon w-16" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>`);
+        warn_content_rating(`<label class="tag big ${data.data.attributes.contentRating}" style="margin: 0;"><i class="icon w-24" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 5px; top: -1.3px !important;"></i>${rating}</label>`);
     }
 
     // buttons
@@ -202,6 +205,7 @@ function get_relationships(data_pass) {
 
             // create url
             var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[i].attributes.fileName}`;
+            cover_art = cover_url;
 
             // expose on page
             em_mangabg.style = `background-image: url(${cover_url});`;
@@ -344,8 +348,11 @@ function open_read_status(status) {
     em_window.setAttribute('id','read_status_window');
 
     em_window.innerHTML = (`
+        <div class="cover"><img src="${cover_art}"></div>
         <div class="header" style="text-align: center;"><h4>Reading status</h4></div>
         <div class="info" style="text-align: center;">
+            <p>Keep track of all things manga, note down what you've<br>completed, are currently reading, and more.</p>
+            <br>
             <div class="select">
                 <select name="status" id="status">
                     <option value="reading" id="op_reading">${readstatus_string['reading']}</option>
@@ -421,10 +428,10 @@ function warn_content_rating(type) {
     em_window.setAttribute('id','warn_content_rating_window');
 
     em_window.innerHTML = (`
+        <div class="cover">${type}</div>
         <div class="header" style="text-align: center;"><h4>Content warning</h4></div>
         <div class="info" style="text-align: center;">
-            <p>This manga contains content you have filtered out.</p>
-            ${type}
+            <p>This manga contains content you have filtered out.<br>Are you sure you want to proceed?</p>
         </div>
         <div class="actions">
         <a role="button" class="button focus" onclick="history.back()">Go back</a>
@@ -497,6 +504,7 @@ function open_following(status) {
     em_window.setAttribute('id','following_window');
 
     em_window.innerHTML = (`
+    <div class="cover"><img src="${cover_art}"></div>
         <div class="header" style="text-align: center;"><h4>Follow manga</h4></div>
         <div class="info" style="text-align: center;">
             <p>Following a manga adds it to your feed and<br>allows you to quickly see updates.</p>
