@@ -474,7 +474,7 @@ section .chapter-card h5:before, h5.main:before {
     min-width: 360px;
     max-width: 500px;
     background: 
-    linear-gradient(var(--b5), var(--b5)) padding-box,
+    linear-gradient(var(--b5), var(--d5)) padding-box,
     linear-gradient(0deg, var(--text-link) 0%, var(--b5) 100%) border-box;
     border: 2px solid transparent;
 }
