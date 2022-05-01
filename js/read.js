@@ -148,6 +148,11 @@ $(document).keydown(function(event) {
         turn_page(1);
         event.preventDefault();
     }
+    // o
+    if (event.keyCode === 79) {
+        show_nav();
+        event.preventDefault();
+    }
 });
 
 // aggregate for chapter list
@@ -196,4 +201,25 @@ function advance_chapter() {
             }
         }
     }
+}
+
+// navbar
+document.getElementById('header').innerHTML =
+(`
+<span class="links">
+    <ul>
+    <li><a href="/"><i class="icon w-20" data-feather="home"></i>Home</a></li>
+    <li><a href="/search.html"><i class="icon w-20" data-feather="search"></i>Search</a></li>
+    </ul>
+    <hr>
+    <ul>
+    <li><a href="/docs.html"><i class="icon w-20" data-feather="book"></i>Docs</a></li>
+    <li><a href="https://github.com/plexiondev/manga"><i class="icon w-20" data-feather="external-link"></i>View Source</a></li>
+    <li><a href="/settings"><i class="icon w-20" data-feather="settings"></i>Settings</a></li>
+    </ul>
+</span>
+`);
+
+function show_nav() {
+    document.getElementById('nav-manga').classList.toggle('shown');
 }
