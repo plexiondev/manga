@@ -15,6 +15,10 @@ document.getElementById('header').innerHTML =
     </ul>
     <hr>
     <ul>
+    <li><a href="/tags.html"><i class="icon w-20" data-feather="tag"></i>Tags</a></li>
+    </ul>
+    <hr>
+    <ul>
     <li><a href="/groups.html"><i class="icon w-20" data-feather="users"></i>Groups</a></li>
     </ul>
     <hr>
