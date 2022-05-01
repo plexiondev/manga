@@ -97,23 +97,14 @@ function create_chapter(data_pass) {
         for (let x in chapters_parent) {
             chapters_array.push(x);
         }
-        var read_now = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
         // store chapter links
         var chapters_links_array = [];
         for (let x in chapters_parent) {
             chapters_links_array.push(chapters_parent[x].id);
         }
-
-        // append to button if first chapter
-        // detect if user has read
-        if (chapter == null) {
-            /*log('general',`User not read before`);*/
-            em_mangaread.href = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
-        } else {
-            /*log('general',`User previously read`);*/
-            em_mangaread.textContent = `Continue reading`;
-            em_mangaread.classList.add("focus");
-            em_mangaread.href = `read?m=${manga}&c=${chapter}`;
+        
+        if (last_read_id == null) {
+            document.getElementById('manga_read').href = `read.html?c=${chapters_parent[chapters_array[0]].id}&m=${manga}`;
         }
 
         // html
