@@ -64,7 +64,7 @@ this function can then refresh auth automatically if required (and also display 
 
 ## groups
 
-- [ ] make pages for groups
+- [x] make pages for groups
 - - [ ] viewing group description
 - - [ ] viewing group's work (manga scanlations)
 - [ ] allow searching for groups
@@ -100,10 +100,10 @@ this function can then refresh auth automatically if required (and also display 
 ## settings
 
 - [x] include options for age ratings (eg. NSFW, suggestive)
-- [ ] make age rating settings take effect
+- [x] make age rating settings take effect
 - - [x] related manga
 - - [x] search
-- - [ ] viewing manga
+- - [x] viewing manga
 - [x] implement auth/login systems
 - - [x] retrieve user's manga reading status
 - - [x] retrieve user's home feed
