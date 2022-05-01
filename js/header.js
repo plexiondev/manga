@@ -7,6 +7,7 @@ document.getElementById('header').innerHTML =
     <ul>
     <li><a href="/"><i class="icon w-20" data-feather="home"></i>Home</a></li>
     <li><a href="/search.html"><i class="icon w-20" data-feather="search"></i>Search</a></li>
+    <li><a href="/recent.html"><i class="icon w-20" data-feather="plus-circle"></i>Recent</a></li>
     </ul>
     <hr>
     <ul>
