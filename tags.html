@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title translate="no">Tags</title>
+    <meta name="theme-color" content="#003BFF">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="https://plexion.dev/css/reset.css">
+    <link rel="stylesheet" href="https://plexion.dev/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script src="https://plexion.dev/js/scroll.js"></script>
+    <!-- icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="dark" style="--accent-page: -4;">
+    <div class="logs" id="log_parent"></div>
+    <script src="/js/logging.js"></script>
+    <script src="/js/check_auth.js"></script>
+    <div class="cont">
+        <nav class="left" id="header"></nav>
+        <script src="/js/header.js"></script>
+        <div class="main">
+            <section class="center">
+                <h4 class="main">Tags</h4>
+                <h5 id="tag_msg">Viewing manga tagged with </h5>
+            </section>
+            <div class="cards" id="feed"></div>
+            <script src="/js/recent.js"></script>
+            <script src="/js/search_box.js"></script>
+            <script src="/js/accept_auth.js"></script>
+        </div>
+    </div>
+    <footer style="text-align: center; margin-top: 350px;">
+        <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
+    </footer>
+</body>
+<!-- options -->
+<script src="/js/settings.js"></script>
+<script>
+    feather.replace()
+</script>
