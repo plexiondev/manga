@@ -18,6 +18,8 @@ let em_mangachlist = document.getElementById("manga-chapters");
 var read_cache = [];
 var unread_cache = [];
 
+var assigned_link = false;
+
 
 // checks
 if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
@@ -118,12 +120,10 @@ function create_chapter(data_pass) {
             // create element
             let chapter_s = document.createElement('li');
             chapter_s.classList.add('chapter-embed');
-            console.log(i,n)
 
-            if (i == 1 && n == 0) {
-                if (last_read_id == null) {
-                    document.getElementById('manga_read').href = `read.html?c=${chapters_links_array[n]}&m=${manga}`;
-                }
+            if (last_read_id == null && assigned_link != true) {
+                document.getElementById('manga_read').href = `read.html?c=${chapters_links_array[n]}&m=${manga}`;
+                assigned_link = true;
             }
 
             if (check_read(`${chapters_links_array[n]}`) == 1) {
