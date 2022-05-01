@@ -220,25 +220,14 @@ function advance_volume(volume) {
 }
 
 // navbar
-document.getElementById('header').innerHTML =
+let em_hr = document.createElement('hr');
+document.getElementById('header_links').appendChild(em_hr);
+let em_attach = document.createElement('ul');
+em_attach.innerHTML =
 (`
-<span class="links">
-    <ul>
-    <li><a href="/"><i class="icon w-20" data-feather="home"></i>Home</a></li>
-    <li><a href="/search.html"><i class="icon w-20" data-feather="search"></i>Search</a></li>
-    </ul>
-    <hr>
-    <ul>
-    <li><a href="/docs.html"><i class="icon w-20" data-feather="book"></i>Docs</a></li>
-    <li><a href="https://github.com/plexiondev/manga"><i class="icon w-20" data-feather="external-link"></i>View Source</a></li>
-    <li><a href="/settings"><i class="icon w-20" data-feather="settings"></i>Settings</a></li>
-    </ul>
-    <hr>
-    <ul>
     <li><a href="javascript:void(0)" onclick="exit()"><i class="icon w-20" data-feather="arrow-left-circle"></i>Return</a></li>
-    </ul>
-</span>
 `);
+document.getElementById('header_links').appendChild(em_attach);
 
 function show_nav() {
     document.getElementById('nav-manga').classList.toggle('shown');
