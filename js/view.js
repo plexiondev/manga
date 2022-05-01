@@ -179,6 +179,8 @@ function get_general(data_pass) {
 
     // reading status
     read_status();
+    // check following
+    check_following();
 
     // info blocks
     document.getElementById('date_created').innerHTML = (`${new Date(`${data.data.attributes.createdAt}`).toLocaleDateString()}`);
@@ -431,4 +433,122 @@ function warn_content_rating(type) {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
+}
+
+// following manga?
+function check_following() {
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/user/follows/manga/${manga}`;
+    xhr.open('GET', url, true);
+    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+
+
+    // on request
+    xhr.onload = function() {
+        if (xhr.status == 404) {
+            // not following
+
+            create_following(false);
+        } else {
+            // following
+
+            create_following(true);
+        }
+    }
+
+
+    // send
+    xhr.send();
+}
+
+// show following on button
+function create_following(status) {
+    if (status == false) {
+        // not following
+
+        // show on button
+        document.getElementById('following').setAttribute('onclick',`open_following(false)`);
+        document.getElementById('following').classList.remove('focus');
+        document.getElementById('following').innerHTML = (`
+        <i class="icon w-22" data-feather="minus-circle" style="top: -1px !important;"></i>
+        `);
+
+        feather.replace();
+    } else {
+        // following
+            
+        // show on button
+        document.getElementById('following').setAttribute('onclick',`open_following(true)`);
+        document.getElementById('following').classList.add('focus');
+        document.getElementById('following').innerHTML = (`
+        <i class="icon w-22" data-feather="bell" style="top: -1px !important;"></i>
+        `);
+
+        feather.replace();
+    }
+}
+
+// open following window
+function open_following(status) {
+    let em_window = document.createElement('span');
+    em_window.classList.add('window');
+    em_window.setAttribute('id','following_window');
+
+    em_window.innerHTML = (`
+        <div class="header" style="text-align: center;"><h4>Follow manga</h4></div>
+        <div class="info" style="text-align: center;">
+            <p>Following a manga adds it to your feed and<br>allows you to quickly see updates.</p>
+            <div class="select">
+                <select name="status" id="status">
+                    <option value="follow" id="op_true">Follow</option>
+                    <option value="unfollow" id="op_false">Unfollow</option>
+                </select>
+            </div>
+        </div>
+        <div class="actions">
+            <a role="button" class="button focus" onclick="save_following()">Save</a>
+            <a role="button" class="button" onclick="exit_read_status()">Cancel</a>
+        </div>
+    `);
+
+    // append
+    document.getElementById('window_parent').appendChild(em_window);
+    feather.replace();
+
+    // auto-select
+    document.getElementById(`op_${status}`).setAttribute('selected','');
+}
+
+// save following (to mangadex)
+function save_following() {
+    let status = document.getElementById('status').value;
+
+    // define xhr POST
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga/${manga}/follow`;
+    if (status == 'follow') {
+        xhr.open('POST', url, true);
+    } else {
+        xhr.open('DELETE', url, true);
+    }
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+
+
+    xhr.onload = function() {
+        if (status == 'follow') {
+            log('enabled',`You are now following!`,false);
+            create_following(true);
+        } else {
+            log('disabled',`You are no longer following`,false);
+            create_following(false);
+        }
+        // clear window
+        document.getElementById('window_parent').innerHTML = ``;
+    }
+
+
+    // send
+    xhr.send();
 }
