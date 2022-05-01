@@ -219,7 +219,7 @@ function get_relationships(data_pass) {
             em_artist.href = `https://mangadex.org/author/${relationships[i].id}`;
             em_artist.innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
             feather.replace();
-        } else if (relationships[i].type == "manga") {
+        } else if (relationships[i].type == "manga" && relationships[i].attributes != undefined) {
             // other relationships
 
             // create element
