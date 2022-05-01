@@ -18,6 +18,11 @@ function load_page() {
         const data = JSON.parse(this.response);
         document.getElementById('feed').innerHTML = ``;
 
+        // reset total
+        if (top_limit > data.total) {
+            top_limit = data.total;
+        }
+
         // calculate total
         var total = Math.round(data.total / 18); // 21418 = 1189
         var page = Math.round(offset / 18); // 18 = 1
@@ -45,7 +50,6 @@ function load_page() {
 function create_em(data_pass,i) {
 
     const data = JSON.parse(data_pass);
-    console.log(data)
 
     // create element
     let card = document.createElement('a');
