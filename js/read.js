@@ -153,6 +153,10 @@ $(document).keydown(function(event) {
         show_nav();
         event.preventDefault();
     }
+    // x
+    if (event.keyCode === 88) {
+        exit();
+    }
 });
 
 // aggregate for chapter list
@@ -225,10 +229,11 @@ document.getElementById('header_links').appendChild(em_hr);
 let em_attach = document.createElement('ul');
 em_attach.innerHTML =
 (`
-    <li><a href="javascript:void(0)" onclick="exit()"><i class="icon w-20" data-feather="arrow-left-circle"></i>Return</a></li>
+    <li><a href="javascript:void(0)" onclick="exit()" class="keycode-cont"><i class="icon w-20" data-feather="arrow-left-circle"></i>Return<label class="overl keycode">X</label></a></li>
 `);
 document.getElementById('header_links').appendChild(em_attach);
 
 function show_nav() {
     document.getElementById('nav-manga').classList.toggle('shown');
+    document.getElementById('show_nav').classList.toggle('shown');
 }

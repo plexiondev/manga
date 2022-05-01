@@ -559,7 +559,7 @@ nav hr {
 .nav-manga button {
     z-index: 110;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 2px;
     transition: 0.25s;
     border: none;
     background-color: var(--b6);
@@ -567,16 +567,37 @@ nav hr {
     top: 0;
     left: 200px;
     bottom: 0;
-    width: 48px;
     height: 48px;
+    border-radius: 0 10px 10px 0;
+    opacity: 0.4;
 }
 .nav-manga button:hover, .nav-manga button:focus {
     background-color: var(--b5);
+    opacity: 1;
+}
+.nav-manga.shown button {
+    opacity: 1;
+}
+
+.nav-manga button svg {
+    transition: 0.25s;
+}
+.nav-manga.shown button svg {
+    transform: rotateZ(180deg);
 }
 
 /* settings */
 #settings {
     display: initial;
+}
+
+/* contains keycode */
+.keycode-cont {
+    position: relative;
+}
+.keycode {
+    position: absolute;
+    right: 10px;
 }
 
 
@@ -631,4 +652,16 @@ button.advance:hover, button.advance:focus {
 /* define */
 .w-22 {
     --w: 22px;
+}
+
+/* search header */
+section.search-cont {
+    padding-top: 120px !important;
+    padding-bottom: 120px;
+}
+section.search-cont .bg-dark {
+    backdrop-filter: blur(10px);
+}
+section.search-cont .search {
+    flex: 1;
 }
