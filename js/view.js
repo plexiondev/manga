@@ -56,6 +56,11 @@ var last_read_volume = localStorage.getItem(`${manga}_read_volume`) || null;
 var last_read_chapter = localStorage.getItem(`${manga}_read_chapter`) || null;
 var last_read_id = localStorage.getItem(`${manga}_read_id`) || null;
 
+if (last_read_id != null) {
+    document.getElementById('manga_read').textContent = `Continue from Vol. ${last_read_volume} Ch. ${last_read_chapter}`;
+    document.getElementById('manga_read').href = `/read.html?c=${last_read_id}&m=${manga}`;
+}
+
 // cache
 let cached_out = localStorage.getItem(`${manga}_view_timeout`) || "";
 let cache = localStorage.getItem(`${manga}_view`) || "";
@@ -66,7 +71,6 @@ let em_mangatitle = document.getElementById("manga-title");
 let em_mangajptitle = document.getElementById("manga-jptitle");
 let em_mangadesc = document.getElementById("manga-desc");
 // buttons
-let em_mangaread = document.getElementById("manga-read");
 let em_mangadex = document.getElementById("mangadex");
 // tags
 let em_tags = document.getElementById("tags");
