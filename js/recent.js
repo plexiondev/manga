@@ -107,6 +107,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     // description
     var converter = new showdown.Converter();
     text = `${data.data[i].attributes.description.en}`;
+    if (text == 'undefined') { text = '' }
     html = converter.makeHtml(text);
 
     // info

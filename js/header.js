@@ -5,9 +5,17 @@ document.getElementById('header').innerHTML =
 (`
 <span class="links">
     <ul>
+    <li><a href="javascript:void(0)" onclick="history.back()"><i class="icon w-20" data-feather="arrow-left"></i>Back</a></li>
+    </ul>
+    <hr>
+    <ul>
     <li><a href="/"><i class="icon w-20" data-feather="home"></i>Home</a></li>
     <li><a href="/search.html"><i class="icon w-20" data-feather="search"></i>Search</a></li>
     <li><a href="/recent.html"><i class="icon w-20" data-feather="plus-circle"></i>Recent</a></li>
+    </ul>
+    <hr>
+    <ul>
+    <li><a href="/groups.html"><i class="icon w-20" data-feather="users"></i>Groups</a></li>
     </ul>
     <hr>
     <ul>
