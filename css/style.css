@@ -373,13 +373,13 @@ input#transl {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: var(--c);
     background: linear-gradient(0deg, var(--c) 0%, rgba(0,0,0,0) 50%);
     transition: 0.25s;
+    opacity: 1;
 }
 
 .manga-card:hover .desc-cont:before, .manga-card:focus .desc-cont:before {
-    opacity: 0;
+    top: 120px;
 }
 
 
