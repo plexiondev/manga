@@ -3,7 +3,7 @@
 - [x] implement basic view of manga page
 - [x] implement Start Reading button
 - [x] swap ^ button depending on if previously read
-- [ ] continue off where left off if previously read
+- [x] continue off where left off if previously read
 - [x] add (temp?) link to mangadex page
 - [x] dynamically update page titles via `page-title`
 
@@ -27,7 +27,7 @@ this function can then refresh auth automatically if required (and also display 
 - [x] include page headers
 - [x] include top header (with title, description)
 - [x] also include bigger search box to find content
-- [ ] possibly include `last_read` (that will update as the last content read - based on id and saved name (to prevent additional api call just to get name)) to jump right back in
+- [x] possibly include `last_read` (that will update as the last content read - based on id and saved name (to prevent additional api call just to get name)) to jump right back in
 
 ## viewing
 
@@ -79,6 +79,8 @@ this function can then refresh auth automatically if required (and also display 
 - [x] implement basic api calls to read manga
 - [x] implement back/forth buttons
 - [ ] implement chapter picker?
+- [x] show chapter/vol name in navbar
+- [ ] show manga name in navbar
 - [x] allow choosing of volume
 - [x] automatically move to the next volume/chapter when finished
 - [x] pre-load all page images
