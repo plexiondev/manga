@@ -3,6 +3,7 @@
 
 var limit = 18;
 var offset = 0;
+var top_limit = 3600;
 
 load_page();
 
@@ -18,13 +19,18 @@ function load_page() {
         document.getElementById('feed').innerHTML = ``;
 
         // calculate total
-        var total = Math.round(data.data.total / 18); // 21418 = 1189
-        var page = offset / 18; // 18 = 1
+        var total = Math.round(data.total / 18); // 21418 = 1189
+        var page = Math.round(offset / 18); // 18 = 1
+        var top_limit_round = Math.round(top_limit / 18); // 3600 = 200
 
         // pages
         document.getElementById('advance_pages').innerHTML =
         (`
-        
+        <button class="page-num left" onclick="set_page(0)">1</button>
+        <button class="page-num" onclick="set_page(${offset-18})">${page-1}</button>
+        <button class="page-num current" onclick="set_page(${offset})">${page}</button>
+        <button class="page-num" onclick="set_page(${offset+18})">${page+1}</button>
+        <button class="page-num right" onclick="set_page(${top_limit})">${top_limit_round}</button>
         `);
         
         for (let i in data.data) {
@@ -75,11 +81,31 @@ function create_em(data_pass,i) {
 function advance_page(direction) {
     if (direction == 1) {
         offset += 18;
-        log('general',`Advancing forward 1 page (${offset})`,true);
-        load_page();
+        if (offset <= 3600) {
+            log('general',`Advancing forward 1 page (${offset})`,true);
+            load_page();
+        } else {
+            offset -= 18;
+        }
     } else {
         offset -= 18;
-        log('general',`Advancing backward 1 page (${offset})`,true);
+        if (offset >= 0) {
+            log('general',`Advancing backward 1 page (${offset})`,true);
+            load_page();
+        } else {
+            offset += 18;
+        }
+    }
+}
+
+// set page directly
+function set_page(page) {
+    offset_temp = offset;
+    offset = page;
+    if (offset >= 0 && offset <= 3600) {
+        log('general',`Set page to ${offset}`,true);
         load_page();
+    } else {
+        offset = offset_temp;
     }
 }

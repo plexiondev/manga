@@ -577,3 +577,47 @@ nav hr {
 #settings {
     display: initial;
 }
+
+
+/* pages */
+.page-num {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-main);
+    font-family: var(--font-main);
+    border-radius: 50px;
+    padding: 4px 10px;
+    margin: 0 2px;
+    transition: 0.25s;
+}
+.page-num:hover, .page-num:focus {
+    background-color: var(--b4);
+}
+/* current */
+.page-num.current {
+    background-color: var(--text-link) !important;
+    color: var(--b6);
+    font-weight: 600;
+}
+/* left/right */
+.page-num.left, .page-num.right {
+    margin: 0 10px;
+    color: var(--text-alt);
+}
+
+/* advance buttons */
+button.advance {
+    border: none;
+    background-color: var(--b3);
+    font-family: var(--font-main);
+    color: var(--text-icon);
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 4px 15px;
+    font-weight: 500;
+    transition: 0.25s;
+}
+button.advance:hover, button.advance:focus {
+    background-color: var(--b2);
+}
