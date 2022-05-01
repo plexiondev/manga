@@ -494,7 +494,7 @@ section .chapter-card h5:before, h5.main:before {
 }
 :root {
     --padding: 180px;
-    --highlight-padding: 180px;
+    --highlight-padding: 120px;
 }
 
 /* nav */
