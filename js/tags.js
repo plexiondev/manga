@@ -198,7 +198,7 @@ function load_page() {
         const data = JSON.parse(this.response);
         document.getElementById('feed').innerHTML = ``;
 
-        document.getElementById('tag_msg').innerHTML = `Viewing manga tagged with <label class="tag">${tags_string[tag_req]}</label>`;
+        document.getElementById('tag_msg').innerHTML = `Viewing manga tagged with <a class="tag" href="/tags.html?t=${tag_req}">${tags_string[tag_req]}</a>`;
 
         // reset total
         if (top_limit > data.total) {
