@@ -50,7 +50,7 @@ const tags_icon = {
 // pass manga id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
-let manga = query.get('m')
+let manga = query.get('m');
 // has user read before?
 let chapter = localStorage.getItem("chapter") || null;
 
@@ -116,7 +116,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
     // then cache
     now = new Date(now);
-    now.setMinutes (now.getMinutes() + 120);
+    now.setMinutes(now.getMinutes() + 120);
     log('general',`Cached until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (2 hr)`,true);
     localStorage.setItem(`${manga}_view_timeout`, now);
 } else {
