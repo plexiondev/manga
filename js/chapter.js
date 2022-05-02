@@ -21,8 +21,8 @@ get_volumes();
 
 
 function truncate(string) {
-    if (string.length > 27) {
-        return string.substring(0,27)+'...';
+    if (string.length > 23) {
+        return string.substring(0,23)+'...';
     } else {
         return string;
     }
