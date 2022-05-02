@@ -108,6 +108,7 @@
 
 a[title]:not(.button) {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* manga */
