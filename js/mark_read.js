@@ -14,11 +14,6 @@ function check_read(chapter_id_pass) {
     }
 }
 
-// periodically check for upload
-// will check if any items have `pending_upload` as a class
-// this means the current reading state has not been sent to mangadex
-window.setInterval(check_pending,5000);
-
 // mark manga chapter as read
 function mark_read(chapter_id_pass,force) {
 
@@ -28,37 +23,25 @@ function mark_read(chapter_id_pass,force) {
         // mark as read
         localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add('read');
-        document.getElementById(`mark_${chapter_id}`).setAttribute('read','true');
 
         if (force != true) {
-        // mark as pending upload
-        document.getElementById(`mark_${chapter_id}`).classList.add('pending_upload');
+            send_read(chapter_id);
 
-        // log to user
-        log('enabled',`Marked ${chapter_id} as read.`,false);
+            // log to user
+            log('enabled',`Marked ${chapter_id} as read.`,false);
         }
     } else {
         // mark as unread
         localStorage.removeItem(`${chapter_id}_read`);
         document.getElementById(`mark_${chapter_id}`).classList.remove('read');
-        document.getElementById(`mark_${chapter_id}`).setAttribute('read','false');
-        
-        // mark as pending upload
-        document.getElementById(`mark_${chapter_id}`).classList.add('pending_upload');
+
+        remove_read(chapter_id);
 
         // log to user
         log('enabled',`Marked ${chapter_id} as unread.`,false);
     }
 }
 
-// check if any mark_read pending upload
-function check_pending() {
-    let pending_items = document.getElementsByClassName('pending_upload');
-    
-    if (pending_items.length > 0) {
-        send_read(pending_items);
-    }
-}
 
 // send off read/un-read chapters
 function send_read(pending_items) {
