@@ -112,7 +112,7 @@ function create_chapter(data_pass) {
         </div>
         `);
 
-        let chapter_list = document.createElement("ul");
+        let chapter_list = document.createElement('ul');
 
         // show chapters
         for (let n in chapters_array) {
@@ -157,7 +157,7 @@ function create_chapter(data_pass) {
 // empty
 function empty_results() {
     log('general',`No chapter results found.`,true);
-    document.getElementById("no_results").style.display = `flex`;
+    document.getElementById('no_results').style.display = `flex`;
 }
 
 

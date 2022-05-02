@@ -146,22 +146,27 @@ function get_general(data_pass) {
 
     // titles
     document.getElementById('manga.title').textContent = data.data.attributes.title.en;
-    // page title
-    document.getElementById('page-title').textContent = `Viewing ${data.data.attributes.title.en}`;
-    // edge-case when multiple alt titles
+    // alt titles
     for (let i in data.data.attributes.altTitles) {
+        // only check for ja (for now)
         if (data.data.attributes.altTitles[i].ja != undefined) {
             document.getElementById('manga.alt_title').textContent = `${data.data.attributes.altTitles[i].ja}`;
             // page title (with alt)
-            document.getElementById('page-title').textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
+            document.getElementById('page.title').textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
+        } else {
+            // page title (without alt)
+            document.getElementById('page.title').textContent = `Viewing ${data.data.attributes.title.en}`;
         }
     }
-    // desc
+
+    // description
+    // ran through showdown to convert markdown
     var converter = new showdown.Converter();
     text = `${data.data.attributes.description.en}`;
     if (text == 'undefined') { text = '' }
     html = converter.makeHtml(text);
-    em_mangadesc.innerHTML = `${html}`;
+    // append
+    document.getElementById('manga.body').innerHTML = `${html}`;
 
     // content rating
     try {
