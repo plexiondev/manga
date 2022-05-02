@@ -47,17 +47,17 @@ function refresh_auth(redirect) {
 
         // swap url
         if (redirect == true) { window.location.href = '/?logged_in=1'; };
+
+        // reset auth cache
+        auth_now = new Date(auth_now);
+        auth_now.setMinutes(auth_now.getMinutes() + 14);
+        log('auth',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`,true);
+        localStorage.setItem('token_cache', auth_now);
     }
 
     xhr.send(JSON.stringify({
         token: localStorage.getItem('token_refresh')
     }));
-
-    // reset auth cache
-    auth_now = new Date(auth_now);
-    auth_now.setMinutes(auth_now.getMinutes() + 14);
-    log('auth',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`,true);
-    localStorage.setItem('token_cache', auth_now);
 }
 
 
