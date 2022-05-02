@@ -10,6 +10,7 @@ function mark_read(chapter_id_pass,force) {
         // mark as read
         if (force == true) {
             // onload, not user requested
+            localStorage.setItem(`${chapter_id}_read`,1);
             document.getElementById(`mark_${chapter_id}`).classList.add('read');
         } else {
             // user requested (by clicking)
