@@ -17,20 +17,13 @@ let user = query.get('u') || "";
 if (user == "") {
     // no user supplied
     prompt_no_user();
+} else {
+    // get user
+    get_user();
 }
 
-// cache
-let cached_out = localStorage.getItem(`${user}_view_timeout`) || "";
-let cache = localStorage.getItem(`${user}_view`) || "";
-let now = new Date();
 
-
-// checks
-if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
-    
-    // if exceeded cache
-    
-    // do everything
+function get_user() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/user/${user}`;
@@ -53,28 +46,10 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
             log('error',`${error}`,true);
             get_error();
         }
-
-        // then cache
-        now = new Date(now);
-        now.setMinutes(now.getMinutes() + 60);
-        log('general',`Cached until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (1 hr)`,true);
-        localStorage.setItem(`${user}_view_timeout`,now);
     }
-
 
     // send
     xhr.send();
-} else {
-    log('general',`Using cached info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
-    const data = JSON.parse(localStorage.getItem(`${user}_view`));
-
-    try {
-        get_general(localStorage.getItem(`${user}_view`));
-    } catch(error) {
-        log('error',`${error}`,true);
-        get_error();
-    }
-
 }
 
 function get_general(data_pass) {
