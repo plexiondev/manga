@@ -226,6 +226,11 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     feather.replace();
 }
 
+// expand truncated body
+function expand_trunc_body() {
+    document.getElementById('attr.trunc_body').classList.toggle('expand');
+}
+
 // on error (404)
 function get_error() {
     document.getElementById('overview').innerHTML = (`
