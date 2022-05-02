@@ -141,7 +141,7 @@ function get_socials(data_pass) {
 // create social
 function create_social(platform,link) {
     let em_tag = document.createElement('a');
-    em_tag.classList.add('tag',`${platform}`);
+    em_tag.classList.add('tag','social',`${platform}`);
     em_tag.href = `${link}`;
     if (platform != 'website') {
         em_tag.innerHTML = (`

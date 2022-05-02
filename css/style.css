@@ -366,7 +366,7 @@ input#transl {
     margin-left: 3px;
 }
 
-.tag img, .tag svg {
+.tag.social img, .tag.social svg {
     width: 20px;
     height: 20px;
     color: #FFFFFF;
@@ -374,14 +374,14 @@ input#transl {
     top: 4.25px;
     margin-right: 5px;
 }
-.tag img {
+.tag.social img {
     width: 20px;
     height: 20px;
     position: relative;
     top: 4.25px;
     filter: invert(1);
 }
-.tag svg {
+.tag.social svg {
     top: -2px !important;
 }
 
