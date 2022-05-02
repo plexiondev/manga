@@ -57,8 +57,8 @@ var last_read_chapter = localStorage.getItem(`${manga}_read_chapter`) || null;
 var last_read_id = localStorage.getItem(`${manga}_read_id`) || null;
 
 if (last_read_id != null) {
-    document.getElementById('manga_read').textContent = `Continue from Vol. ${last_read_volume} Ch. ${last_read_chapter}`;
-    document.getElementById('manga_read').href = `/read.html?c=${last_read_id}&m=${manga}`;
+    document.getElementById('action.read').textContent = `Continue from Vol. ${last_read_volume} Ch. ${last_read_chapter}`;
+    document.getElementById('action.read').href = `/read.html?c=${last_read_id}&m=${manga}`;
 }
 
 // cache
@@ -77,8 +77,6 @@ let em_tags = document.getElementById("tags");
 // images
 let em_mangabg = document.getElementById("manga-bg");
 let em_mangaimg = document.getElementById("manga-img");
-// reading status
-let em_readstatus = document.getElementById('reading_status');
 
 // cover art
 var cover_art;
@@ -147,16 +145,15 @@ function get_general(data_pass) {
     const data = JSON.parse(data_pass);
 
     // titles
-    em_mangatitle.textContent = data.data.attributes.title.en;
+    document.getElementById('manga.title').textContent = data.data.attributes.title.en;
     // page title
-    let page_title = document.getElementById("page-title");
-    page_title.textContent = `Viewing ${data.data.attributes.title.en}`;
+    document.getElementById('page-title').textContent = `Viewing ${data.data.attributes.title.en}`;
     // edge-case when multiple alt titles
     for (let i in data.data.attributes.altTitles) {
         if (data.data.attributes.altTitles[i].ja != undefined) {
-            em_mangajptitle.textContent = `${data.data.attributes.altTitles[i].ja}`;
-            // page title
-            page_title.textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
+            document.getElementById('manga.alt_title').textContent = `${data.data.attributes.altTitles[i].ja}`;
+            // page title (with alt)
+            document.getElementById('page-title').textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
         }
     }
     // desc
@@ -183,17 +180,17 @@ function get_general(data_pass) {
         warn_content_rating(`<label class="tag big ${data.data.attributes.contentRating}" style="margin: 0;"><i class="icon w-24" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 5px; top: -1.3px !important;"></i>${rating}</label>`);
     }
 
-    // buttons
-    em_mangadex.href = `https://mangadex.org/title/${manga}`;
-
+    // actions
+    // open in mangadex
+    document.getElementById('action.mangadex').href = `https://mangadex.org/title/${manga}`;
     // reading status
     read_status();
     // check following
     check_following();
 
     // info blocks
-    document.getElementById('date_created').innerHTML = (`${new Date(`${data.data.attributes.createdAt}`).toLocaleDateString()}`);
-    document.getElementById('date_updated').innerHTML = (`${new Date(`${data.data.attributes.updatedAt}`).toLocaleDateString()}`);
+    document.getElementById('attr.date_created').innerHTML = (`${new Date(`${data.data.attributes.createdAt}`).toLocaleDateString()}`);
+    document.getElementById('attr.date_updated').innerHTML = (`${new Date(`${data.data.attributes.updatedAt}`).toLocaleDateString()}`);
 }
 
 function get_relationships(data_pass) {
@@ -273,7 +270,7 @@ function get_relationships(data_pass) {
 
             // append
             if ((relationships[i].attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') == 1) || (relationships[i].attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') == 1) || (relationships[i].attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') == 1) || (relationships[i].attributes.contentRating == 'safe')) {
-                document.getElementById("manga-related").appendChild(related_card);
+                document.getElementById('manga-related').appendChild(related_card);
             }
         }
     }
@@ -333,9 +330,9 @@ function read_status() {
         let status = data.status;
         if (status == undefined || status == null) { status = 'add' };
 
-        em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
-        em_readstatus.setAttribute('status',`${status}`);
-        em_readstatus.innerHTML = (`
+        document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
+        document.getElementById('action.status').setAttribute('status',`${status}`);
+        document.getElementById('action.status').innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
 
@@ -406,9 +403,9 @@ function save_read_status() {
         if (status == undefined || status == null || status == 'null') { status = 'add' };
 
         // show on button
-        em_readstatus.setAttribute('onclick',`open_read_status('${status}')`);
-        em_readstatus.setAttribute('status',`${status}`);
-        em_readstatus.innerHTML = (`
+        document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
+        document.getElementById('action.status').setAttribute('status',`${status}`);
+        document.getElementById('action.status').innerHTML = (`
         <i class="icon w-20" data-feather="${readstatus_icon[status]}" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
 
@@ -482,9 +479,9 @@ function create_following(status) {
         // not following
 
         // show on button
-        document.getElementById('following').setAttribute('onclick',`open_following(false)`);
-        document.getElementById('following').classList.remove('focus');
-        document.getElementById('following').innerHTML = (`
+        document.getElementById('action.following').setAttribute('onclick',`open_following(false)`);
+        document.getElementById('action.following').classList.remove('focus');
+        document.getElementById('action.following').innerHTML = (`
         <i class="icon w-22" data-feather="minus-circle" style="top: -1px !important;"></i>
         `);
 
@@ -493,9 +490,9 @@ function create_following(status) {
         // following
             
         // show on button
-        document.getElementById('following').setAttribute('onclick',`open_following(true)`);
-        document.getElementById('following').classList.add('focus');
-        document.getElementById('following').innerHTML = (`
+        document.getElementById('action.following').setAttribute('onclick',`open_following(true)`);
+        document.getElementById('action.following').classList.add('focus');
+        document.getElementById('action.following').innerHTML = (`
         <i class="icon w-22" data-feather="bell" style="top: -1px !important;"></i>
         `);
 

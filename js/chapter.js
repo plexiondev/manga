@@ -122,7 +122,7 @@ function create_chapter(data_pass) {
             chapter_s.classList.add('chapter-embed');
 
             if (last_read_id == null && assigned_link != true) {
-                document.getElementById('manga_read').href = `read.html?c=${chapters_links_array[n]}&m=${manga}`;
+                document.getElementById('action.read').href = `read.html?c=${chapters_links_array[n]}&m=${manga}`;
                 assigned_link = true;
             }
 
