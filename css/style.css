@@ -465,6 +465,11 @@ input.generic {
     background-color: #8d21cc !important;
 }
 
+/* important */
+.tag.ROLE_ADMIN {
+    background-color: var(--accent-raise) !important;
+}
+
 
 /* blockquote */
 blockquote {
