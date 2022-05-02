@@ -77,11 +77,30 @@ function get_chapters() {
                 assigned_link = true;
             }
 
+            var scanlation_group;
+            var scanlation_group_id;
+            var uploader;
+            var uploader_id;
+
+            for (let n in data.data[i].relationships) {
+                if (data.data[i].relationships[n].type == 'scanlation_group') {
+                    scanlation_group = data.data[i].relationships[n].attributes.name;
+                    scanlation_group_id = data.data[i].relationships[n].id;
+                } else if (data.data[i].relationships[n].type == 'user') {
+                    uploader = data.data[i].relationships[n].attributes.username;
+                    uploader_id = data.data[i].relationships[n].id;
+                }
+            }
+
             if (check_read(`${data.data[i].id}`) == 1) {
                 // text
                 em_chapter.innerHTML = (`
                 <button class="mark_read read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" read="true" onclick="mark_read('${data.data[i].id}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
                 <a href="read.html?c=${data.data[i].id}&m=${manga}">Chapter ${data.data[i].attributes.chapter}</a>
+                <span class="right-icons">
+                <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" data-feather="user"></i></a>
+                <a href="https://mangadex.org/group/${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
+                </span>
                 `);
             } else {
                 unread_cache.push(`${data.data[i].id}`);
@@ -89,6 +108,10 @@ function get_chapters() {
                 em_chapter.innerHTML = (`
                 <button class="mark_read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" read="false" onclick="mark_read('${data.data[i].id}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
                 <a href="read.html?c=${data.data[i].id}&m=${manga}">Chapter ${data.data[i].attributes.chapter}</a>
+                <span class="right-icons">
+                <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" data-feather="user"></i></a>
+                <a href="https://mangadex.org/group/${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
+                </span>
                 `);
             }
 
@@ -96,6 +119,7 @@ function get_chapters() {
             document.getElementById(`feed.volumes.${data.data[i].attributes.volume}`).appendChild(em_chapter);
         }
 
+        feather.replace();
         read_chapters();
     }
 
