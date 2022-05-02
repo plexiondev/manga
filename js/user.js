@@ -111,7 +111,8 @@ function prompt_no_user() {
         <p>The requested user was not found.<br>Please supply a user using <code>?u=userid</code> in the URL.</p>
         </div>
         <div class="actions">
-        <a role="button" class="button focus" onclick="history.back()">Go back</a>
+        <a role="button" class="button" onclick="history.back()">Go back</a>
+        <a role="button" class="button focus" href="/users.html">Browse Users</a>
         </div>
     `);
 
