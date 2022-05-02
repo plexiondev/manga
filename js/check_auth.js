@@ -7,8 +7,10 @@ let token_cache;
 let auth_now;
 
 // run every 3 seconds
-check_auth();
-window.setInterval(check_auth,3000);
+if (!window.location.href.includes('/auth.html')) {
+    check_auth();
+    window.setInterval(check_auth,3000);
+}
 
 // check auth
 function check_auth() {
@@ -36,23 +38,34 @@ function refresh_auth(redirect) {
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function() {
+        if (xhr.status == 400 && !window.location.href.includes('/auth.html')) {
+            // un-authorised
 
-        const data = JSON.parse(this.response);
+            window.location.href = `/auth.html`;
+        } else if (xhr.status == 429) {
+            // exceeded rate-limit
 
-        // save token to storage
-        localStorage.setItem('token',data.token.session);
-        localStorage.setItem('token_refresh',data.token.refresh);
+            window.location.href = '/auth-end.html?code=429';
+        } else {
+            // authorised
 
-        get_info();
+            const data = JSON.parse(this.response);
 
-        // swap url
-        if (redirect == true) { window.location.href = '/?logged_in=1'; };
+            // save token to storage
+            localStorage.setItem('token',data.token.session);
+            localStorage.setItem('token_refresh',data.token.refresh);
 
-        // reset auth cache
-        auth_now = new Date(auth_now);
-        auth_now.setMinutes(auth_now.getMinutes() + 14);
-        log('auth',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`,true);
-        localStorage.setItem('token_cache', auth_now);
+            get_info();
+
+            // swap url
+            if (redirect == true) { window.location.href = '/auth-end.html?code=200'; };
+
+            // reset auth cache
+            auth_now = new Date(auth_now);
+            auth_now.setMinutes(auth_now.getMinutes() + 14);
+            log('auth',`Authorised again until ${auth_now.getHours()}:${auth_now.getMinutes()}:${auth_now.getSeconds()} (14 min)`,true);
+            localStorage.setItem('token_cache', auth_now);
+        }
     }
 
     xhr.send(JSON.stringify({

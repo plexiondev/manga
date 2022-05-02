@@ -38,7 +38,4 @@ function prompt_login() {
     // append
     document.getElementById('window_parent').appendChild(em_window);
     feather.replace();
-
-    // auto-select
-    document.getElementById(`op_${status}`).setAttribute('selected','');
 }
