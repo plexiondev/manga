@@ -54,6 +54,10 @@ this function can then refresh auth automatically if required (and also display 
 - [ ] auto mark chapter as read if finished reading (possibly make option incase prefer manual)
 - [x] figure out how to work mark read/unread chapters in mark_read.js
 - [x] show warning if manga does not fit in user's content rating
+- [x] show manga's user rating
+- - [ ] allow user to leave a rating
+- [x] show manga's user follows
+- - [x] allow user to follow manga
 - [ ] add more options button
 - - [ ] represent as a simple `...` icon
 - - [ ] contains mangadex link
@@ -125,4 +129,4 @@ this function can then refresh auth automatically if required (and also display 
 - - [x] retrieve user's home feed
 - - [x] retrieve user's manga follows
 - - [ ] retrieve user's (group?) follows
-- - [ ] retrieve user's manga ratings
+- - [x] retrieve user's manga ratings
