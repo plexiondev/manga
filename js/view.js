@@ -612,12 +612,13 @@ function view_rating() {
 
     // calculate
     for (let i in rating_dist) {
-        let rating = rating_dist[i] / max_rating;
+        let rating_init = rating_dist[i] / max_rating;
+        let rating = rating_init * 360;
 
         let em_bar = document.createElement('tr');
         em_bar.innerHTML = (`
         <td class="rating-type">${i}</td>
-        <td class="rating-bar"><span class="bar" style="width: ${max_rating}px;"><span class="fill" style="width: ${rating}px;"></span></span></td>
+        <td class="rating-bar"><span class="bar" style="width: 360px;"><span class="fill" style="width: ${rating}px;"></span></span></td>
         <td class="rating-count"><strong>(${rating_dist[i]})</strong></td>
         `);
 

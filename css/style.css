@@ -125,12 +125,20 @@ a[title]:not(.button) {
 /* rating distribution */
 .distribution .bar {
     background-color: var(--b4);
-    height: 14px;
-    border-radius: 5px;
+    height: 16px;
+    border-radius: 10px;
+    display: block;
+    position: relative;
+    margin: 0 10px;
 }
 .distribution .bar .fill {
     background-color: var(--text-link);
-    border-radius: 5px;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
 
 
