@@ -116,7 +116,12 @@ function get_chapters() {
             }
 
             // append
-            document.getElementById(`feed.volumes.${data.data[i].attributes.volume}`).appendChild(em_chapter);
+            if (data.data[i].attributes.volume != null) {
+                document.getElementById(`feed.volumes.${data.data[i].attributes.volume}`).appendChild(em_chapter);
+            } else {
+                // no volume
+                document.getElementById('feed.volumes.none').appendChild(em_chapter);
+            }
         }
 
         feather.replace();
