@@ -53,10 +53,12 @@ function get_volumes() {
                 em_card.classList.add('chapter-card');
                 em_card.innerHTML = (`
                 <div class="info">
-                <h5 class="main">${volume_name}</h5>
+                <h5 class="main">${volume_name} <label class="overl" id="feed.volumes.${data.volumes[i].volume}.attr.length"></label></h5>
                 </div>
                 <ul id="feed.volumes.${data.volumes[i].volume}"></ul>
                 `);
+
+                localStorage.setItem(`${manga}.volumes.${data.volumes[i].volume}.attr.length`,0);
 
                 // append
                 document.getElementById('feed.volumes').appendChild(em_card);
@@ -142,6 +144,10 @@ function get_chapters() {
                 </span>
                 `);
             }
+
+            let count = parseInt(localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`));
+            localStorage.setItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`,`${parseInt(count+1)}`);
+            document.getElementById(`feed.volumes.${data.data[i].attributes.volume}.attr.length`).textContent = `(${localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`)})`;
 
             // append
             if (data.data[i].attributes.volume != null) {
