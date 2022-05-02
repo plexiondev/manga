@@ -61,10 +61,10 @@ this function can then refresh auth automatically if required (and also display 
 
 ## authors/artists
 
-- [ ] make pages for authors
-- - [ ] viewing author's biography
-- - [ ] viewing author's socials
-- - [ ] viewing author's works
+- [x] make pages for authors
+- - [x] viewing author's biography
+- - [x] viewing author's socials
+- - [x] viewing author's works
 - [ ] make author feed
 
 ## groups
