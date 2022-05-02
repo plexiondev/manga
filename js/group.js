@@ -72,20 +72,15 @@ function get_general(data_pass) {
 
     // biography
     // ran through showdown to convert markdown
-    if (data.data.attributes.biography.en != undefined) {
-        var converter = new showdown.Converter();
-        text = `${data.data.attributes.biography.en}`;
-        html = converter.makeHtml(text);
-        // append
-        document.getElementById('attr.body').innerHTML = `${html}`;
-    }
+    var converter = new showdown.Converter();
+    text = `${data.data.attributes.description}`;
+    html = converter.makeHtml(text);
+    // append
+    document.getElementById('attr.body').innerHTML = `${html}`;
 
     // actions
     // open in mangadex
     document.getElementById('action.mangadex').href = `https://mangadex.org/group/${group}`;
-
-    // socials
-    get_socials(data_pass);
 }
 
 // get works
