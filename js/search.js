@@ -170,5 +170,5 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
 // empty
 function empty_results() {
     log('general',`No search results found.`,true);
-    document.getElementById('no_results').style.display = `flex`;
+    document.getElementById('error.empty').style.display = `flex`;
 }

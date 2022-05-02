@@ -154,7 +154,7 @@ function create_chapter(data_pass) {
 // empty
 function empty_results() {
     log('general',`No chapter results found.`,true);
-    document.getElementById('no_results').style.display = `flex`;
+    document.getElementById('error.empty').style.display = `flex`;
 }
 
 
