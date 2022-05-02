@@ -34,7 +34,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         log('general',`Found ${author} author!`,true);
 
         // parse
-        localStorage.setItem(`${user}_view`,this.response);
+        localStorage.setItem(`${author}_view`,this.response);
 
         data_parse = JSON.parse(this.response);
 
@@ -76,31 +76,24 @@ function get_general(data_pass) {
     const data = JSON.parse(data_pass);
     console.log(data)
 
-    // username
-    document.getElementById('attr.username').textContent = data.data.attributes.username;
+    // name
+    document.getElementById('attr.name').textContent = data.data.attributes.name;
     // page title
-    document.getElementById('page.title').textContent = `${data.data.attributes.username}'s Profile`;
+    document.getElementById('page.title').textContent = `${data.data.attributes.name}'s Author Profile`;
+
+    // biography
+    // ran through showdown to convert markdown
+    if (data.data.attributes.biography.en != undefined) {
+        var converter = new showdown.Converter();
+        text = `${data.data.attributes.biography.en}`;
+        html = converter.makeHtml(text);
+        // append
+        document.getElementById('attr.body').innerHTML = `${html}`;
+    }
 
     // actions
     // open in mangadex
     document.getElementById('action.mangadex').href = `https://mangadex.org/author/${author}`;
-
-    // info blocks
-    document.getElementById('attr.user_id').innerHTML = (`${data.data.id}`);
-
-    // tags
-    let roles = data.data.attributes.roles;
-    for (let i in roles) {
-        // create element
-        let tag = document.createElement('label');
-        tag.classList.add('tag',`${(roles[i]).replaceAll(' ','_')}`);
-
-        // text
-        tag.textContent = `${roles_string[roles[i]]}`;
-
-        // append
-        document.getElementById('attr.roles').appendChild(tag);
-    }
 }
 
 // on error (404)
