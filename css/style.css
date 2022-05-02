@@ -249,6 +249,9 @@ header .menu.left {
 .cards .manga-card {
     margin: 0 !important;
 }
+.cards.users {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
 
 /* manga/search cards */
 .manga-card {
@@ -292,6 +295,19 @@ header .menu.left {
 }
 .manga-card.leader h5, .manga-card.leader svg {
     color: #ffdb66;
+}
+
+/* count */
+.count {
+    margin: 0 12px;
+    background-color: var(--ext);
+    border-radius: 50px;
+    font-size: 11px;
+    padding: 2px 10px;
+    position: relative;
+    bottom: 1px;
+    font-weight: 600;
+    color: var(--text-alt);
 }
 
 /* manga controls */

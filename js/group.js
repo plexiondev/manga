@@ -17,6 +17,8 @@ const tags_icon = {
 }
 
 let group_leader;
+let group_member_count = 0;
+let group_leader_count = 0;
 
 // pass author id from url
 const search = window.location.search;
@@ -121,16 +123,22 @@ function get_members(data_pass) {
             // is group leader
             group_leader = data.data.relationships[i].id;
             card.classList.add('leader');
-            document.getElementById('feed.members').appendChild(card);
+            document.getElementById('feed.leaders').appendChild(card);
+            group_leader_count += 1;
         } else if (data.data.relationships[i].id == group_leader) {
             // is group leader (but as a member)
             // (ignore)
         } else {
             document.getElementById('feed.members').appendChild(card);
+            group_member_count += 1;
         }
 
         feather.replace();
     }
+
+    // show member count
+    document.getElementById('attr.member_count').innerHTML = (`${group_member_count}`);
+    document.getElementById('attr.leader_count').innerHTML = (`${group_leader_count}`);
 }
 
 // get works
