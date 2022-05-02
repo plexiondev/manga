@@ -35,9 +35,6 @@ function get_user() {
     xhr.onload = function() {
         log('general',`Found ${user} user!`,true);
 
-        // parse
-        localStorage.setItem(`${user}_view`,this.response);
-
         data_parse = JSON.parse(this.response);
 
         try {

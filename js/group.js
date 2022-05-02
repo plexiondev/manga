@@ -41,10 +41,7 @@ function get_group() {
 
     // request is received
     xhr.onload = function() {
-        log('general',`Found ${author} group!`,true);
-
-        // parse
-        localStorage.setItem(`${author}_view`,this.response);
+        log('general',`Found ${group} group!`,true);
 
         data_parse = JSON.parse(this.response);
 
@@ -66,11 +63,12 @@ function get_general(data_pass) {
 
     // parse
     const data = JSON.parse(data_pass);
+    console.log(data)
 
     // name
     document.getElementById('attr.name').textContent = data.data.attributes.name;
     // page title
-    document.getElementById('page.title').textContent = `${data.data.attributes.name}'s Author Profile`;
+    document.getElementById('page.title').textContent = `${data.data.attributes.name}'s Group Profile`;
 
     // biography
     // ran through showdown to convert markdown
@@ -84,43 +82,10 @@ function get_general(data_pass) {
 
     // actions
     // open in mangadex
-    document.getElementById('action.mangadex').href = `https://mangadex.org/author/${author}`;
+    document.getElementById('action.mangadex').href = `https://mangadex.org/group/${group}`;
 
     // socials
     get_socials(data_pass);
-}
-
-// parse socials
-function get_socials(data_pass) {
-    const data = JSON.parse(data_pass);
-
-    for (let i in socials) {
-        if (socials[i] in data.data.attributes && data.data.attributes[socials[i]] != null) {
-            create_social(socials[i],data.data.attributes[socials[i]]);
-        }
-    }
-}
-
-// create social
-function create_social(platform,link) {
-    let em_tag = document.createElement('a');
-    em_tag.classList.add('tag','social',`${platform}`);
-    em_tag.href = `${link}`;
-    if (platform != 'website') {
-        em_tag.innerHTML = (`
-        <img src="https://unpkg.com/simple-icons@v6/icons/${platform}.svg">
-        ${socials_string[platform]}
-        `);
-    } else {
-        em_tag.innerHTML = (`
-        <i class="icon w-20" data-feather="globe"></i>
-        ${socials_string[platform]}
-        `);
-    }
-
-    // append
-    document.getElementById('attr.socials').appendChild(em_tag);
-    feather.replace();
 }
 
 // get works
@@ -141,7 +106,7 @@ function get_works() {
 
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga?limit=32&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}&authors[]=${author}&artists[]=${author}`;
+    const url = `https://api.mangadex.org/manga?limit=32&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}&group=${group}`;
     xhr.open('GET',url,true);
 
     xhr.onload = function() {
@@ -258,8 +223,8 @@ function get_error() {
     document.getElementById('overview').innerHTML = (`
     <div class="empty-results" style="display: flex;">
         <span>
-        <h3>User not found</h3>
-        <p>The requested author was not found on MangaDex.</p>
+        <h3>Group not found</h3>
+        <p>The requested group was not found on MangaDex.</p>
         <br>
         <br>
         <label class="over">404</label>

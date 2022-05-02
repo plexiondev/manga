@@ -80,9 +80,6 @@ function get_author() {
     xhr.onload = function() {
         log('general',`Found ${author} author!`,true);
 
-        // parse
-        localStorage.setItem(`${author}_view`,this.response);
-
         data_parse = JSON.parse(this.response);
 
         try {
@@ -295,7 +292,7 @@ function get_error() {
     document.getElementById('overview').innerHTML = (`
     <div class="empty-results" style="display: flex;">
         <span>
-        <h3>User not found</h3>
+        <h3>Author not found</h3>
         <p>The requested author was not found on MangaDex.</p>
         <br>
         <br>
