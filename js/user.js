@@ -81,7 +81,6 @@ function get_general(data_pass) {
 
     // parse
     const data = JSON.parse(data_pass);
-    console.log(data)
 
     // username
     document.getElementById('attr.username').textContent = data.data.attributes.username;
