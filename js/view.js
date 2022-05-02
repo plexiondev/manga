@@ -208,12 +208,12 @@ function get_relationships(data_pass) {
             document.getElementById('attr.img_link').href = `${cover_url}`;
         } else if (relationships[i].type == 'author') {
             // author
-            document.getElementById('attr.author').href = `https://mangadex.org/author/${relationships[i].id}`;
+            document.getElementById('attr.author').href = `/author.html?u=${relationships[i].id}`;
             document.getElementById('attr.author').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="user"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
             feather.replace();
         } else if (relationships[i].type == 'artist') {
             // artist
-            document.getElementById('attr.artist').href = `https://mangadex.org/author/${relationships[i].id}`;
+            document.getElementById('attr.artist').href = `/author.html?u=${relationships[i].id}`;
             document.getElementById('attr.artist').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
             feather.replace();
         } else if (relationships[i].type == 'manga' && relationships[i].attributes != undefined) {
