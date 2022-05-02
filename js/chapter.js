@@ -129,7 +129,7 @@ function get_chapters() {
                 <a href="read.html?c=${data.data[i].id}&m=${manga}" title="${chapter_name_raw}">${chapter_name}</a>
                 <span class="right-icons">
                 <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" data-feather="user"></i></a>
-                <a href="https://mangadex.org/group/${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
+                <a href="/group.html?u=${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
                 </span>
                 `);
             } else {
@@ -140,7 +140,7 @@ function get_chapters() {
                 <a href="read.html?c=${data.data[i].id}&m=${manga}" title="${chapter_name_raw}">${chapter_name}</a>
                 <span class="right-icons">
                 <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" data-feather="user"></i></a>
-                <a href="https://mangadex.org/group/${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
+                <a href="/group.html?u=${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
                 </span>
                 `);
             }
