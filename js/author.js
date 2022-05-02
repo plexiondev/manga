@@ -55,7 +55,10 @@ if (author == "") {
     // no author supplied
     prompt_no_author();
 } else {
+    // get author
     get_author();
+    // get author's works
+    get_works();
 }
 
 // cache
@@ -93,9 +96,6 @@ function get_author() {
     // send
     xhr.send();
 }
-
-// get author's works
-get_works();
 
 function get_general(data_pass) {
 
