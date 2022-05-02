@@ -81,10 +81,14 @@ this function can then refresh auth automatically if required (and also display 
 - [ ] add banner when unclaimed group (no members) - similar to osu! copyright notice? / or show as window (no, too distracting)
 - [ ] add icon for email link
 - [ ] correct link for email
+- [ ] implement group following
+- - [ ] create page for followed groups
 
 ## users
 
 - [x] make pages for users
+- [ ] refine display of roles
+- - [ ] vary colour based on role type
 - [ ] make user feed
 
 ## indexing
