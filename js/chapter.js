@@ -10,11 +10,6 @@ let c_cached_out = localStorage.getItem(`${manga}_chapters_${lang}_timeout`) || 
 let c_cache = localStorage.getItem(`${manga}_chapters_${lang}`) || "";
 let c_now = new Date();
 
-// cached from mangadex
-// initial lists for comparison upon sending data later on
-var read_cache = [];
-var unread_cache = [];
-
 var assigned_link = false;
 
 get_volumes();
