@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title translate="no" id="page.title">Profile</title>
+    <meta name="theme-color" content="#003BFF">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="https://plexion.dev/css/reset.css">
+    <link rel="stylesheet" href="https://plexion.dev/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script src="https://plexion.dev/js/scroll.js"></script>
+    <!-- icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="dark" style="--accent-page: -4;">
+    <div class="logs" id="log_parent"></div>
+    <script src="/js/logging.js"></script>
+    <script src="/js/check_auth.js"></script>
+    <div class="windows" id="window_parent"></div>
+    <script src="/js/windows.js"></script>
+    <header class="dark">
+        <span class="menu left"></span>
+        <span class="search-wrap">
+            <div class="search">
+                <input class="search-input" id="search" placeholder="Search for...">
+                <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-28" data-feather="search"></i></button>
+            </div>
+        </span>
+        <span class="menu">
+            <span class="dropdown-wrap">
+                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
+            </span>
+        </span>
+    </header>
+    <div class="cont">
+        <nav class="left" id="header"></nav>
+        <script src="/js/header.js"></script>
+        <div class="main">
+            <div class="bg" id="img.background">
+                <section class="min header padding">
+                    <div class="bg-dark lib-grad"></div>
+                </section>
+            </div>
+            <section class="left header no-sep no-align" id="overview">
+                <div class="manga-img-wrap">
+                    <span class="big-icon">
+                        <i class="icon w-64" data-feather="user"></i>
+                    </span>
+                </div>
+                <div class="shift-right" style="margin-left: 180px;">
+                    <h2 translate="no" id="attr.username"></h2>
+                    <h4 id="attr.user_id"></h4>
+                    <div class="tags" id="attr.roles"></div>
+                </div>
+                <a role="button" class="button focus left" id="action.follow" title="Follow this user (not supported)" disabled>Follow</a>
+                <a role="button" class="button icon ext" id="action.mangadex" target="_blank" title="View on MangaDex">MangaDex</a>
+            </section>
+            <script src="js/author.js"></script>
+            <script src="js/search_box.js"></script>
+        </div>
+    </div>
+    <footer style="text-align: center; margin-top: 350px;">
+        <p>Service provided by the <a href="https://api.mangadex.org" target="_blank">MangaDex API</a> and the <a href="https://mangadex.org/groups" target="_blank">many excellent scanlation groups</a>, this would not be possible without them.</p>
+    </footer>
+</body>
+<!-- options -->
+<script src="/js/settings.js"></script>
+<script>
+    feather.replace()
+</script>
