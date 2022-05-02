@@ -48,11 +48,7 @@ let now = new Date();
 
 
 // checks
-if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
-    
-    // if exceeded cache
-    
-    // do everything
+function get_author() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/author/${author}`;
@@ -75,29 +71,15 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
             log('error',`${error}`,true);
             get_error();
         }
-
-        // then cache
-        now = new Date(now);
-        now.setMinutes(now.getMinutes() + 30);
-        log('general',`Cached until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (30 min)`,true);
-        localStorage.setItem(`${author}_view_timeout`,now);
     }
 
 
     // send
     xhr.send();
-} else {
-    log('general',`Using cached info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
-    const data = JSON.parse(localStorage.getItem(`${author}_view`));
-
-    try {
-        get_general(localStorage.getItem(`${author}_view`));
-    } catch(error) {
-        log('error',`${error}`,true);
-        get_error();
-    }
-
 }
+
+// get author's works
+get_works();
 
 function get_general(data_pass) {
 
@@ -105,7 +87,6 @@ function get_general(data_pass) {
 
     // parse
     const data = JSON.parse(data_pass);
-    console.log(data)
 
     // name
     document.getElementById('attr.name').textContent = data.data.attributes.name;
@@ -161,6 +142,31 @@ function create_social(platform,link) {
     // append
     document.getElementById('attr.socials').appendChild(em_tag);
     feather.replace();
+}
+
+// get works
+function get_works(data_pass) {
+    const data_og = JSON.parse(data_pass);
+
+    // get content rating
+    let rating_suggestive = "";
+    if (localStorage.getItem('op_show_suggestive') == 1) {
+        rating_suggestive = '&contentRating[]=suggestive';
+    }
+    let rating_explicit = "";
+    if (localStorage.getItem('op_show_explicit') == 1) {
+        rating_explicit = '&contentRating[]=explicit';
+    }
+    let rating_nsfw = "";
+    if (localStorage.getItem('op_show_nsfw') == 1) {
+        rating_nsfw = '&contentRating[]=pornographic';
+    }
+
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga?limit=32&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}&authors[]=${author}&artists[]=${author}`;
+    log('search',`Searching for ${author} author..`,true);
+    xhr.open('GET',url,true);
 }
 
 // on error (404)
