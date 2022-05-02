@@ -366,6 +366,25 @@ input#transl {
     margin-left: 3px;
 }
 
+.tag img, .tag svg {
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    position: relative;
+    top: 4.25px;
+    margin-right: 5px;
+}
+.tag img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 4.25px;
+    filter: invert(1);
+}
+.tag svg {
+    top: -2px !important;
+}
+
 .tag.big {
     font-size: 18px;
     font-weight: 600;

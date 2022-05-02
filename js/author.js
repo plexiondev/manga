@@ -27,7 +27,7 @@ const socials_string = {
     'skeb': 'Skeb',
     'tumblr': 'Tumblr',
     'twitter': 'Twitter',
-    'website': null,
+    'website': 'Website',
     'weibo': 'Weibo',
     'youtube': 'YouTube'
 }
@@ -143,7 +143,24 @@ function get_socials(data_pass) {
 
 // create social
 function create_social(platform,link) {
+    let em_tag = document.createElement('a');
+    em_tag.classList.add('tag',`${platform}`);
+    em_tag.href = `${link}`;
+    if (platform != 'website') {
+        em_tag.innerHTML = (`
+        <img src="https://unpkg.com/simple-icons@v6/icons/${platform}.svg">
+        ${socials_string[platform]}
+        `);
+    } else {
+        em_tag.innerHTML = (`
+        <i class="icon w-20" data-feather="globe"></i>
+        ${socials_string[platform]}
+        `);
+    }
 
+    // append
+    document.getElementById('attr.socials').appendChild(em_tag);
+    feather.replace();
 }
 
 // on error (404)
