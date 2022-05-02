@@ -12,6 +12,8 @@ function load_page() {
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/user?limit=${limit}&offset=${offset}`;
     xhr.open('GET',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
     // on request
     xhr.onload = function() {
@@ -68,7 +70,7 @@ function create_em(data_pass,i) {
     log('general',`Created ${i}!`,true);
     card.innerHTML = (`
     <div class="cover" style="height: initial;">
-    <i class="icon w-24" data-feather="users"></i>
+    <i class="icon w-24" data-feather="user"></i>
     </div>
     <div class="info" style="display: flex; align-items: center;">
     <h5>${data.data[i].attributes.username}</h5>

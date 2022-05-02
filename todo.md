@@ -89,7 +89,7 @@ this function can then refresh auth automatically if required (and also display 
 - [x] make pages for users
 - [ ] refine display of roles
 - - [ ] vary colour based on role type
-- [ ] make user feed
+- [x] make user feed
 
 ## indexing
 
