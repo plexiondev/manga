@@ -74,6 +74,7 @@ function get_general(data_pass) {
     // ran through showdown to convert markdown
     var converter = new showdown.Converter();
     text = `${data.data.attributes.description}`;
+    if (text == 'null') { text = '' }
     html = converter.makeHtml(text);
     // append
     document.getElementById('attr.body').innerHTML = `${html}`;
