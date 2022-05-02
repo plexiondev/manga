@@ -66,18 +66,6 @@ let cached_out = localStorage.getItem(`${manga}_view_timeout`) || "";
 let cache = localStorage.getItem(`${manga}_view`) || "";
 let now = new Date();
 
-// get elements
-let em_mangatitle = document.getElementById("manga-title");
-let em_mangajptitle = document.getElementById("manga-jptitle");
-let em_mangadesc = document.getElementById("manga-desc");
-// buttons
-let em_mangadex = document.getElementById("mangadex");
-// tags
-let em_tags = document.getElementById("tags");
-// images
-let em_mangabg = document.getElementById("manga-bg");
-let em_mangaimg = document.getElementById("manga-img");
-
 // cover art
 var cover_art;
 
@@ -144,12 +132,12 @@ function get_general(data_pass) {
     const data = JSON.parse(data_pass);
 
     // titles
-    document.getElementById('manga.title').textContent = data.data.attributes.title.en;
+    document.getElementById('attr.title').textContent = data.data.attributes.title.en;
     // alt titles
     for (let i in data.data.attributes.altTitles) {
         // only check for ja (for now)
         if (data.data.attributes.altTitles[i].ja != undefined) {
-            document.getElementById('manga.alt_title').textContent = `${data.data.attributes.altTitles[i].ja}`;
+            document.getElementById('attr.alt_title').textContent = `${data.data.attributes.altTitles[i].ja}`;
             // page title (with alt)
             document.getElementById('page.title').textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
         } else {
@@ -165,7 +153,7 @@ function get_general(data_pass) {
     if (text == 'undefined') { text = '' }
     html = converter.makeHtml(text);
     // append
-    document.getElementById('manga.body').innerHTML = `${html}`;
+    document.getElementById('attr.body').innerHTML = `${html}`;
 
     // content rating
     try {
@@ -177,7 +165,7 @@ function get_general(data_pass) {
     let em_rating = document.createElement('label');
     em_rating.classList.add('tag',`${data.data.attributes.contentRating}`);
     em_rating.innerHTML = (`<i class="icon w-16" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}`);
-    em_tags.appendChild(em_rating);
+    document.getElementById('attr.tags').appendChild(em_rating);
 
     // check if content rating matches
     if ((data.data.attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') != 1) || (data.data.attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') != 1) || (data.data.attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') != 1)) {
@@ -207,7 +195,7 @@ function get_relationships(data_pass) {
     // relationships
     let relationships = data.data.relationships;
     for (let i in relationships) {
-        if (relationships[i].type == "cover_art") {
+        if (relationships[i].type == 'cover_art') {
             // cover art
 
             // create url
@@ -215,22 +203,20 @@ function get_relationships(data_pass) {
             cover_art = cover_url;
 
             // expose on page
-            em_mangabg.style = `background-image: url(${cover_url});`;
-            em_mangaimg.src = `${cover_url}`;
-            document.getElementById('manga-img-link').href = `${cover_url}`;
-        } else if (relationships[i].type == "author") {
+            document.getElementById('img.background').style = `background-image: url(${cover_url});`;
+            document.getElementById('img.cover').src = `${cover_url}`;
+            document.getElementById('attr.img_link').href = `${cover_url}`;
+        } else if (relationships[i].type == 'author') {
             // author
-            let em_author = document.getElementById("manga-author");
-            em_author.href = `https://mangadex.org/author/${relationships[i].id}`;
-            em_author.innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="user"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            document.getElementById('attr.author').href = `https://mangadex.org/author/${relationships[i].id}`;
+            document.getElementById('attr.author').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="user"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
             feather.replace();
-        } else if (relationships[i].type == "artist") {
+        } else if (relationships[i].type == 'artist') {
             // artist
-            let em_artist = document.getElementById("manga-artist");
-            em_artist.href = `https://mangadex.org/author/${relationships[i].id}`;
-            em_artist.innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            document.getElementById('attr.artist').href = `https://mangadex.org/author/${relationships[i].id}`;
+            document.getElementById('attr.artist').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
             feather.replace();
-        } else if (relationships[i].type == "manga" && relationships[i].attributes != undefined) {
+        } else if (relationships[i].type == 'manga' && relationships[i].attributes != undefined) {
             // other relationships
 
             // create element
@@ -274,7 +260,7 @@ function get_relationships(data_pass) {
 
             // append
             if ((relationships[i].attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') == 1) || (relationships[i].attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') == 1) || (relationships[i].attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') == 1) || (relationships[i].attributes.contentRating == 'safe')) {
-                document.getElementById('manga-related').appendChild(related_card);
+                document.getElementById('feed.related').appendChild(related_card);
             }
         }
     }
@@ -291,7 +277,7 @@ function get_relationships(data_pass) {
         tag.textContent = `${tags[i].attributes.name.en}`;
 
         // append
-        em_tags.appendChild(tag);
+        document.getElementById('attr.tags').appendChild(tag);
     }
 }
 

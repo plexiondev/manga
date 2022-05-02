@@ -27,10 +27,6 @@ let cached_out = localStorage.getItem(`${search_req}_search_timeout`) || "";
 let cache = localStorage.getItem(`${search_req}_search`) || "";
 let now = new Date();
 
-// get elements
-let em_searchbody = document.getElementById("search-body");
-let em_searchresults = document.getElementById("showing-results");
-
 // page title
 document.getElementById('page-title').textContent = `Searching for ${search_req}`;
 
@@ -61,7 +57,7 @@ xhr.onload = function() {
     const data = JSON.parse(this.response);
     log('search',`Displaying results for ${search_req}`,true);
 
-    em_searchresults.textContent = `Showing ${data.data.length} results for ${search_req}`;
+    document.getElementById('attr.results').textContent = `Showing ${data.data.length} results for ${search_req}`;
 
     // check results aren't empty
     if (data.data.length != 0) {
@@ -166,7 +162,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
 
     // append
     card.appendChild(em_info);
-    em_searchbody.appendChild(card);
+    document.getElementById('search.body').appendChild(card);
 
     feather.replace();
 }
@@ -174,5 +170,5 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
 // empty
 function empty_results() {
     log('general',`No search results found.`,true);
-    document.getElementById("no_results").style.display = `flex`;
+    document.getElementById('no_results').style.display = `flex`;
 }

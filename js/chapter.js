@@ -10,9 +10,6 @@ let c_cached_out = localStorage.getItem(`${manga}_chapters_${lang}_timeout`) || 
 let c_cache = localStorage.getItem(`${manga}_chapters_${lang}`) || "";
 let c_now = new Date();
 
-// get elements
-let em_mangachlist = document.getElementById("manga-chapters");
-
 // cached from mangadex
 // initial lists for comparison upon sending data later on
 var read_cache = [];
@@ -146,7 +143,7 @@ function create_chapter(data_pass) {
         }
 
         card.appendChild(chapter_list);
-        em_mangachlist.appendChild(card);
+        document.getElementById('feed.volumes').appendChild(card);
 
         feather.replace();
     }
