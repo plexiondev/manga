@@ -89,7 +89,7 @@
 
 .chapter-card .right-icons {
     float: right;
-    padding: 0 8px;
+    padding-right: 8px;
     opacity: 0.3;
     transition: 0.25s;
 }
