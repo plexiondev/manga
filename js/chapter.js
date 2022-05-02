@@ -37,7 +37,6 @@ function get_volumes() {
     // request is received
     xhr.onload = function () {
         const data = JSON.parse(this.response);
-        console.log(data)
 
         // parse
         if (data.volumes.length != 0) {
@@ -83,7 +82,6 @@ function get_chapters() {
     // request is received
     xhr.onload = function () {
         const data = JSON.parse(this.response);
-        console.log(data)
 
         for (let i in data.data) {
             let em_chapter = document.createElement('li');
