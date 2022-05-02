@@ -484,9 +484,12 @@ input#transl {
 
 /* related cards */
 .desc-cont {
-    height: 100px;
+    height: 75px;
     overflow: hidden;
     position: relative;
+}
+.desc-cont > p {
+    padding-top: 0;
 }
 .desc-cont:before {
     --c: var(--b5);
