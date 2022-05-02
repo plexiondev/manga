@@ -117,6 +117,10 @@ a[title]:not(.button) {
     cursor: pointer;
 }
 
+[onclick] {
+    cursor: pointer;
+}
+
 /* language */
 .language .flag {
     font-size: 18px;

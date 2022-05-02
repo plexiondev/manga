@@ -69,6 +69,9 @@ let now = new Date();
 // cover art
 var cover_art;
 
+// rating
+let rating_dist;
+
 
 // checks
 if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
@@ -566,7 +569,7 @@ function get_statistics() {
 
     xhr.onload = function() {
         const data = JSON.parse(this.response);
-        console.log(data)
+        rating_dist = data.statistics[`${manga}`].rating.distribution;
 
         // rating
         document.getElementById('attr.rating').innerHTML = (`${data.statistics[`${manga}`].rating.average.toFixed(2)} <i class="icon w-18" data-feather="star" style="top: -2px !important"></i>`);
@@ -578,4 +581,9 @@ function get_statistics() {
 
     // send
     xhr.send();
+}
+
+// open rating distribution window
+function view_rating() {
+    
 }
