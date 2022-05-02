@@ -134,6 +134,15 @@ function get_general(data_pass) {
 function get_socials(data_pass) {
     const data = JSON.parse(data_pass);
 
+    for (let i in socials) {
+        if (socials[i] in data.data.attributes && data.data.attributes[socials[i]] != null) {
+            create_social(socials[i],data.data.attributes[socials[i]]);
+        }
+    }
+}
+
+// create social
+function create_social(platform,link) {
 
 }
 
