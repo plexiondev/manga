@@ -230,11 +230,19 @@ header .menu.left {
 }
 /* cover */
 .manga-card .cover {
-    height: 200px;
     margin-right: 20px;
 }
+.manga-card .cover .cover-inner {
+    width: 140px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
 .manga-card .cover img {
-    height: 100%;
+    width: 140px;
     border-radius: 5px;
 }
 /* info */
