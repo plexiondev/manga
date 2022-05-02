@@ -58,6 +58,7 @@ this function can then refresh auth automatically if required (and also display 
 - - [ ] represent as a simple `...` icon
 - - [ ] contains mangadex link
 - - [ ] contains report link (on mangadex)
+- [ ] allow multiple authors/artists (eg. among us manga LMFAO 💀💀💀💀)
 
 ## authors/artists
 
