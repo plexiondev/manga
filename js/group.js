@@ -16,6 +16,8 @@ const tags_icon = {
     'pornographic': 'alert-octagon'
 }
 
+let group_leader;
+
 // pass author id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -47,6 +49,7 @@ function get_group() {
 
         try {
             get_general(this.response);
+            get_members(this.response);
         } catch(error) {
             log('error',`${error}`,true);
             get_error();
@@ -94,6 +97,40 @@ function get_general(data_pass) {
     // actions
     // open in mangadex
     document.getElementById('action.mangadex').href = `https://mangadex.org/group/${group}`;
+}
+
+function get_members(data_pass) {
+    const data = JSON.parse(data_pass);
+
+    for (let i in data.data.relationships) {
+        // create element
+        let card = document.createElement('a');
+        card.classList.add('manga-card');
+        card.href = `/user.html?u=${data.data.relationships[i].id}`;
+        card.innerHTML = (`
+        <div class="cover" style="height: initial;">
+        <i class="icon w-24" data-feather="user"></i>
+        </div>
+        <div class="info" style="display: flex; align-items: center;">
+        <h5>${data.data.relationships[i].attributes.username}</h5>
+        </div>
+        `);
+
+        // append
+        if (data.data.relationships[i].type == 'leader') {
+            // is group leader
+            group_leader = data.data.relationships[i].id;
+            card.classList.add('leader');
+            document.getElementById('feed.members').appendChild(card);
+        } else if (data.data.relationships[i].id == group_leader) {
+            // is group leader (but as a member)
+            // (ignore)
+        } else {
+            document.getElementById('feed.members').appendChild(card);
+        }
+
+        feather.replace();
+    }
 }
 
 // get works

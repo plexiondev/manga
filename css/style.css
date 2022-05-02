@@ -286,6 +286,14 @@ header .menu.left {
     overflow: hidden;
 }
 
+/* leader */
+.manga-card.leader {
+    border: 2px solid #ffdb66;
+}
+.manga-card.leader h5, .manga-card.leader svg {
+    color: #ffdb66;
+}
+
 /* manga controls */
 .controls-wrap {
     display: flex;
