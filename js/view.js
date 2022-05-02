@@ -71,6 +71,7 @@ var cover_art;
 
 // rating
 let rating_dist;
+let rating_average;
 
 
 // checks
@@ -575,6 +576,7 @@ function get_statistics() {
     xhr.onload = function() {
         const data = JSON.parse(this.response);
         rating_dist = data.statistics[`${manga}`].rating.distribution;
+        rating_average = data.statistics[`${manga}`].rating.average.toFixed(2);
 
         // rating
         document.getElementById('attr.rating').innerHTML = (`${data.statistics[`${manga}`].rating.average.toFixed(2)} <i class="icon w-18" data-feather="star" style="top: -2px !important"></i>`);
@@ -631,12 +633,19 @@ function view_rating() {
         em_dist.appendChild(em_bar);
     }
 
+    // average rating
+    let em_avg = document.createElement('p');
+    em_avg.classList.add('rating');
+    em_avg.style = 'text-align: center;';
+    em_avg.innerHTML = (`${rating_average} <i class="icon w-18" data-feather="star" style="top: -2px !important"></i>`);
+
     // actions
     let em_actions = document.createElement('div');
     em_actions.classList.add('actions');
     em_actions.innerHTML = (`<a role="button" class="button focus" onclick="exit_read_status()">Done</a>`);
 
     // append
+    em_info.appendChild(em_avg);
     em_info.appendChild(em_dist);
     em_window.appendChild(em_info);
     em_window.appendChild(em_actions);
