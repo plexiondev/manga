@@ -34,7 +34,7 @@ if (group == "") {
 function get_group() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/group/${group}`;
+    const url = `https://api.mangadex.org/group/${group}?includes[]=member&includes[]=leader`;
     log('search',`Searching for ${group} group..`,true);
     xhr.open('GET',url,true);
 
