@@ -151,7 +151,9 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
 
     // append
     card.appendChild(em_info);
-    document.getElementById('feed').appendChild(card);
+    if ((data.data[i].attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') == 1) || (data.data[i].attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') == 1) || (data.data[i].attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') == 1) || (data.data[i].attributes.contentRating == 'safe')) {
+        document.getElementById('feed').appendChild(card);
+    }
 
     feather.replace();
 }
