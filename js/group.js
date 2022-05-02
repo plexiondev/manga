@@ -85,16 +85,18 @@ function get_general(data_pass) {
     document.getElementById('attr.body').innerHTML = `${html}`;
 
     // focused language
-    let focused_language;
-    for (let i in data.data.attributes.focusedLanguages) {
-        if (i == 0) { focused_language = data.data.attributes.focusedLanguages[i] }
+    if (data.data.attributes.focusedLanguages.length > 0) {
+        let focused_language;
+        for (let i in data.data.attributes.focusedLanguages) {
+            if (i == 0) { focused_language = data.data.attributes.focusedLanguages[i] }
+        }
+
+        let focused_language_full = new Intl.DisplayNames(['en'],{type: 'language'});
+
+        document.getElementById('attr.focus_language').innerHTML = (`
+        <i class="flag twf twf-${focused_language}"></i> <strong>${focused_language_full.of(`${focused_language}`)}</strong>
+        `);
     }
-
-    let focused_language_full = new Intl.DisplayNames(['en'],{type: 'language'});
-
-    document.getElementById('attr.focus_language').innerHTML = (`
-    <i class="flag twf twf-${focused_language}"></i> <strong>${focused_language_full.of(`${focused_language}`)}</strong>
-    `);
 
     // actions
     // open in mangadex
