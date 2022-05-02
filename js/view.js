@@ -179,6 +179,8 @@ function get_general(data_pass) {
     read_status();
     // check following
     check_following();
+    // statistics
+    get_statistics();
 
     // info blocks
     document.getElementById('attr.date_created').innerHTML = (`${new Date(`${data.data.attributes.createdAt}`).toLocaleDateString()}`);
@@ -537,7 +539,6 @@ function save_following() {
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
-
     xhr.onload = function() {
         if (status == 'follow') {
             log('enabled',`You are now following!`,false);
@@ -550,6 +551,30 @@ function save_following() {
         document.getElementById('window_parent').innerHTML = ``;
     }
 
+    // send
+    xhr.send();
+}
+
+// get statistics
+function get_statistics() {
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/statistics/manga/${manga}`;
+    xhr.open('GET',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
+
+    xhr.onload = function() {
+        const data = JSON.parse(this.response);
+        console.log(data)
+
+        // rating
+        document.getElementById('attr.rating').innerHTML = (`${data.statistics[`${manga}`].rating.average.toFixed(2)} <i class="icon w-18" data-feather="star" style="top: -2px !important"></i>`);
+        // follows
+        document.getElementById('attr.follows').innerHTML = (`${data.statistics[`${manga}`].follows}  <i class="icon w-18" data-feather="bookmark" style="top: -2px !important"></i>`);
+
+        feather.replace();
+    }
 
     // send
     xhr.send();
