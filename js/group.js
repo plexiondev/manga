@@ -1,6 +1,25 @@
 // view group page
 
 
+const socials = {
+    0: 'contactEmail',
+    1: 'discord',
+    2: 'ircChannel',
+    3: 'ircServer',
+    4: 'mangaUpdates',
+    5: 'twitter',
+    6: 'website'
+}
+const socials_string = {
+    'contactEmail': 'Email',
+    'discord': 'Discord',
+    'ircChannel': 'IRC',
+    'ircServer': 'IRC server',
+    'mangaUpdates': 'MangaUpdates',
+    'twitter': 'Twitter',
+    'website': 'Website'
+}
+
 const contentrating_string = {
     'safe': 'Safe',
     'suggestive': 'Suggestive',
@@ -101,6 +120,54 @@ function get_general(data_pass) {
     // actions
     // open in mangadex
     document.getElementById('action.mangadex').href = `https://mangadex.org/group/${group}`;
+
+    // socials
+    get_socials(data_pass);
+}
+
+// parse socials
+function get_socials(data_pass) {
+    const data = JSON.parse(data_pass);
+
+    for (let i in socials) {
+        console.log(socials[i],socials[i] in data.data.attributes,data.data.attributes,data.data.attributes[socials[i]])
+        if (socials[i] in data.data.attributes && data.data.attributes[socials[i]] != null) {
+            create_social(socials[i],data.data.attributes[socials[i]],data_pass);
+        }
+    }
+}
+
+// create social
+function create_social(platform,link,data_pass) {
+    const data = JSON.parse(data_pass);
+
+    let em_tag = document.createElement('a');
+    em_tag.classList.add('tag','social',`${platform}`);
+    if (platform == 'ircChannel') {
+        em_tag.href = `irc://${data.data.attributes.ircServer}/${data.data.attributes.ircChannel.replace('#','')}`;
+        em_tag.innerHTML = (`
+        <i class="icon w-20" data-feather="hash"></i>
+        IRC: ${data.data.attributes.ircServer} ${data.data.attributes.ircChannel}
+        `);
+    } else if (platform == 'website') {
+        em_tag.href = `${link}`;
+        em_tag.innerHTML = (`
+        <i class="icon w-20" data-feather="globe"></i>
+        ${socials_string[platform]}
+        `);
+    } else{
+        em_tag.href = `${link}`;
+        em_tag.innerHTML = (`
+        <img src="https://unpkg.com/simple-icons@v6/icons/${platform}.svg">
+        ${socials_string[platform]}
+        `);
+    }
+
+    // append
+    if (platform != 'ircServer') {
+        document.getElementById('attr.socials').appendChild(em_tag);
+        feather.replace();
+    }
 }
 
 function get_members(data_pass) {
