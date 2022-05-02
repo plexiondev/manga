@@ -1,7 +1,7 @@
 // groups listing
 
 
-var limit = 18;
+var limit = 30;
 var offset = 0;
 var top_limit = 3600;
 

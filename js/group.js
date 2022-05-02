@@ -361,8 +361,8 @@ function get_error() {
     `);
 }
 
-// missing required ?u=authorid
-function prompt_no_author() {
+// missing required ?u=groupid
+function prompt_no_group() {
     let em_window = document.createElement('span');
     em_window.classList.add('window');
     em_window.setAttribute('id','error_window');
@@ -371,10 +371,11 @@ function prompt_no_author() {
     <div class="cover"><img src="/img/fufufu.png"></div>
     <div class="header" style="text-align: center;"><h4>Uh oh.</h4></div>
         <div class="info" style="text-align: center;">
-        <p>The requested author was not found.<br>Please supply a author using <code>?u=authorid</code> in the URL.</p>
+        <p>The requested group was not found.<br>Please supply a group using <code>?u=groupid</code> in the URL.</p>
         </div>
         <div class="actions">
-        <a role="button" class="button focus" onclick="history.back()">Go back</a>
+        <a role="button" class="button" onclick="history.back()">Go back</a>
+        <a role="button" class="button focus" href="/groups.html">Browse Groups</a>
         </div>
     `);
 
