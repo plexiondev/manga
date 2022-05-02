@@ -129,7 +129,7 @@
     top: -130px !important;
     transform: scale(1.05);
 }
-#manga-img {
+.manga-img-cont img {
     width: 190px;
 }
 .manga-img-wrap {
