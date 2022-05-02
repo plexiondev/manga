@@ -428,7 +428,7 @@ function warn_content_rating(type) {
         </div>
         <div class="actions">
         <a role="button" class="button focus" onclick="history.back()">Go back</a>
-            <a role="button" class="button" onclick="exit_read_status()">Continue</a>
+        <a role="button" class="button" onclick="exit_read_status()">Continue</a>
         </div>
     `);
 

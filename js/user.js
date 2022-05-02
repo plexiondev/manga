@@ -10,7 +10,11 @@ const roles_string = {
 // pass user id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
-let user = query.get('u');
+let user = query.get('u') || "";
+if (user == "") {
+    // no user supplied
+    prompt_no_user();
+}
 
 // cache
 let cached_out = localStorage.getItem(`${user}_view_timeout`) || "";
@@ -116,4 +120,26 @@ function get_error() {
         </span>
     </div>
     `);
+}
+
+// missing required ?u=userid
+function prompt_no_user() {
+    let em_window = document.createElement('span');
+    em_window.classList.add('window');
+    em_window.setAttribute('id','error_window');
+
+    em_window.innerHTML = (`
+    <div class="cover"><img src="/img/fufufu.png"></div>
+    <div class="header" style="text-align: center;"><h4>Uh oh.</h4></div>
+        <div class="info" style="text-align: center;">
+        <p>The requested user was not found.<br>Please supply a user using <code>?u=userid</code> in the URL.</p>
+        </div>
+        <div class="actions">
+        <a role="button" class="button focus" onclick="history.back()">Go back</a>
+        </div>
+    `);
+
+    // append
+    document.getElementById('window_parent').appendChild(em_window);
+    feather.replace();
 }
