@@ -56,7 +56,7 @@ function create_em(data_pass,i) {
     card.classList.add('manga-card');
 
     // links
-    card.href = `https://mangadex.org/group/${data.data[i].id}`;
+    card.href = `/group.html?u=${data.data[i].id}`;
 
     // description
     var converter = new showdown.Converter();
