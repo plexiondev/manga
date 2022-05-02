@@ -77,6 +77,7 @@ function get_chapters() {
     // request is received
     xhr.onload = function () {
         const data = JSON.parse(this.response);
+        console.log(data)
 
         for (let i in data.data) {
             let em_chapter = document.createElement('li');
@@ -104,7 +105,7 @@ function get_chapters() {
 
             let chapter_name;
             let chapter_name_raw;
-            if (data.data[i].attributes.title == '') {
+            if (data.data[i].attributes.title == '' || data.data[i].attributes.title == null) {
                 // no title
                 chapter_name = `Chapter ${data.data[i].attributes.chapter}`;
             } else {
