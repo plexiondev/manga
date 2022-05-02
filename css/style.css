@@ -122,6 +122,12 @@ a[title]:not(.button) {
     font-size: 18px;
 }
 
+/* rating */
+.rating, .rating svg {
+    color: var(--text-link) !important;
+    font-weight: 500;
+}
+
 /* manga */
 .manga-wrap {
     display: flex;
