@@ -61,10 +61,11 @@ this function can then refresh auth automatically if required (and also display 
 
 ## authors/artists
 
-- [ ] make pages for authors/artists
-- - [ ] authors
-- - [ ] artists
-- allow searching for authors/artists
+- [ ] make pages for authors
+- - [ ] viewing author's biography
+- - [ ] viewing author's socials
+- - [ ] viewing author's works
+- [ ] make author feed
 
 ## groups
 
@@ -72,6 +73,11 @@ this function can then refresh auth automatically if required (and also display 
 - - [ ] viewing group description
 - - [ ] viewing group's work (manga scanlations)
 - [ ] allow searching for groups
+
+## users
+
+- [x] make pages for users
+- [ ] make user feed
 
 ## indexing
 
