@@ -33,6 +33,7 @@ function send_read(chapter_id) {
 
     xhr.onload = function() {
         // log to user
+        localStorage.setItem(`${chapter_id}_read`,1);
         document.getElementById(`mark_${chapter_id}`).classList.add('read');
         log('enabled',`Marked ${chapter_id} as read.`,false);
     }
@@ -51,6 +52,7 @@ function remove_read(chapter_id) {
 
     xhr.onload = function() {
         // log to user
+        localStorage.setItem(`${chapter_id}_read`,0);
         document.getElementById(`mark_${chapter_id}`).classList.remove('read');
         log('disabled',`Marked ${chapter_id} as unread.`,false);
     }
