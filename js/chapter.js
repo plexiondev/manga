@@ -17,138 +17,90 @@ var unread_cache = [];
 
 var assigned_link = false;
 
+get_volumes();
 
-// checks
-if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
 
-    // if exceeded cache
-
-    // do everything
+function get_volumes() {
     // define xhr GET
-    const c_xhr = new XMLHttpRequest();
-    const c_url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=${lang}`;
-    log('search',`Searching chapters for ${manga}`,true);
-    c_xhr.open('GET',c_url,true);
-
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=${lang}`;
+    xhr.open('GET',url,true);
 
     // request is received
-    c_xhr.onload = function () {
-        log('search',`Found ${manga}'s chapters!`,true);
-
+    xhr.onload = function () {
         const data = JSON.parse(this.response);
-        let v = data.volumes;
+        console.log(data)
 
         // parse
-        if (v.length != 0) {
-            create_chapter(this.response);
-            localStorage.setItem(`${manga}_chapters_${lang}`, this.response);
+        if (data.volumes.length != 0) {
+            for (let i in data.volumes) {
+                let em_card = document.createElement('span');
+                em_card.classList.add('chapter-card');
+                em_card.innerHTML = (`
+                <div class="info">
+                <h5 class="main">Volume ${data.volumes[i].volume}</h5>
+                </div>
+                <ul id="feed.volumes.${data.volumes[i].volume}"></ul>
+                `);
+
+                // append
+                document.getElementById('feed.volumes').appendChild(em_card);
+            }
+
+            get_chapters();
         } else {
             empty_results()
-            localStorage.setItem(`${manga}_chapters_${lang}`, this.response);
         }
     }
-
 
     // send
-    c_xhr.send();
-
-
-    // then cache
-    c_now = new Date(c_now);
-    c_now.setMinutes(c_now.getMinutes() + 15);
-    log('general',`Cached chapter info until ${c_now.getHours()}:${c_now.getMinutes()}:${c_now.getSeconds()} (15 min)`,true);
-    localStorage.setItem(`${manga}_chapters_${lang}_timeout`, c_now);
-} else {
-    log('general',`Using cached chapter info until ${new Date(c_cached_out).getHours()}:${new Date(c_cached_out).getMinutes()}:${new Date(c_cached_out).getSeconds()}`,true);
-
-    const data = JSON.parse(localStorage.getItem(`${manga}_chapters_${lang}`));
-    let v = data.volumes;
-
-    if (v.length != 0) {
-        create_chapter(localStorage.getItem(`${manga}_chapters_${lang}`));
-    } else {
-        empty_results()
-    }
+    xhr.send();
 }
 
-//function chapter(id) {
-//    console.log(`[...] coming soon! ${id}`)
-//}
+function get_chapters() {
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga/${manga}/feed?limit=150&includes[]=scanlation_group&includes[]=user&order[volume]=asc&order[chapter]=asc&translatedLanguage[]=${lang}`;
+    xhr.open('GET',url,true);
 
-function create_chapter(data_pass) {
+    // request is received
+    xhr.onload = function () {
+        const data = JSON.parse(this.response);
+        console.log(data)
 
-    // parse
-    const data = JSON.parse(data_pass);
-
-    // simplicity
-    let v = data.volumes;
-
-    // loop over pool of volumes
-    for (let i in v) {
-
-        // create element
-        let card = document.createElement('span');
-        card.classList.add('chapter-card');
-
-        // links
-        let chapters_parent = v[i].chapters;
-        var chapters_array = [];
-        for (let x in chapters_parent) {
-            chapters_array.push(x);
-        }
-        // store chapter links
-        var chapters_links_array = [];
-        for (let x in chapters_parent) {
-            chapters_links_array.push(chapters_parent[x].id);
-        }
-
-        // html
-        card.innerHTML = (`
-        <div class="info">
-        <h5>Volume ${v[i].volume}</h5>
-        </div>
-        `);
-
-        let chapter_list = document.createElement('ul');
-
-        // show chapters
-        for (let n in chapters_array) {
-
-            // create element
-            let chapter_s = document.createElement('li');
-            chapter_s.classList.add('chapter-embed');
+        for (let i in data.data) {
+            let em_chapter = document.createElement('li');
+            em_chapter.classList.add('chapter-embed');
 
             if (last_read_id == null && assigned_link != true) {
-                document.getElementById('action.read').href = `read.html?c=${chapters_links_array[n]}&m=${manga}`;
+                document.getElementById('action.read').href = `read.html?c=${data.data[i].id}&m=${manga}`;
                 assigned_link = true;
             }
 
-            if (check_read(`${chapters_links_array[n]}`) == 1) {
+            if (check_read(`${data.data[i].id}`) == 1) {
                 // text
-                chapter_s.innerHTML = (`
-                <button class="mark_read read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="true" onclick="mark_read('${chapters_links_array[n]}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
-                <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]}</a>
+                em_chapter.innerHTML = (`
+                <button class="mark_read read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" read="true" onclick="mark_read('${data.data[i].id}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <a href="read.html?c=${data.data[i].id}&m=${manga}">Chapter ${data.data[i].attributes.chapter}</a>
                 `);
             } else {
-                unread_cache.push(`${chapters_links_array[n]}`);
+                unread_cache.push(`${data.data[i].id}`);
                 // text
-                chapter_s.innerHTML = (`
-                <button class="mark_read" id="mark_${chapters_links_array[n]}" chapter_id="${chapters_links_array[n]}" read="false" onclick="mark_read('${chapters_links_array[n]}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
-                <a href="read.html?c=${chapters_links_array[n]}&m=${manga}">Chapter ${chapters_array[n]}</a>
+                em_chapter.innerHTML = (`
+                <button class="mark_read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" read="false" onclick="mark_read('${data.data[i].id}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
+                <a href="read.html?c=${data.data[i].id}&m=${manga}">Chapter ${data.data[i].attributes.chapter}</a>
                 `);
             }
 
             // append
-            chapter_list.appendChild(chapter_s);
+            document.getElementById(`feed.volumes.${data.data[i].attributes.volume}`).appendChild(em_chapter);
         }
 
-        card.appendChild(chapter_list);
-        document.getElementById('feed.volumes').appendChild(card);
-
-        feather.replace();
+        read_chapters();
     }
 
-    read_chapters();
+    // send
+    xhr.send();
 }
 
 // empty
