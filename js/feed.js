@@ -1,9 +1,9 @@
 // home feed
 // requires auth via auth.js
 
-var limit = 16;
+var limit = 15;
 var offset = 0;
-var top_limit = 48;
+var top_limit = 75;
 
 load_page();
 
