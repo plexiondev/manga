@@ -42,11 +42,18 @@ function get_volumes() {
         // parse
         if (data.volumes.length != 0) {
             for (let i in data.volumes) {
+                let volume_name;
+                if (data.volumes[i].volume == 'none') {
+                    volume_name = 'No Volume';
+                } else {
+                    volume_name = `Volume ${data.volumes[i].volume}`;
+                }
+
                 let em_card = document.createElement('span');
                 em_card.classList.add('chapter-card');
                 em_card.innerHTML = (`
                 <div class="info">
-                <h5 class="main">Volume ${data.volumes[i].volume}</h5>
+                <h5 class="main">${volume_name}</h5>
                 </div>
                 <ul id="feed.volumes.${data.volumes[i].volume}"></ul>
                 `);
