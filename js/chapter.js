@@ -20,6 +20,14 @@ var assigned_link = false;
 get_volumes();
 
 
+function truncate(string) {
+    if (string.length > 27) {
+        return string.substring(0,27)+'...';
+    } else {
+        return string;
+    }
+}
+
 function get_volumes() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
@@ -92,11 +100,24 @@ function get_chapters() {
                 }
             }
 
+            let chapter_name;
+            let chapter_name_raw;
+            if (data.data[i].attributes.title == '') {
+                // no title
+                chapter_name = `Chapter ${data.data[i].attributes.chapter}`;
+            } else {
+                // title present (eg. no chapter number)
+                chapter_name = `${data.data[i].attributes.title}`;
+            }
+
+            chapter_name_raw = chapter_name;
+            chapter_name = truncate(chapter_name);
+
             if (check_read(`${data.data[i].id}`) == 1) {
                 // text
                 em_chapter.innerHTML = (`
                 <button class="mark_read read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" read="true" onclick="mark_read('${data.data[i].id}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
-                <a href="read.html?c=${data.data[i].id}&m=${manga}">Chapter ${data.data[i].attributes.chapter}</a>
+                <a href="read.html?c=${data.data[i].id}&m=${manga}" title="${chapter_name_raw}">${chapter_name}</a>
                 <span class="right-icons">
                 <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" data-feather="user"></i></a>
                 <a href="https://mangadex.org/group/${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
@@ -107,7 +128,7 @@ function get_chapters() {
                 // text
                 em_chapter.innerHTML = (`
                 <button class="mark_read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" read="false" onclick="mark_read('${data.data[i].id}',false)" title="Marking as read currently does not work. Please do so from mangadex.org" disabled><i class="icon w-20 seen" data-feather="eye"></i><i class="icon w-20 not_seen" data-feather="eye-off"></i></button>
-                <a href="read.html?c=${data.data[i].id}&m=${manga}">Chapter ${data.data[i].attributes.chapter}</a>
+                <a href="read.html?c=${data.data[i].id}&m=${manga}" title="${chapter_name_raw}">${chapter_name}</a>
                 <span class="right-icons">
                 <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" data-feather="user"></i></a>
                 <a href="https://mangadex.org/group/${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users"></i></a>
