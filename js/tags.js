@@ -191,7 +191,7 @@ function load_page() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga?includedTags[]=${tag_req}&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}&limit=${limit}&offset=${offset}`;
-    xhr.open('GET', url, true);
+    xhr.open('GET',url,true);
 
     // on request
     xhr.onload = function() {

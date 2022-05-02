@@ -34,8 +34,8 @@ function refresh_auth(redirect) {
     // define XHR POST
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/auth/refresh`;
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.open('POST',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
 
     xhr.onload = function() {
         if (xhr.status == 400 && !window.location.href.includes('/auth.html')) {
@@ -79,8 +79,8 @@ function get_info() {
     // define XHR GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/user/me`;
-    xhr.open('GET', url, true);
-    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+    xhr.open('GET',url,true);
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
     xhr.onload = function() {
         const data = JSON.parse(this.response);

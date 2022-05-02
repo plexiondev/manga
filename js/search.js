@@ -53,7 +53,7 @@ if (localStorage.getItem('op_show_nsfw') == 1) {
 const xhr = new XMLHttpRequest();
 const url = `https://api.mangadex.org/manga?title=${search_req}&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}`;
 log('search',`Searching for ${search_req}..`,false);
-xhr.open('GET', url, true);
+xhr.open('GET',url,true);
 
 
 // request is received

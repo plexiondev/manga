@@ -11,7 +11,7 @@ function load_page() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/group?limit=${limit}&offset=${offset}`;
-    xhr.open('GET', url, true);
+    xhr.open('GET',url,true);
 
     // on request
     xhr.onload = function() {

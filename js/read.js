@@ -29,7 +29,7 @@ aggregate();
 // first request to get hash etc.
 const first_xhr = new XMLHttpRequest();
 const first_url = `https://api.mangadex.org/at-home/server/${chapter_id}`;
-first_xhr.open('GET', first_url, true);
+first_xhr.open('GET',first_url,true);
 var done = 0;
 // request is received
 first_xhr.onload = function() {
@@ -189,7 +189,7 @@ function aggregate() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=${localStorage.getItem('op_translate_language')}`;
-    xhr.open('GET', url, true);
+    xhr.open('GET',url,true);
 
     // on receival
     xhr.onload = function() {

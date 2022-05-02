@@ -65,9 +65,9 @@ function send_read(pending_items) {
     // define xhr GET
     const sr_xhr = new XMLHttpRequest();
     const sr_url = `https://api.mangadex.org/manga/${manga}/read`;
-    sr_xhr.open('POST', sr_url, true);
-    sr_xhr.setRequestHeader('Content-Type', 'application/json');
-    sr_xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+    sr_xhr.open('POST',sr_url,true);
+    sr_xhr.setRequestHeader('Content-Type','application/json');
+    sr_xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
     // create arrays
     let read = [];

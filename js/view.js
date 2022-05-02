@@ -92,7 +92,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}?includes[]=author&includes[]=artist&includes[]=cover_art&includes[]=manga`;
     log('search',`Searching for ${manga} manga..`,true);
-    xhr.open('GET', url, true);
+    xhr.open('GET',url,true);
 
 
     // request is received
@@ -100,7 +100,7 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         log('general',`Found ${manga} manga!`,true);
 
         // parse
-        localStorage.setItem(`${manga}_view`, this.response);
+        localStorage.setItem(`${manga}_view`,this.response);
 
         data_parse = JSON.parse(this.response);
 
@@ -111,18 +111,17 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
             log('error',`${error}`,true);
             get_error();
         }
+
+        // then cache
+        now = new Date(now);
+        now.setMinutes(now.getMinutes() + 120);
+        log('general',`Cached until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (2 hr)`,true);
+        localStorage.setItem(`${manga}_view_timeout`,now);
     }
 
 
     // send
     xhr.send();
-
-
-    // then cache
-    now = new Date(now);
-    now.setMinutes(now.getMinutes() + 120);
-    log('general',`Cached until ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} (2 hr)`,true);
-    localStorage.setItem(`${manga}_view_timeout`, now);
 } else {
     log('general',`Using cached info until ${new Date(cached_out).getHours()}:${new Date(cached_out).getMinutes()}:${new Date(cached_out).getSeconds()}`,true);
     const data = JSON.parse(localStorage.getItem(`${manga}_view`));
@@ -316,8 +315,8 @@ function read_status() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}/status`;
-    xhr.open('GET', url, true);
-    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+    xhr.open('GET',url,true);
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
 
     // on request
@@ -395,9 +394,9 @@ function save_read_status() {
     // define xhr POST
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}/status`;
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+    xhr.open('POST',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
 
     xhr.onload = function() {
@@ -456,7 +455,7 @@ function check_following() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/user/follows/manga/${manga}`;
-    xhr.open('GET', url, true);
+    xhr.open('GET',url,true);
     xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
 
 
@@ -545,12 +544,12 @@ function save_following() {
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}/follow`;
     if (status == 'follow') {
-        xhr.open('POST', url, true);
+        xhr.open('POST',url,true);
     } else {
-        xhr.open('DELETE', url, true);
+        xhr.open('DELETE',url,true);
     }
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
 
     xhr.onload = function() {

@@ -34,9 +34,9 @@ if (localStorage.getItem('op_show_nsfw') == 1) {
 // define xhr GET
 const xhr = new XMLHttpRequest();
 const url = `https://api.mangadex.org/manga/?includes[]=cover_art&order[createdAt]=desc&limit=33&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}`;
-xhr.open('GET', url, true);
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+xhr.open('GET',url,true);
+xhr.setRequestHeader('Content-Type','application/json');
+xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
 // on request
 xhr.onload = function() {

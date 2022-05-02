@@ -33,8 +33,8 @@ function create_auth(accept,username,email,password) {
     // define XHR POST
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/auth/login`;
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.open('POST',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
 
     xhr.onload = function() {
 

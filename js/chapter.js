@@ -31,7 +31,7 @@ if (Date.parse(c_now) >= Date.parse(c_cached_out) || c_cached_out == "") {
     const c_xhr = new XMLHttpRequest();
     const c_url = `https://api.mangadex.org/manga/${manga}/aggregate?translatedLanguage[]=${lang}`;
     log('search',`Searching chapters for ${manga}`,true);
-    c_xhr.open('GET', c_url, true);
+    c_xhr.open('GET',c_url,true);
 
 
     // request is received
@@ -166,8 +166,8 @@ function read_chapters() {
     // define xhr GET
     const r_xhr = new XMLHttpRequest();
     const r_url = `https://api.mangadex.org/manga/${manga}/read`;
-    r_xhr.open('GET', r_url, true);
-    r_xhr.setRequestHeader('Authorization', `${localStorage.getItem('token')}`);
+    r_xhr.open('GET',r_url,true);
+    r_xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
 
 
     // request is received
