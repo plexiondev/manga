@@ -695,13 +695,16 @@ button.advance:hover, button.advance:focus {
 }
 
 /* aspect ratio locked classes */
-.w-16, .w-18, .w-20, .w-22, .w-24, .w-30, .w-32, .w-40, .w-48, .w-52 {
+.w-16, .w-18, .w-20, .w-22, .w-24, .w-30, .w-32, .w-40, .w-48, .w-52, .w-64 {
     width: var(--w);
     height: var(--w);
 }
 /* define */
 .w-22 {
     --w: 22px;
+}
+.w-64 {
+    --w: 64px;
 }
 
 /* search header */
@@ -720,4 +723,17 @@ section.search-cont .search {
 select {
     border-bottom: var(--button-border);
     min-width: 175px;
+}
+
+
+/* user */
+.big-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px;
+    border-radius: 50%;
+    background-color: var(--b4);
+    /* lock */
+    width: 154px;
 }
