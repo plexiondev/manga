@@ -286,6 +286,11 @@ function get_relationships(data_pass) {
     }
 }
 
+// expand truncated body
+function expand_trunc_body() {
+    document.getElementById('attr.trunc_body').classList.toggle('expand');
+}
+
 // on error (404)
 function get_error() {
     document.getElementById('overview').innerHTML = (`
