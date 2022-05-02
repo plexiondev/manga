@@ -73,6 +73,9 @@ this function can then refresh auth automatically if required (and also display 
 - - [x] viewing group's work (manga scanlations)
 - - [x] viewing group's members
 - [ ] allow searching for groups
+- [ ] add banner when unclaimed group (no members) - similar to osu! copyright notice? / or show as window (no, too distracting)
+- [ ] add icon for email link
+- [ ] correct link for email
 
 ## users
 
