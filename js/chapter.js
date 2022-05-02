@@ -145,16 +145,20 @@ function get_chapters() {
                 `);
             }
 
-            let count = parseInt(localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`));
-            localStorage.setItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`,`${parseInt(count+1)}`);
-            document.getElementById(`feed.volumes.${data.data[i].attributes.volume}.attr.length`).textContent = `(${localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`)})`;
-
             // append
             if (data.data[i].attributes.volume != null) {
                 document.getElementById(`feed.volumes.${data.data[i].attributes.volume}`).appendChild(em_chapter);
+                
+                let count = parseInt(localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`));
+                localStorage.setItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`,`${parseInt(count+1)}`);
+                document.getElementById(`feed.volumes.${data.data[i].attributes.volume}.attr.length`).textContent = `(${localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`)})`;
             } else {
                 // no volume
                 document.getElementById('feed.volumes.none').appendChild(em_chapter);
+                
+                let count = parseInt(localStorage.getItem(`${manga}.volumes.none.attr.length`));
+                localStorage.setItem(`${manga}.volumes.none.attr.length`,`${parseInt(count+1)}`);
+                document.getElementById(`feed.volumes.none.attr.length`).textContent = `(${localStorage.getItem(`${manga}.volumes.none.attr.length`)})`;
             }
         }
 
