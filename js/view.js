@@ -585,5 +585,44 @@ function get_statistics() {
 
 // open rating distribution window
 function view_rating() {
-    
+    let em_window = document.createElement('span');
+    em_window.classList.add('window');
+    em_window.setAttribute('id','rating_window');
+
+    em_window.innerHTML = (`
+    <div class="cover"><img src="${cover_art}"></div>
+        <div class="header" style="text-align: center;"><h4>User rating</h4></div>
+    `);
+
+    // info
+    let em_info = document.createElement('div');
+    em_info.classList.add('info');
+
+    // distribution
+    let em_dist = document.createElement('table');
+    em_dist.classList.add('distribution');
+
+    // get highest rating
+    let max_rating = 0;
+    for (let i in rating_dist) {
+        if (rating_dist[i] > max_rating) {
+            max_rating = rating_dist[i]
+        }
+    }
+
+    // calculate
+    for (let i in rating_dist) {
+
+    }
+
+    // actions
+    let em_actions = document.createElement('div');
+    em_actions.classList.add('actions');
+    em_actions.innerHTML = (`<a role="button" class="button focus" onclick="exit_read_status()">Done</a>`);
+
+    // append
+    em_window.appendChild(em_info);
+    em_window.appendChild(em_actions);
+    document.getElementById('window_parent').appendChild(em_window);
+    feather.replace();
 }
