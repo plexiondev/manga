@@ -65,13 +65,13 @@ this function can then refresh auth automatically if required (and also display 
 - - [x] viewing author's biography
 - - [x] viewing author's socials
 - - [x] viewing author's works
-- [ ] make author feed
 
 ## groups
 
 - [x] make pages for groups
-- - [ ] viewing group description
-- - [ ] viewing group's work (manga scanlations)
+- - [x] viewing group description
+- - [x] viewing group's work (manga scanlations)
+- - [x] viewing group's members
 - [ ] allow searching for groups
 
 ## users
