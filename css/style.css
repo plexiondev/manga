@@ -121,7 +121,17 @@ a[title]:not(.button) {
     cursor: pointer;
 }
 
+
 /* rating distribution */
+.distribution .bar {
+    background-color: var(--b4);
+    height: 14px;
+    border-radius: 5px;
+}
+.distribution .bar .fill {
+    background-color: var(--text-link);
+    border-radius: 5px;
+}
 
 
 /* language */

@@ -617,7 +617,7 @@ function view_rating() {
         let em_bar = document.createElement('tr');
         em_bar.innerHTML = (`
         <td class="rating-type">${i}</td>
-        <td class="rating-bar"><span class="bar" style="width: ${max_rating};"><span class="fill" style="width: ${rating};"></span></span></td>
+        <td class="rating-bar"><span class="bar" style="width: ${max_rating}px;"><span class="fill" style="width: ${rating}px;"></span></span></td>
         <td class="rating-count"><strong>(${rating_dist[i]})</strong></td>
         `);
 
