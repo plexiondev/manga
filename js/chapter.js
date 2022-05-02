@@ -52,7 +52,7 @@ function get_volumes() {
                 em_card.classList.add('chapter-card');
                 em_card.innerHTML = (`
                 <div class="info">
-                <h5 class="main">${volume_name} <label class="overl" id="feed.volumes.${data.volumes[i].volume}.attr.length"></label></h5>
+                <h5 class="main">${volume_name}<label class="count" id="feed.volumes.${data.volumes[i].volume}.attr.length"></label></h5>
                 </div>
                 <ul id="feed.volumes.${data.volumes[i].volume}"></ul>
                 `);
@@ -149,14 +149,14 @@ function get_chapters() {
                 
                 let count = parseInt(localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`));
                 localStorage.setItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`,`${parseInt(count+1)}`);
-                document.getElementById(`feed.volumes.${data.data[i].attributes.volume}.attr.length`).textContent = `(${localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`)})`;
+                document.getElementById(`feed.volumes.${data.data[i].attributes.volume}.attr.length`).textContent = `${localStorage.getItem(`${manga}.volumes.${data.data[i].attributes.volume}.attr.length`)}`;
             } else {
                 // no volume
                 document.getElementById('feed.volumes.none').appendChild(em_chapter);
                 
                 let count = parseInt(localStorage.getItem(`${manga}.volumes.none.attr.length`));
                 localStorage.setItem(`${manga}.volumes.none.attr.length`,`${parseInt(count+1)}`);
-                document.getElementById(`feed.volumes.none.attr.length`).textContent = `(${localStorage.getItem(`${manga}.volumes.none.attr.length`)})`;
+                document.getElementById(`feed.volumes.none.attr.length`).textContent = `${localStorage.getItem(`${manga}.volumes.none.attr.length`)}`;
             }
         }
 
