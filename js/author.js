@@ -1,6 +1,37 @@
 // view author page
 
 
+const socials = {
+    0: 'booth',
+    1: 'fanBox',
+    2: 'fantia',
+    3: 'melonBook',
+    4: 'naver',
+    5: 'nicoVideo',
+    6: 'pixiv',
+    7: 'skeb',
+    8: 'tumblr',
+    9: 'twitter',
+    10: 'website',
+    11: 'weibo',
+    12: 'youtube'
+}
+const socials_string = {
+    'booth': 'Booth',
+    'fanBox': 'Fanbox',
+    'fantia': 'Fantia',
+    'melonBook': 'Melonbooks',
+    'naver': 'NAVER',
+    'nicoVideo': 'Niconico',
+    'pixiv': 'pixiv',
+    'skeb': 'Skeb',
+    'tumblr': 'Tumblr',
+    'twitter': 'Twitter',
+    'website': null,
+    'weibo': 'Weibo',
+    'youtube': 'YouTube'
+}
+
 // pass author id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -94,6 +125,16 @@ function get_general(data_pass) {
     // actions
     // open in mangadex
     document.getElementById('action.mangadex').href = `https://mangadex.org/author/${author}`;
+
+    // socials
+    get_socials(data_pass);
+}
+
+// parse socials
+function get_socials(data_pass) {
+    const data = JSON.parse(data_pass);
+
+
 }
 
 // on error (404)
