@@ -85,6 +85,8 @@ function get_general(data_pass) {
 
     // username
     document.getElementById('attr.username').textContent = data.data.attributes.username;
+    // page title
+    document.getElementById('page.title').textContent = `${data.data.attributes.username}'s Profile`;
 
     // actions
     // open in mangadex
