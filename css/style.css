@@ -624,7 +624,7 @@ section .chapter-card h5:before, h5.main:before {
     align-items: center;
     background-color: var(--b6);
 }
-.window .cover.blur {
+.window .cover.blur, .bg.blur {
     filter: blur(20px);
 }
 .window .cover img {
