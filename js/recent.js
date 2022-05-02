@@ -100,7 +100,9 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     log('general',`Created ${i}!`,true);
     card.innerHTML = (`
     <div class="cover">
+    <span class="cover-inner">
     <img src="${cover_art_url}" id="${manga}_cover" alt="Cover art">
+    </span>
     </div>
     `);
 
