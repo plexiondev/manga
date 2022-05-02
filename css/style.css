@@ -121,6 +121,9 @@ a[title]:not(.button) {
     cursor: pointer;
 }
 
+/* rating distribution */
+
+
 /* language */
 .language .flag {
     font-size: 18px;

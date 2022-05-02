@@ -612,7 +612,17 @@ function view_rating() {
 
     // calculate
     for (let i in rating_dist) {
+        let rating = rating_dist[i] / max_rating;
 
+        let em_bar = document.createElement('tr');
+        em_bar.innerHTML = (`
+        <td class="rating-type">${i}</td>
+        <td class="rating-bar"><span class="bar" style="width: ${max_rating};"><span class="fill" style="width: ${rating};"></span></span></td>
+        <td class="rating-count"><strong>(${rating_dist[i]})</strong></td>
+        `);
+
+        // append
+        em_dist.appendChild(em_bar);
     }
 
     // actions
@@ -621,6 +631,7 @@ function view_rating() {
     em_actions.innerHTML = (`<a role="button" class="button focus" onclick="exit_read_status()">Done</a>`);
 
     // append
+    em_info.appendChild(em_dist);
     em_window.appendChild(em_info);
     em_window.appendChild(em_actions);
     document.getElementById('window_parent').appendChild(em_window);
