@@ -1,6 +1,12 @@
 /* manga styles */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --font-main: Inter, -apple-system, BlinkMacSystemFont, Roboto, "Noto Sans JP", "Noto Sans SC", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
 /* shift elements to right for cover */
 .shift-right {
     margin-left: 210px;
