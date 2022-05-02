@@ -52,7 +52,7 @@ this function can then refresh auth automatically if required (and also display 
 - [x] allow marking as read manga chapters
 - [ ] if all chapters marked as read, auto-mark volume as read
 - [ ] auto mark chapter as read if finished reading (possibly make option incase prefer manual)
-- [ ] figure out how to work mark read/unread chapters in mark_read.js
+- [x] figure out how to work mark read/unread chapters in mark_read.js
 - [x] show warning if manga does not fit in user's content rating
 - [ ] add more options button
 - - [ ] represent as a simple `...` icon
