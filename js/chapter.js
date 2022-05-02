@@ -171,21 +171,11 @@ function read_chapters() {
         const data = JSON.parse(this.response);
         
         for (let i in data.data) {
-            // remove from unread (if there)
-            unread_cache.slice(unread_cache.indexOf(`${data.data[i]}`),1);
-            log('general',`Removed ${data.data[i]} from unread.`,true);
             // append to read & mark read
             try {
-                read_cache.push(`${data.data[i]}`);
                 mark_read(data.data[i],true);
             } catch(error) {}
         }
-
-        // cache arrays
-        localStorage.setItem(`${manga}_read_array`,read_cache);
-        localStorage.setItem(`${manga}_unread_array`,unread_cache);
-
-        console.log(`CACHE\n\nread (${read_cache.length}):\n${read_cache}\n\nunread (${unread_cache.length}):\n${unread_cache}`);
     }
 
 
