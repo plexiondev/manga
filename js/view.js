@@ -279,6 +279,10 @@ function get_relationships(data_pass) {
         tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);
         tag.href = `/tags.html?t=${tags[i].id}`;
 
+        if (tags[i].attributes.name.en == 'Sexual Violence' || tags[i].attributes.name.en == 'Gore') {
+            warn_content_rating(`<label class="tag big ${(tags[i].attributes.name.en).replaceAll(' ','_')}" style="margin: 0;">${tags[i].attributes.name.en}</label>`);
+        }
+
         // text
         tag.textContent = `${tags[i].attributes.name.en}`;
 
