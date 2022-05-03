@@ -851,10 +851,17 @@ section.search-cont .search {
     color: var(--text-main);
     font-weight: 500;
     min-width: 180px;
+    text-decoration: none !important;
+    position: relative;
 }
 .menu a:hover, .menu a:focus {
     background-color: var(--b5);
     color: var(--text-head);
+}
+.menu a svg {
+    position: absolute;
+    right: 10px;
+    top: 8px !important;
 }
 /* gap */
 .dropdown hr, .menu hr {

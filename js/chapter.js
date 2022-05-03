@@ -152,7 +152,6 @@ function get_chapters() {
             }
         }
 
-        lucide.createIcons();
         read_chapters();
         bind_chapters();
     }
@@ -204,13 +203,13 @@ function bind_chapters() {
         em_menu.id = `menu.${chapters[i]}`;
         em_menu.innerHTML = (`
         <ul>
-            <li><a href="/read.html?c=${chapters[i]}&m=${manga}">Read chapter</a></li>
+            <li><a href="/read.html?c=${chapters[i]}&m=${manga}">Read chapter<i class="icon w-20" icon-name="book"></i></a></li>
             <hr>
-            <li><a href="/group.html?u=${groups[i]}">View Group</a></li>
-            <li><a href="/user.html?u=${uploaders[i]}">View Uploader</a></li>
+            <li><a href="/group.html?u=${groups[i]}">View Group<i class="icon w-20" icon-name="users"></i></a></li>
+            <li><a href="/user.html?u=${uploaders[i]}">View Uploader<i class="icon w-20" icon-name="user"></i></a></li>
             <hr>
-            <li><a onclick="send_read('${chapters[i]}')">Mark Read</a></li>
-            <li><a onclick="remove_read('${chapters[i]}')">Mark Unread</a></li>
+            <li><a onclick="send_read('${chapters[i]}')">Mark Read<i class="icon w-20" icon-name="eye"></i></a></li>
+            <li><a onclick="remove_read('${chapters[i]}')">Mark Unread<i class="icon w-20" icon-name="eye-off"></i></a></li>
         </ul>
         `);
 
@@ -234,4 +233,6 @@ function bind_chapters() {
             }
         });
     }
+
+    lucide.createIcons();
 }
