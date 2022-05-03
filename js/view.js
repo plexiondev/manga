@@ -630,7 +630,7 @@ function view_rating() {
         em_bar.innerHTML = (`
         <td class="rating-type">${i}</td>
         <td class="rating-bar"><span class="bar" style="width: 360px;"><span class="fill" style="width: ${rating}px;"></span></span></td>
-        <td class="rating-count"><strong>(${rating_dist[i]})</strong></td>
+        <td class="rating-count"><strong class="text-14">${rating_dist[i]} <i class="icon w-14" data-feather="star" stroke-width="2.5" style="top: -2px !important"></i></strong></td>
         `);
 
         // append

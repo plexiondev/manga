@@ -125,7 +125,7 @@ a[title]:not(.button) {
 /* rating distribution */
 .distribution .bar {
     background-color: var(--b4);
-    height: 16px;
+    height: 14px;
     border-radius: 10px;
     display: block;
     position: relative;
@@ -863,11 +863,14 @@ button.advance:hover, button.advance:focus {
 }
 
 /* aspect ratio locked classes */
-.w-16, .w-18, .w-20, .w-22, .w-24, .w-30, .w-32, .w-40, .w-48, .w-52, .w-64 {
+.w-14, .w-16, .w-18, .w-20, .w-22, .w-24, .w-30, .w-32, .w-40, .w-48, .w-52, .w-64 {
     width: var(--w);
     height: var(--w);
 }
 /* define */
+.w-14 {
+    --w: 14px;
+}
 .w-22 {
     --w: 22px;
 }
