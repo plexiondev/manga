@@ -498,7 +498,7 @@ function create_following(status) {
         document.getElementById('action.following').setAttribute('onclick',`open_following(true)`);
         document.getElementById('action.following').classList.add('focus');
         document.getElementById('action.following').innerHTML = (`
-        <i class="icon w-22" data-feather="bell" style="top: -1px !important;"></i>
+        <i class="icon w-22" data-feather="bookmark" style="top: -1px !important;"></i>
         `);
 
         feather.replace();
