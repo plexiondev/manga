@@ -5,7 +5,7 @@ Insight into how each component works together to allow for seamless manga readi
 ### <i class="icon w-24" data-feather="link-2"></i> Useful links
 
 - [MangaDex](https://mangadex.org/)
-- [MangaDex API](https://api.mangadex.org/swagger)
+- [MangaDex API](https://api.mangadex.org/swagger.html)
 - [MangaDex Discord](https://discord.gg/mangadex)
 
 ### <i class="icon w-24" data-feather="lock"></i> Authentication
