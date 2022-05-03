@@ -121,8 +121,20 @@ a[title]:not(.button) {
     cursor: pointer;
 }
 
+.button.icon-only {
+    --sides: 20px;
+}
+
+.window {
+    max-width: 500px;
+}
+
 
 /* rating distribution */
+.distribution .rating-count, .distribution .rating-type {
+    text-align: right;
+}
+/* bars */
 .distribution .bar {
     background-color: var(--b4);
     height: 14px;
