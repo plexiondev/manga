@@ -658,3 +658,8 @@ function view_rating() {
     document.getElementById('window_parent').appendChild(em_window);
     feather.replace();
 }
+
+// more options menu
+function more_options() {
+    document.getElementById('action.more_menu').classList.toggle('shown');
+}
