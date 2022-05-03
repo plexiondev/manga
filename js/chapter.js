@@ -2,7 +2,7 @@
 
 
 // cache
-var lang = localStorage.getItem("op_translate_language") || "en";
+var lang = localStorage.getItem('op_translate_language') || "en";
 if (lang == 0) {
     lang = "en";
 }
@@ -11,6 +11,10 @@ let c_cache = localStorage.getItem(`${manga}_chapters_${lang}`) || "";
 let c_now = new Date();
 
 var assigned_link = false;
+
+let chapters = [];
+let groups = [];
+let uploaders = [];
 
 get_volumes();
 
@@ -81,6 +85,7 @@ function get_chapters() {
         for (let i in data.data) {
             let em_chapter = document.createElement('li');
             em_chapter.classList.add('chapter-embed');
+            em_chapter.id = `link.${data.data[i].id}`;
 
             if (last_read_id == null && assigned_link != true) {
                 document.getElementById('action.read').href = `read.html?c=${data.data[i].id}&m=${manga}`;
@@ -101,6 +106,11 @@ function get_chapters() {
                     uploader_id = data.data[i].relationships[n].id;
                 }
             }
+
+            // store chapter ids
+            chapters.push(`${data.data[i].id}`);
+            groups.push(`${scanlation_group_id}`);
+            uploaders.push(`${uploader_id}`);
 
             let chapter_name;
             let chapter_name_raw;
@@ -144,6 +154,7 @@ function get_chapters() {
 
         feather.replace();
         read_chapters();
+        bind_chapters();
     }
 
     // send
@@ -181,4 +192,47 @@ function read_chapters() {
 
     // send
     r_xhr.send();
+}
+
+// bind chapters for right-click event listeners
+// based on https://itnext.io/how-to-create-a-custom-right-click-menu-with-javascript-9c368bb58724
+function bind_chapters() {
+    for (let i in chapters) {
+        // create menu
+        let em_menu = document.createElement('div');
+        em_menu.classList.add('menu','standalone');
+        em_menu.id = `menu.${chapters[i]}`;
+        em_menu.innerHTML = (`
+        <ul>
+            <li><a href="/view.html?c=${chapters[i]}&m=${manga}">Read chapter</a></li>
+            <hr>
+            <li><a href="/group.html?u=${groups[i]}">View Group</a></li>
+            <li><a href="/user.html?u=${uploaders[i]}">View Uploader</a></li>
+            <hr>
+            <li><a>Mark Read</a></li>
+            <li><a>Mark Unread</a></li>
+        </ul>
+        `);
+
+        // append
+        document.body.appendChild(em_menu);
+
+        // right-click
+        console.log(document.getElementById(`link.${chapters[i]}`))
+        document.getElementById(`link.${chapters[i]}`).addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+
+            const { clientX: mouse_x,clientY: mouse_y } = event;
+
+            document.getElementById(`menu.${chapters[i]}`).style = `top: ${mouse_y}px; left: ${mouse_x}px;`;
+            document.getElementById(`menu.${chapters[i]}`).classList.add('shown');
+        });
+
+        // click out bounds
+        document.body.addEventListener('click', (event_click) => {
+            if (event_click.target.offsetParent != document.getElementById(`menu.${chapters[i]}`)) {
+                document.getElementById(`menu.${chapters[i]}`).classList.remove('shown');
+            }
+        });
+    }
 }
