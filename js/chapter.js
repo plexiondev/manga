@@ -71,7 +71,7 @@ function get_volumes() {
 function get_chapters() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga/${manga}/feed?limit=150&includes[]=scanlation_group&includes[]=user&order[volume]=asc&order[chapter]=asc&translatedLanguage[]=${lang}`;
+    const url = `https://api.mangadex.org/manga/${manga}/feed?limit=240&includes[]=scanlation_group&includes[]=user&order[volume]=asc&order[chapter]=asc&translatedLanguage[]=${lang}`;
     xhr.open('GET',url,true);
 
     // request is received
