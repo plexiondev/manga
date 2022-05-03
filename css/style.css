@@ -582,6 +582,12 @@ input.generic {
 .button {
     cursor: pointer;
 }
+.button svg {
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+}
+.button.focus svg {
+    color: var(--text-head);
+}
 
 
 /* content ratings */
