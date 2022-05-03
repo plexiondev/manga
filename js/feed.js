@@ -26,7 +26,7 @@ const tags_icon = {
 function load_page() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/user/follows/manga/?includes[]=cover_art&limit=${limit}&offset=${offset}`;
+    const url = `https://api.mangadex.org/user/follows/manga/?includes[]=cover_art&includes[]=author&includes[]=artist&limit=${limit}&offset=${offset}`;
     xhr.open('GET',url,true);
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
