@@ -822,6 +822,17 @@ section.search-cont .search {
 .dropdown.shown .menu {
     position: absolute;
     display: block;
+    animation: show_menu 0.2s;
+}
+@keyframes show_menu {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 /* links */
 .dropdown .menu li:before {
