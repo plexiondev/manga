@@ -17,7 +17,7 @@ document.getElementById('header').innerHTML =
     </ul>
     <hr>
     <ul>
-    <li><a href="/user.html?u=${localStorage.getItem('token_user_id')}"><i class="icon w-20" icon-name="user"></i>Profile</a></li>
+    <li><a href="/user.html?u=${localStorage.getItem('token_user_id')}"><i class="icon w-20" icon-name="contact"></i>Profile</a></li>
     <li><a href="/groups.html"><i class="icon w-20" icon-name="users"></i>Groups</a></li>
     <li><a href="/users.html"><i class="icon w-20" icon-name="user"></i>Users</a></li>
     </ul>
