@@ -2,13 +2,13 @@
 
 Insight into how each component works together to allow for seamless manga reading. May be helpful if anyone else is looking into the MangaDex API and doesn't know where to begin (or is lost on something).
 
-### <i class="icon w-24" data-feather="link-2"></i> Useful links
+### <i class="icon w-24" icon-name="link-2"></i> Useful links
 
 - [MangaDex](https://mangadex.org/)
 - [MangaDex API](https://api.mangadex.org/swagger.html)
 - [MangaDex Discord](https://discord.gg/mangadex)
 
-### <i class="icon w-24" data-feather="lock"></i> Authentication
+### <i class="icon w-24" icon-name="lock"></i> Authentication
 
 > Related: [auth.js](/js/auth.js), [check_auth.js](/js/check_auth.js)
 
@@ -20,7 +20,7 @@ This refresh token can then be periodically used every **14 min** to refresh you
 
 Your current session can be viewed in the [settings page](/settings), using https://api.mangadex.org/user/me to get your current user information.
 
-### <i class="icon w-24" data-feather="book"></i> Reading
+### <i class="icon w-24" icon-name="book"></i> Reading
 
 > Related: [read.js](/js/read.js)
 
@@ -37,7 +37,7 @@ eg. read.html?c=e81d4141-c28a-409c-9c60-3e2b4fba9a9e&m=74088ca4-48ea-4c09-8df0-2
 
 MangaDex allows for a data-quality to be specified, either `data` (highest), or `data-saver` (lower quality). This can be changed in the [settings](/settings), listed under "Prefer low quality downloads" (enabling will opt for data-saver).
 
-### <i class="icon w-24" data-feather="eye"></i> Viewing
+### <i class="icon w-24" icon-name="eye"></i> Viewing
 
 > Related: [view.js](/js/view.js), [chapter.js](/js/chapter.js)
 
@@ -63,7 +63,7 @@ The cover art of a manga can be retrieved using the mentioned `?includes[]=cover
 
 With the `fileName` being directly in the result.
 
-### <i class="icon w-24" data-feather="search"></i> Searching
+### <i class="icon w-24" icon-name="search"></i> Searching
 
 > Related: [search.js](/js/search.js), [search_box.js](/js/search_box.js)
 

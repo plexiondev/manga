@@ -146,13 +146,13 @@ function create_social(platform,link,data_pass) {
     if (platform == 'ircChannel') {
         em_tag.href = `irc://${data.data.attributes.ircServer}/${data.data.attributes.ircChannel.replace('#','')}`;
         em_tag.innerHTML = (`
-        <i class="icon w-20" data-feather="hash"></i>
+        <i class="icon w-20" icon-name="hash"></i>
         IRC: ${data.data.attributes.ircServer} ${data.data.attributes.ircChannel}
         `);
     } else if (platform == 'website') {
         em_tag.href = `${link}`;
         em_tag.innerHTML = (`
-        <i class="icon w-20" data-feather="globe"></i>
+        <i class="icon w-20" icon-name="globe"></i>
         ${socials_string[platform]}
         `);
     } else{
@@ -166,7 +166,7 @@ function create_social(platform,link,data_pass) {
     // append
     if (platform != 'ircServer') {
         document.getElementById('attr.socials').appendChild(em_tag);
-        feather.replace();
+        lucide.createIcons();
     }
 }
 
@@ -180,7 +180,7 @@ function get_members(data_pass) {
         card.href = `/user.html?u=${data.data.relationships[i].id}`;
         card.innerHTML = (`
         <div class="cover" style="height: initial;">
-        <i class="icon w-24" data-feather="user"></i>
+        <i class="icon w-24" icon-name="user"></i>
         </div>
         <div class="info" style="display: flex; align-items: center;">
         <h5>${data.data.relationships[i].attributes.username}</h5>
@@ -202,7 +202,7 @@ function get_members(data_pass) {
             group_member_count += 1;
         }
 
-        feather.replace();
+        lucide.createIcons();
     }
 
     // show member count
@@ -313,7 +313,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     em_info.innerHTML = (`
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
     <div class="desc-cont text-16">${html}</div>
-    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" data-feather="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
+    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" icon-name="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
     `);
 
     // tags
@@ -338,7 +338,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
         document.getElementById('feed.works').appendChild(card);
     }
 
-    feather.replace();
+    lucide.createIcons();
 }
 
 // expand truncated body
@@ -381,5 +381,5 @@ function prompt_no_group() {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 }

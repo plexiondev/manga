@@ -28,7 +28,7 @@ if (code == '200') {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 } else if (code == '429') {
     // rate-limit
 
@@ -46,7 +46,7 @@ if (code == '200') {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 } else {
     // unknown error (api)
 
@@ -69,5 +69,5 @@ if (code == '200') {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 }

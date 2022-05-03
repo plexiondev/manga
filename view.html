@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="https://plexion.dev/js/scroll.js"></script>
     <!-- icons -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="dark" style="--accent-page: -4;">
     <div class="logs" id="log_parent"></div>
@@ -28,12 +28,12 @@
         <span class="search-wrap">
             <div class="search">
                 <input class="search-input" id="search" placeholder="Search for...">
-                <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-28" data-feather="search"></i></button>
+                <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-28" icon-name="search"></i></button>
             </div>
         </span>
         <span class="menu">
             <span class="dropdown-wrap">
-                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
+                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" icon-name="more-horizontal"></i></a>
             </span>
         </span>
     </header>
@@ -66,7 +66,7 @@
                     <a role="button" class="button" id="action.following" style="height: 53px; padding-left: 16px; padding-right: 20px;" title="Follow this manga"></a>
                 </span>
                 <span class="dropdown" id="action.more_menu">
-                    <button class="button icon-only" id="action.more" onclick="more_options()"><i class="icon w-22" data-feather="more-horizontal" stroke-width="2.5"></i></button>
+                    <button class="button icon-only" id="action.more" onclick="more_options()"><i class="icon w-22" icon-name="more-horizontal" stroke-width="2.5"></i></button>
                     <div class="menu">
                         <ul>
                             <li><a id="action.mangadex" target="_blank" title="View on MangaDex">View on MangaDex</a></li>
@@ -79,7 +79,7 @@
                     <div class="body-trunc" id="attr.trunc_body"><p class="text-18" id="attr.body"></p></div>
                     <button class="advance" onclick="expand_trunc_body()">
                         EXPAND
-                        <i class="icon w-16" data-feather="chevron-down"></i>
+                        <i class="icon w-16" icon-name="chevron-down"></i>
                     </button>
                 </div>
                 <div class="info-blocks">
@@ -132,6 +132,4 @@
 </body>
 <!-- options -->
 <script src="/js/settings.js"></script>
-<script>
-    feather.replace()
-</script>
+<script>lucide.createIcons();</script>

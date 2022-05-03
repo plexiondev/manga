@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="https://plexion.dev/js/scroll.js"></script>
     <!-- icons -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="dark" style="--accent-page: -4;">
     <div class="logs" id="log_parent"></div>
@@ -32,13 +32,13 @@
             <section class="center">
                 <div class="advance">
                     <button class="advance" onclick="advance_page(-1);">
-                        <i class="icon w-16" data-feather="chevron-left"></i>
+                        <i class="icon w-16" icon-name="chevron-left"></i>
                         PREV
                     </button>
                     <span class="pages" id="advance_pages"></span>
                     <button class="advance" onclick="advance_page(1);">
                         NEXT
-                        <i class="icon w-16" data-feather="chevron-right"></i>
+                        <i class="icon w-16" icon-name="chevron-right"></i>
                     </button>
                 </div>
             </section>
@@ -52,6 +52,4 @@
 </body>
 <!-- options -->
 <script src="/js/settings.js"></script>
-<script>
-    feather.replace()
-</script>
+<script>lucide.createIcons();</script>

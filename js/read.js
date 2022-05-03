@@ -255,8 +255,8 @@ document.getElementById('header').innerHTML =
 (`
 <span class="links" id="header_links">
     <ul>
-    <li><a href="javascript:void(0)" onclick="history.back()"><i class="icon w-20" data-feather="arrow-left"></i>Back</a></li>
-    <li><a href="javascript:void(0)" onclick="location.reload()"><i class="icon w-20" data-feather="repeat"></i>Reload</a></li>
+    <li><a href="javascript:void(0)" onclick="history.back()"><i class="icon w-20" icon-name="arrow-left"></i>Back</a></li>
+    <li><a href="javascript:void(0)" onclick="location.reload()"><i class="icon w-20" icon-name="repeat"></i>Reload</a></li>
     </ul>
     <hr>
     <ul>
@@ -264,8 +264,8 @@ document.getElementById('header').innerHTML =
     </ul>
     <hr>
     <ul>
-    <li><a href="javascript:void(0)" onclick="exit()" class="keycode-cont"><i class="icon w-20" data-feather="log-out"></i>Exit<label class="overl keycode">X</label></a></li>
-    <li><a href="/settings" target="_blank"><i class="icon w-20" data-feather="settings"></i>Settings</a></li>
+    <li><a href="javascript:void(0)" onclick="exit()" class="keycode-cont"><i class="icon w-20" icon-name="log-out"></i>Exit<label class="overl keycode">X</label></a></li>
+    <li><a href="/settings" target="_blank"><i class="icon w-20" icon-name="settings"></i>Settings</a></li>
     </ul>
 </span>
 `);

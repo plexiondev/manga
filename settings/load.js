@@ -28,7 +28,7 @@ $.get( 'settings.json', function( response ) {
             <span class="text">
                 <span class="icon">
                     <div class="headline-icon min-icon">
-                        <i class="icon w-24" data-feather="${data.settings[i].icon}"></i>
+                        <i class="icon w-24" icon-name="${data.settings[i].icon}"></i>
                     </div>
                 </span>
             </span>
@@ -87,7 +87,7 @@ $.get( 'settings.json', function( response ) {
             <span class="text">
                 <span class="icon">
                     <div class="headline-icon min-icon">
-                        <i class="icon w-24" data-feather="${data.settings[i].icon}"></i>
+                        <i class="icon w-24" icon-name="${data.settings[i].icon}"></i>
                     </div>
                 </span>
                 <span class="info" id="login_info">
@@ -107,7 +107,7 @@ $.get( 'settings.json', function( response ) {
             <span class="text">
                 <span class="icon">
                     <div class="headline-icon min-icon">
-                        <i class="icon w-24" data-feather="${data.settings[i].icon}"></i>
+                        <i class="icon w-24" icon-name="${data.settings[i].icon}"></i>
                     </div>
                 </span>
                 <span class="info">
@@ -128,7 +128,7 @@ $.get( 'settings.json', function( response ) {
             no_category(em_setting);
         }
 
-        feather.replace();
+        lucide.createIcons();
     }
 
     // detect upon load (& mark options as enabled)

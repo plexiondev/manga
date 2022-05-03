@@ -13,7 +13,7 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- icons -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="dark" style="--accent-page: -4;">
     <div class="logs" id="log_parent"></div>
@@ -21,29 +21,27 @@
     <div class="nav-manga" id="nav-manga">
         <nav class="left manga" id="header"></nav>
         <script src="/js/header.js"></script>
-        <button onclick="show_nav()" id="show_nav" title="Press 'O' to open keyboard only"><i class="icon w-24" data-feather="chevrons-right"></i></button>
+        <button onclick="show_nav()" id="show_nav" title="Press 'O' to open keyboard only"><i class="icon w-24" icon-name="chevrons-right"></i></button>
     </div>
     <div class="manga-wrap" id="manga_wrap"></div>
     <div class="controls-wrap">
         <div class="controls">
             <span id="volume-down" onclick="turn_page(-1);">
-                <i class="icon w-28" data-feather="arrow-left"></i>
+                <i class="icon w-28" icon-name="arrow-left"></i>
             </span>
             <span id="chapter-control">
                 <strong id="page"></strong><p class="sep">/</p><i id="chapter-length"></i>
             </span>
             <span id="volume-up" onclick="turn_page(1);">
-                <i class="icon w-28" data-feather="arrow-right"></i>
+                <i class="icon w-28" icon-name="arrow-right"></i>
             </span>
         </div>
     </div>
     <script src="js/read.js"></script>
     <span class="exit" onclick="exit()">
-        <i class="icon w-28" data-feather="x"></i>
+        <i class="icon w-28" icon-name="x"></i>
     </span>
 </body>
 <!-- options -->
 <script src="/js/settings.js"></script>
-<script>
-    feather.replace()
-</script>
+<script>lucide.createIcons();</script>

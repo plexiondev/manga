@@ -68,7 +68,7 @@ function create_em(data_pass,i) {
     log('general',`Created ${i}!`,true);
     card.innerHTML = (`
     <div class="cover" style="height: initial;">
-    <i class="icon w-24" data-feather="users"></i>
+    <i class="icon w-24" icon-name="users"></i>
     </div>
     <div class="info" style="display: flex; align-items: center;">
     <h5>${data.data[i].attributes.name}</h5>
@@ -78,7 +78,7 @@ function create_em(data_pass,i) {
     // append
     document.getElementById('feed').appendChild(card);
 
-    feather.replace();
+    lucide.createIcons();
 }
 
 // advance pages

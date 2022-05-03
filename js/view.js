@@ -168,12 +168,12 @@ function get_general(data_pass) {
     // create element
     let em_rating = document.createElement('label');
     em_rating.classList.add('tag',`${data.data.attributes.contentRating}`);
-    em_rating.innerHTML = (`<i class="icon w-16" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}`);
+    em_rating.innerHTML = (`<i class="icon w-16" icon-name="${tags_icon[`${data.data.attributes.contentRating}`]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}`);
     document.getElementById('attr.tags').appendChild(em_rating);
 
     // check if content rating matches
     if ((data.data.attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') != 1) || (data.data.attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') != 1) || (data.data.attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') != 1)) {
-        warn_content_rating(`<label class="tag big ${data.data.attributes.contentRating}" stroke-width="2.5" style="margin: 0;"><i class="icon w-24" data-feather="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 5px; top: -1.3px !important;"></i>${rating}</label>`);
+        warn_content_rating(`<label class="tag big ${data.data.attributes.contentRating}" stroke-width="2.5" style="margin: 0;"><i class="icon w-24" icon-name="${tags_icon[`${data.data.attributes.contentRating}`]}" style="margin-right: 5px; top: -1.3px !important;"></i>${rating}</label>`);
     }
 
     // actions
@@ -215,13 +215,13 @@ function get_relationships(data_pass) {
         } else if (relationships[i].type == 'author') {
             // author
             document.getElementById('attr.author').href = `/author.html?u=${relationships[i].id}`;
-            document.getElementById('attr.author').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="user"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
-            feather.replace();
+            document.getElementById('attr.author').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" icon-name="user"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            lucide.createIcons();
         } else if (relationships[i].type == 'artist') {
             // artist
             document.getElementById('attr.artist').href = `/author.html?u=${relationships[i].id}`;
-            document.getElementById('attr.artist').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" data-feather="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
-            feather.replace();
+            document.getElementById('attr.artist').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" icon-name="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
+            lucide.createIcons();
         } else if (relationships[i].type == 'manga' && relationships[i].attributes != undefined) {
             // other relationships
 
@@ -260,7 +260,7 @@ function get_relationships(data_pass) {
             <div class="desc-cont">${html}</div>
             <br>
             <label class="tag ${relationship}">${relationship}</label>
-            <label class="tag ${relationships[i].attributes.contentRating}"><i class="icon w-16" data-feather="${tags_icon[`${relationships[i].attributes.contentRating}`]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
+            <label class="tag ${relationships[i].attributes.contentRating}"><i class="icon w-16" icon-name="${tags_icon[`${relationships[i].attributes.contentRating}`]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
             </div>
             `);
 
@@ -338,10 +338,10 @@ function read_status() {
         document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
         document.getElementById('action.status').setAttribute('status',`${status}`);
         document.getElementById('action.status').innerHTML = (`
-        <i class="icon w-20" data-feather="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
+        <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
 
-        feather.replace();
+        lucide.createIcons();
     }
 
 
@@ -382,7 +382,7 @@ function open_read_status(status) {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 
     // auto-select
     document.getElementById(`op_${status}`).setAttribute('selected','');
@@ -411,10 +411,10 @@ function save_read_status() {
         document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
         document.getElementById('action.status').setAttribute('status',`${status}`);
         document.getElementById('action.status').innerHTML = (`
-        <i class="icon w-20" data-feather="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
+        <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
         `);
 
-        feather.replace();
+        lucide.createIcons();
     }
 
 
@@ -488,10 +488,10 @@ function create_following(status) {
         document.getElementById('attr.follows').setAttribute('onclick',`open_following(false)`);
         document.getElementById('action.following').classList.remove('focus');
         document.getElementById('action.following').innerHTML = (`
-        <i class="icon w-22" data-feather="minus-circle" stroke-width="2.5" style="top: -1px !important;"></i>
+        <i class="icon w-22" icon-name="minus-circle" stroke-width="2.5" style="top: -1px !important;"></i>
         `);
 
-        feather.replace();
+        lucide.createIcons();
     } else {
         // following
             
@@ -500,10 +500,10 @@ function create_following(status) {
         document.getElementById('attr.follows').setAttribute('onclick',`open_following(true)`);
         document.getElementById('action.following').classList.add('focus');
         document.getElementById('action.following').innerHTML = (`
-        <i class="icon w-22" data-feather="bookmark" stroke-width="2.5" style="top: -1px !important;"></i>
+        <i class="icon w-22" icon-name="bookmark" stroke-width="2.5" style="top: -1px !important;"></i>
         `);
 
-        feather.replace();
+        lucide.createIcons();
     }
 }
 
@@ -533,7 +533,7 @@ function open_following(status) {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 
     // auto-select
     document.getElementById(`op_${status}`).setAttribute('selected','');
@@ -585,11 +585,11 @@ function get_statistics() {
         rating_average = data.statistics[`${manga}`].rating.average.toFixed(2);
 
         // rating
-        document.getElementById('attr.rating').innerHTML = (`${data.statistics[`${manga}`].rating.average.toFixed(2)} <i class="icon w-18" data-feather="star" stroke-width="2.5" style="top: -2px !important"></i>`);
+        document.getElementById('attr.rating').innerHTML = (`${data.statistics[`${manga}`].rating.average.toFixed(2)} <i class="icon w-18" icon-name="star" stroke-width="2.5" style="top: -2px !important"></i>`);
         // follows
-        document.getElementById('attr.follows').innerHTML = (`${data.statistics[`${manga}`].follows}  <i class="icon w-18" data-feather="bookmark" stroke-width="2.5" style="top: -2px !important"></i>`);
+        document.getElementById('attr.follows').innerHTML = (`${data.statistics[`${manga}`].follows}  <i class="icon w-18" icon-name="bookmark" stroke-width="2.5" style="top: -2px !important"></i>`);
 
-        feather.replace();
+        lucide.createIcons();
     }
 
     // send
@@ -632,7 +632,7 @@ function view_rating() {
         em_bar.innerHTML = (`
         <td class="rating-type">${i}</td>
         <td class="rating-bar"><span class="bar" style="width: 360px;"><span class="fill" style="width: ${rating}px;"></span></span></td>
-        <td class="rating-count"><strong class="text-14">${rating_dist[i]} <i class="icon w-14" data-feather="star" stroke-width="2.5" style="top: -2px !important"></i></strong></td>
+        <td class="rating-count"><strong class="text-14">${rating_dist[i]} <i class="icon w-14" icon-name="star" stroke-width="2.5" style="top: -2px !important"></i></strong></td>
         `);
 
         // append
@@ -643,7 +643,7 @@ function view_rating() {
     let em_avg = document.createElement('p');
     em_avg.classList.add('rating');
     em_avg.style = 'text-align: center;';
-    em_avg.innerHTML = (`${rating_average} <i class="icon w-18" data-feather="star" stroke-width="2.5" style="top: -2px !important"></i>`);
+    em_avg.innerHTML = (`${rating_average} <i class="icon w-18" icon-name="star" stroke-width="2.5" style="top: -2px !important"></i>`);
 
     // actions
     let em_actions = document.createElement('div');
@@ -656,7 +656,7 @@ function view_rating() {
     em_window.appendChild(em_info);
     em_window.appendChild(em_actions);
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 }
 
 // more options menu

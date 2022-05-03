@@ -118,5 +118,5 @@ function prompt_no_user() {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 }

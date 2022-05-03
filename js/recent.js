@@ -118,7 +118,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     em_info.innerHTML = (`
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
     <div class="desc-cont text-16">${html}</div>
-    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" data-feather="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
+    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" icon-name="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
     `);
 
     // tags
@@ -141,5 +141,5 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     card.appendChild(em_info);
     document.getElementById('feed').appendChild(card);
 
-    feather.replace();
+    lucide.createIcons();
 }

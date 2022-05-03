@@ -37,5 +37,5 @@ function prompt_login() {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 }

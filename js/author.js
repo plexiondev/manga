@@ -147,14 +147,14 @@ function create_social(platform,link) {
         `);
     } else {
         em_tag.innerHTML = (`
-        <i class="icon w-20" data-feather="globe"></i>
+        <i class="icon w-20" icon-name="globe"></i>
         ${socials_string[platform]}
         `);
     }
 
     // append
     document.getElementById('attr.socials').appendChild(em_tag);
-    feather.replace();
+    lucide.createIcons();
 }
 
 // get works
@@ -259,7 +259,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     em_info.innerHTML = (`
     <h4 class="text-20">${data.data[i].attributes.title.en}</h4>
     <div class="desc-cont text-16">${html}</div>
-    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" data-feather="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
+    <label class="tag ${data.data[i].attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" icon-name="${tags_icon[`${data.data[i].attributes.contentRating}`]}" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
     `);
 
     // tags
@@ -284,7 +284,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
         document.getElementById('feed.works').appendChild(card);
     }
 
-    feather.replace();
+    lucide.createIcons();
 }
 
 // on error (404)
@@ -321,5 +321,5 @@ function prompt_no_author() {
 
     // append
     document.getElementById('window_parent').appendChild(em_window);
-    feather.replace();
+    lucide.createIcons();
 }

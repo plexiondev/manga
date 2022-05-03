@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="https://plexion.dev/js/scroll.js"></script>
     <!-- icons -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="dark" style="--accent-page: -4;">
     <div class="logs" id="log_parent"></div>
@@ -28,12 +28,12 @@
         <span class="search-wrap">
             <div class="search">
                 <input class="search-input" id="search" placeholder="Search for...">
-                <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-28" data-feather="search"></i></button>
+                <button role="search" class="search-con" onclick="search_manga()" id="search-con"><i class="icon w-28" icon-name="search"></i></button>
             </div>
         </span>
         <span class="menu">
             <span class="dropdown-wrap">
-                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
+                <a href="/settings" aria-label="Settings" class="option-open"><i class="icon w-28" icon-name="more-horizontal"></i></a>
             </span>
         </span>
     </header>
@@ -49,7 +49,7 @@
             <section class="left header no-sep no-align" id="overview">
                 <div class="manga-img-wrap">
                     <span class="big-icon">
-                        <i class="icon w-64" data-feather="user"></i>
+                        <i class="icon w-64" icon-name="user"></i>
                     </span>
                 </div>
                 <div class="shift-right" style="margin-left: 180px;">
@@ -77,6 +77,4 @@
 </body>
 <!-- options -->
 <script src="/js/settings.js"></script>
-<script>
-    feather.replace()
-</script>
+<script>lucide.createIcons();</script>

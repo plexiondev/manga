@@ -127,11 +127,11 @@ function get_chapters() {
 
             // text
             em_chapter.innerHTML = (`
-            <button class="mark_read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" onclick="mark_read('${data.data[i].id}',false)"><i class="icon w-20 seen" data-feather="eye" stroke-width="2.5"></i><i class="icon w-20 not_seen" data-feather="eye-off" stroke-width="2.5"></i></button>
+            <button class="mark_read" id="mark_${data.data[i].id}" chapter_id="${data.data[i].id}" onclick="mark_read('${data.data[i].id}',false)"><i class="icon w-20 seen" icon-name="eye" stroke-width="2.5"></i><i class="icon w-20 not_seen" icon-name="eye-off" stroke-width="2.5"></i></button>
             <a href="read.html?c=${data.data[i].id}&m=${manga}" title="${chapter_name_raw}">${chapter_name}</a>
             <span class="right-icons">
-            <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" data-feather="user" stroke-width="2.5"></i></a>
-            <a href="/group.html?u=${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" data-feather="users" stroke-width="2.5"></i></a>
+            <a href="/user.html?u=${uploader_id}" title="Uploaded by ${uploader}"><i class="icon w-16" icon-name="user" stroke-width="2.5"></i></a>
+            <a href="/group.html?u=${scanlation_group_id}" title="Created by ${scanlation_group}"><i class="icon w-16" icon-name="users" stroke-width="2.5"></i></a>
             </span>
             `);
 
@@ -152,7 +152,7 @@ function get_chapters() {
             }
         }
 
-        feather.replace();
+        lucide.createIcons();
         read_chapters();
         bind_chapters();
     }

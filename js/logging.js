@@ -44,13 +44,13 @@ function log(type,details,advanced) {
     
         // info
         em_log.innerHTML = (`
-        <span class="icon"><i class="icon w-32" data-feather="${log_icons[type]}"></i></span>
+        <span class="icon"><i class="icon w-32" icon-name="${log_icons[type]}"></i></span>
         <span class="info"><span><h5>${log_headers[type]} (debug)</h5><p class="text-15">${details}</p></span></span>
         `);
     
         // append
         em_log_parent.appendChild(em_log);
-        feather.replace();
+        lucide.createIcons();
     
         // auto-hide after timeout
         setTimeout(function() {
@@ -70,13 +70,13 @@ function log(type,details,advanced) {
 
         // info
         em_log.innerHTML = (`
-        <span class="icon"><i class="icon w-32" data-feather="${log_icons[type]}"></i></span>
+        <span class="icon"><i class="icon w-32" icon-name="${log_icons[type]}"></i></span>
         <span class="info"><span><h5>${log_headers[type]}</h5><p class="text-15">${details}</p></span></span>
         `);
 
         // append
         em_log_parent.appendChild(em_log);
-        feather.replace();
+        lucide.createIcons();
 
         // auto-hide after timeout
         setTimeout(function() {
