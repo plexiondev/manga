@@ -485,6 +485,7 @@ function create_following(status) {
 
         // show on button
         document.getElementById('action.following').setAttribute('onclick',`open_following(false)`);
+        document.getElementById('attr.follows').setAttribute('onclick',`open_following(false)`);
         document.getElementById('action.following').classList.remove('focus');
         document.getElementById('action.following').innerHTML = (`
         <i class="icon w-22" data-feather="minus-circle" stroke-width="2.5" style="top: -1px !important;"></i>
@@ -496,6 +497,7 @@ function create_following(status) {
             
         // show on button
         document.getElementById('action.following').setAttribute('onclick',`open_following(true)`);
+        document.getElementById('attr.follows').setAttribute('onclick',`open_following(true)`);
         document.getElementById('action.following').classList.add('focus');
         document.getElementById('action.following').innerHTML = (`
         <i class="icon w-22" data-feather="bookmark" stroke-width="2.5" style="top: -1px !important;"></i>
