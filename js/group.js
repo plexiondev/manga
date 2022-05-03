@@ -178,14 +178,41 @@ function get_members(data_pass) {
         let card = document.createElement('a');
         card.classList.add('manga-card');
         card.href = `/user.html?u=${data.data.relationships[i].id}`;
-        card.innerHTML = (`
-        <div class="cover" style="height: initial;">
-        <i class="icon w-24" icon-name="user"></i>
-        </div>
-        <div class="info" style="display: flex; align-items: center;">
-        <h5>${data.data.relationships[i].attributes.username}</h5>
-        </div>
-        `);
+
+        if (data.data.relationships[i].type == 'leader') {
+            // is group leader
+            group_leader = data.data.relationships[i].id;
+            card.classList.add('leader');
+
+            card.innerHTML = (`
+            <div class="cover" style="height: initial;">
+            <i class="icon w-24" icon-name="crown"></i>
+            </div>
+            <div class="info" style="display: flex; align-items: center;">
+            <h5>${data.data.relationships[i].attributes.username}</h5>
+            </div>
+            `);
+
+            // append
+            document.getElementById('feed.leaders').appendChild(card);
+            group_leader_count += 1;
+        } else if (data.data.relationships[i].id == group_leader) {
+            // is group leader (but as a member)
+            // (ignore)
+        } else {
+            card.innerHTML = (`
+            <div class="cover" style="height: initial;">
+            <i class="icon w-24" icon-name="user"></i>
+            </div>
+            <div class="info" style="display: flex; align-items: center;">
+            <h5>${data.data.relationships[i].attributes.username}</h5>
+            </div>
+            `);
+            
+            // append
+            document.getElementById('feed.members').appendChild(card);
+            group_member_count += 1;
+        }
 
         // append
         if (data.data.relationships[i].type == 'leader') {
