@@ -72,6 +72,7 @@ var cover_art;
 // rating
 let rating_dist;
 let rating_average;
+let user_rating;
 
 
 // checks
@@ -185,6 +186,8 @@ function get_general(data_pass) {
     check_following();
     // statistics
     get_statistics();
+    // get user rating
+    get_rating();
 
     // info blocks
     document.getElementById('attr.date_created').innerHTML = (`${new Date(`${data.data.attributes.createdAt}`).toLocaleDateString()}`);
@@ -662,6 +665,65 @@ function view_rating() {
 // more options menu
 function more_options() {
     document.getElementById('action.more_menu').classList.toggle('shown');
+}
+
+// get user rating
+function get_rating() {
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/rating/?manga[]=${manga}`;
+    xhr.open('GET',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
+
+    xhr.onload = function() {
+        const data = JSON.parse(this.response);
+
+        user_rating = data.ratings[`${manga}`].rating;
+    }
+
+    // send
+    xhr.send();
+}
+
+// open set rating window
+function open_rating_window(rating) {
+    let em_window = document.createElement('span');
+    em_window.classList.add('window');
+    em_window.setAttribute('id','following_window');
+
+    em_window.innerHTML = (`
+    <div class="cover"><img src="${cover_art}"></div>
+        <div class="header" style="text-align: center;"><h4>Rate manga</h4></div>
+        <div class="info" style="text-align: center;">
+            <p>How would you rate this manga from 1-10?</p>
+            <div class="select">
+                <select name="rating" id="rating">
+                    <option value="1" id="op_1">1</option>
+                    <option value="2" id="op_2">2</option>
+                    <option value="3" id="op_3">3</option>
+                    <option value="4" id="op_4">4</option>
+                    <option value="5" id="op_5">5</option>
+                    <option value="6" id="op_6">6</option>
+                    <option value="7" id="op_7">7</option>
+                    <option value="8" id="op_8">8</option>
+                    <option value="9" id="op_9">9</option>
+                    <option value="10" id="op_10">10</option>
+                </select>
+            </div>
+        </div>
+        <div class="actions">
+            <a role="button" class="button focus" onclick="save_following(document.getElementById('status').value)">Save</a>
+            <a role="button" class="button" onclick="exit_read_status()">Cancel</a>
+        </div>
+    `);
+
+    // append
+    document.getElementById('window_parent').appendChild(em_window);
+    lucide.createIcons();
+
+    // auto-select
+    document.getElementById(`op_${rating}`).setAttribute('selected','');
 }
 
 // set manga rating
