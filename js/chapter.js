@@ -204,13 +204,13 @@ function bind_chapters() {
         em_menu.id = `menu.${chapters[i]}`;
         em_menu.innerHTML = (`
         <ul>
-            <li><a href="/view.html?c=${chapters[i]}&m=${manga}">Read chapter</a></li>
+            <li><a href="/read.html?c=${chapters[i]}&m=${manga}">Read chapter</a></li>
             <hr>
             <li><a href="/group.html?u=${groups[i]}">View Group</a></li>
             <li><a href="/user.html?u=${uploaders[i]}">View Uploader</a></li>
             <hr>
-            <li><a>Mark Read</a></li>
-            <li><a>Mark Unread</a></li>
+            <li><a onclick="send_read('${chapters[i]}')">Mark Read</a></li>
+            <li><a onclick="remove_read('${chapters[i]}')">Mark Unread</a></li>
         </ul>
         `);
 
@@ -218,7 +218,6 @@ function bind_chapters() {
         document.body.appendChild(em_menu);
 
         // right-click
-        console.log(document.getElementById(`link.${chapters[i]}`))
         document.getElementById(`link.${chapters[i]}`).addEventListener('contextmenu', (event) => {
             event.preventDefault();
 

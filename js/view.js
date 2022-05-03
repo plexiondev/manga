@@ -488,13 +488,13 @@ function create_following(status) {
         document.getElementById('attr.follows').setAttribute('onclick',`open_following(false)`);
         document.getElementById('action.following').classList.remove('focus');
         document.getElementById('action.following').innerHTML = (`
-        <i class="icon w-22" icon-name="minus-circle" stroke-width="2.5" style="top: -1px !important;"></i>
+        <i class="icon w-22" icon-name="bookmark-plus" stroke-width="2.5" style="top: -1px !important;"></i>
         `);
 
         lucide.createIcons();
     } else {
         // following
-            
+        
         // show on button
         document.getElementById('action.following').setAttribute('onclick',`open_following(true)`);
         document.getElementById('attr.follows').setAttribute('onclick',`open_following(true)`);
