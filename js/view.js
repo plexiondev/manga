@@ -663,3 +663,39 @@ function view_rating() {
 function more_options() {
     document.getElementById('action.more_menu').classList.toggle('shown');
 }
+
+// set manga rating
+function set_rating(rating) {
+    // define xhr POST
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/rating/${manga}`;
+    xhr.open('POST',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
+
+    xhr.onload = function() {
+        log('enabled',`Set rating as ${rating}!`,false);
+    }
+
+    // send
+    xhr.send(JSON.stringify({
+        "rating": rating
+    }));
+}
+
+// remove manga rating
+function remove_rating() {
+    // define xhr DELETE
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/rating/${manga}`;
+    xhr.open('DELETE',url,true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.setRequestHeader('Authorization',`${localStorage.getItem('token')}`);
+
+    xhr.onload = function() {
+        log('disabled',`Removed your rating`,false);
+    }
+
+    // send
+    xhr.send();
+}
