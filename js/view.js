@@ -686,6 +686,9 @@ function get_rating() {
     xhr.send();
 }
 
+// TODO: - add case for if user has not rated ^
+// TODO: - make frontend for leaving user rating
+
 // open set rating window
 function open_rating_window(rating) {
     let em_window = document.createElement('span');
