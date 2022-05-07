@@ -228,30 +228,31 @@ header .menu.left {
 
 /* search */
 .search {
-    border-radius: 5px;
+    border-radius: 7px;
     transition: 0.25s;
     overflow: hidden;
     display: flex;
-}
-.search:focus-within {
-    box-shadow: var(--raise-1);
+    background-color: var(--b3);
 }
 /* input */
 .search input {
-    background: var(--b6);
+    background: var(--b5);
     border: none;
+    outline: none !important;
     color: var(--text-main);
     font-family: var(--font-main);
-    padding: 10px 15px;
+    padding: 13px 15px;
     font-size: 16px;
     width: 100%;
+    border-radius: 7px;
 }
 /* confirm */
 .search button:not(.clear-input) {
-    background-color: var(--accent-raise);
-    width: 50px;
-    height: 40px;
+    background-color: var(--b3);
+    width: 60px;
+    height: 46px;
     border: none;
+    border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,8 +268,8 @@ header .menu.left {
 }
 /* clear input */
 .search button.clear-input {
-    background: var(--b6);
-    width: 60px;
+    background: var(--b3);
+    width: 30px !important;
     height: 40px;
     border: none;
     display: flex;
@@ -582,15 +583,22 @@ input#transl {
 
 /* content ratings */
 .tag.suggestive {
-    background-color: #a84e04 !important;
+    --b: #FFD966;
 }
 .tag.pornographic, .tag.erotica, .tag.Sexual_Violence, .tag.Gore {
-    background-color: #cf0e0e !important;
+    --b: #ff6666;
 }
-
-/* other tags */
 .tag.Doujinshi {
-    background-color: #8d21cc !important;
+    --b: #FF66AB;
+}
+.tag.suggestive, .tag.pornographic, .tag.erotica, .tag.Sexual_Violence, .tag.Gore, .tag.Doujinshi {
+    color: var(--b3) !important;
+    font-weight: 600 !important;
+    background-color: var(--b) !important;
+    border-color: var(--b) !important;
+}
+.tag svg {
+    color: currentColor;
 }
 
 /* important */
