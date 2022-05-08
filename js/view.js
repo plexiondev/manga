@@ -2,14 +2,21 @@
 
 
 const relationships_string = {
+    'monochrome': 'Monochrome',
+    'colored': 'Coloured',
+    'preserialization': 'Pre-serialization',
+    'serialization': 'Serialization',
+    'prequel': 'Prequel',
+    'main_story': 'Main Story',
+    'side_story': 'Side Story',
+    'adapted_from': 'Original',
+    'spin_off': 'Spin-off',
     'based_on': 'Original',
     'doujinshi': 'Doujinshi',
-    'sequel': 'Sequel',
-    'adapted_from': 'Original',
-    'side_story': 'Side-story',
-    'prequel': 'Prequel',
-    'spin_off': 'Spin-off',
-    'shared_universe': 'Shared universe'
+    'same_franchise': 'Same franchise',
+    'shared_universe': 'Shared universe',
+    'alternate_story': 'Alternate Story',
+    'alternate_version': 'Alternate-version'
 }
 
 const contentrating_string = {
