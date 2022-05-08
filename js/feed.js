@@ -6,7 +6,15 @@ var limit = 15;
 var offset = 0;
 var top_limit = 75;
 
-load_page();
+feed_ready();
+
+function feed_ready() {
+    if (authorised == 1) {
+        load_page();
+    } else {
+        window.setTimeout(feed_ready,500);
+    }
+}
 
 const contentrating_string = {
     'safe': 'Safe',

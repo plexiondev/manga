@@ -6,6 +6,8 @@
 let token_cache;
 let auth_now;
 
+let authorised = 0;
+
 // run every 3 seconds
 if (!window.location.href.includes('/auth.html')) {
     check_auth();
@@ -20,8 +22,10 @@ function check_auth() {
     // if over 14m (1m below for safety)
     if (Date.parse(auth_now) >= Date.parse(token_cache) || token_cache == "") {
         refresh_auth(false);
+        authorised = 0;
     } else {
         log('auth',`Auth still valid!`,true);
+        authorised = 1;
     }
 }
 
