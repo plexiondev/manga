@@ -4,6 +4,7 @@
 const roles_string = {
     'ROLE_MEMBER': 'Member',
     'ROLE_USER': 'User',
+    'ROLE_UNVERIFIED': 'Unverified User',
     'ROLE_GROUP_MEMBER': 'Group Member',
     'ROLE_GROUP_LEADER': 'Group Leader',
     'ROLE_ADMIN': 'Admin',
