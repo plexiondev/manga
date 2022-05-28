@@ -226,69 +226,6 @@ header .menu.left {
     justify-content: left;
 }
 
-/* search */
-.search {
-    border-radius: 7px;
-    transition: 0.25s;
-    overflow: hidden;
-    display: flex;
-    background-color: var(--b3);
-}
-/* input */
-.search input {
-    background: var(--b5);
-    border: none;
-    outline: none !important;
-    color: var(--text-main);
-    font-family: var(--font-main);
-    padding: 13px 15px;
-    font-size: 16px;
-    width: 100%;
-    border-radius: 7px;
-}
-/* confirm */
-.search button:not(.clear-input) {
-    background-color: var(--b3);
-    width: 60px;
-    height: 46px;
-    border: none;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.25s;
-    outline: none !important;
-}
-.search button:hover, .search button:focus {
-    background-color: var(--accent);
-}
-.search svg {
-    top: 0 !important;
-    color: var(--text-head);
-}
-/* clear input */
-.search button.clear-input {
-    background: var(--b3);
-    width: 30px !important;
-    height: 40px;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    outline: none !important;
-}
-.search button.clear-input svg {
-    opacity: 0.5;
-}
-/* home search */
-.search.big input {
-    padding: 15px 20px;
-    font-size: 21px;
-}
-.search.big button {
-    width: 65px;
-    height: 55px;
-}
 
 .cards .manga-card {
     margin: 0 !important;
