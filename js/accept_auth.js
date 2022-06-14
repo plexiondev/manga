@@ -56,9 +56,9 @@ if (code == '200') {
 
     em_window.innerHTML = (`
     <div class="cover"><img src="/img/fufufu.png"></div>
-    <div class="header" style="text-align: center;"><h4>Uh oh.</h4></div>
+    <div class="header" style="text-align: center;"><h4>${TranslateString('ACCEPT_AUTH_000_HEAD')}</h4></div>
         <div class="info" style="text-align: center;">
-            <p>We've encountered an unknown error. Please try again later.</p>
+            <p>${TranslateString('ACCEPT_AUTH_000_MSG')}</p>
             <br>
             <label class="over">404</label>
         </div>
