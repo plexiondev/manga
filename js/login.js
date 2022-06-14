@@ -10,18 +10,18 @@ function prompt_login() {
 
     em_window.innerHTML = (`
         <div class="cover"><img src="/img/hmm.png"></div>
-        <div class="header" style="text-align: center;"><h4>Login to your account</h4></div>
+        <div class="header" style="text-align: center;"><h4>${TranslateString('AUTH_HEAD')}</h4></div>
         <div class="info" style="text-align: center;">
-            <p>To fully utilise the app, please login to your account.</p>
+            <p>${TranslateString('AUTH_MSG')}</p>
             <br>
             <form onsubmit="parse_form()">
-                <label class="over" for="email">Email</label>
+                <label class="over" for="email">${TranslateString('AUTH_INPUT_EMAIL')}</label>
                 <br>
                 <input class="generic" type="email" id="email" name="email">
     
                 <br>
                 <br>
-                <label class="over" for="password">Password</label>
+                <label class="over" for="password">${TranslateString('AUTH_INPUT_PASS')}</label>
                 <br>
                 <input class="generic" type="password" id="password" name="password">
     
@@ -31,7 +31,7 @@ function prompt_login() {
             </form>
         </div>
         <div class="actions">
-            <a role="button" class="button focus" onclick="document.getElementById('submit_login').click()">Login</a>
+            <a role="button" class="button focus" onclick="document.getElementById('submit_login').click()">${TranslateString('AUTH_ACTION_LOGIN')}</a>
         </div>
     `);
 

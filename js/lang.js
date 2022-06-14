@@ -8,7 +8,13 @@ const en = {
     'ACCEPT_AUTH_429_HEAD': "Uh oh.",
     'ACCEPT_AUTH_429_MSG': "We were unable to log in, it appears you have reached<br>your hourly rate limit. Please try again later.",
     'ACCEPT_AUTH_000_HEAD': "Uh oh.",
-    'ACCEPT_AUTH_000_MSG': "We've encountered an unknown error. Please try again later."
+    'ACCEPT_AUTH_000_MSG': "We've encountered an unknown error. Please try again later.",
+    'AUTH_HEAD': "Login to your account",
+    'AUTH_MSG': "To fully utilise the app, please login to your account.",
+    'AUTH_INPUT_EMAIL': "Email",
+    'AUTH_INPUT_USER': "Username",
+    'AUTH_INPUT_PASS': "Password",
+    'AUTH_ACTION_LOGIN': "Login"
 }
 
 function TranslateString(param = '') {
