@@ -17,9 +17,9 @@ if (code == '200') {
 
     em_window.innerHTML = (`
         <div class="cover"><img src="/img/done.png"></div>
-        <div class="header" style="text-align: center;"><h4>All done!</h4></div>
+        <div class="header" style="text-align: center;"><h4>${TranslateString('ACCEPT_AUTH_SUCCESS_HEAD')}</h4></div>
         <div class="info" style="text-align: center;">
-            <p>You're all logged in, now you can get to reading.</p>
+            <p>${TranslateString('ACCEPT_AUTH_SUCCESS_MSG')}</p>
         </div>
         <div class="actions">
             <a role="button" class="button focus" href="/">Finish</a>
