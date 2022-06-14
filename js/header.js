@@ -5,13 +5,13 @@ document.getElementById('header').innerHTML =
 (`
 <span class="links">
     <ul>
-    <li><a href="javascript:void(0)" onclick="history.back()"><i class="icon w-20" icon-name="arrow-left"></i>Back</a></li>
-    <li><a href="javascript:void(0)" onclick="location.reload()"><i class="icon w-20" icon-name="repeat"></i>Reload</a></li>
+    <li><a href="javascript:void(0)" onclick="history.back()"><i class="icon w-20" icon-name="arrow-left"></i>${TranslateString('GLOBAL_ACTION_BACK')}</a></li>
+    <li><a href="javascript:void(0)" onclick="location.reload()"><i class="icon w-20" icon-name="repeat"></i>${TranslateString('GLOBAL_ACTION_RELOAD')}</a></li>
     </ul>
     <hr>
     <ul>
-    <li><a href="/"><i class="icon w-20" icon-name="home"></i>Home</a></li>
-    <li><a href="/search.html"><i class="icon w-20" icon-name="search"></i>Search</a></li>
+    <li><a href="/"><i class="icon w-20" icon-name="home"></i>${TranslateString('HEADER_ACTION_HOME')}</a></li>
+    <li><a href="/search.html"><i class="icon w-20" icon-name="search"></i>${TranslateString('HEADER_ACTION_SEARCH')}</a></li>
     <li><a href="/tags.html"><i class="icon w-20" icon-name="tag"></i>Tags</a></li>
     <li><a href="/recent.html"><i class="icon w-20" icon-name="plus-circle"></i>Recent</a></li>
     </ul>
