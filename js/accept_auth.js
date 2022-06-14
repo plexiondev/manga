@@ -17,12 +17,12 @@ if (code == '200') {
 
     em_window.innerHTML = (`
         <div class="cover"><img src="/img/done.png"></div>
-        <div class="header" style="text-align: center;"><h4>${TranslateString('ACCEPT_AUTH_SUCCESS_HEAD')}</h4></div>
+        <div class="header" style="text-align: center;"><h4>${TranslateString('ACCEPT_AUTH_200_HEAD')}</h4></div>
         <div class="info" style="text-align: center;">
-            <p>${TranslateString('ACCEPT_AUTH_SUCCESS_MSG')}</p>
+            <p>${TranslateString('ACCEPT_AUTH_200_MSG')}</p>
         </div>
         <div class="actions">
-            <a role="button" class="button focus" href="/">Finish</a>
+            <a role="button" class="button focus" href="/">${TranslateString('GLOBAL_ACTION_FINISH')}</a>
         </div>
     `);
 
@@ -38,9 +38,9 @@ if (code == '200') {
 
     em_window.innerHTML = (`
         <div class="cover"><img src="/img/fufufu.png"></div>
-        <div class="header" style="text-align: center;"><h4>Uh oh.</h4></div>
+        <div class="header" style="text-align: center;"><h4>${TranslateString('ACCEPT_AUTH_429_HEAD')}</h4></div>
         <div class="info" style="text-align: center;">
-            <p>We were unable to log in, it appears you have reached<br>your hourly rate limit. Please try again later.</p>
+            <p>${TranslateString('ACCEPT_AUTH_429_MSG')}</p>
         </div>
     `);
 
