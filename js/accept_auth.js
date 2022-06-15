@@ -55,8 +55,8 @@ if (code == '200') {
     em_window.setAttribute('id','login_window');
 
     em_window.innerHTML = (`
-    <div class="cover"><img src="/img/fufufu.png"></div>
-    <div class="header" style="text-align: center;"><h4>${TranslateString('ACCEPT_AUTH_000_HEAD')}</h4></div>
+        <div class="cover"><img src="/img/fufufu.png"></div>
+        <div class="header" style="text-align: center;"><h4>${TranslateString('ACCEPT_AUTH_000_HEAD')}</h4></div>
         <div class="info" style="text-align: center;">
             <p>${TranslateString('ACCEPT_AUTH_000_MSG')}</p>
             <br>
