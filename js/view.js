@@ -19,23 +19,7 @@ const relationships_string = {
     'alternate_version': 'Alternate-version'
 }
 
-const contentrating_string = {
-    'safe': 'Safe',
-    'suggestive': 'Suggestive',
-    'erotica': 'Erotica',
-    'pornographic': 'NSFW'
-}
-
 // reading status
-const readstatus_string = {
-    'reading': 'Reading',
-    'on_hold': 'On Hold',
-    'plan_to_read': 'Plan To Read',
-    'dropped': 'Dropped',
-    're_reading': 'Re-reading',
-    'completed': 'Completed',
-    'add': 'Add to Library'
-}
 const readstatus_icon = {
     'reading': 'book',
     'on_hold': 'pause-circle',
@@ -169,7 +153,7 @@ function get_general(data_pass) {
 
     // content rating
     try {
-        var rating = contentrating_string[data.data.attributes.contentRating];
+        var rating = TranslateString(`RATING_${data.data.attributes.contentRating.toUpperCase()}`);
     } catch(error) {
         var rating = `${data.data.attributes.contentRating}`;
     }
@@ -245,15 +229,17 @@ function get_relationships(data_pass) {
 
             // how related
             try {
-                var relationship = relationships_string[relationships[i].related];
+                var relationship = TranslateString(`RELATIONSHIP_${relationships[i].related.toUpperCase()}`);
             } catch(error) {
+                // if the relationship string is not found
                 var relationship = `${relationships[i].related}`;
             }
 
             // content rating
             try {
-                var rating = contentrating_string[relationships[i].attributes.contentRating];
+                var rating = TranslateString(`RATING_${relationships[i].attributes.contentRating.toUpperCase()}`);
             } catch(error) {
+                // if the rating string is not found
                 var rating = `${relationships[i].attributes.contentRating}`;
             }
 
@@ -348,7 +334,7 @@ function read_status() {
         document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
         document.getElementById('action.status').setAttribute('status',`${status}`);
         document.getElementById('action.status').innerHTML = (`
-        <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
+        <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${TranslateString(`READ_${status.toUpperCase()}`)}
         `);
 
         lucide.createIcons();
@@ -373,12 +359,12 @@ function open_read_status(status) {
             <br>
             <div class="select">
                 <select name="status" id="status">
-                    <option value="reading" id="op_reading">${readstatus_string['reading']}</option>
-                    <option value="on_hold" id="op_on_hold">${readstatus_string['on_hold']}</option>
-                    <option value="plan_to_read" id="op_plan_to_read">${readstatus_string['plan_to_read']}</option>
-                    <option value="dropped" id="op_dropped">${readstatus_string['dropped']}</option>
-                    <option value="re_reading" id="op_re_reading">${readstatus_string['re_reading']}</option>
-                    <option value="completed" id="op_completed">${readstatus_string['completed']}</option>
+                    <option value="reading" id="op_reading">${TranslateString('READ_READING')}</option>
+                    <option value="on_hold" id="op_on_hold">${TranslateString('READ_ON_HOLD')}</option>
+                    <option value="plan_to_read" id="op_plan_to_read">${TranslateString('READ_PLAN_TO_READ')}</option>
+                    <option value="dropped" id="op_dropped">${TranslateString('READ_DROPPED')}</option>
+                    <option value="re_reading" id="op_re_reading">${TranslateString('READ_RE_READING')}</option>
+                    <option value="completed" id="op_completed">${TranslateString('READ_COMPLETED')}</option>
                     <option style="font-size: 10px;" disabled>&nbsp;</option>
                     <option value="null" id="op_add">Remove from Library</option>
                 </select>
@@ -421,7 +407,7 @@ function save_read_status() {
         document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
         document.getElementById('action.status').setAttribute('status',`${status}`);
         document.getElementById('action.status').innerHTML = (`
-        <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${readstatus_string[status]}
+        <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${TranslateString(`READ_${status.toUpperCase()}`)}
         `);
 
         lucide.createIcons();
