@@ -82,6 +82,22 @@ function get_general(data_pass) {
         // append
         document.getElementById('attr.roles').appendChild(tag);
     }
+
+    // is current user?
+    if (data.data.id == localStorage.getItem('token_user_id')) {
+        let UserAuthPanel = document.createElement('section');
+        UserAuthPanel.classList.add('left','header','no-sep','no-align');
+        UserAuthPanel.setAttribute('id','auth');
+
+        UserAuthPanel.innerHTML = (`
+        <h4>Your account</h4>
+        <p>Control your current session.</p>
+        <a role="button" class="button focus left" href="/auth.html">Sign out</a>
+        <a role="button" class="button" href="javascript:void(0)" onclick="refresh_auth(false)">Refresh token</a>
+        `);
+
+        document.getElementById('main').appendChild(UserAuthPanel);
+    }
 }
 
 // on error (404)
