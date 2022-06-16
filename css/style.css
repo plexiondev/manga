@@ -265,6 +265,10 @@ header .menu.left {
     width: 120px;
     border-radius: 5px;
 }
+/* hide cover (if enabled) */
+.op_hide_cover .manga-card .cover, .op_hide_cover .manga-img-cont {
+    display: none;
+}
 /* info */
 .manga-card .info {
     overflow: hidden;

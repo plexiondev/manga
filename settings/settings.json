@@ -46,6 +46,13 @@
             ]
         },
         {
+            "category": "appearance",
+            "name": "Hide cover images",
+            "description": "Removes cover images from search, feed, and viewing.",
+            "option": "hide_cover",
+            "icon": "image-off"
+        },
+        {
             "category": "reading",
             "name": "Translated language",
             "icon": "globe",
@@ -84,7 +91,7 @@
             "name": "Prefer low quality downloads",
             "description": "Opt for data-saver images when reading manga.",
             "option": "data_saver",
-            "icon": "image"
+            "icon": "arrow-down-circle"
         },
         {
             "category": "rating",
