@@ -269,6 +269,9 @@ header .menu.left {
 .op_hide_cover .manga-card .cover, .op_hide_cover .manga-img-cont {
     display: none;
 }
+.op_hide_cover .shift-right {
+    margin-left: initial;
+}
 /* info */
 .manga-card .info {
     overflow: hidden;
