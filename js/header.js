@@ -29,3 +29,17 @@ document.getElementById('header').innerHTML =
     </ul>
 </span>
 `);
+
+// set top header info
+document.getElementById('header-main').innerHTML =
+(`
+<span class="left"></span>
+<span class="right">
+    <a class="user-panel" href="/user.html?u=${localStorage.getItem('token_user_id')}">
+        <span class="info">
+            <h5>${localStorage.getItem('token_username')}</h5>
+        </span>
+        <span class="icon"></span>
+    </a>
+</span>
+`)

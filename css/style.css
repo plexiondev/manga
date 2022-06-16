@@ -220,10 +220,37 @@ a[title]:not(.button) {
 
 /* header */
 header {
-    min-height: 70px;
+    min-height: 56px;
 }
 header .menu.left {
     justify-content: left;
+}
+
+/* user panel */
+header .user-panel {
+    background-color: var(--d6);
+    height: 56px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+header .user-panel:hover, header .user-panel:focus {
+    background-color: var(--d5);
+}
+header .user-panel .info {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+/* icon */
+header .user-panel .icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--b5);
+    border-radius: 20%;
 }
 
 
