@@ -368,6 +368,9 @@ svg {
 }
 
 /* settings */
+.settings .inner {
+    max-width: 1092px;
+}
 /* input */
 .setting input {
     background: var(--b5);
