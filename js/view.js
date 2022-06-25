@@ -1,24 +1,6 @@
 // view manga page
 
 
-const relationships_string = {
-    'monochrome': 'Monochrome',
-    'colored': 'Coloured',
-    'preserialization': 'Pre-serialization',
-    'serialization': 'Serialization',
-    'prequel': 'Prequel',
-    'main_story': 'Main Story',
-    'side_story': 'Side Story',
-    'adapted_from': 'Original',
-    'spin_off': 'Spin-off',
-    'based_on': 'Original',
-    'doujinshi': 'Doujinshi',
-    'same_franchise': 'Same franchise',
-    'shared_universe': 'Shared universe',
-    'alternate_story': 'Alternate Story',
-    'alternate_version': 'Alternate-version'
-}
-
 // reading status
 const readstatus_icon = {
     'reading': 'book',
@@ -38,18 +20,19 @@ const tags_icon = {
     'pornographic': 'alert-octagon'
 }
 
-// pass manga id from url
-const search = window.location.search;
-const query = new URLSearchParams(search);
-let manga = query.get('m');
-// has user read before?
-var last_read_volume = localStorage.getItem(`${manga}_read_volume`) || null;
-var last_read_chapter = localStorage.getItem(`${manga}_read_chapter`) || null;
-var last_read_id = localStorage.getItem(`${manga}_read_id`) || null;
 
-if (last_read_id != null) {
-    document.getElementById('action.read').textContent = `Continue from Vol. ${last_read_volume} Ch. ${last_read_chapter}`;
-    document.getElementById('action.read').href = `/read.html?c=${last_read_id}&m=${manga}`;
+// Index page's query strings
+const PageQuery = new URLSearchParams(window.location.search);
+let manga = PageQuery.get('m');
+
+// Has the user locally read before?
+var UserLastReadVolume = localStorage.getItem(`${manga}_read_volume`) || null;
+var UserLastReadChapter = localStorage.getItem(`${manga}_read_chapter`) || null;
+var UserLastReadChapterID = localStorage.getItem(`${manga}_read_id`) || null;
+
+if (UserLastReadChapterID != null) {
+    document.getElementById('action.read').textContent = `Continue from Vol. ${UserLastReadVolume} Ch. ${UserLastReadChapter}`;
+    document.getElementById('action.read').href = `/read.html?c=${UserLastReadChapterID}&m=${manga}`;
 }
 
 // cache
@@ -89,10 +72,10 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
         data_parse = JSON.parse(this.response);
 
         try {
-            get_general(this.response);
-            get_relationships(this.response);
+            ParseMangaGeneral(this.response);
+            ParseMangaRelationships(this.response);
         } catch(error) {
-            log('error',`${error}`,true);
+            log('error',error,true);
             get_error();
         }
 
@@ -111,8 +94,8 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
     const data = JSON.parse(localStorage.getItem(`${manga}_view`));
 
     try {
-        get_general(localStorage.getItem(`${manga}_view`));
-        get_relationships(localStorage.getItem(`${manga}_view`));
+        ParseMangaGeneral(localStorage.getItem(`${manga}_view`));
+        ParseMangaRelationships(localStorage.getItem(`${manga}_view`));
     } catch(error) {
         log('error',`${error}`,true);
         get_error();
@@ -120,7 +103,11 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
 }
 
-function get_general(data_pass) {
+/**
+ * Parses general information (eg. title, description, content rating, etc.)
+ * @param {string} data_pass - Raw data from either MangaDex API or cache
+ */
+function ParseMangaGeneral(data_pass) {
 
     log('search',`Retrieving general attributes..`,true);
 
@@ -146,7 +133,7 @@ function get_general(data_pass) {
     // ran through showdown to convert markdown
     var converter = new showdown.Converter();
     text = `${data.data.attributes.description.en}`;
-    if (text == 'undefined') { text = '' }
+    if (text == 'undefined') text = '';
     html = converter.makeHtml(text);
     // append
     document.getElementById('attr.body').innerHTML = `${html}`;
@@ -171,21 +158,27 @@ function get_general(data_pass) {
     // actions
     // open in mangadex
     document.getElementById('action.mangadex').href = `https://mangadex.org/title/${manga}`;
-    // reading status
-    read_status();
-    // check following
-    check_following();
-    // statistics
-    get_statistics();
-    // get user rating
-    get_rating();
+
+    // Parse user-required interactions
+    // Is the user actively reading?
+    FetchUserReadStatus();
+    // Is the user following?
+    FetchUserFollowing();
+    // Did the user rate this manga?
+    FetchUserRating();
+    // Get the manga's rating & follow count
+    FetchMangaStatistics();
 
     // info blocks
     document.getElementById('attr.date_created').innerHTML = (`${new Date(`${data.data.attributes.createdAt}`).toLocaleDateString()}`);
     document.getElementById('attr.date_updated').innerHTML = (`${new Date(`${data.data.attributes.updatedAt}`).toLocaleDateString()}`);
 }
 
-function get_relationships(data_pass) {
+/**
+ * Parses a manga's relationships (eg. cover art, author, artist, and related manga)
+ * @param {string} data_pass - Raw data from either MangaDex API or cache
+ */
+function ParseMangaRelationships(data_pass) {
 
     log('search',`Retrieving relationships..`,true);
 
@@ -308,7 +301,7 @@ function get_error() {
 }
 
 // reading status
-function read_status() {
+function FetchUserReadStatus() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga/${manga}/status`;
@@ -331,7 +324,7 @@ function read_status() {
         let status = data.status;
         if (status == undefined || status == null) { status = 'add' };
 
-        document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
+        document.getElementById('action.status').setAttribute('onclick',`open_FetchUserReadStatus('${status}')`);
         document.getElementById('action.status').setAttribute('status',`${status}`);
         document.getElementById('action.status').innerHTML = (`
         <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${TranslateString(`READ_${status.toUpperCase()}`)}
@@ -346,10 +339,10 @@ function read_status() {
 }
 
 // open reading status window
-function open_read_status(status) {
+function open_FetchUserReadStatus(status) {
     let em_window = document.createElement('span');
     em_window.classList.add('window');
-    em_window.setAttribute('id','read_status_window');
+    em_window.setAttribute('id','FetchUserReadStatus_window');
 
     em_window.innerHTML = (`
         <div class="cover"><img src="${cover_art}"></div>
@@ -371,8 +364,8 @@ function open_read_status(status) {
             </div>
         </div>
         <div class="actions">
-            <a role="button" class="button focus" onclick="save_read_status()">Save</a>
-            <a role="button" class="button" onclick="exit_read_status()">Cancel</a>
+            <a role="button" class="button focus" onclick="save_FetchUserReadStatus()">Save</a>
+            <a role="button" class="button" onclick="exit_FetchUserReadStatus()">Cancel</a>
         </div>
     `);
 
@@ -385,7 +378,7 @@ function open_read_status(status) {
 }
 
 // save reading status (to mangadex)
-function save_read_status() {
+function save_FetchUserReadStatus() {
     let status = document.getElementById('status').value;
 
     // define xhr POST
@@ -404,7 +397,7 @@ function save_read_status() {
         if (status == undefined || status == null || status == 'null') { status = 'add' };
 
         // show on button
-        document.getElementById('action.status').setAttribute('onclick',`open_read_status('${status}')`);
+        document.getElementById('action.status').setAttribute('onclick',`open_FetchUserReadStatus('${status}')`);
         document.getElementById('action.status').setAttribute('status',`${status}`);
         document.getElementById('action.status').innerHTML = (`
         <i class="icon w-20" icon-name="${readstatus_icon[status]}" stroke-width="2.5" style="top: -2px !important; margin-right: 5px;"></i> ${TranslateString(`READ_${status.toUpperCase()}`)}
@@ -421,7 +414,7 @@ function save_read_status() {
 }
 
 // exit window
-function exit_read_status() {
+function exit_FetchUserReadStatus() {
     document.getElementById('window_parent').innerHTML = ``;
 }
 
@@ -439,7 +432,7 @@ function warn_content_rating(type) {
         </div>
         <div class="actions">
         <a role="button" class="button focus" onclick="history.back()">Go back</a>
-        <a role="button" class="button" onclick="exit_read_status()">Continue</a>
+        <a role="button" class="button" onclick="exit_FetchUserReadStatus()">Continue</a>
         </div>
     `);
 
@@ -448,7 +441,7 @@ function warn_content_rating(type) {
 }
 
 // following manga?
-function check_following() {
+function FetchUserFollowing() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/user/follows/manga/${manga}`;
@@ -461,11 +454,11 @@ function check_following() {
         if (xhr.status == 404) {
             // not following
 
-            create_following(false);
+            DisplayUserFollowing(false);
         } else {
             // following
 
-            create_following(true);
+            DisplayUserFollowing(true);
         }
     }
 
@@ -474,33 +467,32 @@ function check_following() {
     xhr.send();
 }
 
-// show following on button
-function create_following(status) {
+/**
+ * Display the user's following status
+ * @param {string} status 
+ */
+function DisplayUserFollowing(status) {
     if (status == false) {
-        // not following
+        // User is not following
 
-        // show on button
         document.getElementById('action.following').setAttribute('onclick',`open_following(false)`);
         document.getElementById('attr.follows').setAttribute('onclick',`open_following(false)`);
         document.getElementById('action.following').classList.remove('focus');
         document.getElementById('action.following').innerHTML = (`
         <i class="icon w-22" icon-name="bookmark-plus" stroke-width="2.5" style="top: -1px !important;"></i>
         `);
-
-        lucide.createIcons();
     } else {
-        // following
+        // User is following
         
-        // show on button
         document.getElementById('action.following').setAttribute('onclick',`open_following(true)`);
         document.getElementById('attr.follows').setAttribute('onclick',`open_following(true)`);
         document.getElementById('action.following').classList.add('focus');
         document.getElementById('action.following').innerHTML = (`
         <i class="icon w-22" icon-name="bookmark" stroke-width="2.5" style="top: -1px !important;"></i>
         `);
-
-        lucide.createIcons();
     }
+
+    lucide.createIcons();
 }
 
 // open following window
@@ -523,7 +515,7 @@ function open_following(status) {
         </div>
         <div class="actions">
             <a role="button" class="button focus" onclick="save_following()">Save</a>
-            <a role="button" class="button" onclick="exit_read_status()">Cancel</a>
+            <a role="button" class="button" onclick="exit_FetchUserReadStatus()">Cancel</a>
         </div>
     `);
 
@@ -553,10 +545,10 @@ function save_following() {
     xhr.onload = function() {
         if (status == 'follow') {
             log('enabled',`You are now following!`,false);
-            create_following(true);
+            DisplayUserFollowing(true);
         } else {
             log('disabled',`You are no longer following`,false);
-            create_following(false);
+            DisplayUserFollowing(false);
         }
         // clear window
         document.getElementById('window_parent').innerHTML = ``;
@@ -567,7 +559,7 @@ function save_following() {
 }
 
 // get statistics
-function get_statistics() {
+function FetchMangaStatistics() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/statistics/manga/${manga}`;
@@ -644,7 +636,7 @@ function view_rating() {
     // actions
     let em_actions = document.createElement('div');
     em_actions.classList.add('actions');
-    em_actions.innerHTML = (`<a role="button" class="button focus" onclick="exit_read_status()">Done</a>`);
+    em_actions.innerHTML = (`<a role="button" class="button focus" onclick="exit_FetchUserReadStatus()">Done</a>`);
 
     // append
     em_info.appendChild(em_avg);
@@ -661,7 +653,7 @@ function more_options() {
 }
 
 // get user rating
-function get_rating() {
+function FetchUserRating() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/rating/?manga[]=${manga}`;
@@ -710,7 +702,7 @@ function open_rating_window(rating) {
         </div>
         <div class="actions">
             <a role="button" class="button focus" onclick="save_following(document.getElementById('status').value)">Save</a>
-            <a role="button" class="button" onclick="exit_read_status()">Cancel</a>
+            <a role="button" class="button" onclick="exit_FetchUserReadStatus()">Cancel</a>
         </div>
     `);
 
