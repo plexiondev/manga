@@ -220,13 +220,11 @@ function get_members(data_pass) {
             group_leader = data.data.relationships[i].id;
             card.classList.add('leader');
             document.getElementById('feed.leaders').appendChild(card);
-            group_leader_count += 1;
         } else if (data.data.relationships[i].id == group_leader) {
             // is group leader (but as a member)
             // (ignore)
         } else {
             document.getElementById('feed.members').appendChild(card);
-            group_member_count += 1;
         }
 
         lucide.createIcons();
