@@ -204,7 +204,7 @@ a[title]:not(.button) {
     height: 266px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: var(--raise-1);
+    outline: 5px solid var(--b4);
     position: absolute;
     top: -140px;
     display: flex;
@@ -769,6 +769,7 @@ section.search-cont .search {
     padding: 45px;
     border-radius: 38%;
     background-color: var(--d6);
+    outline: 5px solid var(--b4);
     /* lock */
     width: 154px;
 }
