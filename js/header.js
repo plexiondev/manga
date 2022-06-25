@@ -35,10 +35,10 @@ document.getElementById('nav').classList.add('shown');
 // detect key input
 $(document).keydown(function(event) {
     // o
-    if (event.keyCode === 79) {
+    /*if (event.keyCode === 79) {
         show_nav();
         event.preventDefault();
-    }
+    }*/
 });
 
 function show_nav() {
