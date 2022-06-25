@@ -453,7 +453,7 @@ input#transl {
     padding-top: 0;
 }
 .desc-cont:before {
-    --c: var(--b4);
+    --c: var(--b3);
     z-index: 3;
     content: '';
     width: 100%;
