@@ -1,24 +1,6 @@
 // view manga page
 
 
-const relationships_string = {
-    'monochrome': 'Monochrome',
-    'colored': 'Coloured',
-    'preserialization': 'Pre-serialization',
-    'serialization': 'Serialization',
-    'prequel': 'Prequel',
-    'main_story': 'Main Story',
-    'side_story': 'Side Story',
-    'adapted_from': 'Original',
-    'spin_off': 'Spin-off',
-    'based_on': 'Original',
-    'doujinshi': 'Doujinshi',
-    'same_franchise': 'Same franchise',
-    'shared_universe': 'Shared universe',
-    'alternate_story': 'Alternate Story',
-    'alternate_version': 'Alternate-version'
-}
-
 // reading status
 const readstatus_icon = {
     'reading': 'book',
@@ -120,17 +102,19 @@ if (Date.parse(now) >= Date.parse(cached_out) || cached_out == "") {
 
 }
 
+/**
+ * parses general manga info (eg. title, description)
+ * @param {string} data_pass data passed from API or cache
+ */
 function get_general(data_pass) {
-
-    log('search',`Retrieving general attributes..`,true);
-
-    // parse
     const data = JSON.parse(data_pass);
 
     // titles
     document.getElementById('attr.title').textContent = data.data.attributes.title.en;
     // alt titles
     for (let i in data.data.attributes.altTitles) {
+        // TODO: support other alt titles than `ja`
+
         // only check for ja (for now)
         if (data.data.attributes.altTitles[i].ja != undefined) {
             document.getElementById('attr.alt_title').textContent = `${data.data.attributes.altTitles[i].ja}`;
@@ -146,10 +130,10 @@ function get_general(data_pass) {
     // ran through showdown to convert markdown
     var converter = new showdown.Converter();
     text = `${data.data.attributes.description.en}`;
-    if (text == 'undefined') { text = '' }
+    if (text == 'undefined') text = '';
     html = converter.makeHtml(text);
     // append
-    document.getElementById('attr.body').innerHTML = `${html}`;
+    document.getElementById('attr.body').innerHTML = html;
 
     // content rating
     try {
@@ -160,7 +144,7 @@ function get_general(data_pass) {
     // create element
     let em_rating = document.createElement('label');
     em_rating.classList.add('tag',`${data.data.attributes.contentRating}`);
-    em_rating.innerHTML = (`<i class="icon w-16" icon-name="${tags_icon[`${data.data.attributes.contentRating}`]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}`);
+    em_rating.innerHTML = (`<i class="icon w-16" icon-name="${tags_icon[data.data.attributes.contentRating]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}`);
     document.getElementById('attr.tags').appendChild(em_rating);
 
     // check if content rating matches
