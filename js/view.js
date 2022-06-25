@@ -604,7 +604,9 @@ function view_rating() {
     }
 
     // calculate
-    for (let i in rating_dist) {
+    for (let n in rating_dist) {
+        let i = 11 - n;
+
         let rating_init = rating_dist[i] / max_rating;
         let rating = rating_init * 360;
 
