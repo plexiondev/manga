@@ -28,14 +28,20 @@
         </div>
         <script src="/js/header.js"></script>
         <div class="main">
-            <section class="center padding accent">
-                <h1 class="text-56">Settings</h1>
-                <p class="text-20">Adjust your manga viewing experience.</p>
-            </section>
-            <div id="settings"></div>
-            <script src="load.js"></script>
-            <script src="/js/search_box.js"></script>
-            <div class="gap small"></div>
+            <div class="panel-header">
+                <span class="icon">
+                    <i class="icon w-24" icon-name="settings"></i>
+                </span>
+                <h4>Settings</h4>
+            </div>
+            <div class="panels" id="main">
+                <section class="left header no-sep no-align primary" style="bottom: 0;" id="overview">
+                    <div class="content">
+                        <div id="settings"></div>
+                        <script src="load.js"></script>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
     <footer style="text-align: center; margin-top: 350px;">
