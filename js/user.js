@@ -138,8 +138,6 @@ function get_relationships(data_pass) {
 
             RelationshipsPanel.innerHTML = (`
             <h4>Groups</h4>
-            <br>
-            <br>
             <div class="cards users" id="feed.groups" style="padding: 20px 0;"></div>
             `);
 
