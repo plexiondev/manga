@@ -289,7 +289,7 @@ function get_relationships(data_pass,manga_pass,i) {
 
             // create url
             var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[n].attributes.fileName}`;
-            if (i == 0) { document.getElementById('img.background').style = `background-image: url(${cover_url});`; }
+            if (i == 0) document.getElementById('img.background').style = `background-image: url(${cover_url});`;
 
             create_em(data_raw,cover_url,manga,i);
         }
