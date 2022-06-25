@@ -28,28 +28,35 @@
         </div>
         <script src="/js/header.js"></script>
         <div class="main">
+            <div class="panel-header">
+                <span class="icon">
+                    <i class="icon w-24" icon-name="search"></i>
+                </span>
+                <h4>Search</h4>
+            </div>
             <div class="bg" id="manga-bg">
-                <section class="min header padding center limited search-cont">
-                    <div class="search sheared" id="search-cont">
-                        <input class="search-input" id="search" placeholder="Search for..." autofocus>
-                        <button role="search" class="search-con" onclick="search_manga()" id="search-con" aria-label="Search current text"><i class="icon w-28" icon-name="search"></i></button>
+                <section class="min header padding"></section>
+            </div>
+            <div class="panels">
+                <section class="left header no-sep no-align primary" id="overview">
+                    <div class="row-info content">
+                        <div class="search sheared" id="search-cont">
+                            <input class="search-input" id="search" placeholder="Search for..." autofocus>
+                            <button role="search" class="search-con" onclick="search_manga()" id="search-con" aria-label="Search current text"><i class="icon w-28" icon-name="search"></i></button>
+                        </div>
                     </div>
-                    <div class="bg-dark lib-grad"></div>
+                    <div class="content">
+                        <h5 class="main" id="attr.results"></h5>
+                        <div class="search-body" id="search.body"></div>
+                        <div class="empty-results" id="error.empty" style="display: none;">
+                            <span>
+                                <h3>Nothing...</h3>
+                                <p>Try a different query or combination of key-words.</p>
+                            </span>
+                        </div>
+                    </div>
                 </section>
             </div>
-            <section class="left header no-sep no-align">
-                <h4>Search</h4>
-                <br>
-                <br>
-                <h5 class="main" id="attr.results">Showing </h5>
-                <div class="search-body" id="search.body"></div>
-                <div class="empty-results" id="error.empty" style="display: none;">
-                    <span>
-                        <h3>Nothing...</h3>
-                        <p>Try a different query or combination of key-words.</p>
-                    </span>
-                </div>
-            </section>
             <script src="js/search.js"></script>
             <script src="js/search_box.js"></script>
         </div>
