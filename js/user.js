@@ -56,6 +56,7 @@ function get_general(data_pass) {
 
     // parse
     const data = JSON.parse(data_pass);
+    console.log(data)
 
     // username
     document.getElementById('attr.username').textContent = data.data.attributes.username;
@@ -98,6 +99,95 @@ function get_general(data_pass) {
 
         document.getElementById('main').appendChild(UserAuthPanel);
     }
+
+    get_relationships(data_pass);
+}
+
+function get_relationships(data_pass) {
+    // get group IDs
+    const group_ids = [];
+    const data_groups = JSON.parse(data_pass);
+    for (let i in data_groups.data.relationships) {
+        group_ids.push(data_groups.data.relationships[i].id); // add to group ID array
+    }
+
+    // only continue if in more than 1 group
+    if (group_ids.length > 0) {
+        // create request
+        let group_query = '';
+        for (let i in group_ids) {
+            group_query = `${group_query}&ids[]=${group_ids[i]}`; // append each group ID to query
+        }
+
+
+        // define xhr GET
+        const xhr = new XMLHttpRequest();
+        const url = `https://api.mangadex.org/group?limit=12${group_query}`;
+        xhr.open('GET',url,true);
+
+
+        // request is received
+        xhr.onload = function() {
+            const data = JSON.parse(this.response);
+            console.log(data);
+
+            // create "Groups" panel
+            let RelationshipsPanel = document.createElement('section');
+            RelationshipsPanel.classList.add('left','header','no-sep','no-align');
+            RelationshipsPanel.setAttribute('id','groups');
+
+            RelationshipsPanel.innerHTML = (`
+            <h4>Groups</h4>
+            <br>
+            <br>
+            <div class="cards users" id="feed.groups" style="padding: 20px 0;"></div>
+            `);
+
+            document.getElementById('main').appendChild(RelationshipsPanel);
+
+            // filter through groups
+            for (let i in data.data) {
+                create_group_em(this.response,i);
+            }
+        }
+
+        // send
+        xhr.send();
+    }
+}
+
+function create_group_em(data_pass,i) {
+
+    const data = JSON.parse(data_pass);
+
+    // create element
+    let card = document.createElement('a');
+    card.classList.add('manga-card');
+
+    // links
+    card.href = `/group.html?u=${data.data[i].id}`;
+
+    // description
+    var converter = new showdown.Converter();
+    text = `${data.data[i].attributes.description}`;
+    if (text == 'null') { text = '' }
+    html = converter.makeHtml(text);
+    
+    // html
+    log('general',`Created ${i}!`,true);
+    card.innerHTML = (`
+    <div class="cover" style="height: initial;">
+    <i class="icon w-24" icon-name="users"></i>
+    </div>
+    <div class="info" style="display: flex; align-items: center;">
+    <h5>${data.data[i].attributes.name}</h5>
+    </div>
+    `);
+
+    // append
+    document.getElementById('feed.groups').appendChild(card);
+
+    lucide.createIcons();
 }
 
 // on error (404)
