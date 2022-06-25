@@ -27,27 +27,50 @@
     <div class="cont">
         <nav class="left" id="header"></nav>
         <script src="/js/header.js"></script>
-        <div class="main" id="main">
-            <div class="bg blur" style="background-image: url(/img/fufufu.png);" id="img.background">
+        <div class="main">
+            <div class="panel-header">
+                <span class="icon">
+                    <i class="icon w-24" icon-name="user"></i>
+                </span>
+                <h4>User Info</h4>
+            </div>
+            <div class="bg" style="background-image: url(/img/fufufu.png);" id="img.background">
                 <section class="min header padding">
                     <div class="bg-dark lib-grad"></div>
                 </section>
             </div>
-            <section class="left header no-sep no-align" id="overview">
-                <div class="manga-img-wrap">
-                    <span class="big-icon">
-                        <i class="icon w-64" icon-name="user"></i>
-                    </span>
-                </div>
-                <div class="shift-right" style="margin-left: 180px;">
-                    <label class="over">User</label><br>
-                    <h2 translate="no" id="attr.username"></h2>
-                    <h4 id="attr.user_id"></h4>
-                    <div class="tags" id="attr.roles"></div>
-                </div>
-                <a role="button" class="button focus left" id="action.follow" title="Follow this user (not supported)" disabled>Follow</a>
-                <a role="button" class="button icon ext" id="action.mangadex" target="_blank" title="View on MangaDex">MangaDex</a>
-            </section>
+            <div class="panels" id="main">
+                <section class="left header no-sep no-align primary" id="overview">
+                    <div class="row-info content">
+                        <div class="manga-img-wrap">
+                            <span class="overlay big-icon">
+                                <i class="icon w-64" icon-name="user"></i>
+                            </span>
+                        </div>
+                        <div class="shift-right" style="margin-left: 180px;">
+                            <h3 class="text-30" translate="no" id="attr.username"></h3>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="info-blocks">
+                            <div class="dl-wrap">
+                                <dl>
+                                    <dt>User</dt>
+                                    <dd id="attr.user_id"></dd>
+                                </dl>
+                                <dl>
+                                    <dt>Roles</dt>
+                                    <dd class="show-tags"><div class="tags minimal" id="attr.roles"></div></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-buttons content">
+                        <a role="button" class="button focus small" id="action.follow" title="Follow this user (not supported)" disabled>Follow</a>
+                        <a role="button" class="button icon ext small" id="action.mangadex" target="_blank" title="View on MangaDex">MangaDex</a>
+                    </div>
+                </section>
+            </div>
             <script src="js/user.js"></script>
             <script src="js/search_box.js"></script>
         </div>

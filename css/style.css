@@ -190,6 +190,11 @@ a[title]:not(.button) {
     padding: 10px 0;
 }
 
+.overlay {
+    position: absolute;
+    top: -90px;
+}
+
 /* images */
 #overview {
     position: relative;
@@ -761,7 +766,7 @@ section.search-cont .search {
     align-items: center;
     padding: 45px;
     border-radius: 38%;
-    background-color: var(--b4);
+    background-color: var(--d6);
     /* lock */
     width: 154px;
 }
@@ -865,7 +870,8 @@ div.main {
     background-color: var(--b5);
 }
 .panels section:is(.sep, .no-sep) {
-    max-width: calc(var(--panel-width) - 20px);
+    width: 100%;
+    width: calc(var(--panel-width) - 20px);
     background-color: var(--b4);
     margin: 0 10px;
 }
@@ -873,7 +879,8 @@ div.main {
 .panels section.primary:is(.sep, .no-sep), .panel-header {
     margin: 0;
     border-radius: 0;
-    max-width: var(--panel-width);
+    width: 100%;
+    width: var(--panel-width);
     padding: 0;
     background-color: var(--b5);
 }
