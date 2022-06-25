@@ -199,21 +199,22 @@ a[title]:not(.button) {
 #overview {
     position: relative;
 }
+.manga-img-wrap {
+    position: absolute;
+    bottom: 10px;
+}
 .manga-img-cont {
     width: 190px;
     height: 266px;
     overflow: hidden;
     border-radius: 10px;
     outline: 5px solid var(--b4);
-    position: absolute;
-    top: -140px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .manga-img-cont:active, .manga-img-cont:hover, .manga-img-cont:focus {
-    top: -140px !important;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 .manga-img-cont img {
     width: 190px;
