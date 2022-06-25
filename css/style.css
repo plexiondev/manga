@@ -5,6 +5,8 @@
 
 :root {
     --font-main: Inter, -apple-system, BlinkMacSystemFont, Roboto, "Noto Sans JP", "Noto Sans SC", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --panel-width: 1000px;
 }
 
 /* shift elements to right for cover */
@@ -199,20 +201,17 @@ a[title]:not(.button) {
     border-radius: 10px;
     box-shadow: var(--raise-1);
     position: absolute;
-    top: -130px;
+    top: -140px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .manga-img-cont:active, .manga-img-cont:hover, .manga-img-cont:focus {
-    top: -130px !important;
+    top: -140px !important;
     transform: scale(1.05);
 }
 .manga-img-cont img {
     width: 190px;
-}
-.manga-img-wrap {
-    height: 20px;
 }
 .shift-right {
     margin-bottom: 10px;
@@ -489,11 +488,11 @@ input#transl {
     height: 100%;
     overflow: hidden;
     position: relative;
-    transition: 0.4s;
+    transition: 0.5s;
     max-height: 1000px;
 }
 .body-trunc:not(.expand) {
-    max-height: 250px;
+    max-height: 100px;
 }
 .body-trunc:not(.expand):before {
     --c: var(--b5);
@@ -505,8 +504,15 @@ input#transl {
     left: 0;
     top: 0;
     background: linear-gradient(0deg, var(--c) 0%, rgba(0,0,0,0) 50%);
-    transition: 0.4s;
+    transition: 0.5s;
     opacity: 1;
+}
+/* fix margin */
+.body-trunc p:first-child {
+    padding-top: 0;
+}
+.body-trunc p:last-child {
+    padding-bottom: 0;
 }
 /* button container */
 .body-trunc-cont {
@@ -516,6 +522,10 @@ input#transl {
     top: calc(100% - 40px);
     border: none;
     border-bottom: var(--button-border);
+    opacity: 0;
+}
+.body-trunc-cont:is(:hover, :focus-within) > button {
+    opacity: 1;
 }
 .body-trunc-cont > button:active {
     top: calc(100% - 40px) !important;
@@ -549,7 +559,7 @@ input#transl {
 
 
 /* section header */
-section > h4 {
+section > h4.main {
     border-bottom: 2px solid var(--text-link);
     display: inline-block;
 }
@@ -750,7 +760,7 @@ section.search-cont .search {
     justify-content: center;
     align-items: center;
     padding: 45px;
-    border-radius: 50%;
+    border-radius: 38%;
     background-color: var(--b4);
     /* lock */
     width: 154px;
@@ -823,4 +833,103 @@ section.search-cont .search {
 .dropdown hr, .menu hr {
     margin: 7px 0;
     border: 1px solid var(--b3);
+}
+
+
+/* main content */
+div.main {
+    display: grid;
+    justify-content: center;
+    margin: 80px 0;
+}
+/* content header */
+.panel-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* appearance */
+    background-color: var(--d5) !important;
+    padding: 0 40px !important;
+    height: 55px;
+    font-family: var(--font-head);
+}
+.panel-header .icon {
+    margin-right: 10px;
+}
+/* panels */
+.panels {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 10px;
+    /* appearance */
+    background-color: var(--b5);
+}
+.panels section:is(.sep, .no-sep) {
+    max-width: calc(var(--panel-width) - 20px);
+    background-color: var(--b4);
+    margin: 0 10px;
+}
+/* top (main) panel */
+.panels section.primary:is(.sep, .no-sep), .panel-header {
+    margin: 0;
+    border-radius: 0;
+    max-width: var(--panel-width);
+    padding: 0;
+    background-color: var(--b5);
+}
+.panels section.primary:is(.sep, .no-sep) {
+    margin-bottom: 20px;
+}
+/* sub-sections */
+.panels section:is(.sep, .no-sep) .content {
+    padding: 20px;
+}
+.row-info {
+    background-color: var(--b4);
+}
+.row-buttons {
+    padding: 5px 20px !important;
+    background-color: var(--b3);
+    display: flex;
+    justify-content: right;
+}
+
+
+dt {
+    width: 110px;
+}
+dd {
+    width: 180px;
+}
+dd.show-tags {
+    width: 250px;
+    flex-wrap: wrap;
+}
+.info-blocks {
+    display: inline-flex;
+    gap: 0 30px;
+    max-width: 550px;
+}
+
+
+.tags.minimal {
+    padding: 0;
+}
+.tags.minimal .tag {
+    background-color: transparent !important;
+    color: var(--text-main) !important;
+    border-radius: 0 !important;
+    border: none;
+    padding: 0;
+    line-height: 20px;
+    font-weight: initial;
+    display: inline-block;
+}
+.tags.minimal .tag svg {
+    display: none;
+}
+
+.text-30 {
+    font-size: 30px;
+    line-height: 34px;
 }
