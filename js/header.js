@@ -29,3 +29,19 @@ document.getElementById('header').innerHTML =
     </ul>
 </span>
 `);
+document.body.classList.add('header-shown');
+document.getElementById('nav').classList.add('shown');
+
+// detect key input
+$(document).keydown(function(event) {
+    // o
+    if (event.keyCode === 79) {
+        show_nav();
+        event.preventDefault();
+    }
+});
+
+function show_nav() {
+    document.body.classList.toggle('header-shown');
+    document.getElementById('nav').classList.toggle('shown');
+}

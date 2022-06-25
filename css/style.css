@@ -592,9 +592,15 @@ section .chapter-card h5:before, h5.main:before {
     display: flex;
 }
 .cont > .main {
-    margin-left: 200px;
     flex: 1;
+    margin-left: 0;
+    transition: margin-left 0.4s;
 }
+
+.header-shown .cont > .main {
+    margin-left: 200px;
+}
+
 :root {
     --padding: 160px;
     --highlight-padding: 120px;
@@ -605,10 +611,6 @@ nav {
     width: 200px;
     background-color: var(--b5);
     padding: 80px 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
     z-index: 10;
     height: 100vh;
 }
@@ -639,8 +641,14 @@ nav hr {
     border: 1px solid var(--b4);
 }
 
+.nav {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+}
+
 /* nav manga reading */
-.nav-manga {
+.nav-manga, .nav {
     position: fixed;
     left: -200px;
     transition: 0.4s;
@@ -649,7 +657,7 @@ nav hr {
 .nav-manga nav {
     position: absolute;
 }
-.nav-manga.shown {
+.nav-manga.shown, .nav.shown {
     left: 0;
 }
 /* button */
@@ -942,4 +950,17 @@ dd.show-tags {
 .text-30 {
     font-size: 30px;
     line-height: 34px;
+}
+
+
+/* adapt to lower widths */
+
+@media (max-width: 1200px) {
+    :root {
+        --panel-width: 100%; /* take full screen width */
+    }
+
+    .cont > .main {
+        margin-left: 0 !important; /* do not adapt to nav */
+    }
 }
