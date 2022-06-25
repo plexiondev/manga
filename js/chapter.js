@@ -75,12 +75,13 @@ function get_volumes() {
 function get_chapters() {
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga/${manga}/feed?limit=240&includes[]=scanlation_group&includes[]=user&order[volume]=asc&order[chapter]=asc&translatedLanguage[]=${lang}`;
+    const url = `https://api.mangadex.org/manga/${manga}/feed?limit=240&includes[]=scanlation_group&includes[]=user&order[volume]=asc&order[chapter]=asc&translatedLanguage[]=${lang}&contentRating[]=safe&contentRating[]=suggestive&contentRating[]=erotica&contentRating[]=pornographic`;
     xhr.open('GET',url,true);
 
     // request is received
     xhr.onload = function () {
         const data = JSON.parse(this.response);
+        console.log(data)
 
         for (let i in data.data) {
             let em_chapter = document.createElement('li');
