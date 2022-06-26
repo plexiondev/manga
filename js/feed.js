@@ -12,7 +12,7 @@ function feed_ready() {
     if (authorised == 1) {
         load_page();
     } else {
-        window.setTimeout(feed_ready,500);
+        window.setTimeout(feed_ready,200);
     }
 }
 
@@ -68,7 +68,7 @@ function load_page() {
             // get manga id
             var manga = data.data[i].id;
             
-            get_relationships(this.response,manga,i);
+            get_relationships(this.response,manga,i,'feed');
         }
     }
 

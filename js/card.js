@@ -1,7 +1,15 @@
 // create generic manga cards
 
 
-function get_relationships(data_pass,manga_pass,i) {
+// get content rating
+let rating_suggestive = "";
+if (localStorage.getItem('op_show_suggestive') == 1) rating_suggestive = '&contentRating[]=suggestive';
+let rating_explicit = "";
+if (localStorage.getItem('op_show_explicit') == 1) rating_explicit = '&contentRating[]=explicit';
+let rating_nsfw = "";
+if (localStorage.getItem('op_show_nsfw') == 1) rating_nsfw = '&contentRating[]=pornographic';
+
+function get_relationships(data_pass,manga_pass,i,append) {
 
     log('search',`Retrieving relationships..`,true);
 
@@ -19,12 +27,12 @@ function get_relationships(data_pass,manga_pass,i) {
             // create url
             var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[n].attributes.fileName}`;
 
-            create_em(data_raw,cover_url,manga,i);
+            create_em(data_raw,cover_url,manga,i,append);
         }
     }
 }
 
-function create_em(data_pass,cover_url_pass,manga_pass,i) {
+function create_em(data_pass,cover_url_pass,manga_pass,i,append) {
 
     const data = JSON.parse(data_pass);
     var cover_art_url = cover_url_pass;
@@ -88,7 +96,7 @@ function create_em(data_pass,cover_url_pass,manga_pass,i) {
     // append
     card.appendChild(em_info);
     if ((data.data[i].attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') == 1) || (data.data[i].attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') == 1) || (data.data[i].attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') == 1) || (data.data[i].attributes.contentRating == 'safe')) {
-        document.getElementById('feed').appendChild(card);
+        document.getElementById(`${append}`).appendChild(card);
     }
 
     lucide.createIcons();

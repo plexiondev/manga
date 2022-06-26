@@ -161,17 +161,11 @@ function create_social(platform,link) {
 function get_works() {
     // get content rating
     let rating_suggestive = "";
-    if (localStorage.getItem('op_show_suggestive') == 1) {
-        rating_suggestive = '&contentRating[]=suggestive';
-    }
+    if (localStorage.getItem('op_show_suggestive') == 1) rating_suggestive = '&contentRating[]=suggestive';
     let rating_explicit = "";
-    if (localStorage.getItem('op_show_explicit') == 1) {
-        rating_explicit = '&contentRating[]=explicit';
-    }
+    if (localStorage.getItem('op_show_explicit') == 1) rating_explicit = '&contentRating[]=explicit';
     let rating_nsfw = "";
-    if (localStorage.getItem('op_show_nsfw') == 1) {
-        rating_nsfw = '&contentRating[]=pornographic';
-    }
+    if (localStorage.getItem('op_show_nsfw') == 1) rating_nsfw = '&contentRating[]=pornographic';
 
     // define xhr GET
     const xhr = new XMLHttpRequest();

@@ -30,29 +30,37 @@
         </div>
         <script src="/js/header.js"></script>
         <div class="main">
-            <section class="center header padding accent">
-                <p class="text-20"><strong>Welcome back</strong>, search for a manga or get right back into reading.</p>
+            <section class="left full" style="--padding: 140px; --top: 45px;">
+                <h3>Seasonal</h3>
+                <div class="cards" id="seasonal" style="padding: 20px 0;"></div>
             </section>
-            <section class="center limited">
+            <section class="center limited" style="--top: 10px;">
                 <div class="search sheared" id="search-cont">
                     <input class="search-input" id="search" placeholder="Search for..." autofocus>
                     <button role="search" class="search-con" onclick="search_manga()" id="search-con" aria-label="Search current text"><i class="icon w-28" icon-name="search"></i></button>
                 </div>
             </section>
-            <div class="cards" id="feed"></div>
-            <section class="center">
-                <div class="advance">
-                    <button class="advance" onclick="advance_page(-1);">
-                        <i class="icon w-16" icon-name="chevron-left"></i>
-                        PREV
-                    </button>
-                    <span class="pages" id="advance_pages"></span>
-                    <button class="advance" onclick="advance_page(1);">
-                        NEXT
-                        <i class="icon w-16" icon-name="chevron-right"></i>
-                    </button>
+            <section class="left full" style="--padding: 140px; --top: 45px;">
+                <h3>Your feed</h3>
+                <div class="cards" id="feed" style="padding: 20px 0;"></div>
+                <div style="text-align: center;">
+                    <div class="advance">
+                        <button class="advance" onclick="advance_page(-1);">
+                            <i class="icon w-16" icon-name="chevron-left"></i>
+                            PREV
+                        </button>
+                        <span class="pages" id="advance_pages"></span>
+                        <button class="advance" onclick="advance_page(1);">
+                            NEXT
+                            <i class="icon w-16" icon-name="chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
             </section>
+            <section class="center">
+                
+            </section>
+            <script src="/js/seasonal.js"></script>
             <script src="/js/feed.js"></script>
             <script src="/js/search_box.js"></script>
         </div>

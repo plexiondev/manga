@@ -249,6 +249,8 @@ header .menu.left {
     padding: 20px;
     margin: 20px 0;
     transition: 0.25s;
+    /* animate in */
+    animation: card_show 0.35s;
 }
 .manga-card:hover, .manga-card:focus {
     background-color: var(--b2);
