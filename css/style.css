@@ -378,6 +378,9 @@ svg {
 .settings .inner {
     max-width: 1092px;
 }
+.setting {
+    border-radius: 7px;
+}
 /* input */
 .setting input {
     background: var(--b5);
@@ -886,6 +889,7 @@ div.main {
     width: calc(var(--panel-width) - 20px);
     background-color: var(--b4);
     margin: 0 10px;
+    --highlight-padding: 0;
 }
 /* top (main) panel */
 .panels section.primary:is(.sep, .no-sep), .panel-header {
