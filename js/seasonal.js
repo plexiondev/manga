@@ -17,6 +17,7 @@ function get_lists() {
     xhr.onload = function() {
         const data = JSON.parse(this.response);
         document.getElementById('seasonal').innerHTML = ``;
+        document.getElementById('attr.seasonal_time').textContent = data.data[0].attributes.name.replace('Seasonal: ','');
 
         for (let i in data.data[0]) {
             if (data.data[0][i].type == 'manga') list.push(data.data[0][i].id);
@@ -42,7 +43,7 @@ function get_seasonal(list) {
 
     // define xhr GET
     const xhr = new XMLHttpRequest();
-    const url = `https://api.mangadex.org/manga?limit=3&includes[]=cover_art&includes[]=author&includes[]=artist&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}${append_list}`;
+    const url = `https://api.mangadex.org/manga?limit=3&order[followedCount]=desc&includes[]=cover_art&includes[]=author&includes[]=artist&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}${append_list}`;
     xhr.open('GET',url,true);
 
     // on request

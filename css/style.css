@@ -294,6 +294,10 @@ header .menu.left {
     color: #ffdb66;
 }
 
+:is(h1,h2,h3,h4,h5,p,label).highlight {
+    color: #ffdb66;
+}
+
 /* count */
 .count {
     margin: 0 12px;
