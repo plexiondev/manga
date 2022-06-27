@@ -994,6 +994,7 @@ div.main {
     width: var(--panel-width);
     padding: 0;
     background-color: var(--b5);
+    border-bottom: none;
 }
 .panels section.primary:is(.sep, .no-sep) {
     margin-bottom: 20px;
