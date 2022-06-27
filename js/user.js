@@ -133,7 +133,7 @@ function get_relationships(data_pass) {
 
             // create "Groups" panel
             let RelationshipsPanel = document.createElement('section');
-            RelationshipsPanel.classList.add('left','header','no-sep','no-align');
+            RelationshipsPanel.classList.add('left','header','no-sep','no-align','no-raise');
             RelationshipsPanel.setAttribute('id','groups');
 
             RelationshipsPanel.innerHTML = (`
