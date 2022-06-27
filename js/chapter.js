@@ -50,11 +50,12 @@ function get_volumes() {
                 let em_card = document.createElement('span');
                 em_card.classList.add('chapter-card');
                 em_card.innerHTML = (`
-                <div class="info" onclick="collapse_chapter('${data.volumes[i].volume}')">
+                <div class="info">
                 <h5 class="main">${volume_name}<label class="count" id="feed.volumes.${data.volumes[i].volume}.attr.length"></label></h5>
                 </div>
                 <ul class="hide" id="feed.volumes.${data.volumes[i].volume}"></ul>
                 `);
+                em_card.setAttribute('onclick',`collapse_chapter('${data.volumes[i].volume}')`);
 
                 localStorage.setItem(`${manga}.volumes.${data.volumes[i].volume}.attr.length`,0);
 
