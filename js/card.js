@@ -1,36 +1,32 @@
 // create generic manga cards
 
 
+const contentrating_string = {
+    'safe': 'Safe',
+    'suggestive': 'Suggestive',
+    'erotica': 'Erotica',
+    'pornographic': 'NSFW'
+}
+
 // get content rating
-let rating_suggestive = "";
+let rating_suggestive = '';
 if (localStorage.getItem('op_show_suggestive') == 1) rating_suggestive = '&contentRating[]=suggestive';
-let rating_explicit = "";
+let rating_explicit = '';
 if (localStorage.getItem('op_show_explicit') == 1) rating_explicit = '&contentRating[]=explicit';
-let rating_nsfw = "";
+let rating_nsfw = '';
 if (localStorage.getItem('op_show_nsfw') == 1) rating_nsfw = '&contentRating[]=pornographic';
 
 /**
  * generate cover art for manga
  * @param {string} data current manga data from API
- * @param {string} manga_pass manga ID
+ * @param {string} manga manga ID
  * @param {string} append element ID to append card to
  * @param {boolean} minimal display as minimal/cover-only cards?
  */
-function get_relationships(data,manga_pass,append,minimal = false) {
-
-    log('search',`Retrieving relationships..`,true);
-
-    // parse
-    var manga = manga_pass;
-
-    // relationships
-    let relationships = data.relationships;
-    for (let n in relationships) {
-        if (relationships[n].type == "cover_art") {
-            // cover art
-
-            // create url
-            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${relationships[n].attributes.fileName}`;
+function generate_card(data,manga,append,minimal = false) {
+    for (let i in data.relationships) {
+        if (data.relationships[i].type == "cover_art") {
+            var cover_url = `https://uploads.mangadex.org/covers/${manga}/${data.relationships[i].attributes.fileName}`;
 
             create_em(data,cover_url,manga,append,minimal);
         }
@@ -40,15 +36,12 @@ function get_relationships(data,manga_pass,append,minimal = false) {
 /**
  * generate card for manga
  * @param {string} data current manga data from API
- * @param {string} cover_url_pass direct URL to cover on MangaDex
- * @param {string} manga_pass manga ID
+ * @param {string} cover_art_url direct URL to cover on MangaDex
+ * @param {string} manga manga ID
  * @param {string} append element ID to append card to
  * @param {boolean} minimal display as minimal/cover-only cards?
  */
-function create_em(data,cover_url_pass,manga_pass,append,minimal) {
-
-    var cover_art_url = cover_url_pass;
-    var manga = manga_pass;
+function create_em(data,cover_art_url,manga,append,minimal) {
 
     // create element
     let card = document.createElement('a');

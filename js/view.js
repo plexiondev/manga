@@ -42,6 +42,9 @@ let now = new Date();
 // cover art
 var cover_art;
 
+// related manga
+let related = [];
+
 // rating
 let rating_dist;
 let rating_average;
@@ -213,55 +216,12 @@ function get_relationships(data_pass) {
             document.getElementById('attr.artist').innerHTML = `<i class="icon w-24" style="margin-right: 5px;" icon-name="image"></i><h5 class="text-16">${relationships[i].attributes.name}</h5>`;
             lucide.createIcons();
         } else if (relationships[i].type == 'manga' && relationships[i].attributes != undefined) {
-            // other relationships
+            // related manga
 
-            // create element
-            let related_card = document.createElement('a');
-            related_card.classList.add('manga-card');
-            related_card.style.margin = '0';
-
-            // link
-            related_card.href = `view.html?m=${relationships[i].id}`;
-
-            // how related
-            try {
-                var relationship = TranslateString(`RELATIONSHIP_${relationships[i].related.toUpperCase()}`);
-            } catch(error) {
-                // if the relationship string is not found
-                var relationship = `${relationships[i].related}`;
-            }
-
-            // content rating
-            try {
-                var rating = TranslateString(`RATING_${relationships[i].attributes.contentRating.toUpperCase()}`);
-            } catch(error) {
-                // if the rating string is not found
-                var rating = `${relationships[i].attributes.contentRating}`;
-            }
-
-            // description
-            var converter = new showdown.Converter();
-            text = `${relationships[i].attributes.description.en}`;
-            if (text == 'undefined') { text = '' }
-            html = converter.makeHtml(text);
-
-            // text
-            related_card.innerHTML = (`
-            <div class="info">
-            <h4 class="text-20">${relationships[i].attributes.title.en}</h4>
-            <div class="desc-cont">${html}</div>
-            <br>
-            <label class="tag ${relationship}">${relationship}</label>
-            <label class="tag ${relationships[i].attributes.contentRating}"><i class="icon w-16" icon-name="${tags_icon[`${relationships[i].attributes.contentRating}`]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
-            </div>
-            `);
-
-            // append
-            if ((relationships[i].attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') == 1) || (relationships[i].attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') == 1) || (relationships[i].attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') == 1) || (relationships[i].attributes.contentRating == 'safe')) {
-                document.getElementById('feed.related').appendChild(related_card);
-            }
+            related.push(relationships[i].id);
         }
     }
+    if (related.length > 0) get_related();
 
     // tags
     let tags = data.data.attributes.tags;
@@ -281,6 +241,35 @@ function get_relationships(data_pass) {
         // append
         document.getElementById('attr.tags').appendChild(tag);
     }
+}
+
+// get related manga
+function get_related() {
+    // append each ID to query
+    let append_list = '';
+    for (let i in related) {
+        append_list = `${append_list}&ids[]=${related[i]}`;
+    }
+
+    // define xhr GET
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.mangadex.org/manga?includes[]=cover_art&includes[]=author&includes[]=artist&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}${append_list}`;
+    xhr.open('GET',url,true);
+
+    // on request
+    xhr.onload = function() {
+        const data = JSON.parse(this.response);
+        
+        for (let i in data.data) {
+            // get manga id
+            var manga = data.data[i].id;
+            
+            generate_card(data.data[i],manga,'feed.related',true);
+        }
+    }
+
+    // send
+    xhr.send();
 }
 
 // expand truncated body

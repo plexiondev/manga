@@ -16,13 +16,6 @@ function feed_ready() {
     }
 }
 
-const contentrating_string = {
-    'safe': 'Safe',
-    'suggestive': 'Suggestive',
-    'erotica': 'Erotica',
-    'pornographic': 'NSFW'
-}
-
 // tags
 const tags_icon = {
     'safe': 'check',
@@ -68,7 +61,7 @@ function load_page() {
             // get manga id
             var manga = data.data[i].id;
             
-            get_relationships(data.data[i],manga,'feed',true);
+            generate_card(data.data[i],manga,'feed',true);
         }
     }
 
