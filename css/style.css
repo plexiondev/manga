@@ -49,7 +49,7 @@ a.no-underline {
     transition: 0.3s;
 }
 .chapter-card.hide .info .collapser {
-    transform: rotateZ(180deg);
+    transform: rotateZ(-180deg);
 }
 /* chapter list */
 .chapter-card ul li {
