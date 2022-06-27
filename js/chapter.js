@@ -50,7 +50,7 @@ function get_volumes() {
                 let em_card = document.createElement('span');
                 em_card.classList.add('chapter-card');
                 em_card.innerHTML = (`
-                <div class="info">
+                <div class="info" onclick="collapse_chapter('${data.volumes[i].volume}')">
                 <h5 class="main">${volume_name}<label class="count" id="feed.volumes.${data.volumes[i].volume}.attr.length"></label></h5>
                 </div>
                 <ul id="feed.volumes.${data.volumes[i].volume}"></ul>
@@ -236,4 +236,9 @@ function bind_chapters() {
     }
 
     lucide.createIcons();
+}
+
+// collapse chapter card
+function collapse_chapter(id) {
+    document.getElementById(`feed.volumes.${id}`).classList.toggle('hide');
 }
