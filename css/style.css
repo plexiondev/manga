@@ -9,6 +9,13 @@
     --panel-width: 1000px;
 }
 
+a * {
+    cursor: pointer !important;
+}
+a.no-underline {
+    text-decoration: none !important;
+}
+
 /* shift elements to right for cover */
 .shift-right {
     margin-left: 210px;
@@ -588,7 +595,8 @@ input#transl {
     max-height: 1000px;
 }
 .body-trunc:not(.expand) {
-    max-height: 100px;
+    height: 80px;
+    max-height: 80px;
 }
 .body-trunc:not(.expand):before {
     --c: var(--b5);
@@ -599,7 +607,7 @@ input#transl {
     position: absolute;
     left: 0;
     top: 0;
-    background: linear-gradient(0deg, var(--c) 0%, rgba(0,0,0,0) 50%);
+    background: linear-gradient(0deg, var(--c) 0%, rgba(0,0,0,0) 30%);
     transition: 0.5s;
     opacity: 1;
 }

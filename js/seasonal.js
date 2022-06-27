@@ -17,6 +17,7 @@ function get_lists() {
     xhr.onload = function() {
         const data = JSON.parse(this.response);
         document.getElementById('seasonal').innerHTML = ``;
+        document.getElementById('seasonal.href').href = `list.html?l=${data.data[0].id}`;
         document.getElementById('attr.seasonal_time').textContent = data.data[0].attributes.name.replace('Seasonal: ','');
 
         for (let i in data.data[0].relationships) {
