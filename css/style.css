@@ -238,6 +238,40 @@ header .menu.left {
 .cards.users {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+.cards.min-manga {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+/* minimal manga cards */
+.min-manga-card {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none !important;
+    transition: 0.3s;
+    width: 140px;
+    /* animate in */
+    animation: card_show 0.35s;
+}
+/* cover */
+.min-manga-card .cover {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.min-manga-card .cover .cover-inner {
+    width: 140px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.min-manga-card .cover img {
+    width: 140px;
+    border-radius: 5px;
+}
 
 /* manga/search cards */
 .manga-card {
@@ -248,11 +282,11 @@ header .menu.left {
     box-shadow: var(--raise-0);
     padding: 20px;
     margin: 20px 0;
-    transition: 0.25s;
+    transition: 0.3s;
     /* animate in */
     animation: card_show 0.35s;
 }
-.manga-card:hover, .manga-card:focus {
+.manga-card:is(:hover, :focus) {
     background-color: var(--b2);
 }
 /* cover */
@@ -275,7 +309,7 @@ header .menu.left {
     border-radius: 5px;
 }
 /* hide cover (if enabled) */
-.op_hide_cover .manga-card .cover, .op_hide_cover .manga-img-cont {
+.op_hide_cover :is(.manga-card .cover, .manga-img-cont) {
     display: none;
 }
 .op_hide_cover .shift-right {
@@ -313,7 +347,7 @@ header .menu.left {
 /* badge */
 .badge {
     margin: 0 12px;
-    background-color: var(--b6);
+    background-color: var(--b5);
     border-radius: 50px;
     font-size: 12px;
     padding: 2px 10px;

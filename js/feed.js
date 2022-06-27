@@ -2,9 +2,9 @@
 // requires auth via auth.js
 
 
-var limit = 15;
+var limit = 24;
 var offset = 0;
-var top_limit = 75;
+var top_limit = 120;
 
 feed_ready();
 
@@ -68,7 +68,7 @@ function load_page() {
             // get manga id
             var manga = data.data[i].id;
             
-            get_relationships(this.response,manga,i,'feed');
+            get_relationships(this.response,manga,i,'feed',true);
         }
     }
 
