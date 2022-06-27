@@ -8,7 +8,10 @@ const roles_string = {
     'ROLE_GROUP_MEMBER': 'Group Member',
     'ROLE_GROUP_LEADER': 'Group Leader',
     'ROLE_ADMIN': 'Admin',
-    'ROLE_POWER_UPLOADER': 'Power Uploader'
+    'ROLE_POWER_UPLOADER': 'Power Uploader',
+    'ROLE_DEVELOPER': 'Developer',
+    'ROLE_STAFF': 'Staff',
+    'ROLE_MD_AT_HOME': 'MD@H'
 }
 
 // pass user id from url
