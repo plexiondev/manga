@@ -310,6 +310,25 @@ header .menu.left {
     font-weight: 600;
     color: var(--text-alt);
 }
+/* badge */
+.badge {
+    margin: 0 12px;
+    background-color: var(--b6);
+    border-radius: 50px;
+    font-size: 12px;
+    padding: 2px 10px;
+    position: relative;
+    bottom: 1px;
+    font-weight: 600;
+    --colour: var(--text-alt);
+    color: var(--colour);
+}
+.badge.seasonal {
+    --colour: #ffdb66;
+}
+.badge.something {
+    --colour: #47EB55;
+}
 
 /* manga controls */
 .controls-wrap {

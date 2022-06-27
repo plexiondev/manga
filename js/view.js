@@ -126,6 +126,18 @@ function get_general(data_pass) {
         }
     }
 
+    // featured in seasonal?
+    let seasonal_list = JSON.parse(localStorage.getItem('seasonal'));
+    for (let i in seasonal_list) {
+        if (seasonal_list[i] == manga) {
+            let SeasonalBadge = document.createElement('label');
+            SeasonalBadge.classList.add('badge','seasonal');
+            SeasonalBadge.textContent = 'SEASONAL';
+    
+            document.getElementById('attr.title').appendChild(SeasonalBadge);
+        }
+    }
+
     // description
     // ran through showdown to convert markdown
     var converter = new showdown.Converter();
