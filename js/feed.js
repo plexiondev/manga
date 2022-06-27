@@ -68,7 +68,7 @@ function load_page() {
             // get manga id
             var manga = data.data[i].id;
             
-            get_relationships(this.response,manga,i,'feed',true);
+            get_relationships(data.data[i],manga,'feed',true);
         }
     }
 

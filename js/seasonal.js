@@ -57,7 +57,7 @@ function get_seasonal(list) {
             // get manga id
             var manga = data.data[i].id;
             
-            get_relationships(this.response,manga,i,'seasonal');
+            get_relationships(data.data[i],manga,'seasonal');
         }
     }
 
