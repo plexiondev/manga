@@ -669,6 +669,10 @@ section .chapter-card h5:before, h5.main:before {
     margin-right: 7px;
 }
 
+section.no-raise {
+    bottom: 0;
+}
+
 .overl.small {
     font-size: 11px;
     max-width: 100px;
@@ -941,6 +945,11 @@ section.search-cont .search {
 }
 
 
+section.min.cover.padding {
+    padding-top: 140px;
+}
+
+
 /* main content */
 div.main {
     display: grid;
@@ -966,6 +975,7 @@ div.main {
     display: grid;
     grid-template-columns: minmax(0,1fr);
     gap: 10px;
+    padding-bottom: 10px;
     /* appearance */
     background-color: var(--b5);
 }

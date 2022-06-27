@@ -87,7 +87,7 @@ function get_general(data_pass) {
     // is current user?
     if (data.data.id == localStorage.getItem('token_user_id')) {
         let UserAuthPanel = document.createElement('section');
-        UserAuthPanel.classList.add('left','header','no-sep','no-align');
+        UserAuthPanel.classList.add('left','header','no-sep','no-align','no-raise');
         UserAuthPanel.setAttribute('id','auth');
 
         UserAuthPanel.innerHTML = (`
