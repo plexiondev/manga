@@ -53,7 +53,7 @@ function get_volumes() {
                 <div class="info" onclick="collapse_chapter('${data.volumes[i].volume}')">
                 <h5 class="main">${volume_name}<label class="count" id="feed.volumes.${data.volumes[i].volume}.attr.length"></label></h5>
                 </div>
-                <ul id="feed.volumes.${data.volumes[i].volume}"></ul>
+                <ul class="hide" id="feed.volumes.${data.volumes[i].volume}"></ul>
                 `);
 
                 localStorage.setItem(`${manga}.volumes.${data.volumes[i].volume}.attr.length`,0);

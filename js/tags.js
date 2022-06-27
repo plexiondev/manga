@@ -153,13 +153,6 @@ if (tag_req == "") {
 }
 let offset = (query.get('page') * 18) || 0;
 
-const contentrating_string = {
-    'safe': 'Safe',
-    'suggestive': 'Suggestive',
-    'erotica': 'Erotica',
-    'pornographic': 'NSFW'
-}
-
 // tags
 const tags_icon = {
     'safe': 'check',
