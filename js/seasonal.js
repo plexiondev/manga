@@ -23,6 +23,9 @@ function get_lists() {
             if (data.data[0][i].type == 'manga') list.push(data.data[0][i].id);
         }
 
+        // save seasonal list locally
+        localStorage.setItem(`seasonal_${data.data[0].attributes.name.replace('Seasonal: ','')}`,list);
+
         get_seasonal(list);
     }
 
