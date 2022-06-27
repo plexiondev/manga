@@ -19,8 +19,8 @@ function get_lists() {
         document.getElementById('seasonal').innerHTML = ``;
         document.getElementById('attr.seasonal_time').textContent = data.data[0].attributes.name.replace('Seasonal: ','');
 
-        for (let i in data.data[0]) {
-            if (data.data[0][i].type == 'manga') list.push(data.data[0][i].id);
+        for (let i in data.data[0].relationships) {
+            if (data.data[0].relationships[i].type == 'manga') list.push(data.data[0].relationships[i].id);
         }
 
         // save seasonal list locally
@@ -38,7 +38,7 @@ function get_lists() {
  * @param {string} list the first list's manga IDs
  */
 function get_seasonal(list) {
-    /* append each ID to query */
+    // append each ID to query
     let append_list = '';
     for (let i in list) {
         append_list = `${append_list}&ids[]=${list[i]}`;
