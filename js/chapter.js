@@ -48,12 +48,14 @@ function get_volumes() {
                 }
 
                 let em_card = document.createElement('span');
-                em_card.classList.add('chapter-card');
+                em_card.classList.add('chapter-card','hide');
+                em_card.id = `feed.volumes.${data.volumes[i].volume}.cont`;
                 em_card.innerHTML = (`
                 <div class="info">
                 <h5 class="main">${volume_name}<label class="count" id="feed.volumes.${data.volumes[i].volume}.attr.length"></label></h5>
+                <i class="icon w-20 collapser" icon-name="chevron-up" stroke-width="2.5"></i>
                 </div>
-                <ul class="hide" id="feed.volumes.${data.volumes[i].volume}"></ul>
+                <ul id="feed.volumes.${data.volumes[i].volume}"></ul>
                 `);
                 em_card.setAttribute('onclick',`collapse_chapter('${data.volumes[i].volume}')`);
 
@@ -241,5 +243,5 @@ function bind_chapters() {
 
 // collapse chapter card
 function collapse_chapter(id) {
-    document.getElementById(`feed.volumes.${id}`).classList.toggle('hide');
+    document.getElementById(`feed.volumes.${id}.cont`).classList.toggle('hide');
 }

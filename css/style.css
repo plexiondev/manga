@@ -36,8 +36,20 @@ a.no-underline {
     transition: 0.2s;
     position: relative;
 }
+.chapter-card .info {
+    position: relative;
+}
 .chapter-card .info h5 {
     margin-bottom: 10px;
+}
+/* collapser */
+.chapter-card .info .collapser {
+    position: absolute;
+    right: 5px;
+    transition: 0.3s;
+}
+.chapter-card.hide .info .collapser {
+    transform: rotateZ(180deg);
 }
 /* chapter list */
 .chapter-card ul li {
@@ -122,12 +134,12 @@ a.no-underline {
     overflow: hidden;
     transition: 0.4s;
 }
-.chapter-card ul.hide {
+.chapter-card.hide ul {
     height: 200px;
     max-height: 200px;
 }
 
-.chapter-card ul.hide:before {
+.chapter-card.hide ul:before {
     --c: var(--b4);
     z-index: 3;
     content: '';
