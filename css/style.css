@@ -111,7 +111,7 @@
 /* collapsed chapter card */
 .chapter-card ul {
     height: 100%;
-    max-height: 1200px;
+    max-height: 2500px;
     overflow: hidden;
     transition: 0.4s;
 }
