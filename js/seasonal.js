@@ -24,7 +24,7 @@ function get_lists() {
         }
 
         // save seasonal list locally
-        localStorage.setItem(`seasonal_${data.data[0].attributes.name.replace('Seasonal: ','')}`,list);
+        localStorage.setItem('seasonal',list);
 
         get_seasonal(list);
     }
