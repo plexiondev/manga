@@ -20,13 +20,6 @@ const socials_string = {
     'website': 'Website'
 }
 
-const contentrating_string = {
-    'safe': 'Safe',
-    'suggestive': 'Suggestive',
-    'erotica': 'Erotica',
-    'pornographic': 'NSFW'
-}
-
 // tags
 const tags_icon = {
     'safe': 'check',
@@ -66,11 +59,9 @@ function get_group() {
     xhr.onload = function() {
         log('general',`Found ${group} group!`,true);
 
-        data_parse = JSON.parse(this.response);
-
         try {
-            get_general(this.response);
-            get_members(this.response);
+            get_general(JSON.parse(this.response));
+            get_members(JSON.parse(this.response));
         } catch(error) {
             log('error',`${error}`,true);
             get_error();
@@ -81,13 +72,9 @@ function get_group() {
     xhr.send();
 }
 
-function get_general(data_pass) {
+function get_general(data) {
 
     log('search',`Retrieving general attributes..`,true);
-
-    // parse
-    const data = JSON.parse(data_pass);
-    console.log(data)
 
     // name
     document.getElementById('attr.name').textContent = data.data.attributes.name;
@@ -122,25 +109,20 @@ function get_general(data_pass) {
     document.getElementById('action.mangadex').href = `https://mangadex.org/group/${group}`;
 
     // socials
-    get_socials(data_pass);
+    get_socials(data);
 }
 
 // parse socials
-function get_socials(data_pass) {
-    const data = JSON.parse(data_pass);
-
+function get_socials(data) {
     for (let i in socials) {
-        console.log(socials[i],socials[i] in data.data.attributes,data.data.attributes,data.data.attributes[socials[i]])
         if (socials[i] in data.data.attributes && data.data.attributes[socials[i]] != null) {
-            create_social(socials[i],data.data.attributes[socials[i]],data_pass);
+            create_social(socials[i],data.data.attributes[socials[i]],data);
         }
     }
 }
 
 // create social
-function create_social(platform,link,data_pass) {
-    const data = JSON.parse(data_pass);
-
+function create_social(platform,link,data) {
     let em_tag = document.createElement('a');
     em_tag.classList.add('tag','social',`${platform}`);
     if (platform == 'ircChannel') {
@@ -170,9 +152,7 @@ function create_social(platform,link,data_pass) {
     }
 }
 
-function get_members(data_pass) {
-    const data = JSON.parse(data_pass);
-
+function get_members(data) {
     for (let i in data.data.relationships) {
         // create element
         let card = document.createElement('a');
@@ -237,20 +217,6 @@ function get_members(data_pass) {
 
 // get works
 function get_works() {
-    // get content rating
-    let rating_suggestive = "";
-    if (localStorage.getItem('op_show_suggestive') == 1) {
-        rating_suggestive = '&contentRating[]=suggestive';
-    }
-    let rating_explicit = "";
-    if (localStorage.getItem('op_show_explicit') == 1) {
-        rating_explicit = '&contentRating[]=explicit';
-    }
-    let rating_nsfw = "";
-    if (localStorage.getItem('op_show_nsfw') == 1) {
-        rating_nsfw = '&contentRating[]=pornographic';
-    }
-
     // define xhr GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/manga?limit=32&includes[]=cover_art&contentRating[]=safe${rating_suggestive}${rating_explicit}${rating_nsfw}&group=${group}`;
@@ -261,10 +227,7 @@ function get_works() {
         document.getElementById('feed.works').innerHTML = ``;
 
         for (let i in data.data) {
-            // get manga id
-            var manga = data.data[i].id;
-
-            get_relationships(this.response,manga,i);
+            generate_card(data.data[i],data.data[i].id,'feed.works',true,i);
         }
     }
 
