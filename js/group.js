@@ -19,6 +19,13 @@ const socials_string = {
     'twitter': 'Twitter',
     'website': 'Website'
 }
+const socials_append = {
+    'contactEmail': 'mailto:',
+    'discord': 'https://discord.gg/',
+    'ircServer': '',
+    'mangaUpdates': 'https://mangaupdates.com/publisher/',
+    'twitter': 'https://twitter.com/'
+}
 
 // tags
 const tags_icon = {
@@ -137,8 +144,14 @@ function create_social(platform,link,data) {
         <i class="icon w-20" icon-name="globe"></i>
         ${socials_string[platform]}
         `);
+    } else if (platform == 'contactEmail') {
+        em_tag.href = `${socials_append[platform]}${link}`;
+        em_tag.innerHTML = (`
+        <i class="icon w-20" icon-name="mail"></i>
+        ${socials_string[platform]}
+        `);
     } else{
-        em_tag.href = `${link}`;
+        em_tag.href = `${socials_append[platform]}${link}`;
         em_tag.innerHTML = (`
         <img src="https://unpkg.com/simple-icons@v6/icons/${platform}.svg">
         ${socials_string[platform]}
