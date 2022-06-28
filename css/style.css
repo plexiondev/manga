@@ -1100,3 +1100,8 @@ dd.show-tags {
         margin-left: 0 !important; /* do not adapt to nav */
     }
 }
+
+
+.images-temp {
+    display: none;
+}

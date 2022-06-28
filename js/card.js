@@ -26,6 +26,7 @@ if (localStorage.getItem('op_show_nsfw') == 1) rating_nsfw = '&contentRating[]=p
 function generate_card(data,manga,append,minimal = false,index = -1) {
     for (let i in data.relationships) {
         if (data.relationships[i].type == "cover_art") {
+            /*var cover_url = generate_image(data.relationships[i].attributes.fileName,manga);*/
             var cover_url = `https://uploads.mangadex.org/covers/${manga}/${data.relationships[i].attributes.fileName}`;
             try {
                 if (index == 0) document.getElementById('img.background').style = `background-image: url(${cover_url})`;
