@@ -13,7 +13,6 @@ document.getElementById('header').innerHTML =
     <li><a href="/"><i class="icon w-20" icon-name="home"></i>${TranslateString('HEADER_ACTION_HOME')}</a></li>
     <li><a href="/search.html"><i class="icon w-20" icon-name="search"></i>${TranslateString('HEADER_ACTION_SEARCH')}</a></li>
     <li><a href="/tags.html"><i class="icon w-20" icon-name="tag"></i>Tags</a></li>
-    <li><a href="/recent.html"><i class="icon w-20" icon-name="plus-circle"></i>Recent</a></li>
     </ul>
     <hr>
     <ul>

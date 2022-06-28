@@ -55,10 +55,7 @@ function get_seasonal(list) {
         const data = JSON.parse(this.response);
         
         for (let i in data.data) {
-            // get manga id
-            var manga = data.data[i].id;
-            
-            generate_card(data.data[i],manga,'seasonal',false,i);
+            generate_card(data.data[i],data.data[i].id,'seasonal',false,i);
         }
     }
 

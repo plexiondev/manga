@@ -31,17 +31,21 @@
         </div>
         <script src="/js/header.js"></script>
         <div class="main no-grid">
-            <section class="left full" style="--padding: 140px; --top: 45px;">
-                    <a class="no-underline" id="seasonal.href"><h3>Seasonal</h3><label class="overl highlight" id="attr.seasonal_time"></label> </a>
-                    <div class="cards" id="seasonal" style="padding: 20px 0;"></div>
-            </section>
             <section class="center limited" style="--top: 10px;">
                 <div class="search sheared" id="search-cont">
                     <input class="search-input" id="search" placeholder="Search for..." autofocus>
                     <button role="search" class="search-con" onclick="search_manga()" id="search-con" aria-label="Search current text"><i class="icon w-28" icon-name="search"></i></button>
                 </div>
             </section>
-            <section class="left full" style="--padding: 140px; --top: 45px;">
+            <section class="left full" style="--padding: 140px; --top: 25px;">
+                    <a class="no-underline" id="seasonal.href"><h3>Seasonal</h3><label class="overl highlight" id="attr.seasonal_time"></label> </a>
+                    <div class="cards" id="seasonal" style="padding: 20px 0;"></div>
+            </section>
+            <section class="left full" style="--padding: 140px; --top: 25px;">
+                <h3>Recent</h3>
+                <div class="cards min-manga" id="recent" style="padding: 20px 0;"></div>
+            </section>
+            <section class="left full" style="--padding: 140px; --top: 25px;">
                 <h3>Your feed</h3>
                 <div class="cards min-manga" id="feed" style="padding: 20px 0;"></div>
                 <div style="text-align: center;">
@@ -59,6 +63,7 @@
                 </div>
             </section>
             <script src="/js/seasonal.js"></script>
+            <script src="/js/recent.js"></script>
             <script src="/js/feed.js"></script>
             <script src="/js/search_box.js"></script>
         </div>
