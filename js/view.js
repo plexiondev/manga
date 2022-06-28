@@ -115,19 +115,7 @@ function get_general(data_pass) {
     // titles
     document.getElementById('attr.title').textContent = parse_title(data.data.attributes.title);
     document.getElementById('attr.alt_title').textContent = parse_alt_title(data.data.attributes.altTitles);
-    // alt titles
-    for (let i in data.data.attributes.altTitles) {
-        // TODO: support other alt titles than `ja`
-
-        // only check for ja (for now)
-        if (data.data.attributes.altTitles[i].ja != undefined) {
-            // page title (with alt)
-            document.getElementById('page.title').textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
-        } else {
-            // page title (without alt)
-            document.getElementById('page.title').textContent = `Viewing ${data.data.attributes.title.en}`;
-        }
-    }
+    document.getElementById('page.title').textContent = `Viewing ${parse_title(data.data.attributes.title)}`;
 
     // featured in seasonal?
     let seasonal_list = JSON.parse(localStorage.getItem('seasonal'));
