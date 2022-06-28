@@ -113,14 +113,14 @@ function get_general(data_pass) {
     const data = JSON.parse(data_pass);
 
     // titles
-    document.getElementById('attr.title').textContent = data.data.attributes.title.en;
+    document.getElementById('attr.title').textContent = parse_title(data.data.attributes.title);
+    document.getElementById('attr.alt_title').textContent = parse_alt_title(data.data.attributes.altTitles);
     // alt titles
     for (let i in data.data.attributes.altTitles) {
         // TODO: support other alt titles than `ja`
 
         // only check for ja (for now)
         if (data.data.attributes.altTitles[i].ja != undefined) {
-            document.getElementById('attr.alt_title').textContent = `${data.data.attributes.altTitles[i].ja}`;
             // page title (with alt)
             document.getElementById('page.title').textContent = `Viewing ${data.data.attributes.title.en} (${data.data.attributes.altTitles[i].ja})`;
         } else {
