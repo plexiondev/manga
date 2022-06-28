@@ -26,10 +26,8 @@ function get_user() {
     xhr.onload = function() {
         log('general',`Found ${user} user!`,true);
 
-        data_parse = JSON.parse(this.response);
-
         try {
-            get_general(this.response);
+            get_general(JSON.parse(this.response));
         } catch(error) {
             log('error',`${error}`,true);
             get_error();
@@ -40,13 +38,9 @@ function get_user() {
     xhr.send();
 }
 
-function get_general(data_pass) {
+function get_general(data) {
 
     log('search',`Retrieving general attributes..`,true);
-
-    // parse
-    const data = JSON.parse(data_pass);
-    console.log(data)
 
     // username
     document.getElementById('attr.username').textContent = data.data.attributes.username;
@@ -90,13 +84,12 @@ function get_general(data_pass) {
         document.getElementById('main').appendChild(UserAuthPanel);
     }
 
-    get_relationships(data_pass);
+    get_relationships(data);
 }
 
-function get_relationships(data_pass) {
+function get_relationships(data_groups) {
     // get group IDs
     const group_ids = [];
-    const data_groups = JSON.parse(data_pass);
     for (let i in data_groups.data.relationships) {
         group_ids.push(data_groups.data.relationships[i].id); // add to group ID array
     }
