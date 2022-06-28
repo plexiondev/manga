@@ -408,11 +408,22 @@ header .menu.left {
     --colour: var(--text-alt);
     color: var(--colour);
 }
+.badge.raise {
+    background-color: var(--b4);
+}
 .badge.seasonal {
     --colour: #ffdb66;
 }
 .badge.something {
     --colour: #47EB55;
+}
+
+.tags .badge {
+    margin: 0 2px;
+    display: inline-block;
+}
+.badge:first-child {
+    margin-left: 0;
 }
 
 /* manga controls */

@@ -59,7 +59,7 @@ function get_general(data) {
     for (let i in roles) {
         // create element
         let tag = document.createElement('label');
-        tag.classList.add('tag',`${(roles[i]).replaceAll(' ','_')}`);
+        tag.classList.add('badge','raise',`${(roles[i]).replaceAll(' ','_')}`);
 
         // text
         tag.textContent = TranslateString(roles[i]);
