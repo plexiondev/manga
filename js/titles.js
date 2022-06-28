@@ -1,7 +1,7 @@
 // ordering title translations
 
 
-const title_priority = ['en','ja','ko','other'];
+const title_priority = ['en','ja-ro','ja','ko','other'];
 
 function parse_title(data) {
     let text = '';

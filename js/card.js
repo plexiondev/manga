@@ -81,12 +81,12 @@ function create_em(data,cover_art_url,manga,append,minimal) {
     em_info.classList.add('info');
     if (minimal) {
         em_info.innerHTML = (`
-        <h4 class="text-16 truncate-2">${data.attributes.title.en}</h4>
+        <h4 class="text-16 truncate-2">${parse_title(data.attributes.title)}</h4>
         <label class="badge ${data.attributes.contentRating}" style="margin-left: 0;">${rating}</label>
         `); 
     } else {
         em_info.innerHTML = (`
-        <h4 class="text-18 truncate">${data.attributes.title.en}</h4>
+        <h4 class="text-18 truncate">${parse_title(data.attributes.title)}</h4>
         <div class="desc-cont text-16">${html}</div>
         <label class="tag ${data.attributes.contentRating}" style="margin-left: 0;"><i class="icon w-16" icon-name="${tags_icon[`${data.attributes.contentRating}`]}" stroke-width="2.5" style="margin-right: 3px; top: -1.3px !important;"></i>${rating}</label>
         `);
