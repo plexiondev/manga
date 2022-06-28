@@ -1,19 +1,6 @@
 // view user page
 
 
-const roles_string = {
-    'ROLE_MEMBER': 'Member',
-    'ROLE_USER': 'User',
-    'ROLE_UNVERIFIED': 'Unverified User',
-    'ROLE_GROUP_MEMBER': 'Group Member',
-    'ROLE_GROUP_LEADER': 'Group Leader',
-    'ROLE_ADMIN': 'Admin',
-    'ROLE_POWER_UPLOADER': 'Power Uploader',
-    'ROLE_DEVELOPER': 'Developer',
-    'ROLE_STAFF': 'Staff',
-    'ROLE_MD_AT_HOME': 'MD@H'
-}
-
 // pass user id from url
 const search = window.location.search;
 const query = new URLSearchParams(search);
@@ -81,7 +68,7 @@ function get_general(data_pass) {
         tag.classList.add('tag',`${(roles[i]).replaceAll(' ','_')}`);
 
         // text
-        tag.textContent = `${roles_string[roles[i]]}`;
+        tag.textContent = TranslateString(roles[i]);
 
         // append
         document.getElementById('attr.roles').appendChild(tag);
