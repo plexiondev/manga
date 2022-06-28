@@ -856,6 +856,9 @@ nav hr {
 }
 
 /* advance buttons */
+div.advance {
+    margin: 25px 0;
+}
 button.advance {
     border: none;
     background-color: var(--b3);
@@ -983,7 +986,7 @@ section.min.cover.padding {
 div.main {
     display: grid;
     justify-content: center;
-    margin: 80px 0;
+    margin: 80px 0 0;
 }
 div.main.no-grid {
     display: initial;
