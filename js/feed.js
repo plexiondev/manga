@@ -58,10 +58,7 @@ function load_page() {
         `);
         
         for (let i in data.data) {
-            // get manga id
-            var manga = data.data[i].id;
-            
-            generate_card(data.data[i],manga,'feed',true,i);
+            generate_card(data.data[i],data.data[i].id,'feed',true,i);
         }
     }
 
