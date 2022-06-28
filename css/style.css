@@ -158,6 +158,12 @@ a.no-underline {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.truncate-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
 
 a[title]:not(.button) {
     text-decoration: underline;
@@ -297,6 +303,9 @@ header .menu.left {
     width: 140px;
     /* animate in */
     animation: card_show 0.35s;
+}
+.min-manga-card:is(:hover, :focus) {
+
 }
 /* cover */
 .min-manga-card .cover {

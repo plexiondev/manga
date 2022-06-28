@@ -112,7 +112,6 @@ function get_relationships(data_groups) {
         // request is received
         xhr.onload = function() {
             const data = JSON.parse(this.response);
-            console.log(data);
 
             // create "Groups" panel
             let RelationshipsPanel = document.createElement('section');
@@ -128,7 +127,7 @@ function get_relationships(data_groups) {
 
             // filter through groups
             for (let i in data.data) {
-                create_group_em(this.response,i);
+                create_group_em(JSON.parse(this.response),i);
             }
         }
 
@@ -137,9 +136,7 @@ function get_relationships(data_groups) {
     }
 }
 
-function create_group_em(data_pass,i) {
-
-    const data = JSON.parse(data_pass);
+function create_group_em(data,i) {
 
     // create element
     let card = document.createElement('a');
