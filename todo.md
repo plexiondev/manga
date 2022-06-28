@@ -58,9 +58,9 @@ this function can then refresh auth automatically if required (and also display 
 - - [ ] allow user to leave a rating
 - [x] show manga's user follows
 - - [x] allow user to follow manga
-- [ ] add more options button
-- - [ ] represent as a simple `...` icon
-- - [ ] contains mangadex link
+- [x] add more options button
+- - [x] represent as a simple `...` icon
+- - [x] contains mangadex link
 - - [ ] contains report link (on mangadex)
 - [ ] allow multiple authors/artists (eg. among us manga LMFAO 💀💀💀💀)
 
@@ -79,8 +79,8 @@ this function can then refresh auth automatically if required (and also display 
 - - [x] viewing group's members
 - [ ] allow searching for groups
 - [ ] add banner when unclaimed group (no members) - similar to osu! copyright notice? / or show as window (no, too distracting)
-- [ ] add icon for email link
-- [ ] correct link for email
+- [x] add icon for email link
+- [x] correct link for email
 - [ ] implement group following
 - - [ ] create page for followed groups
 
