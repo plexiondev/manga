@@ -658,14 +658,17 @@ input#transl {
 
 
 /* content ratings */
-.tag.suggestive {
+:is(.tag,.badge):is(.suggestive) {
     --b: #FFD966;
+    --colour: #FFD966;
 }
-.tag.pornographic, .tag.erotica, .tag.Sexual_Violence, .tag.Gore {
+:is(.tag,.badge):is(.pornographic,.erotica,.Sexual_Violence,.Gore) {
     --b: #FF6666;
+    --colour: #FF6666;
 }
-.tag.Doujinshi {
+:is(.tag,.badge).Doujinshi {
     --b: #FF66AB;
+    --colour: #FF66AB;
 }
 .tag.suggestive, .tag.pornographic, .tag.erotica, .tag.Sexual_Violence, .tag.Gore, .tag.Doujinshi {
     color: var(--b3) !important;
