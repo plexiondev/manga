@@ -59,10 +59,7 @@ function refresh_auth(redirect) {
             localStorage.setItem('token',data.token.session);
             localStorage.setItem('token_refresh',data.token.refresh);
 
-            get_info();
-
-            // swap url
-            if (redirect == true) { window.location.href = '/auth-end.html?code=200'; };
+            get_info(redirect);
 
             // reset auth cache
             auth_now = new Date(auth_now);
@@ -79,7 +76,7 @@ function refresh_auth(redirect) {
 
 
 // get user info
-function get_info() {
+function get_info(redirect = false) {
     // define XHR GET
     const xhr = new XMLHttpRequest();
     const url = `https://api.mangadex.org/user/me`;
@@ -96,6 +93,9 @@ function get_info() {
         localStorage.setItem('token_user_info',`${this.response}`);
         localStorage.setItem('token_user_id',`${user_id}`);
         localStorage.setItem('token_username',`${username}`);
+
+        // swap url
+        if (redirect) window.location.href = '/auth-end.html?code=200';
     }
 
     // send off
