@@ -61,7 +61,7 @@ function load_page() {
             // get manga id
             var manga = data.data[i].id;
             
-            generate_card(data.data[i],manga,'feed',true);
+            generate_card(data.data[i],manga,'feed',true,i);
         }
     }
 

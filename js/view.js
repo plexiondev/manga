@@ -252,7 +252,7 @@ function get_related() {
             // get manga id
             var manga = data.data[i].id;
             
-            generate_card(data.data[i],manga,'feed.related',true);
+            generate_card(data.data[i],manga,'feed.related',true,i);
         }
     }
 

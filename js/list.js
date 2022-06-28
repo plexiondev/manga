@@ -82,7 +82,7 @@ function get_titles() {
         const data = JSON.parse(this.response);
         
         for (let i in data.data) {
-            generate_card(data.data[i],data.data[i].id,'feed.titles',true);
+            generate_card(data.data[i],data.data[i].id,'feed.titles',true,i);
         }
     }
 
