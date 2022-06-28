@@ -73,7 +73,8 @@ const tags = {
     60: '9438db5a-7e2a-4ac0-b39e-e0d95a34b8a8',
     61: 'd14322ac-4d6f-4e9b-afd9-629d5f4d8a41',
     62: '8c86611e-fab7-4986-9dec-d1a2f44acdd5',
-    63: '631ef465-9aba-4afb-b0fc-ea10efe274a8'
+    63: '631ef465-9aba-4afb-b0fc-ea10efe274a8',
+    64: '0a39b5a1-b235-4886-a747-1d05d216532d'
 };
 
 const tags_string = {
@@ -140,7 +141,8 @@ const tags_string = {
     '9438db5a-7e2a-4ac0-b39e-e0d95a34b8a8': 'Video Games',
     'd14322ac-4d6f-4e9b-afd9-629d5f4d8a41': 'Villainess',
     '8c86611e-fab7-4986-9dec-d1a2f44acdd5': 'Virtual Reality',
-    '631ef465-9aba-4afb-b0fc-ea10efe274a8': 'Zombies'
+    '631ef465-9aba-4afb-b0fc-ea10efe274a8': 'Zombies',
+    '0a39b5a1-b235-4886-a747-1d05d216532d': 'Award Winning'
 };
 
 // pass tag request
@@ -151,32 +153,10 @@ if (tag_req == "") {
     tag_req = tags[random(0,63)];
     console.log(tag_req)
 }
-let offset = (query.get('page') * 18) || 0;
 
-// tags
-const tags_icon = {
-    'safe': 'check',
-    'suggestive': 'alert-circle',
-    'erotica': 'alert-circle',
-    'pornographic': 'alert-octagon'
-}
-
-// get content rating
-let rating_suggestive = "";
-if (localStorage.getItem('op_show_suggestive') == 1) {
-    rating_suggestive = '&contentRating[]=suggestive';
-}
-let rating_explicit = "";
-if (localStorage.getItem('op_show_explicit') == 1) {
-    rating_explicit = '&contentRating[]=explicit';
-}
-let rating_nsfw = "";
-if (localStorage.getItem('op_show_nsfw') == 1) {
-    rating_nsfw = '&contentRating[]=pornographic';
-}
-
-var limit = 18;
-var top_limit = 3600;
+var limit = 24;
+var offset = (query.get('page') * 18) || 0;
+var top_limit = 120;
 
 load_page();
 
@@ -191,7 +171,8 @@ function load_page() {
         const data = JSON.parse(this.response);
         document.getElementById('feed').innerHTML = ``;
 
-        document.getElementById('tag_msg').innerHTML = `Viewing manga tagged with <a class="tag" href="/tags.html?t=${tag_req}">${tags_string[tag_req]}</a>`;
+        document.getElementById('attr.tag').textContent = tags_string[tag_req];
+        document.getElementById('attr.href').href = `/tags.html?t=${tag_req}`;
 
         // reset total
         if (top_limit > data.total) {
@@ -199,25 +180,22 @@ function load_page() {
         }
 
         // calculate total
-        var total = Math.round(data.total / 18); // 21418 = 1189
-        var page = Math.round(offset / 18); // 18 = 1
-        var top_limit_round = Math.round(top_limit / 18); // 3600 = 200
+        var total = Math.round(data.total / limit); // 21418 = 1189
+        var page = Math.round(offset / limit); // 18 = 1
+        var top_limit_round = Math.round(top_limit / limit); // 3600 = 200
 
         // pages
         document.getElementById('advance_pages').innerHTML =
         (`
         <button class="page-num left" onclick="set_page(0)">1</button>
-        <button class="page-num" onclick="set_page(${offset-18})">${page-1}</button>
+        <button class="page-num" onclick="set_page(${offset-limit})">${page-1}</button>
         <button class="page-num current" onclick="set_page(${offset})">${page}</button>
-        <button class="page-num" onclick="set_page(${offset+18})">${page+1}</button>
+        <button class="page-num" onclick="set_page(${offset+limit})">${page+1}</button>
         <button class="page-num right" onclick="set_page(${top_limit})">${top_limit_round}</button>
         `);
         
         for (let i in data.data) {
-            // get manga id
-            var manga = data.data[i].id;
-
-            get_relationships(this.response,manga,i);
+            generate_card(data.data[i],data.data[i].id,'feed',true,i);
         }
     }
 

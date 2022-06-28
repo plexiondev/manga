@@ -304,9 +304,6 @@ header .menu.left {
     /* animate in */
     animation: card_show 0.35s;
 }
-.min-manga-card:is(:hover, :focus) {
-
-}
 /* cover */
 .min-manga-card .cover {
     display: flex;
@@ -987,6 +984,9 @@ div.main {
     display: grid;
     justify-content: center;
     margin: 80px 0;
+}
+div.main.no-grid {
+    display: initial;
 }
 /* content header */
 .panel-header {
