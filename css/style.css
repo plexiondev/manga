@@ -897,6 +897,10 @@ section.search-cont .search {
     flex: 1;
 }
 
+.bg.manga {
+    background-position: center 25%;
+}
+
 .search input {
     text-transform: capitalize;
 }
