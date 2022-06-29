@@ -7,16 +7,16 @@ function generate_image(img,manga) {
 
     if (Date.parse(now) >= Date.parse(exceeded) || !exceeded) {
         // create image element
-        /*let image_em = document.createElement('img');
-        image_em.setAttribute('id',`image_${img}`);
+        let image_em = document.createElement('img');
         image_em.width = 140;
         image_em.height = 200;
         image_em.src = `https://uploads.mangadex.org/covers/${manga}/${img}`;
-        document.getElementById('images.temp').appendChild(image_em);*/
+        document.getElementById('images.temp').appendChild(image_em);
+        console.log(img,manga)
 
         // generate base64
-        /*var image = base64(document.getElementById(`image_${img}`));*/
-        var image = base64(`https://uploads.mangadex.org/covers/${manga}/${img}`);
+        var image = base64(image_em);
+        /*var image = base64(`https://uploads.mangadex.org/covers/${manga}/${img}`);*/
 
         // cache
         localStorage.setItem(`image_${img}`,image);
@@ -41,5 +41,6 @@ function base64(img) {
     ctx.drawImage(img, 0, 0);
 
     var data_url = canvas.toDataURL('image/jpeg');
+    console.log(data_url)
     return data_url.replace(/^data:image\/(png|jpeg);base64,/, '');
 }
