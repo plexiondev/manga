@@ -190,7 +190,7 @@ function get_relationships(data_pass) {
             cover_art = cover_url;
 
             // expose on page
-            document.getElementById('img.background').style = `background-image: url(${cover_url});`;
+            document.getElementById('img.background_primary').style = `background-image: url(${cover_url});`;
             document.getElementById('img.cover').src = `${cover_url}`;
             document.getElementById('attr.img_link').href = `${cover_url}`;
         } else if (relationships[i].type == 'author') {
