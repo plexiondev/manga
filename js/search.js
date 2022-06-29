@@ -32,18 +32,12 @@ document.getElementById('page-title').textContent = `Searching for ${search_req}
 
 
 // get content rating
-let rating_suggestive = "";
-if (localStorage.getItem('op_show_suggestive') == 1) {
-    rating_suggestive = '&contentRating[]=suggestive';
-}
-let rating_explicit = "";
-if (localStorage.getItem('op_show_explicit') == 1) {
-    rating_explicit = '&contentRating[]=explicit';
-}
-let rating_nsfw = "";
-if (localStorage.getItem('op_show_nsfw') == 1) {
-    rating_nsfw = '&contentRating[]=pornographic';
-}
+let rating_suggestive = '';
+if (setting('show_suggestive')) rating_suggestive = '&contentRating[]=suggestive';
+let rating_explicit = '';
+if (setting('show_erotica')) rating_explicit = '&contentRating[]=erotica';
+let rating_nsfw = '';
+if (lsetting('show_nsfw')) rating_nsfw = '&contentRating[]=pornographic';
 
 // define xhr GET
 const xhr = new XMLHttpRequest();

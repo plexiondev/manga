@@ -12,11 +12,11 @@ const contentrating_string = {
 
 // get content rating
 let rating_suggestive = '';
-if (localStorage.getItem('op_show_suggestive') == 1) rating_suggestive = '&contentRating[]=suggestive';
+if (setting('show_suggestive')) rating_suggestive = '&contentRating[]=suggestive';
 let rating_explicit = '';
-if (localStorage.getItem('op_show_explicit') == 1) rating_explicit = '&contentRating[]=explicit';
+if (setting('show_erotica')) rating_explicit = '&contentRating[]=erotica';
 let rating_nsfw = '';
-if (localStorage.getItem('op_show_nsfw') == 1) rating_nsfw = '&contentRating[]=pornographic';
+if (setting('show_nsfw')) rating_nsfw = '&contentRating[]=pornographic';
 
 /**
  * generate cover art for manga
@@ -117,9 +117,9 @@ function create_em(data,cover_art_url,manga,append,minimal) {
     // append
     card.appendChild(em_info);
     if (
-        (data.attributes.contentRating == 'suggestive' && localStorage.getItem('op_show_suggestive') == 1)
-        || (data.attributes.contentRating == 'erotica' && localStorage.getItem('op_show_erotica') == 1)
-        || (data.attributes.contentRating == 'pornographic' && localStorage.getItem('op_show_nsfw') == 1)
+        (data.attributes.contentRating == 'suggestive' && setting('show_suggestive'))
+        || (data.attributes.contentRating == 'erotica' && setting('show_erotica'))
+        || (data.attributes.contentRating == 'pornographic' && setting('show_nsfw'))
         || (data.attributes.contentRating == 'safe')) {
         document.getElementById(`${append}`).appendChild(card);
     }
