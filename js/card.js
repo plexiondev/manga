@@ -1,6 +1,8 @@
 // create generic manga cards
 
 
+const MAX_TAGS = 2;
+
 const contentrating_string = {
     'safe': 'Safe',
     'suggestive': 'Suggestive',
@@ -99,7 +101,7 @@ function create_em(data,cover_art_url,manga,append,minimal) {
     // tags
     let tags = data.attributes.tags;
     for (let i in tags) {
-        if (i < 2 && !minimal) {
+        if (i < MAX_TAGS && !minimal) {
             // create element
             let tag = document.createElement('label');
             tag.classList.add('tag',`${(tags[i].attributes.name.en).replaceAll(' ','_')}`);

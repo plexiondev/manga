@@ -55,4 +55,15 @@ function onload() {
     });
 }
 // run on load
-window.onload = onload()
+window.onload = onload();
+
+// check if enabled
+function setting(data) {
+    let option = localStorage.getItem(`op_${data}`);
+
+    if (option >= 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
